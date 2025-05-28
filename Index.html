@@ -410,7 +410,8 @@
         display: flex;
         justify-content: space-between;
         transform: translateY(-50%);
-        padding: 0 10px;
+        left: 0; /* Étire le conteneur des boutons sur toute la largeur */
+        right: 0; /* Étire le conteneur des boutons sur toute la largeur */
         z-index: 10;
     }
 
@@ -427,6 +428,15 @@
         justify-content: center;
         align-items: center;
         transition: background-color 0.3s ease;
+    }
+
+    /* Ajout de marges spécifiques pour positionner les boutons correctement */
+    .carousel-nav-button.prev-button {
+        margin-left: 1.5rem; /* Aligne avec le padding du carousel-container */
+    }
+
+    .carousel-nav-button.next-button {
+        margin-right: 1.5rem; /* Aligne avec le padding du carousel-container */
     }
 
     .carousel-nav-button:hover {
@@ -856,27 +866,27 @@
             <div class="carousel-track">
               <div class="photo-item">
                 <a href="images/Drone/DJI_0457.jpg" data-src-large="images/Drone/DJI_0457.jpg" class="photo-lightbox-trigger">
-                  <img src="images/Drone/DJI_0457.jpg" alt="Vue aérienne d'une ville côtière avec des vagues turquoise et une plage de sable, des maisons sur des collines verdoyantes, ciel clair, atmosphère paisible et étendue.">
+                  <img src="images/Drone/DJI_0457.jpg" alt="Vue aérienne d'une ville côtière avec plage et vagues turquoise.">
                 </a>
-                <div class="photo-title">Aérienne 1</div>
+                <div class="photo-title">Bleu Infini</div>
               </div>
               <div class="photo-item">
                 <a href="images/Drone/DJI_0459.jpg" data-src-large="images/Drone/DJI_0459.jpg" class="photo-lightbox-trigger">
                   <img src="images/Drone/DJI_0459.jpg" alt="Vagues turquoise roulant vers une plage de sable bordée d'un brise-lames et d'une marina remplie de bateaux, maisons résidentielles et collines verdoyantes en arrière-plan sous un ciel partiellement nuageux, atmosphère côtière calme et étendue.">
                 </a>
-                <div class="photo-title">Aérienne 2</div>
+                <div class="photo-title">Azur & Rivages</div>
               </div>
               <div class="photo-item">
                 <a href="images/Drone/DJI_0460.jpg" data-src-large="images/Drone/DJI_0460.jpg" class="photo-lightbox-trigger">
                   <img src="images/Drone/DJI_0460.jpg" alt="Ville côtière bordée par l'océan turquoise avec des vagues douces, une plage de sable, une marina avec des bateaux, et des maisons nichées parmi des collines verdoyantes sous un ciel partiellement nuageux, atmosphère tranquille et étendue.">
                 </a>
-                <div class="photo-title">Aérienne 3</div>
+                <div class="photo-title">Émeraude Côtière</div>
               </div>
               <div class="photo-item">
                 <a href="images/Drone/DJI_0466.jpg" data-src-large="images/Drone/DJI_0466.jpg" class="photo-lightbox-trigger">
-                  <img src="images/Drone/DJI_0466.jpg" alt="White catamaran boat floating alone on deep blue ocean water viewed from above with sunlight reflecting on the waves, open sea surrounding the boat, tranquil and peaceful atmosphere">
+                  <img src="images/Drone/DJI_0466.jpg" alt="White catamaran boat floating alone on deep blue ocean water viewed from above with sunlight reflecting on the waves, creating a sense of tranquility and vastness">
                 </a>
-                <div class="photo-title">Aérienne 4</div>
+                <div class="photo-title">Solitude Bleue</div>
               </div>
             </div>
             <div class="carousel-nav-buttons">
