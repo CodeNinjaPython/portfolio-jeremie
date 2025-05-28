@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jérémie FAVRE - Vidéaste</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Variables CSS pour les couleurs */
+    :root {
+      --black: #1a1a1a;
+      --white: #ffffff;
+      --dark-grey: #333333;
+      --light-grey: #f4f4f4;
+      --accent-color: #e0e0e0; /* Une couleur d'accentuation subtile pour les bordures/lignes */
+    }
+
+    /* Styles généraux du corps */
+    html {
+      scroll-behavior: smooth; /* Active le défilement fluide */
+    }
+    body {
+      margin: 0;
+      font-family: 'Lato', Arial, sans-serif;
+      line-height: 1.6;
+      background-color: var(--black); /* Fond sombre */
+      color: var(--white); /* Texte blanc sur fond sombre */
+      overflow-x: hidden; /* Empêche le défilement horizontal dû aux rotations */
+      /* Motif de fond plus complexe pour imiter la texture du CV */
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 20px 20px, 20px 20px, 10px 10px, 10px 10px;
+      background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
+    }
+
+    /* Styles des titres */
+    h1, h2, h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--white);
+      margin-top: 0;
+    }
+    h1 {
+      font-size: 4rem; /* Taille plus grande pour le titre principal */
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      transform: rotate(-3deg); /* Effet d'inclinaison */
+      display: inline-block; /* Nécessaire pour la transformation sur les éléments en ligne */
+      background-color: var(--black); /* Pour que le texte se détache du motif */
+      padding: 0 15px;
+      position: relative;
+      z-index: 1; /* Assure que le titre est au-dessus des autres éléments */
+    }
+    h2 {
+      font-size: 2.2rem; /* Taille légèrement plus grande pour les sous-titres */
+      border-bottom: 3px solid var(--accent-color); /* Bordure plus épaisse */
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      display: inline-block; /* Pour que la bordure inférieure soit aussi large que le texte */
+      transform: rotate(-1deg); /* Légère inclinaison pour les sous-titres */
+      padding-right: 15px; /* Espace après le texte pour la bordure */
+    }
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--accent-color);
+    }
+
+    /* En-tête */
+    header {
+      background: var(--dark-grey); /* Fond gris foncé pour l'en-tête */
+      color: var(--white);
+      padding: 4rem 1rem 2rem; /* Plus de rembourrage */
+      text-align: center;
+      position: relative;
+      overflow: hidden; /* Pour contenir les éléments inclinés */
+      margin-bottom: 3rem; /* Plus d'espace sous l'en-tête */
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Ombre plus prononcée */
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 2; /* S'assurer que le contenu est au-dessus des effets de fond */
+      max-width: 900px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem; /* Plus d'espace entre les éléments de l'en-tête */
+    }
+
+    .profile-photo {
+      width: 180px; /* Photo de profil plus grande */
+      height: 180px;
+      border-radius: 50%;
+      background-color: var(--light-grey); /* Espace réservé pour l'image */
+      border: 6px solid var(--white); /* Bordure plus épaisse */
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 0 0 10px rgba(255,255,255,0.1); /* Effet d'anneau autour de la photo */
+    }
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top; /* Ajustement du cadrage de l'image de profil */
+      /* Recommandation: Optimiser l'image (compression, dimensions) pour le web */
+    }
+
+    .header p {
+      font-size: 1.3rem; /* Texte de description plus grand */
+      margin-top: 0;
+      font-weight: 300;
+    }
+
+    /* Bannière "VIDÉASTE - CADREUR MONTEUR" */
+    .top-banner {
+      position: absolute;
+      top: 20px;
+      left: -50px; /* Décalé pour l'inclinaison */
+      background-color: var(--accent-color);
+      color: var(--black);
+      padding: 10px 80px; /* Plus large pour le texte */
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+      transform: rotate(-10deg); /* Forte inclinaison */
+      z-index: 3; /* Au-dessus de tout */
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    }
+
+    /* Navigation */
+    nav {
+      background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent pour la nav */
+      padding: 1rem 0;
+      position: absolute; /* Positionne la nav au-dessus de l'en-tête */
+      bottom: 0;
+      width: 100%;
+      z-index: 10; /* Assure que la nav est au-dessus de tout */
+      transform: translateY(50%); /* Remonte la nav sur l'en-tête */
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      padding: 0.5rem 1rem;
+      transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    nav a:hover {
+      color: var(--accent-color);
+      transform: translateY(-3px);
+    }
+    nav a::after { /* Soulignement animé */
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: var(--accent-color);
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-out;
+    }
+    nav a:hover::after {
+      transform: translateX(0);
+    }
+
+
+    /* Contenu principal (grille) */
+    .main-content {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem; /* Plus d'espace entre les sections */
+      max-width: 950px; /* Largeur maximale légèrement augmentée */
+      margin: auto;
+      padding: 0 1.5rem; /* Plus de rembourrage sur les côtés */
+    }
+
+    @media (min-width: 768px) {
+      .main-content {
+        /* Ajustement de la grille pour que la section "Mon Expertise" prenne toute la largeur */
+        grid-template-columns: 1fr;
+      }
+      .top-banner {
+        left: -80px; /* Ajustement pour les écrans plus larges */
+        font-size: 2.2rem;
+        padding: 15px 100px;
+      }
+      nav {
+        transform: translateY(50%); /* Maintenir la position */
+      }
+    }
+
+    /* Sections de contenu */
+    section {
+      background-color: var(--dark-grey); /* Fond gris foncé pour les sections de contenu */
+      padding: 2.5rem; /* Plus de rembourrage */
+      border-radius: 10px; /* Coins plus arrondis */
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Ombre plus douce */
+      border: 1px solid rgba(255,255,255,0.1); /* Bordure subtile */
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation sur hover */
+    }
+    section:hover {
+      transform: translateY(-5px); /* Légère élévation au survol */
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .section-white {
+      background-color: var(--white);
+      color: var(--dark-grey);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+    .section-white h2, .section-white h3 {
+      color: var(--dark-grey);
+      border-bottom-color: var(--dark-grey);
+    }
+    .section-white a {
+      color: var(--dark-grey);
+    }
+
+    /* Grille vidéo (Portfolio) */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .video-item {
+      background-color: var(--black); /* Fond noir pour chaque élément vidéo */
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    .video-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+    }
+    iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: none;
+      border-radius: 8px 8px 0 0; /* Coins arrondis en haut */
+      display: block;
+    }
+    .video-info {
+      padding: 1rem;
+      color: var(--white);
+    }
+    .video-info h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: var(--accent-color);
+    }
+    .video-info p {
+      font-size: 0.9rem;
+      line-height: 1.4;
+      color: rgba(255,255,255,0.8);
+    }
+
+    /* Informations de contact */
+    .contact-info p {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+    }
+    .contact-info a {
+      color: var(--white);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .section-white .contact-info a {
+      color: var(--dark-grey);
+    }
+    .contact-info a:hover {
+      color: var(--accent-color);
+    }
+    .section-white .contact-info a:hover {
+      color: var(--dark-grey);
+    }
+    .contact-info i {
+      margin-right: 12px; /* Plus d'espace pour les icônes */
+      font-size: 1.3rem;
+      color: var(--accent-color);
+    }
+    .section-white .contact-info i {
+      color: var(--dark-grey);
+    }
+
+    /* Formulaire de contact */
+    .contact-form label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+      color: var(--dark-grey); /* Couleur du texte du label */
+    }
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+      width: calc(100% - 20px); /* Ajuster la largeur avec le padding */
+      padding: 10px;
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--dark-grey);
+      border-radius: 5px;
+      background-color: var(--light-grey); /* Fond clair pour les champs */
+      color: var(--dark-grey);
+      font-family: 'Lato', Arial, sans-serif;
+      font-size: 1rem;
+    }
+    .contact-form textarea {
+      resize: vertical; /* Permet de redimensionner verticalement */
+      min-height: 100px;
+    }
+    .contact-form input[type="text"]:focus,
+    .contact-form input[type="email"]:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: var(--accent-color);
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+    .contact-form button {
+      background-color: var(--dark-grey); /* Bouton sombre sur fond clair */
+      color: var(--white);
+      padding: 12px 25px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      transform: rotate(-2deg); /* Légère inclinaison pour le bouton */
+    }
+    .contact-form button:hover {
+      background-color: #000; /* Plus foncé au survol */
+      transform: rotate(-2deg) scale(1.05); /* Légère inclinaison et agrandissement */
+    }
+
+
+    /* Grille des compétences */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr; /* Une seule colonne par défaut */
+      gap: 1.5rem;
+    }
+    /* Suppression de la règle pour deux colonnes sur les écrans moyens, pour que "Mes Outils Créatifs" prenne toute la largeur */
+    /* @media (min-width: 500px) {
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    } */
+    .skills-grid ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .skills-grid li {
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+    }
+    .skills-grid li::before {
+      content: '•';
+      color: var(--accent-color);
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+    .skill-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 0.8rem;
+      font-size: 1.1rem;
+    }
+    .skill-item i {
+      font-size: 1.6rem;
+      color: var(--accent-color);
+    }
+
+    /* Pied de page */
+    footer {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      margin-top: 4rem;
+      background-color: var(--dark-grey);
+      color: var(--white);
+      font-size: 0.9rem;
+      box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="top-banner">VIDÉASTE - CADREUR MONTEUR</div>
+    <div class="header-content">
+      <div class="profile-photo">
+        <img src="unnamed.jpg" alt="Jérémie Favre">
+      </div>
+      <h1>Jérémie FAVRE</h1>
+      <p>Vidéaste basé à La Réunion</p>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#skills">Mon Expertise</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="main-content">
+    <section id="about">
+      <h2>À propos de ma démarche</h2>
+      <p>
+        Animé par la passion de l'image et du mouvement, je suis Jérémie Favre, vidéaste basé à La Réunion. Ma démarche créative consiste à transformer des idées en récits visuels captivants. Que ce soit pour des clips dynamiques, des documentaires immersifs ou des publicités percutantes, je m'engage à donner vie à chaque projet, de la conception à la post-production.<br>
+        Mon expertise s'étend de la coordination complète des tournages à la maîtrise des prises de vue aériennes avec drone stabilisé et FPV, offrant des perspectives uniques à vos projets.
+      </p>
+    </section>
+
+    <section id="skills">
+      <h2>Mon Expertise</h2>
+      <div class="skills-grid">
+        <div>
+          <h3>Mes Outils Créatifs</h3>
+          <div class="skill-item"><i class="fab fa-adobe"></i> Premiere Pro : Maîtrise du montage vidéo professionnel.</div>
+          <div class="skill-item"><i class="fab fa-adobe"></i> After Effects : Création d'effets visuels et animations.</div>
+          <div class="skill-item"><i class="fab fa-adobe"></i> Photoshop : Retouche d'image et conception graphique.</div>
+          <div class="skill-item"><i class="fab fa-adobe"></i> Lightroom : Optimisation et catalogage des images.</div>
+          <div class="skill-item"><i class="fas fa-video"></i> Production Vidéo : De l'idée au produit final.</div>
+          <div class="skill-item"><i class="fas fa-film"></i> Montage Vidéo : Narration visuelle et rythme.</div>
+          <div class="skill-item"><i class="fas fa-drone"></i> Pilotage Drone : Perspectives aériennes uniques.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="section-white">
+      <h2>Portfolio Vidéo</h2>
+      <div class="video-grid">
+        <div class="video-item">
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=example" title="Titre de la Vidéo 1 - Projet Publicitaire"></iframe>
+          <div class="video-info">
+            <h3>Projet Publicitaire "Montagne Magique"</h3>
+            <p>Réalisation et montage d'une publicité pour une destination touristique locale, mettant en avant les paysages de La Réunion.</p>
+          </div>
+        </div>
+        <div class="video-item">
+          <iframe src="https://player.vimeo.com/video/example" title="Titre de la Vidéo 2 - Interview Artistique"></iframe>
+          <div class="video-info">
+            <h3>Interview d'Artiste "L'Âme Créole"</h3>
+            <p>Captation et post-production d'une interview avec un artiste local, explorant son processus créatif et son lien avec l'île.</p>
+          </div>
+        </div>
+        </div>
+    </section>
+  </div>
+
+  <section id="contact" class="contact section-white">
+    <h2>Contact</h2>
+    <div class="contact-form">
+      <form action="#" method="POST"> <label for="name">Nom :</label>
+        <input type="text" id="name" name="name" required aria-label="Votre nom">
+
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" required aria-label="Votre adresse email">
+
+        <label for="message">Message :</label>
+        <textarea id="message" name="message" rows="5" required aria-label="Votre message"></textarea>
+
+        <button type="submit">Envoyer le message</button>
+      </form>
+    </div>
+    <div class="contact-info" style="margin-top: 2rem;">
+      <p><i class="fas fa-envelope"></i> Email : <a href="mailto:contact@jeremiefavre.com">contact@jeremiefavre.com</a></p>
+      <p><i class="fab fa-instagram"></i> Instagram : <a href="https://instagram.com/jeremiefavre" target="_blank">@jeremiefavre</a></p>
+      <p><i class="fab fa-vimeo"></i> Vimeo : <a href="https://vimeo.com/jeremiefavre" target="_blank">vimeo.com/jeremiefavre</a></p>
+      <p><i class="fas fa-map-marker-alt"></i> Basé à La Réunion</p>
+      <p><i class="fas fa-phone"></i> Téléphone : +262 692 123 456 (exemple)</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Jérémie FAVRE. Tous droits réservés.</p>
+  </footer>
+</body>
+</html>
