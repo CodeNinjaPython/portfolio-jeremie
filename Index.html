@@ -271,66 +271,38 @@
       color: var(--dark-grey);
     }
 
-    /* Grille vidéo (Portfolio) */
-    .video-grid {
+    /* Grille vidéo (Portfolio) - Adapté de votre code fourni */
+    .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Min-width légèrement ajusté */
+      gap: 1.5rem; /* Espace entre les vidéos */
     }
-    .video-item {
+    .video {
       background-color: var(--black); /* Fond noir pour chaque élément vidéo */
-      border-radius: 8px;
-      overflow: hidden;
+      padding: 15px;
+      border-radius: 8px; /* Coins arrondis */
       box-shadow: 0 4px 8px rgba(0,0,0,0.3);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       border: 1px solid rgba(255,255,255,0.05);
-      cursor: pointer; /* Indique qu'il est cliquable */
+      overflow: hidden; /* Assure que le contenu reste dans les bordures arrondies */
     }
-    .video-item:hover {
+    .video:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 16px rgba(0,0,0,0.4);
     }
-    .video-item iframe { /* Cache l'iframe original pour la modale */
-        display: none;
+    .video-title {
+      text-align: center;
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: var(--accent-color); /* Couleur du titre de la vidéo */
     }
-    .video-item .thumbnail { /* Style de l'aperçu */
-        width: 100%;
-        aspect-ratio: 16 / 9;
-        background-size: cover;
-        background-position: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        border-radius: 8px 8px 0 0;
-        position: relative;
-    }
-    .video-item .thumbnail::after { /* Icône Play */
-        content: '\f144'; /* FontAwesome play icon */
-        font-family: "Font Awesome 5 Free";
-        font-weight: 900;
-        font-size: 3em;
-        color: rgba(255,255,255,0.8);
-        text-shadow: 0 0 10px rgba(0,0,0,0.5);
-        transition: transform 0.2s ease-in-out;
-    }
-    .video-item .thumbnail:hover::after {
-        transform: scale(1.1);
-    }
-
-    .video-info {
-      padding: 1rem;
-      color: var(--white);
-    }
-    .video-info h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-      color: var(--accent-color);
-    }
-    .video-info p {
-      font-size: 0.9rem;
-      line-height: 1.4;
-      color: rgba(255,255,255,0.8);
+    iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9; /* Maintient le ratio 16:9 pour les vidéos */
+      border: none;
+      border-radius: 8px; /* Coins arrondis pour l'iframe */
+      display: block; /* Supprime l'espace sous l'iframe */
     }
 
     /* Informations de contact */
@@ -494,66 +466,6 @@
       transform: translateY(-3px);
     }
 
-    /* Styles pour la modale (lightbox) */
-    .modal {
-      display: none; /* La modale est cachée par défaut */
-      position: fixed; /* Stay in place */
-      z-index: 1000; /* Sit on top */
-      left: 0;
-      top: 0;
-      width: 100%; /* Full width */
-      height: 100%; /* Full height */
-      overflow: auto; /* Enable scroll if needed */
-      background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-      padding-top: 60px; /* Pour laisser de la place au bouton fermer */
-      /* Les propriétés flex seront ajoutées par JavaScript quand elle est affichée */
-    }
-
-    .modal-content {
-      margin: auto;
-      display: block;
-      width: 90%;
-      max-width: 900px; /* Max width for video */
-      height: auto;
-      aspect-ratio: 16 / 9; /* Maintain aspect ratio for video */
-    }
-
-    /* Add Animation */
-    .modal-content, #caption {
-      -webkit-animation-name: zoom;
-      -webkit-animation-duration: 0.6s;
-      animation-name: zoom;
-      animation-duration: 0.6s;
-    }
-
-    @-webkit-keyframes zoom {
-      from {transform:scale(0)}
-      to {transform:scale(1)}
-    }
-
-    @keyframes zoom {
-      from {transform:scale(0)}
-      to {transform:scale(1)}
-    }
-
-    .close {
-      position: absolute;
-      top: 15px;
-      right: 35px;
-      color: #f1f1f1;
-      font-size: 40px;
-      font-weight: bold;
-      transition: 0.3s;
-      cursor: pointer;
-    }
-
-    .close:hover,
-    .close:focus {
-      color: #bbb;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
     /* Media queries pour la responsivité */
     @media (max-width: 768px) {
         h1 {
@@ -580,9 +492,6 @@
         .profile-photo {
             width: 140px;
             height: 140px;
-        }
-        .modal-content {
-            width: 95%;
         }
     }
   </style>
@@ -639,62 +548,45 @@
 
     <section id="portfolio" class="section-white">
       <h2>Portfolio Vidéo</h2>
-      <div class="video-grid">
-        <div class="video-item" data-video-url="https://youtu.be/qtrdrRYwMoA?">
-          <div class="thumbnail"></div>
-          <div class="video-info">
-            <h3>LIVRE DU DESTIN Court metrage</h3>
-            <p>[DESCRIPTION DE LA VIDÉO - Ajoutez une description détaillée ici]</p>
-          </div>
+      <div class="gallery">
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/qtrdrRYwMoA" allowfullscreen></iframe>
+          <div class="video-title">LIVRE DU DESTIN Court metrage</div>
         </div>
-        <div class="video-item" data-video-url="https://youtu.be/j_FrzbnDIuY?">
-          <div class="thumbnail"></div>
-          <div class="video-info">
-            <h3>AURORA - Court Métrages</h3>
-            <p>[DESCRIPTION DE LA VIDÉO - Ajoutez une description détaillée ici]</p>
-          </div>
+
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/j_FrzbnDIuY" allowfullscreen></iframe>
+          <div class="video-title">AURORA - Court Métrages</div>
         </div>
-        <div class="video-item" data-video-url="https://youtu.be/_q7MnK_2QFI?">
-          <div class="thumbnail"></div>
-          <div class="video-info">
-            <h3>Venum - PUB</h3>
-            <p>[DESCRIPTION DE LA VIDÉO - Ajoutez une description détaillée ici]</p>
-          </div>
+
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/_q7MnK_2QFI" allowfullscreen></iframe>
+          <div class="video-title">Venum - PUB</div>
         </div>
-        <div class="video-item" data-video-url="https://youtu.be/XOG37yLswio?">
-          <div class="thumbnail"></div>
-          <div class="video-info">
-            <h3>Restaurant LE LEON</h3>
-            <p>[DESCRIPTION DE LA VIDÉO - Ajoutez une description détaillée ici]</p>
-          </div>
+
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/XOG37yLswio" allowfullscreen></iframe>
+          <div class="video-title">Restaurant LE LEON</div>
         </div>
-        <div class="video-item" data-video-url="https://youtu.be/zZD8K0tTuzo">
-          <div class="thumbnail"></div>
-          <div class="video-info">
-            <h3>Portrait de Stéphanie Valmorex</h3>
-            <p>[DESCRIPTION DE LA VIDÉO - Ajoutez une description détaillée ici]</p>
-          </div>
+
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/zZD8K0tTuzo" allowfullscreen></iframe>
+          <div class="video-title">Portrait de Stéphanie Valmorex</div>
         </div>
-        <div class="video-item" data-video-url="https://youtu.be/9GQS8eGeZlk?">
-          <div class="thumbnail"></div>
-          <div class="video-info">
-            <h3>KidnaPink Final Officiel</h3>
-            <p>[DESCRIPTION DE LA VIDÉO - Ajoutez une description détaillée ici]</p>
-          </div>
+
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/9GQS8eGeZlk" allowfullscreen></iframe>
+          <div class="video-title">KidnaPink Final Officiel</div>
         </div>
-        <div class="video-item" data-video-url="https://youtu.be/6bbMbT8_QGE?">
-          <div class="thumbnail"></div>
-          <div class="video-info">
-            <h3>ALONE</h3>
-            <p>[DESCRIPTION DE LA VIDÉO - Ajoutez une description détaillée ici]</p>
-          </div>
+
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/6bbMbT8_QGE" allowfullscreen></iframe>
+          <div class="video-title">ALONE</div>
         </div>
-        <div class="video-item" data-video-url="https://youtu.be/5S_ke4JsViI?">
-          <div class="thumbnail"></div>
-          <div class="video-info">
-            <h3>Dessert spécial diabétique - Ensemble contre le diabète ( Julien LEVENEUR )</h3>
-            <p>[DESCRIPTION DE LA VIDÉO - Ajoutez une description détaillée ici]</p>
-          </div>
+
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/5S_ke4JsViI" allowfullscreen></iframe>
+          <div class="video-title">Dessert spécial diabétique - Ensemble contre le diabète ( Julien LEVENEUR )</div>
         </div>
       </div>
     </section>
@@ -703,7 +595,8 @@
   <section id="contact" class="contact section-white">
     <h2>Contact</h2>
     <div class="contact-form">
-      <form action="YOUR_FORM_SUBMISSION_SERVICE_URL" method="POST"> <label for="name">Nom :</label>
+      <form action="YOUR_FORM_SUBMISSION_SERVICE_URL" method="POST">
+        <label for="name">Nom :</label>
         <input type="text" id="name" name="name" required aria-label="Votre nom">
 
         <label for="email">Email :</label>
@@ -729,11 +622,6 @@
   </footer>
 
   <button id="back-to-top" title="Retour en haut"><i class="fas fa-arrow-up"></i></button>
-
-  <div id="videoModal" class="modal">
-    <span class="close">×</span>
-    <iframe class="modal-content" id="modalVideo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  </div>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -777,73 +665,8 @@
         });
       });
 
-      // Script pour la modale vidéo et les miniatures
-      const videoItems = document.querySelectorAll('.video-item');
-      const modal = document.getElementById('videoModal');
-      const modalVideo = document.getElementById('modalVideo');
-      const closeBtn = document.querySelector('.close');
-
-      // Pour s'assurer que la modale est cachée au chargement
-      modal.style.display = 'none';
-      modalVideo.src = ''; // S'assurer que la vidéo ne démarre pas
-
-      videoItems.forEach(item => {
-          const fullYouTubeUrl = item.dataset.videoUrl;
-          let videoId = '';
-
-          // Regex pour extraire l'ID YouTube de diverses URLs YouTube
-          // Cette regex est conçue pour extraire l'ID de 11 caractères
-          const youtubeMatch = fullYouTubeUrl.match(/(?:youtube\.com\/(?:[^\/]+\/.+\/|\/(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
-          if (youtubeMatch && youtubeMatch[1]) {
-              videoId = youtubeMatch[1];
-          }
-
-          // Générer l'URL de la miniature
-          if (videoId) {
-              // URL standard pour les miniatures YouTube (hqdefault = haute qualité)
-              const thumbnailUrl = `http://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
-              item.querySelector('.thumbnail').style.backgroundImage = `url('${thumbnailUrl}')`;
-          } else {
-              // Fallback si l'ID n'est pas trouvé (par exemple, une image placeholder)
-              item.querySelector('.thumbnail').style.backgroundImage = `url('https://placehold.co/480x270/333/fff?text=URL+Video+Invalide')`;
-          }
-
-          item.addEventListener('click', () => {
-              if (videoId) {
-                  modal.style.display = 'flex'; // La modale apparaît
-                  modal.style.alignItems = 'center';
-                  modal.style.justifyContent = 'center';
-
-                  // URL standard pour l'intégration vidéo YouTube avec autoplay et sans vidéos suggérées
-                  modalVideo.src = `http://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
-                  modal.focus();
-              } else {
-                  console.error("Impossible d'ouvrir la vidéo : l'URL de la vidéo est manquante ou incorrecte.");
-                  // Vous pouvez ajouter ici un message à l'utilisateur si vous le souhaitez
-              }
-          });
-      });
-
-      closeBtn.addEventListener('click', () => {
-          modal.style.display = 'none';
-          modalVideo.src = ''; // Arrête la vidéo en réinitialisant la source
-      });
-
-      // Fermer la modale si l'on clique en dehors de la vidéo
-      modal.addEventListener('click', (event) => {
-          if (event.target === modal) {
-              modal.style.display = 'none';
-              modalVideo.src = ''; // Arrête la vidéo
-          }
-      });
-
-      // Fermer la modale avec la touche Échap
-      document.addEventListener('keydown', (event) => {
-          if (event.key === 'Escape' && modal.style.display === 'flex') {
-              modal.style.display = 'none';
-              modalVideo.src = ''; // Arrête la vidéo
-          }
-      });
+      // NOTE : Le script pour la modale vidéo et les miniatures a été supprimé
+      // car les vidéos sont maintenant intégrées directement via des iframes.
     });
   </script>
 </body>
