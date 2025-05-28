@@ -75,10 +75,10 @@
     header {
       background: var(--dark-grey); /* Fond gris foncé pour l'en-tête */
       color: var(--white);
-      padding: 4rem 1rem 2rem; /* Plus de rembourrage */
+      padding: 4rem 1rem 8rem; /* Garde ce padding-bottom généreux */
       text-align: center;
       position: relative;
-      overflow: hidden; /* Pour contenir les éléments inclinés */
+      /* MODIFICATION : Suppression de overflow: hidden; */
       margin-bottom: 3rem; /* Plus d'espace sous l'en-tête */
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Ombre plus prononcée */
     }
@@ -137,7 +137,7 @@
     /* Navigation */
     nav {
       background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent pour la nav */
-      padding: 1rem 0;
+      padding: 1.5rem 0;
       position: absolute; /* Positionne la nav au-dessus de l'en-tête */
       bottom: 0;
       width: 100%;
@@ -362,22 +362,10 @@
       grid-template-columns: 1fr; /* Une seule colonne par défaut */
       gap: 1.5rem;
     }
-    /* Suppression de la règle pour deux colonnes sur les écrans moyens, pour que "Mes Outils Créatifs" prenne toute la largeur */
-    /* @media (min-width: 500px) {
-      .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    } */
     .skills-grid ul {
       list-style: none;
       padding: 0;
       margin: 0;
-    }
-    .skills-grid li {
-      margin-bottom: 0.5rem;
-      font-size: 1.1rem;
-      display: flex;
-      align-items: center;
     }
     .skills-grid li::before {
       content: '•';
