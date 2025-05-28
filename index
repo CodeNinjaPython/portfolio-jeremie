@@ -1,0 +1,6 @@
+cd ~/Users/jeremiefavre/Documents/GitHub/portfolio-jeremie
+git init
+git remote add origin https://github.com/CodeNinjaPython/portfolio-jeremie.git
+git add .
+git commit -m "Initial commit"
+git push -u origin master
