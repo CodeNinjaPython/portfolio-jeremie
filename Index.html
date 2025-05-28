@@ -79,8 +79,8 @@
       color: var(--white);
       padding: 4rem 1rem 3rem; /* Réduction du padding-bottom, nav est déplacée */
       text-align: center;
-      position: relative; /* Nécessaire pour les pseudo-elements et la nav */
-      overflow: visible; /* Permet aux pseudo-elements de dépasser */
+      position: relative; /* Nécessaire pour les pseudo-éléments et la nav */
+      overflow: visible; /* Permet aux pseudo-éléments de dépasser */
       margin-bottom: 0; /* Supprime la marge en bas de l'en-tête */
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Ombre plus prononcée */
     }
@@ -300,7 +300,7 @@
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Min-width légèrement ajusté */
       gap: 1.5rem; /* Espace entre les vidéos */
     }
-    .video {
+    .video-item { /* Renommé de .video pour éviter les conflits et clarifier */
       background-color: var(--black); /* Fond noir pour chaque élément vidéo */
       padding: 15px;
       border-radius: 8px; /* Coins arrondis */
@@ -308,8 +308,9 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       border: 1px solid rgba(255,255,255,0.05);
       overflow: hidden; /* Assure que le contenu reste dans les bordures arrondies */
+      cursor: pointer; /* Indique que l'élément est cliquable */
     }
-    .video:hover {
+    .video-item:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 16px rgba(0,0,0,0.4);
     }
@@ -320,13 +321,31 @@
       font-size: 1.1rem;
       color: var(--accent-color); /* Couleur du titre de la vidéo */
     }
-    iframe {
-      width: 100%;
-      aspect-ratio: 16 / 9; /* Maintient le ratio 16:9 pour les vidéos */
-      border: none;
-      border-radius: 8px; /* Coins arrondis pour l'iframe */
-      display: block; /* Supprime l'espace sous l'iframe */
+    .video-item .thumbnail {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        border-radius: 8px; /* Coins arrondis pour l'aperçu */
+        position: relative;
     }
+    .video-item .thumbnail::after { /* Icône Play */
+        content: '\f144'; /* FontAwesome play icon */
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        font-size: 3em;
+        color: rgba(255,255,255,0.8);
+        text-shadow: 0 0 10px rgba(0,0,0,0.5);
+        transition: transform 0.2s ease-in-out;
+    }
+    .video-item .thumbnail:hover::after {
+        transform: scale(1.1);
+    }
+
 
     /* Styles pour la galerie photo */
     .photo-category {
@@ -608,8 +627,8 @@
       color: var(--white);
       font-size: 0.9rem;
       box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
-      position: relative; /* Nécessaire pour les pseudo-elements */
-      overflow: visible; /* Permet aux pseudo-elements de dépasser */
+      position: relative; /* Nécessaire pour les pseudo-éléments */
+      overflow: visible; /* Permet aux pseudo-éléments de dépasser */
     }
 
     /* Effet "papier déchiré" en haut du pied de page */
@@ -802,43 +821,35 @@
     <section id="portfolio" class="section-white">
       <h2>Portfolio Vidéo</h2>
       <div class="gallery">
-        <div class="video">
-          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0" allowfullscreen></iframe>
+        <div class="video-item" data-video-url="dQw4w9WgXcQ"> <div class="thumbnail"></div>
           <div class="video-title">LIVRE DU DESTIN Court metrage</div>
         </div>
 
-        <div class="video">
-          <iframe src="https://www.youtube.com/embed/M7lc1UVf-VE?rel=0" allowfullscreen></iframe>
+        <div class="video-item" data-video-url="M7lc1UVf-VE"> <div class="thumbnail"></div>
           <div class="video-title">AURORA - Court Métrages</div>
         </div>
 
-        <div class="video">
-          <iframe src="https://www.youtube.com/embed/xvFZjo5PgG0?rel=0" allowfullscreen></iframe>
+        <div class="video-item" data-video-url="LXb3EKWsInQ"> <div class="thumbnail"></div>
           <div class="video-title">Venum - PUB</div>
         </div>
 
-        <div class="video">
-          <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY?rel=0" allowfullscreen></iframe>
+        <div class="video-item" data-video-url="k85mY4a1u58"> <div class="thumbnail"></div>
           <div class="video-title">Restaurant LE LEON</div>
         </div>
 
-        <div class="video">
-          <iframe src="https://www.youtube.com/embed/o01e4a2QGqQ?rel=0" allowfullscreen></iframe>
+        <div class="video-item" data-video-url="dQw4w9WgXcQ"> <div class="thumbnail"></div>
           <div class="video-title">Portrait de Stéphanie Valmorex</div>
         </div>
 
-        <div class="video">
-          <iframe src="https://www.youtube.com/embed/PjGZ2-N_E4E?rel=0" allowfullscreen></iframe>
+        <div class="video-item" data-video-url="M7lc1UVf-VE"> <div class="thumbnail"></div>
           <div class="video-title">KidnaPink Final Officiel</div>
         </div>
 
-        <div class="video">
-          <iframe src="https://www.youtube.com/embed/WJzQJ-0rW7Y?rel=0" allowfullscreen></iframe>
+        <div class="video-item" data-video-url="LXb3EKWsInQ"> <div class="thumbnail"></div>
           <div class="video-title">ALONE</div>
         </div>
 
-        <div class="video">
-          <iframe src="https://www.youtube.com/embed/v_tG2_l_8p4?rel=0" allowfullscreen></iframe>
+        <div class="video-item" data-video-url="k85mY4a1u58"> <div class="thumbnail"></div>
           <div class="video-title">Dessert spécial diabétique - Ensemble contre le diabète ( Julien LEVENEUR )</div>
         </div>
       </div>
@@ -854,25 +865,26 @@
             <div class="carousel-track">
               <div class="photo-item">
                 <a href="images/Drone/DJI_0457.jpg" data-src-large="images/Drone/DJI_0457.jpg" class="photo-lightbox-trigger">
-                <img src="images/Drone/DJI_0457.jpg" alt="Aerial view of a coastal town with turquoise ocean waves breaking along a sandy shoreline, houses and buildings nestled on green hills, clear sky above, conveying a peaceful and expansive atmosphere">
+                  <img src="images/Drone/DJI_0457.jpg" alt="Vue aérienne d'une ville côtière avec des vagues turquoise et une plage de sable, des maisons sur des collines verdoyantes, ciel clair, atmosphère paisible et étendue.">
                 </a>
                 <div class="photo-title">Aérienne 1</div>
               </div>
               <div class="photo-item">
                 <a href="images/Drone/DJI_0459.jpg" data-src-large="images/Drone/DJI_0459.jpg" class="photo-lightbox-trigger">
-                  <img src="images/Drone/DJI_0459.jpg" alt="Turquoise ocean waves rolling toward a sandy beach lined with a breakwater and marina filled with boats, residential houses and green hills in the background under a partly cloudy sky, conveying a calm and expansive coastal atmosphere">
+                  <img src="images/Drone/DJI_0459.jpg" alt="Vagues turquoise roulant vers une plage de sable bordée d'un brise-lames et d'une marina remplie de bateaux, maisons résidentielles et collines verdoyantes en arrière-plan sous un ciel partiellement nuageux, atmosphère côtière calme et étendue.">
                 </a>
                 <div class="photo-title">Aérienne 2</div>
               </div>
               <div class="photo-item">
                 <a href="images/Drone/DJI_0460.jpg" data-src-large="images/Drone/DJI_0460.jpg" class="photo-lightbox-trigger">
-                  <img src="images/Drone/DJI_0460.jpg" alt="Coastal town bordered by turquoise ocean with gentle waves, sandy beach, marina with boats, and houses nestled among green hills under a partly cloudy sky, conveying a tranquil and expansive atmosphere">
+                  <img src="images/Drone/DJI_0460.jpg" alt="Ville côtière bordée par l'océan turquoise avec des vagues douces, une plage de sable, une marina avec des bateaux, et des maisons nichées parmi des collines verdoyantes sous un ciel partiellement nuageux, atmosphère tranquille et étendue.">
                 </a>
                 <div class="photo-title">Aérienne 3</div>
               </div>
               <div class="photo-item">
                 <a href="images/Drone/DJI_0461.jpg" data-src-large="images/Drone/DJI_0461.jpg" class="photo-lightbox-trigger">
-                  <img src="images/Drone/DJI_0461.jpg" alt="Photo Aérienne 4"> </a>
+                  <img src="images/Drone/DJI_0461.jpg" alt="Photo Aérienne 4">
+                </a>
                 <div class="photo-title">Aérienne 4</div>
               </div>
             </div>
@@ -889,25 +901,25 @@
             <div class="carousel-track">
               <div class="photo-item">
                 <a href="images/Portrait/nom-de-votre-portrait-1.jpg" data-src-large="images/Portrait/nom-de-votre-portrait-1.jpg" class="photo-lightbox-trigger">
-                  <img src="images/Portrait/nom-de-votre-portrait-1.jpg" alt="Portrait 1">
+                  <img src="https://placehold.co/300x180/333/fff?text=Portrait+1" alt="Portrait 1">
                 </a>
                 <div class="photo-title">Portrait 1</div>
               </div>
               <div class="photo-item">
                 <a href="images/Portrait/nom-de-votre-portrait-2.jpg" data-src-large="images/Portrait/nom-de-votre-portrait-2.jpg" class="photo-lightbox-trigger">
-                  <img src="images/Portrait/nom-de-votre-portrait-2.jpg" alt="Portrait 2">
+                  <img src="https://placehold.co/300x180/333/fff?text=Portrait+2" alt="Portrait 2">
                 </a>
                 <div class="photo-title">Portrait 2</div>
               </div>
               <div class="photo-item">
                 <a href="images/Portrait/nom-de-votre-portrait-3.jpg" data-src-large="images/Portrait/nom-de-votre-portrait-3.jpg" class="photo-lightbox-trigger">
-                  <img src="images/Portrait/nom-de-votre-portrait-3.jpg" alt="Portrait 3">
+                  <img src="https://placehold.co/300x180/333/fff?text=Portrait+3" alt="Portrait 3">
                 </a>
                 <div class="photo-title">Portrait 3</div>
               </div>
               <div class="photo-item">
                 <a href="images/Portrait/nom-de-votre-portrait-4.jpg" data-src-large="images/Portrait/nom-de-votre-portrait-4.jpg" class="photo-lightbox-trigger">
-                  <img src="images/Portrait/nom-de-votre-portrait-4.jpg" alt="Portrait 4">
+                  <img src="https://placehold.co/300x180/333/fff?text=Portrait+4" alt="Portrait 4">
                 </a>
                 <div class="photo-title">Portrait 4</div>
               </div>
@@ -925,31 +937,31 @@
             <div class="carousel-track">
               <div class="photo-item">
                 <a href="images/Paysage/nom-de-votre-paysage-1.jpg" data-src-large="images/Paysage/nom-de-votre-paysage-1.jpg" class="photo-lightbox-trigger">
-                  <img src="images/Paysage/nom-de-votre-paysage-1.jpg" alt="Paysage 1">
+                  <img src="https://placehold.co/300x180/333/fff?text=Paysage+1" alt="Paysage 1">
                 </a>
                 <div class="photo-title">Paysage 1</div>
               </div>
               <div class="photo-item">
                 <a href="images/Paysage/nom-de-votre-paysage-2.jpg" data-src-large="images/Paysage/nom-de-votre-paysage-2.jpg" class="photo-lightbox-trigger">
-                  <img src="images/Paysage/nom-de-votre-paysage-2.jpg" alt="Paysage 2">
+                  <img src="https://placehold.co/300x180/333/fff?text=Paysage+2" alt="Paysage 2">
                 </a>
                 <div class="photo-title">Paysage 2</div>
               </div>
               <div class="photo-item">
                 <a href="images/Paysage/nom-de-votre-paysage-3.jpg" data-src-large="images/Paysage/nom-de-votre-paysage-3.jpg" class="photo-lightbox-trigger">
-                  <img src="images/Paysage/nom-de-votre-paysage-3.jpg" alt="Paysage 3">
+                  <img src="https://placehold.co/300x180/333/fff?text=Paysage+3" alt="Paysage 3">
                 </a>
                 <div class="photo-title">Paysage 3</div>
               </div>
               <div class="photo-item">
                 <a href="images/Paysage/nom-de-votre-paysage-4.jpg" data-src-large="images/Paysage/nom-de-votre-paysage-4.jpg" class="photo-lightbox-trigger">
-                  <img src="images/Paysage/nom-de-votre-paysage-4.jpg" alt="Paysage 4">
+                  <img src="https://placehold.co/300x180/333/fff?text=Paysage+4" alt="Paysage 4">
                 </a>
                 <div class="photo-title">Paysage 4</div>
               </div>
               <div class="photo-item">
                 <a href="images/Paysage/nom-de-votre-paysage-5.jpg" data-src-large="images/Paysage/nom-de-votre-paysage-5.jpg" class="photo-lightbox-trigger">
-                  <img src="images/Paysage/nom-de-votre-paysage-5.jpg" alt="Paysage 5">
+                  <img src="https://placehold.co/300x180/333/fff?text=Paysage+5" alt="Paysage 5">
                 </a>
                 <div class="photo-title">Paysage 5</div>
               </div>
@@ -1004,6 +1016,11 @@
     <span class="close-button">×</span>
     <img class="lightbox-content" id="img-large">
     <div id="lightbox-caption" class="lightbox-caption"></div>
+  </div>
+
+  <div id="videoModal" class="lightbox"> <span class="close-button">×</span>
+    <iframe class="lightbox-content" id="modalVideo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div id="video-modal-caption" class="lightbox-caption"></div>
   </div>
 
   <script>
@@ -1136,14 +1153,15 @@
             }
             // Attendre que l'image soit chargée pour avoir une largeur correcte
             const firstItem = photoItems[0];
-            if (firstItem.offsetWidth === 0 && firstItem.querySelector('img')) {
+            // Si l'image n'est pas encore chargée, attacher un événement onload
+            if (firstItem && firstItem.querySelector('img') && firstItem.querySelector('img').naturalWidth === 0) {
                 firstItem.querySelector('img').onload = () => {
                     updateCarouselPosition(); // Recalculer après chargement de l'image
                 };
                 return; // Sortir et attendre le chargement
             }
 
-            const itemWidth = firstItem.offsetWidth + (parseFloat(getComputedStyle(firstItem).marginRight) || 0);
+            const itemWidth = firstItem ? firstItem.offsetWidth + (parseFloat(getComputedStyle(firstItem).marginRight) || 0) : 0;
             const containerWidth = carouselContainer.offsetWidth;
 
             if (itemWidth > 0 && containerWidth > 0) {
@@ -1234,7 +1252,7 @@
       const lightbox = document.getElementById('lightbox');
       const lightboxImg = document.getElementById('img-large');
       const lightboxCaption = document.getElementById('lightbox-caption');
-      const closeButton = document.querySelector('.close-button');
+      const closeButton = lightbox.querySelector('.close-button'); // Spécifier le bouton de fermeture de la lightbox
 
       // Récupère tous les liens qui déclenchent la lightbox
       const lightboxTriggers = document.querySelectorAll('.photo-lightbox-trigger');
@@ -1275,6 +1293,71 @@
       document.addEventListener('keydown', (e) => {
           if (e.key === 'Escape' && lightbox.classList.contains('active')) {
               lightbox.classList.remove('active');
+              document.body.style.overflow = 'auto';
+          }
+      });
+
+
+      // --- SCRIPT POUR LA MODALE VIDÉO ---
+      const videoModal = document.getElementById('videoModal');
+      const modalVideo = document.getElementById('modalVideo');
+      const videoModalCloseButton = videoModal.querySelector('.close-button'); // Bouton de fermeture de la modale vidéo
+      const videoModalCaption = document.getElementById('video-modal-caption');
+
+      // Assurez-vous que la modale vidéo est cachée au chargement
+      videoModal.classList.remove('active');
+      modalVideo.src = '';
+
+      const videoItems = document.querySelectorAll('.video-item');
+
+      videoItems.forEach(item => {
+          const videoId = item.dataset.videoUrl; // L'ID de la vidéo est directement dans data-video-url
+          const videoTitle = item.querySelector('.video-title').textContent;
+
+          // Générer l'URL de la miniature YouTube
+          if (videoId) {
+              const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+              item.querySelector('.thumbnail').style.backgroundImage = `url('${thumbnailUrl}')`;
+          } else {
+              // Fallback si l'ID est manquant ou incorrect
+              item.querySelector('.thumbnail').style.backgroundImage = `url('https://placehold.co/480x270/333/fff?text=ID+Video+Manquant')`;
+              console.error(`Erreur: L'ID vidéo est manquant ou incorrect pour l'élément:`, item);
+          }
+
+          item.addEventListener('click', () => {
+              if (videoId) {
+                  videoModal.classList.add('active'); // Affiche la modale vidéo
+                  modalVideo.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`; // URL d'intégration YouTube
+                  videoModalCaption.textContent = videoTitle; // Affiche le titre de la vidéo
+                  document.body.style.overflow = 'hidden'; // Empêche le défilement de la page
+              } else {
+                  console.error("Impossible d'ouvrir la vidéo : l'ID de la vidéo est manquant ou incorrect.");
+                  // Vous pouvez ajouter ici un message visible à l'utilisateur si vous le souhaitez
+              }
+          });
+      });
+
+      // Fermer la modale vidéo
+      videoModalCloseButton.addEventListener('click', () => {
+          videoModal.classList.remove('active');
+          modalVideo.src = ''; // Arrête la vidéo en réinitialisant la source
+          document.body.style.overflow = 'auto'; // Réactive le défilement de la page
+      });
+
+      // Fermer la modale vidéo si l'on clique en dehors de la vidéo
+      videoModal.addEventListener('click', (e) => {
+          if (e.target === videoModal) {
+              videoModal.classList.remove('active');
+              modalVideo.src = ''; // Arrête la vidéo
+              document.body.style.overflow = 'auto';
+          }
+      });
+
+      // Fermer la modale vidéo avec la touche Échap
+      document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && videoModal.classList.contains('active')) {
+              videoModal.classList.remove('active');
+              modalVideo.src = ''; // Arrête la vidéo
               document.body.style.overflow = 'auto';
           }
       });
