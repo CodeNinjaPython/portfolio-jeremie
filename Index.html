@@ -469,6 +469,62 @@
       background-color: var(--white);
       transform: translateY(-3px);
     }
+
+    /* Styles pour la modale (lightbox) */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1000; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 80%;
+      max-height: 80%;
+    }
+
+    /* Add Animation */
+    .modal-content, #caption {
+      -webkit-animation-name: zoom;
+      -webkit-animation-duration: 0.6s;
+      animation-name: zoom;
+      animation-duration: 0.6s;
+    }
+
+    @-webkit-keyframes zoom {
+      from {transform:scale(0)}
+      to {transform:scale(1)}
+    }
+
+    @keyframes zoom {
+      from {transform:scale(0)}
+      to {transform:scale(1)}
+    }
+
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -525,27 +581,42 @@
       <h2>Portfolio Vidéo</h2>
       <div class="video-grid">
         <div class="video-item">
-          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=example" title="Titre de la Vidéo 1 - Projet Publicitaire"></iframe>
+          <iframe src="https://youtu.be/qtrdrRYwMoA" title="[TITRE DE LA VIDÉO 1]"></iframe>
           <div class="video-info">
-            <h3>Projet Publicitaire "Montagne Magique"</h3>
-            <p>Réalisation et montage d'une publicité pour une destination touristique locale, mettant en avant les paysages de La Réunion.</p>
+            <h3>[TITRE DE LA VIDÉO 1]</h3>
+            <p>[DESCRIPTION DE LA VIDÉO 1]</p>
           </div>
         </div>
         <div class="video-item">
-          <iframe src="https://player.vimeo.com/video/example" title="Titre de la Vidéo 2 - Interview Artistique"></iframe>
+          <iframe src="https://youtu.be/j_FrzbnDIuY" title="[TITRE DE LA VIDÉO 2]"></iframe>
           <div class="video-info">
-            <h3>Interview d'Artiste "L'Âme Créole"</h3>
-            <p>Captation et post-production d'une interview avec un artiste local, explorant son processus créatif et son lien avec l'île.</p>
+            <h3>[TITRE DE LA VIDÉO 2]</h3>
+            <p>[DESCRIPTION DE LA VIDÉO 2]</p>
           </div>
         </div>
+        <div class="video-item">
+          <iframe src="https://youtu.be/_q7MnK_2QFI" title="[TITRE DE LA VIDÉO 3]"></iframe>
+          <div class="video-info">
+            <h3>[TITRE DE LA VIDÉO 3]</h3>
+            <p>[DESCRIPTION DE LA VIDÉO 3]</p>
+          </div>
         </div>
+        <div class="video-item">
+          <iframe src="https://youtu.be/9GQS8eGeZlk" title="[TITRE DE LA VIDÉO 4]"></iframe>
+          <div class="video-info">
+            <h3>[TITRE DE LA VIDÉO 4]</h3>
+            <p>[DESCRIPTION DE LA VIDÉO 4]</p>
+          </div>
+        </div>
+      </div>
     </section>
   </div>
 
   <section id="contact" class="contact section-white">
     <h2>Contact</h2>
     <div class="contact-form">
-      <form action="#" method="POST"> <label for="name">Nom :</label>
+      <form action="#" method="POST">
+        <label for="name">Nom :</label>
         <input type="text" id="name" name="name" required aria-label="Votre nom">
 
         <label for="email">Email :</label>
@@ -563,7 +634,7 @@
       <p><i class="fab fa-vimeo"></i> Vimeo : <a href="https://vimeo.com/jeremiefavre" target="_blank">vimeo.com/jeremiefavre</a></p>
       <p><i class="fas fa-map-marker-alt"></i> Basé à La Réunion</p>
       <p><i class="fas fa-phone"></i> Téléphone : +262 692 123 456 (exemple)</p>
-    </p>
+    </div>
   </section>
 
   <footer>
@@ -571,6 +642,11 @@
   </footer>
 
   <button id="back-to-top" title="Retour en haut"><i class="fas fa-arrow-up"></i></button>
+
+  <div id="videoModal" class="modal">
+    <span class="close">&times;</span>
+    <iframe class="modal-content" id="modalVideo"></iframe>
+  </div>
 
   <script>
     // Script pour l'animation de scroll (Intersection Observer)
@@ -613,6 +689,31 @@
           behavior: 'smooth'
         });
       });
+
+       // Script pour la modale vidéo
+       const videoItems = document.querySelectorAll('.video-item');
+       const modal = document.getElementById('videoModal');
+       const modalVideo = document.getElementById('modalVideo');
+       const closeBtn = document.querySelector('.close');
+
+       videoItems.forEach(item => {
+           item.addEventListener('click', () => {
+               modal.style.display = 'block';
+               modalVideo.src = item.querySelector('iframe').src; // Set the video source
+           });
+       });
+
+       closeBtn.addEventListener('click', () => {
+           modal.style.display = 'none';
+           modalVideo.src = ''; // Stop video when closing
+       });
+
+       window.addEventListener('click', (event) => {
+           if (event.target == modal) {
+               modal.style.display = 'none';
+               modalVideo.src = ''; // Stop video when clicking outside
+           }
+       });
     });
   </script>
 </body>
