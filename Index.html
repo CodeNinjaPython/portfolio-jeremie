@@ -245,9 +245,9 @@
       border-radius: 10px; /* Coins plus arrondis */
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Ombre plus douce */
       border: 1px solid rgba(255,255,255,0.1); /* Bordure subtile */
-      transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.6s ease, transform 0.6s ease; /* Animation sur hover et scroll */
-      opacity: 0; /* État initial caché pour l'animation de scroll */
-      transform: translateY(20px); /* Légèrement décalé vers le bas pour l'animation */
+      transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.6s ease; /* Animation sur hover et scroll */
+      opacity: 1; /* Rendu toujours visible par défaut */
+      transform: translateY(0); /* Rendu toujours visible par défaut */
     }
     section.is-visible {
       opacity: 1; /* Visible une fois dans le viewport */
@@ -382,6 +382,26 @@
     .contact-form button:hover {
       background-color: #000; /* Plus foncé au survol */
       transform: rotate(-2deg) scale(1.05); /* Légère inclinaison et agrandissement */
+    }
+
+    /* Styles pour le message de succès */
+    .success-message {
+      background-color: #d4edda; /* Vert clair */
+      color: #155724; /* Vert foncé */
+      border: 1px solid #c3e6cb; /* Bordure verte */
+      padding: 1rem;
+      margin-top: 1.5rem;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: bold;
+      opacity: 0; /* Caché par défaut */
+      transition: opacity 0.5s ease-in-out; /* Animation d'apparition */
+    }
+    .success-message.show {
+      opacity: 1; /* Visible */
+    }
+    .hidden {
+      display: none;
     }
 
 
@@ -595,7 +615,7 @@
   <section id="contact" class="contact section-white">
     <h2>Contact</h2>
     <div class="contact-form">
-      <form action="YOUR_FORM_SUBMISSION_SERVICE_URL" method="POST">
+      <form action="https://formspree.io/f/mgvkgnjg" method="POST">
         <label for="name">Nom :</label>
         <input type="text" id="name" name="name" required aria-label="Votre nom">
 
@@ -607,6 +627,9 @@
 
         <button type="submit">Envoyer le message</button>
       </form>
+      <div id="successMessage" class="success-message hidden">
+        <p>Votre message a été envoyé avec succès !</p>
+      </div>
     </div>
     <div class="contact-info" style="margin-top: 2rem;">
       <p><i class="fas fa-envelope"></i> Email : <a href="mailto:contact@jeremiefavre.com">contact@jeremiefavre.com</a></p>
@@ -623,51 +646,6 @@
 
   <button id="back-to-top" title="Retour en haut"><i class="fas fa-arrow-up"></i></button>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Script pour l'animation de scroll (Intersection Observer)
-      const sections = document.querySelectorAll('section');
-
-      const observerOptions = {
-        root: null, /* viewport */
-        rootMargin: '0px',
-        threshold: 0.1 /* 10% de la section visible */
-      };
-
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target); // Arrête d'observer une fois visible
-          }
-        });
-      }, observerOptions);
-
-      sections.forEach(section => {
-        observer.observe(section);
-      });
-
-      // Script pour le bouton "Retour en haut"
-      const backToTopButton = document.getElementById('back-to-top');
-
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) { // Affiche le bouton après 300px de défilement
-          backToTopButton.style.display = 'block';
-        } else {
-          backToTopButton.style.display = 'none';
-        }
-      });
-
-      backToTopButton.addEventListener('click', () => {
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-      });
-
-      // NOTE : Le script pour la modale vidéo et les miniatures a été supprimé
-      // car les vidéos sont maintenant intégrées directement via des iframes.
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
