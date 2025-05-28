@@ -75,12 +75,27 @@
     header {
       background: var(--dark-grey); /* Fond gris foncé pour l'en-tête */
       color: var(--white);
-      padding: 4rem 1rem 8rem; /* Garde ce padding-bottom généreux */
+      padding: 4rem 1rem 3rem; /* MODIFICATION : Réduction du padding-bottom, nav est déplacée */
       text-align: center;
-      position: relative;
-      /* MODIFICATION : Suppression de overflow: hidden; */
-      margin-bottom: 3rem; /* Plus d'espace sous l'en-tête */
+      position: relative; /* Nécessaire pour les pseudo-éléments et la nav */
+      overflow: visible; /* IMPORTANT : Permet aux pseudo-éléments de dépasser */
+      margin-bottom: 0; /* MODIFICATION : Supprime la marge en bas de l'en-tête */
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Ombre plus prononcée */
+    }
+
+    /* Effet "papier déchiré" en bas de l'en-tête */
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -20px; /* Ajustez pour contrôler le chevauchement avec la section suivante */
+      left: 0;
+      width: 100%;
+      height: 40px; /* Hauteur de l'effet de "déchirure" */
+      background-color: var(--black); /* Correspond au fond du corps */
+      transform: skewY(2deg); /* Crée une légère inclinaison vers le haut */
+      transform-origin: bottom left;
+      z-index: 5; /* S'assure qu'il est au-dessus du contenu principal mais en dessous de la nav */
+      box-shadow: 0 5px 10px rgba(0,0,0,0.3); /* Ombre pour la profondeur */
     }
 
     .header-content {
@@ -136,14 +151,13 @@
 
     /* Navigation */
     nav {
-      background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent pour la nav */
+      background-color: var(--black); /* MODIFICATION : Totalement opaque */
       padding: 1.5rem 0;
-      position: absolute; /* Positionne la nav au-dessus de l'en-tête */
-      bottom: 0;
       width: 100%;
-      z-index: 10; /* Assure que la nav est au-dessus de tout */
-      transform: translateY(50%); /* Remonte la nav sur l'en-tête */
+      margin-top: -3rem; /* MODIFICATION : Remonte la nav pour chevaucher l'en-tête */
+      z-index: 10; /* S'assure que la nav est au-dessus de tout */
       box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      position: relative; /* Nécessaire pour que z-index fonctionne */
     }
     nav ul {
       list-style: none;
@@ -162,25 +176,25 @@
       padding: 0.5rem 1rem;
       transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
       position: relative;
-      overflow: hidden;
     }
     nav a:hover {
       color: var(--accent-color);
-      transform: translateY(-3px);
+      transform: translateY(-5px); /* Déplacement vertical plus prononcé */
     }
     nav a::after { /* Soulignement animé */
       content: '';
       position: absolute;
       bottom: 0;
-      left: 0;
+      left: 50%;
       width: 100%;
       height: 2px;
       background-color: var(--accent-color);
-      transform: translateX(-100%);
+      transform: translateX(-50%) scaleX(0); /* Centrage et départ sans largeur */
+      transform-origin: center;
       transition: transform 0.3s ease-out;
     }
     nav a:hover::after {
-      transform: translateX(0);
+      transform: translateX(-50%) scaleX(1); /* S'agrandit pour prendre toute la largeur */
     }
 
 
@@ -203,9 +217,6 @@
         left: -80px; /* Ajustement pour les écrans plus larges */
         font-size: 2.2rem;
         padding: 15px 100px;
-      }
-      nav {
-        transform: translateY(50%); /* Maintenir la position */
       }
     }
 
@@ -395,6 +406,23 @@
       color: var(--white);
       font-size: 0.9rem;
       box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+      position: relative; /* Nécessaire pour les pseudo-éléments */
+      overflow: visible; /* Permet aux pseudo-éléments de dépasser */
+    }
+
+    /* Effet "papier déchiré" en haut du pied de page */
+    footer::before {
+      content: '';
+      position: absolute;
+      top: -20px; /* Ajustez pour contrôler le chevauchement avec la section précédente */
+      left: 0;
+      width: 100%;
+      height: 40px;
+      background-color: var(--black); /* Correspond au fond du corps */
+      transform: skewY(-2deg); /* Crée une légère inclinaison vers le bas */
+      transform-origin: top left;
+      z-index: 5;
+      box-shadow: 0 -5px 10px rgba(0,0,0,0.3);
     }
   </style>
 </head>
@@ -408,15 +436,16 @@
       <h1>Jérémie FAVRE</h1>
       <p>Vidéaste basé à La Réunion</p>
     </div>
-    <nav>
-      <ul>
-        <li><a href="#about">À propos</a></li>
-        <li><a href="#skills">Mon Expertise</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+    </header>
+
+  <nav>
+    <ul>
+      <li><a href="#about">À propos</a></li>
+      <li><a href="#skills">Mon Expertise</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
   <div class="main-content">
     <section id="about">
@@ -485,7 +514,7 @@
       <p><i class="fab fa-vimeo"></i> Vimeo : <a href="https://vimeo.com/jeremiefavre" target="_blank">vimeo.com/jeremiefavre</a></p>
       <p><i class="fas fa-map-marker-alt"></i> Basé à La Réunion</p>
       <p><i class="fas fa-phone"></i> Téléphone : +262 692 123 456 (exemple)</p>
-    </div>
+    </p>
   </section>
 
   <footer>
