@@ -242,8 +242,6 @@
       width: 100%;
       height: 60px; /* Hauteur de l'effet de "déchirure" */
       background-color: var(--black); /* Révèle le fond noir du corps */
-      transform: skewY(2deg); /* Crée une légère inclinaison vers le haut */
-      transform-origin: bottom left;
       z-index: 5; /* S'assure qu'il est au-dessus du contenu principal */
       box-shadow: 0 8px 15px rgba(0,0,0,0.5); /* Ombre pour la profondeur */
     }
@@ -251,6 +249,16 @@
     /* Supprime l'effet de déchirure en haut des sections */
     section::before {
       content: none; /* Annule le pseudo-élément ::before */
+    }
+
+    /* Alternance de l'inclinaison pour les sections sombres */
+    section:nth-child(odd)::after {
+      transform: skewY(2deg);
+      transform-origin: bottom left;
+    }
+    section:nth-child(even)::after {
+      transform: skewY(-2deg);
+      transform-origin: bottom right;
     }
 
 
@@ -269,12 +277,20 @@
     /* Ajustements pour les sections blanches : la "déchirure" est la couleur de la section */
     .section-white::after {
       background-color: var(--white); /* Le "papier" déchiré est blanc */
-      transform: skewY(-2deg); /* Rotation légèrement différente pour le bas */
-      transform-origin: bottom right;
     }
     /* Supprime l'effet de déchirure en haut des sections blanches */
     .section-white::before {
       content: none; /* Annule le pseudo-élément ::before */
+    }
+
+    /* Alternance de l'inclinaison pour les sections blanches */
+    .section-white:nth-child(odd)::after {
+      transform: skewY(-2deg); /* Rotation légèrement différente pour le bas */
+      transform-origin: bottom right;
+    }
+    .section-white:nth-child(even)::after {
+      transform: skewY(2deg); /* Rotation légèrement différente pour le bas */
+      transform-origin: bottom left;
     }
 
 
