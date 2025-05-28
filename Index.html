@@ -328,6 +328,40 @@
       display: block; /* Supprime l'espace sous l'iframe */
     }
 
+    /* Styles pour la galerie photo */
+    .photo-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajusté pour les photos */
+      gap: 1.5rem;
+    }
+    .photo-item {
+      background-color: var(--dark-grey); /* Fond pour chaque élément photo */
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.05);
+      overflow: hidden;
+      text-align: center;
+    }
+    .photo-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+    }
+    .photo-item img {
+      width: 100%;
+      height: 200px; /* Hauteur fixe pour les images */
+      object-fit: cover; /* Assure que l'image couvre la zone */
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+    .photo-title {
+      font-weight: bold;
+      font-size: 1rem;
+      color: var(--accent-color);
+    }
+
+
     /* Informations de contact */
     .contact-info p {
       margin-bottom: 1rem;
@@ -588,7 +622,7 @@
       <li><a href="#about">À propos</a></li>
       <li><a href="#skills">Mon Expertise</a></li>
       <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#photos">Vitrine Photo</a></li> <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
@@ -661,6 +695,35 @@
         </div>
       </div>
     </section>
+
+    <section id="photos"> <h2>Vitrine Photo</h2>
+      <div class="photo-gallery">
+        <div class="photo-item">
+          <img src="https://placehold.co/400x200/333333/E0E0E0?text=Paysage+Urbain" alt="Paysage Urbain">
+          <div class="photo-title">Paysage Urbain</div>
+        </div>
+        <div class="photo-item">
+          <img src="https://placehold.co/400x200/333333/E0E0E0?text=Portrait+Artistique" alt="Portrait Artistique">
+          <div class="photo-title">Portrait Artistique</div>
+        </div>
+        <div class="photo-item">
+          <img src="https://placehold.co/400x200/333333/E0E0E0?text=Nature+Sauvage" alt="Nature Sauvage">
+          <div class="photo-title">Nature Sauvage</div>
+        </div>
+        <div class="photo-item">
+          <img src="https://placehold.co/400x200/333333/E0E0E0?text=Architecture+Moderne" alt="Architecture Moderne">
+          <div class="photo-title">Architecture Moderne</div>
+        </div>
+        <div class="photo-item">
+          <img src="https://placehold.co/400x200/333333/E0E0E0?text=Scene+de+Vie" alt="Scène de Vie">
+          <div class="photo-title">Scène de Vie</div>
+        </div>
+        <div class="photo-item">
+          <img src="https://placehold.co/400x200/333333/E0E0E0?text=Evenement+Sportif" alt="Événement Sportif">
+          <div class="photo-title">Événement Sportif</div>
+        </div>
+      </div>
+    </section>
   </div>
 
   <section id="contact" class="contact section-white">
@@ -687,7 +750,7 @@
         <p><i class="fas fa-envelope"></i> Email : <a href="mailto:contact@jeremiefavre.com">contact@jeremiefavre.com</a></p>
         <p><i class="fab fa-instagram"></i> Instagram : <a href="https://instagram.com/j3remie_fvr" target="_blank">@j3remie_fvr</a></p>
         <p><i class="fas fa-map-marker-alt"></i> Basé à La Réunion</p>
-        <p><i class="fas fa-phone"></i> Téléphone : <a href="tel:+262693112398">0693112398</a></p>
+        <p><i class="fas fa-phone"></i> Téléphone :  <a href="tel:+262693112398">+262 693 112 398</a></p>
       </div>
     </div>
   </section>
