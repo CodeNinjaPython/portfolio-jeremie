@@ -640,56 +640,56 @@
     <section id="portfolio" class="section-white">
       <h2>Portfolio Vidéo</h2>
       <div class="video-grid">
-        <div class="video-item" data-video-url="https://www.youtube.com/watch?v=qtrdrRYwMoA">
+        <div class="video-item" data-video-url="VOTRE_URL_YOUTUBE_COMPLETE_ICI_LIVRE_DU_DESTIN">
           <div class="thumbnail"></div>
           <div class="video-info">
             <h3>LIVRE DU DESTIN Court metrage</h3>
             <p>[DESCRIPTION DE LA VIDÉO - Ajoutez une description détaillée ici]</p>
           </div>
         </div>
-        <div class="video-item" data-video-url="https://www.youtube.com/watch?v=j_FrzbnDIuY">
+        <div class="video-item" data-video-url="VOTRE_URL_YOUTUBE_COMPLETE_ICI_AURORA">
           <div class="thumbnail"></div>
           <div class="video-info">
             <h3>AURORA - Court Métrages</h3>
             <p>[DESCRIPTION DE LA VIDÉO - Ajoutez une description détaillée ici]</p>
           </div>
         </div>
-        <div class="video-item" data-video-url="https://www.youtube.com/watch?v=_q7MnK_2QFI">
+        <div class="video-item" data-video-url="VOTRE_URL_YOUTUBE_COMPLETE_ICI_VENUM_PUB">
           <div class="thumbnail"></div>
           <div class="video-info">
             <h3>Venum - PUB</h3>
             <p>[DESCRIPTION DE LA VIDÉO - Ajoutez une description détaillée ici]</p>
           </div>
         </div>
-        <div class="video-item" data-video-url="https://www.youtube.com/watch?v=XOG37yLswio">
+        <div class="video-item" data-video-url="VOTRE_URL_YOUTUBE_COMPLETE_ICI_RESTAURANT_LE_LEON">
           <div class="thumbnail"></div>
           <div class="video-info">
             <h3>Restaurant LE LEON</h3>
             <p>[DESCRIPTION DE LA VIDÉO - Ajoutez une description détaillée ici]</p>
           </div>
         </div>
-        <div class="video-item" data-video-url="https://www.youtube.com/watch?v=zZD8K0tTuzo">
+        <div class="video-item" data-video-url="VOTRE_URL_YOUTUBE_COMPLETE_ICI_STEPHANIE_VALMOREX">
           <div class="thumbnail"></div>
           <div class="video-info">
             <h3>Portrait de Stéphanie Valmorex</h3>
             <p>[DESCRIPTION DE LA VIDÉO - Ajoutez une description détaillée ici]</p>
           </div>
         </div>
-        <div class="video-item" data-video-url="https://www.youtube.com/watch?v=9GQS8eGeZlk">
+        <div class="video-item" data-video-url="https://youtu.be/9GQS8eGeZlk?">
           <div class="thumbnail"></div>
           <div class="video-info">
             <h3>KidnaPink Final Officiel</h3>
             <p>[DESCRIPTION DE LA VIDÉO - Ajoutez une description détaillée ici]</p>
           </div>
         </div>
-        <div class="video-item" data-video-url="https://www.youtube.com/watch?v=6bbMbT8_QGE">
+        <div class="video-item" data-video-url="VOTRE_URL_YOUTUBE_COMPLETE_ICI_ALONE">
           <div class="thumbnail"></div>
           <div class="video-info">
             <h3>ALONE</h3>
             <p>[DESCRIPTION DE LA VIDÉO - Ajoutez une description détaillée ici]</p>
           </div>
         </div>
-        <div class="video-item" data-video-url="https://youtu.be/9GQS8eGeZlk3">
+        <div class="video-item" data-video-url="VOTRE_URL_YOUTUBE_COMPLETE_ICI_DESSERT_DIABETIQUE">
           <div class="thumbnail"></div>
           <div class="video-info">
             <h3>Dessert spécial diabétique - Ensemble contre le diabète ( Julien LEVENEUR )</h3>
@@ -792,6 +792,7 @@
           let videoId = '';
 
           // Regex pour extraire l'ID YouTube de diverses URLs YouTube
+          // Cette regex est conçue pour extraire l'ID de 11 caractères
           const youtubeMatch = fullYouTubeUrl.match(/(?:youtube\.com\/(?:[^\/]+\/.+\/|\/(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
           if (youtubeMatch && youtubeMatch[1]) {
               videoId = youtubeMatch[1];
