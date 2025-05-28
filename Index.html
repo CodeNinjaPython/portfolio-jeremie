@@ -233,8 +233,8 @@
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
     }
 
-    /* Effet "papier déchiré" (skew) au bas de chaque section */
-    section::after {
+    /* Effet "papier déchiré" (skew) au bas de chaque section, SAUF la dernière */
+    section:not(#contact)::after {
       content: '';
       position: absolute;
       bottom: -30px; /* Positionne l'effet en dessous de la section */
@@ -252,11 +252,11 @@
     }
 
     /* Alternance de l'inclinaison pour les sections sombres */
-    section:nth-child(odd)::after {
+    section:not(#contact):nth-child(odd)::after {
       transform: skewY(2deg);
       transform-origin: bottom left;
     }
-    section:nth-child(even)::after {
+    section:not(#contact):nth-child(even)::after {
       transform: skewY(-2deg);
       transform-origin: bottom right;
     }
@@ -275,7 +275,7 @@
       color: var(--dark-grey);
     }
     /* Ajustements pour les sections blanches : la "déchirure" est la couleur de la section */
-    .section-white::after {
+    .section-white:not(#contact)::after {
       background-color: var(--white); /* Le "papier" déchiré est blanc */
     }
     /* Supprime l'effet de déchirure en haut des sections blanches */
@@ -284,11 +284,11 @@
     }
 
     /* Alternance de l'inclinaison pour les sections blanches */
-    .section-white:nth-child(odd)::after {
+    .section-white:not(#contact):nth-child(odd)::after {
       transform: skewY(-2deg); /* Rotation légèrement différente pour le bas */
       transform-origin: bottom right;
     }
-    .section-white:nth-child(even)::after {
+    .section-white:not(#contact):nth-child(even)::after {
       transform: skewY(2deg); /* Rotation légèrement différente pour le bas */
       transform-origin: bottom left;
     }
@@ -453,7 +453,8 @@
       padding-bottom: 0;
     }
     .contact-content.expanded {
-      max-height: 1000px; /* Valeur suffisamment grande pour que tout le contenu soit visible */
+      max-height: 1000px !important; /* Ajout de !important pour assurer la priorité */
+      min-height: 200px; /* Assure une hauteur minimale quand déplié */
       padding-top: 1.5rem; /* Ajoute du padding quand la section est ouverte */
       padding-bottom: 1rem; /* Ajoute du padding quand la section est ouverte */
     }
