@@ -254,7 +254,7 @@
       transform: translateY(0); /* Remonte à sa position normale */
     }
     section:hover {
-      transform: translateY(-5px); /* Légère élévation au survol */
+      transform: translateY(-5px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
     }
 
@@ -473,7 +473,7 @@
 
     /* Bouton retour en haut */
     #back-to-top {
-      display: none; /* Caché par défaut */
+      display: none; /* Caché par default */
       position: fixed;
       bottom: 20px;
       right: 20px;
@@ -496,7 +496,7 @@
 
     /* Styles pour la modale (lightbox) */
     .modal {
-      display: none; /* Hidden by default */
+      display: none; /* La modale est cachée par défaut */
       position: fixed; /* Stay in place */
       z-index: 1000; /* Sit on top */
       left: 0;
@@ -506,9 +506,7 @@
       overflow: auto; /* Enable scroll if needed */
       background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
       padding-top: 60px; /* Pour laisser de la place au bouton fermer */
-      display: flex; /* Utiliser flexbox pour centrer le contenu */
-      align-items: center; /* Centrer verticalement */
-      justify-content: center; /* Centrer horizontalement */
+      /* Les propriétés flex seront ajoutées par JavaScript quand elle est affichée */
     }
 
     .modal-content {
@@ -642,32 +640,60 @@
     <section id="portfolio" class="section-white">
       <h2>Portfolio Vidéo</h2>
       <div class="video-grid">
-        <div class="video-item" data-video-url="https://www.youtube.com/embed/2">
+        <div class="video-item" data-video-url="https://www.youtube.com/watch?v=qtrdrRYwMoA">
           <div class="thumbnail"></div>
           <div class="video-info">
-            <h3>LIVRE DU DESTIN - Court metrage</h3>
-            <p>[DESCRIPTION DE LA VIDÉO 1 - Ajoutez une description détaillée ici]</p>
+            <h3>LIVRE DU DESTIN Court metrage</h3>
+            <p>[DESCRIPTION DE LA VIDÉO - Ajoutez une description détaillée ici]</p>
           </div>
         </div>
-        <div class="video-item" data-video-url="https://www.youtube.com/embed/3">
+        <div class="video-item" data-video-url="https://www.youtube.com/watch?v=j_FrzbnDIuY">
           <div class="thumbnail"></div>
           <div class="video-info">
             <h3>AURORA - Court Métrages</h3>
-            <p>[DESCRIPTION DE LA VIDÉO 2 - Ajoutez une description détaillée ici]</p>
+            <p>[DESCRIPTION DE LA VIDÉO - Ajoutez une description détaillée ici]</p>
           </div>
         </div>
-        <div class="video-item" data-video-url="https://www.youtube.com/embed/4">
+        <div class="video-item" data-video-url="https://www.youtube.com/watch?v=_q7MnK_2QFI">
           <div class="thumbnail"></div>
           <div class="video-info">
             <h3>Venum - PUB</h3>
-            <p>[DESCRIPTION DE LA VIDÉO 3 - Ajoutez une description détaillée ici]</p>
+            <p>[DESCRIPTION DE LA VIDÉO - Ajoutez une description détaillée ici]</p>
           </div>
         </div>
-        <div class="video-item" data-video-url="https://www.youtube.com/embed/5">
+        <div class="video-item" data-video-url="https://www.youtube.com/watch?v=XOG37yLswio">
+          <div class="thumbnail"></div>
+          <div class="video-info">
+            <h3>Restaurant LE LEON</h3>
+            <p>[DESCRIPTION DE LA VIDÉO - Ajoutez une description détaillée ici]</p>
+          </div>
+        </div>
+        <div class="video-item" data-video-url="https://www.youtube.com/watch?v=zZD8K0tTuzo">
+          <div class="thumbnail"></div>
+          <div class="video-info">
+            <h3>Portrait de Stéphanie Valmorex</h3>
+            <p>[DESCRIPTION DE LA VIDÉO - Ajoutez une description détaillée ici]</p>
+          </div>
+        </div>
+        <div class="video-item" data-video-url="https://www.youtube.com/watch?v=9GQS8eGeZlk">
           <div class="thumbnail"></div>
           <div class="video-info">
             <h3>KidnaPink Final Officiel</h3>
-            <p>[DESCRIPTION DE LA VIDÉO 4 - Ajoutez une description détaillée ici]</p>
+            <p>[DESCRIPTION DE LA VIDÉO - Ajoutez une description détaillée ici]</p>
+          </div>
+        </div>
+        <div class="video-item" data-video-url="https://www.youtube.com/watch?v=6bbMbT8_QGE">
+          <div class="thumbnail"></div>
+          <div class="video-info">
+            <h3>ALONE</h3>
+            <p>[DESCRIPTION DE LA VIDÉO - Ajoutez une description détaillée ici]</p>
+          </div>
+        </div>
+        <div class="video-item" data-video-url="https://youtu.be/9GQS8eGeZlk3">
+          <div class="thumbnail"></div>
+          <div class="video-info">
+            <h3>Dessert spécial diabétique - Ensemble contre le diabète ( Julien LEVENEUR )</h3>
+            <p>[DESCRIPTION DE LA VIDÉO - Ajoutez une description détaillée ici]</p>
           </div>
         </div>
       </div>
@@ -710,8 +736,8 @@
   </div>
 
   <script>
-    // Script pour l'animation de scroll (Intersection Observer)
     document.addEventListener('DOMContentLoaded', () => {
+      // Script pour l'animation de scroll (Intersection Observer)
       const sections = document.querySelectorAll('section');
 
       const observerOptions = {
@@ -757,33 +783,43 @@
       const modalVideo = document.getElementById('modalVideo');
       const closeBtn = document.querySelector('.close');
 
+      // Pour s'assurer que la modale est cachée au chargement
+      modal.style.display = 'none';
+      modalVideo.src = ''; // S'assurer que la vidéo ne démarre pas
+
       videoItems.forEach(item => {
-          const videoUrl = item.dataset.videoUrl;
+          const fullYouTubeUrl = item.dataset.videoUrl;
           let videoId = '';
 
-          // MODIFICATION CLÉ ICI : Extraction de l'ID de la vidéo
-          // Cette regex est plus robuste pour les URLs de type googleusercontent.com/youtube.com/ID
-          const match = videoUrl.match(/\/([a-zA-Z0-9_-]+)$/);
-          if (match && match[1]) {
-              videoId = match[1];
+          // Regex pour extraire l'ID YouTube de diverses URLs YouTube
+          const youtubeMatch = fullYouTubeUrl.match(/(?:youtube\.com\/(?:[^\/]+\/.+\/|\/(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
+          if (youtubeMatch && youtubeMatch[1]) {
+              videoId = youtubeMatch[1];
           }
 
-          // Générer l'URL de la miniature et la définir
+          // Générer l'URL de la miniature
           if (videoId) {
-              // Utilisation de la miniature de haute qualité (hqdefault) avec le domaine YouTube standard
-              const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+              // URL standard pour les miniatures YouTube (hqdefault = haute qualité)
+              const thumbnailUrl = `http://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
               item.querySelector('.thumbnail').style.backgroundImage = `url('${thumbnailUrl}')`;
           } else {
               // Fallback si l'ID n'est pas trouvé (par exemple, une image placeholder)
-              item.querySelector('.thumbnail').style.backgroundImage = `url('https://placehold.co/480x270/333/fff?text=Video+Non+Trouvee')`;
+              item.querySelector('.thumbnail').style.backgroundImage = `url('https://placehold.co/480x270/333/fff?text=URL+Video+Invalide')`;
           }
 
           item.addEventListener('click', () => {
-              modal.style.display = 'flex'; // Utiliser flex pour centrer facilement
-              // Utiliser l'URL d'intégration YouTube standard avec l'autoplay pour la modale
-              modalVideo.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
-              // Assurer que le focus est sur la modale pour l'accessibilité
-              modal.focus();
+              if (videoId) {
+                  modal.style.display = 'flex'; // La modale apparaît
+                  modal.style.alignItems = 'center';
+                  modal.style.justifyContent = 'center';
+
+                  // URL standard pour l'intégration vidéo YouTube avec autoplay et sans vidéos suggérées
+                  modalVideo.src = `http://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+                  modal.focus();
+              } else {
+                  console.error("Impossible d'ouvrir la vidéo : l'URL de la vidéo est manquante ou incorrecte.");
+                  // Vous pouvez ajouter ici un message à l'utilisateur si vous le souhaitez
+              }
           });
       });
 
