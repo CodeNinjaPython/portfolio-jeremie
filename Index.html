@@ -506,6 +506,9 @@
       overflow: auto; /* Enable scroll if needed */
       background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
       padding-top: 60px; /* Pour laisser de la place au bouton fermer */
+      display: flex; /* Utiliser flexbox pour centrer le contenu */
+      align-items: center; /* Centrer verticalement */
+      justify-content: center; /* Centrer horizontalement */
     }
 
     .modal-content {
@@ -639,29 +642,29 @@
     <section id="portfolio" class="section-white">
       <h2>Portfolio Vidéo</h2>
       <div class="video-grid">
-        <div class="video-item" data-video-url="https://www.youtube.com/embed/2?autoplay=1&rel=0">
-          <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/2/hqdefault.jpg');"></div>
+        <div class="video-item" data-video-url="https://www.youtube.com/embed/2">
+          <div class="thumbnail"></div>
           <div class="video-info">
             <h3>LIVRE DU DESTIN - Court metrage</h3>
             <p>[DESCRIPTION DE LA VIDÉO 1 - Ajoutez une description détaillée ici]</p>
           </div>
         </div>
-        <div class="video-item" data-video-url="https://www.youtube.com/embed/3?autoplay=1&rel=0">
-          <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/3/hqdefault.jpg');"></div>
+        <div class="video-item" data-video-url="https://www.youtube.com/embed/3">
+          <div class="thumbnail"></div>
           <div class="video-info">
             <h3>AURORA - Court Métrages</h3>
             <p>[DESCRIPTION DE LA VIDÉO 2 - Ajoutez une description détaillée ici]</p>
           </div>
         </div>
-        <div class="video-item" data-video-url="https://www.youtube.com/embed/4?autoplay=1&rel=0">
-          <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/4/hqdefault.jpg');"></div>
+        <div class="video-item" data-video-url="https://www.youtube.com/embed/4">
+          <div class="thumbnail"></div>
           <div class="video-info">
             <h3>Venum - PUB</h3>
             <p>[DESCRIPTION DE LA VIDÉO 3 - Ajoutez une description détaillée ici]</p>
           </div>
         </div>
-        <div class="video-item" data-video-url="https://www.youtube.com/embed/5?autoplay=1&rel=0">
-          <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/5/hqdefault.jpg');"></div>
+        <div class="video-item" data-video-url="https://www.youtube.com/embed/5">
+          <div class="thumbnail"></div>
           <div class="video-info">
             <h3>KidnaPink Final Officiel</h3>
             <p>[DESCRIPTION DE LA VIDÉO 4 - Ajoutez une description détaillée ici]</p>
@@ -748,30 +751,37 @@
         });
       });
 
-      // Script pour la modale vidéo
+      // Script pour la modale vidéo et les miniatures
       const videoItems = document.querySelectorAll('.video-item');
       const modal = document.getElementById('videoModal');
       const modalVideo = document.getElementById('modalVideo');
       const closeBtn = document.querySelector('.close');
 
       videoItems.forEach(item => {
-          // Extraire l'ID de la vidéo de l'URL youtube.com
-          const youtubeUrl = item.dataset.videoUrl;
+          const videoUrl = item.dataset.videoUrl;
           let videoId = '';
-          const youtubeMatch = youtubeUrl.match(/(?:youtube\.com\/(?:[^\/]+\/.+\/|\/(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
-          if (youtubeMatch && youtubeMatch[1]) {
-              videoId = youtubeMatch[1];
+
+          // MODIFICATION CLÉ ICI : Extraction de l'ID de la vidéo
+          // Cette regex est plus robuste pour les URLs de type googleusercontent.com/youtube.com/ID
+          const match = videoUrl.match(/\/([a-zA-Z0-9_-]+)$/);
+          if (match && match[1]) {
+              videoId = match[1];
           }
 
           // Générer l'URL de la miniature et la définir
           if (videoId) {
+              // Utilisation de la miniature de haute qualité (hqdefault) avec le domaine YouTube standard
               const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
               item.querySelector('.thumbnail').style.backgroundImage = `url('${thumbnailUrl}')`;
+          } else {
+              // Fallback si l'ID n'est pas trouvé (par exemple, une image placeholder)
+              item.querySelector('.thumbnail').style.backgroundImage = `url('https://placehold.co/480x270/333/fff?text=Video+Non+Trouvee')`;
           }
 
           item.addEventListener('click', () => {
               modal.style.display = 'flex'; // Utiliser flex pour centrer facilement
-              modalVideo.src = item.dataset.videoUrl; // Utiliser l'URL complète avec autoplay
+              // Utiliser l'URL d'intégration YouTube standard avec l'autoplay pour la modale
+              modalVideo.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
               // Assurer que le focus est sur la modale pour l'accessibilité
               modal.focus();
           });
