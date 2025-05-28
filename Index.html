@@ -329,36 +329,101 @@
     }
 
     /* Styles pour la galerie photo */
-    .photo-gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajusté pour les photos */
-      gap: 1.5rem;
+    .photo-category {
+        margin-bottom: 2rem; /* Espace entre les catégories de photos */
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 8px;
+        overflow: hidden;
+        background-color: var(--dark-grey); /* Fond pour les catégories */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
+    .photo-category:last-child {
+        margin-bottom: 0;
+    }
+
+    .category-title { /* Renommé de .category-toggle */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1.5rem;
+        background-color: var(--black); /* Fond pour le titre de la catégorie */
+        color: var(--white);
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+        user-select: none;
+    }
+
+    /* Carrousel styles */
+    .carousel-container {
+        position: relative;
+        overflow: hidden;
+        padding: 1.5rem; /* Padding interne pour le carrousel */
+    }
+
+    .carousel-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+
     .photo-item {
-      background-color: var(--dark-grey); /* Fond pour chaque élément photo */
-      padding: 10px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border: 1px solid rgba(255,255,255,0.05);
-      overflow: hidden;
-      text-align: center;
+        flex: 0 0 auto; /* Empêche les éléments de rétrécir */
+        width: 100%; /* Chaque élément prend 100% de la largeur du conteneur */
+        max-width: 300px; /* Taille maximale pour les éléments du carrousel */
+        margin-right: 1rem; /* Espace entre les images */
+        background-color: var(--dark-grey);
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        border: 1px solid rgba(255,255,255,0.05);
+        text-align: center;
     }
-    .photo-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+
+    .photo-item:last-child {
+        margin-right: 0; /* Pas de marge pour le dernier élément */
     }
+
     .photo-item img {
-      width: 100%;
-      height: 200px; /* Hauteur fixe pour les images */
-      object-fit: cover; /* Assure que l'image couvre la zone */
-      border-radius: 5px;
-      margin-bottom: 10px;
+        width: 100%;
+        height: 180px; /* Hauteur fixe pour les images de carrousel */
+        object-fit: cover;
+        border-radius: 5px;
+        margin-bottom: 10px;
     }
     .photo-title {
-      font-weight: bold;
-      font-size: 1rem;
-      color: var(--accent-color);
+        font-weight: bold;
+        font-size: 0.9rem;
+        color: var(--accent-color);
+    }
+
+    .carousel-nav-buttons {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+        padding: 0 10px;
+        z-index: 10;
+    }
+
+    .carousel-nav-button {
+        background-color: rgba(0, 0, 0, 0.5);
+        color: var(--white);
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 0.3s ease;
+    }
+
+    .carousel-nav-button:hover {
+        background-color: rgba(0, 0, 0, 0.8);
     }
 
 
@@ -602,6 +667,12 @@
             width: 140px;
             height: 140px;
         }
+        .photo-item {
+            width: 100%; /* Sur mobile, chaque photo prend toute la largeur */
+        }
+        .carousel-nav-buttons {
+            padding: 0 5px;
+        }
     }
   </style>
 </head>
@@ -622,7 +693,8 @@
       <li><a href="#about">À propos</a></li>
       <li><a href="#skills">Mon Expertise</a></li>
       <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#photos">Vitrine Photo</a></li> <li><a href="#contact">Contact</a></li>
+      <li><a href="#photos">Vitrine Photo</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
@@ -696,32 +768,94 @@
       </div>
     </section>
 
-    <section id="photos"> <h2>Vitrine Photo</h2>
-      <div class="photo-gallery">
-        <div class="photo-item">
-          <img src="https://placehold.co/400x200/333333/E0E0E0?text=Paysage+Urbain" alt="Paysage Urbain">
-          <div class="photo-title">Paysage Urbain</div>
+    <section id="photos">
+      <h2>Vitrine Photo</h2>
+      <div class="photo-categories-container">
+
+        <div class="photo-category">
+          <h3 class="category-title">Photo Aérienne</h3>
+          <div class="carousel-container" id="carousel-aerienne">
+            <div class="carousel-track">
+              <div class="photo-item">
+                <img src="https://placehold.co/400x200/333333/E0E0E0?text=Aerienne+1" alt="Photo Aérienne 1">
+                <div class="photo-title">Aérienne 1</div>
+              </div>
+              <div class="photo-item">
+                <img src="https://placehold.co/400x200/333333/E0E0E0?text=Aerienne+2" alt="Photo Aérienne 2">
+                <div class="photo-title">Aérienne 2</div>
+              </div>
+              <div class="photo-item">
+                <img src="https://placehold.co/400x200/333333/E0E0E0?text=Aerienne+3" alt="Photo Aérienne 3">
+                <div class="photo-title">Aérienne 3</div>
+              </div>
+              <div class="photo-item">
+                <img src="https://placehold.co/400x200/333333/E0E0E0?text=Aerienne+4" alt="Photo Aérienne 4">
+                <div class="photo-title">Aérienne 4</div>
+              </div>
+            </div>
+            <div class="carousel-nav-buttons">
+              <button class="carousel-nav-button prev-button" data-carousel="aerienne"><i class="fas fa-chevron-left"></i></button>
+              <button class="carousel-nav-button next-button" data-carousel="aerienne"><i class="fas fa-chevron-right"></i></button>
+            </div>
+          </div>
         </div>
-        <div class="photo-item">
-          <img src="https://placehold.co/400x200/333333/E0E0E0?text=Portrait+Artistique" alt="Portrait Artistique">
-          <div class="photo-title">Portrait Artistique</div>
+
+        <div class="photo-category">
+          <h3 class="category-title">Portrait</h3>
+          <div class="carousel-container" id="carousel-portrait">
+            <div class="carousel-track">
+              <div class="photo-item">
+                <img src="https://placehold.co/400x200/333333/E0E0E0?text=Portrait+1" alt="Portrait 1">
+                <div class="photo-title">Portrait 1</div>
+              </div>
+              <div class="photo-item">
+                <img src="https://placehold.co/400x200/333333/E0E0E0?text=Portrait+2" alt="Portrait 2">
+                <div class="photo-title">Portrait 2</div>
+              </div>
+              <div class="photo-item">
+                <img src="https://placehold.co/400x200/333333/E0E0E0?text=Portrait+3" alt="Portrait 3">
+                <div class="photo-title">Portrait 3</div>
+              </div>
+            </div>
+            <div class="carousel-nav-buttons">
+              <button class="carousel-nav-button prev-button" data-carousel="portrait"><i class="fas fa-chevron-left"></i></button>
+              <button class="carousel-nav-button next-button" data-carousel="portrait"><i class="fas fa-chevron-right"></i></button>
+            </div>
+          </div>
         </div>
-        <div class="photo-item">
-          <img src="https://placehold.co/400x200/333333/E0E0E0?text=Nature+Sauvage" alt="Nature Sauvage">
-          <div class="photo-title">Nature Sauvage</div>
+
+        <div class="photo-category">
+          <h3 class="category-title">Paysage</h3>
+          <div class="carousel-container" id="carousel-paysage">
+            <div class="carousel-track">
+              <div class="photo-item">
+                <img src="https://placehold.co/400x200/333333/E0E0E0?text=Paysage+1" alt="Paysage 1">
+                <div class="photo-title">Paysage 1</div>
+              </div>
+              <div class="photo-item">
+                <img src="https://placehold.co/400x200/333333/E0E0E0?text=Paysage+2" alt="Paysage 2">
+                <div class="photo-title">Paysage 2</div>
+              </div>
+              <div class="photo-item">
+                <img src="https://placehold.co/400x200/333333/E0E0E0?text=Paysage+3" alt="Paysage 3">
+                <div class="photo-title">Paysage 3</div>
+              </div>
+              <div class="photo-item">
+                <img src="https://placehold.co/400x200/333333/E0E0E0?text=Paysage+4" alt="Paysage 4">
+                <div class="photo-title">Paysage 4</div>
+              </div>
+              <div class="photo-item">
+                <img src="https://placehold.co/400x200/333333/E0E0E0?text=Paysage+5" alt="Paysage 5">
+                <div class="photo-title">Paysage 5</div>
+              </div>
+            </div>
+            <div class="carousel-nav-buttons">
+              <button class="carousel-nav-button prev-button" data-carousel="paysage"><i class="fas fa-chevron-left"></i></button>
+              <button class="carousel-nav-button next-button" data-carousel="paysage"><i class="fas fa-chevron-right"></i></button>
+            </div>
+          </div>
         </div>
-        <div class="photo-item">
-          <img src="https://placehold.co/400x200/333333/E0E0E0?text=Architecture+Moderne" alt="Architecture Moderne">
-          <div class="photo-title">Architecture Moderne</div>
-        </div>
-        <div class="photo-item">
-          <img src="https://placehold.co/400x200/333333/E0E0E0?text=Scene+de+Vie" alt="Scène de Vie">
-          <div class="photo-title">Scène de Vie</div>
-        </div>
-        <div class="photo-item">
-          <img src="https://placehold.co/400x200/333333/E0E0E0?text=Evenement+Sportif" alt="Événement Sportif">
-          <div class="photo-title">Événement Sportif</div>
-        </div>
+
       </div>
     </section>
   </div>
@@ -747,10 +881,10 @@
         </div>
       </div>
       <div class="contact-info" style="margin-top: 2rem;">
-        <p><i class="fas fa-envelope"></i> Email : <a href="mailto:contact@jeremiefavre.com"> contact@jeremiefavre.com</a></p>
-        <p><i class="fab fa-instagram"></i> Instagram : <a href="https://instagram.com/j3remie_fvr" target="_blank"> @j3remie_fvr</a></p>
+        <p><i class="fas fa-envelope"></i> Email : <a href="mailto:contact@jeremiefavre.com">contact@jeremiefavre.com</a></p>
+        <p><i class="fab fa-instagram"></i> Instagram : <a href="https://instagram.com/j3remie_fvr" target="_blank">@j3remie_fvr</a></p>
         <p><i class="fas fa-map-marker-alt"></i> Basé à La Réunion</p>
-        <p><i class="fas fa-phone"></i> Téléphone :  <a href="tel:+262693112398"> +262 693 112 398</a></p>
+        <p><i class="fas fa-phone"></i> Téléphone : <a href="tel:+262693112398">0693112398</a></p>
       </div>
     </div>
   </section>
