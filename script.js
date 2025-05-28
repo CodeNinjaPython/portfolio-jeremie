@@ -10,9 +10,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
+      // Pour les sections, la classe 'is-visible' est ajoutée pour les animations
+      // mais elles sont visibles par défaut via CSS pour éviter le contenu manquant.
       if (entry.isIntersecting) {
         entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target); // Arrête d'observer une fois visible
+        // observer.unobserve(entry.target); // Optionnel: pour une animation qui ne se déclenche qu'une fois
+      } else {
+        // Optionnel: Supprimer la classe si la section sort du viewport pour réinitialiser l'animation
+        // entry.target.classList.remove('is-visible');
       }
     });
   }, observerOptions);
@@ -76,5 +81,16 @@ document.addEventListener('DOMContentLoaded', () => {
       // Gérer les erreurs réseau
       // Par exemple: alert('Impossible de se connecter au service d\'envoi. Vérifiez votre connexion.');
     }
+  });
+
+  // Script pour la section contact collapsible
+  const contactSectionTitle = document.querySelector('#contact h2');
+  const contactContent = document.getElementById('contactContent');
+  const contactToggleIcon = document.getElementById('contactToggleIcon');
+
+  // Au clic sur le titre, bascule l'état ouvert/fermé
+  contactSectionTitle.addEventListener('click', () => {
+      contactContent.classList.toggle('expanded');
+      contactToggleIcon.classList.toggle('rotated');
   });
 });
