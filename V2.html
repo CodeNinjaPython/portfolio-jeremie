@@ -368,7 +368,7 @@
 
     .photo-item {
         flex: 0 0 auto; /* Empêche les éléments de rétrécir */
-        width: calc(100% / var(--items-per-view, 1) - var(--gap-width, 1rem) * (var(--items-per-view, 1) - 1) / var(--items-per-view, 1)); /* Largeur dynamique */
+        width: 100%; /* Chaque élément prend 100% de la largeur du conteneur */
         max-width: 300px; /* Taille maximale pour les éléments du carrousel */
         margin-right: 1rem; /* Espace entre les images */
         background-color: var(--dark-grey);
@@ -377,12 +377,6 @@
         box-shadow: 0 4px 8px rgba(0,0,0,0.3);
         border: 1px solid rgba(255,255,255,0.05);
         text-align: center;
-        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation au survol */
-    }
-    /* Animation au survol des images */
-    .photo-item:hover {
-        transform: translateY(-5px) scale(1.03); /* Légère élévation et zoom */
-        box-shadow: 0 8px 20px rgba(0,0,0,0.5); /* Ombre plus prononcée */
     }
 
     .photo-item:last-child {
@@ -430,10 +424,6 @@
 
     .carousel-nav-button:hover {
         background-color: rgba(0, 0, 0, 0.8);
-    }
-    .carousel-nav-button:disabled {
-        opacity: 0.3;
-        cursor: not-allowed;
     }
 
 
@@ -650,72 +640,6 @@
       transform: translateY(-3px);
     }
 
-    /* Styles pour la Lightbox (Modale) */
-    .lightbox {
-      display: none; /* Caché par défaut */
-      position: fixed; /* Reste en place même en scrollant */
-      z-index: 1000; /* Se place au-dessus de tout le reste */
-      left: 0;
-      top: 0;
-      width: 100%; /* Pleine largeur */
-      height: 100%; /* Pleine hauteur */
-      overflow: auto; /* Permet le défilement si l'image est trop grande */
-      background-color: rgba(0,0,0,0.9); /* Fond noir semi-transparent */
-      display: flex; /* Utilise flexbox pour centrer */
-      align-items: center; /* Centre verticalement */
-      justify-content: center; /* Centre horizontalement */
-      flex-direction: column; /* Pour que la légende soit en dessous */
-    }
-
-    .lightbox.active {
-      display: flex; /* Affiche la lightbox */
-    }
-
-    .lightbox-content {
-      margin: auto;
-      display: block;
-      max-width: 90%; /* Limite la largeur de l'image dans la modale */
-      max-height: 80vh; /* Limite la hauteur de l'image (80% de la hauteur de la fenêtre) */
-      border-radius: 8px; /* Coins arrondis pour l'image */
-      box-shadow: 0 4px 20px rgba(0,0,0,0.8); /* Ombre plus prononcée */
-      animation-name: zoom;
-      animation-duration: 0.6s;
-    }
-
-    @keyframes zoom {
-      from {transform: scale(0.1)}
-      to {transform: scale(1)}
-    }
-
-    .close-button {
-      position: absolute;
-      top: 15px;
-      right: 35px;
-      color: #f1f1f1;
-      font-size: 40px;
-      font-weight: bold;
-      transition: 0.3s;
-      cursor: pointer;
-      z-index: 1001; /* Au-dessus de l'image */
-    }
-
-    .close-button:hover,
-    .close-button:focus {
-      color: #bbb;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    .lightbox-caption {
-      margin-top: 15px;
-      text-align: center;
-      color: #ccc;
-      font-size: 1.2rem;
-      padding: 10px 0;
-      max-width: 90%;
-    }
-
-
     /* Media queries pour la responsivité */
     @media (max-width: 768px) {
         h1 {
@@ -803,42 +727,42 @@
       <h2>Portfolio Vidéo</h2>
       <div class="gallery">
         <div class="video">
-          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/qtrdrRYwMoA" allowfullscreen></iframe>
           <div class="video-title">LIVRE DU DESTIN Court metrage</div>
         </div>
 
         <div class="video">
-          <iframe src="https://www.youtube.com/embed/M7lc1UVf-VE?rel=0" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/j_FrzbnDIuY" allowfullscreen></iframe>
           <div class="video-title">AURORA - Court Métrages</div>
         </div>
 
         <div class="video">
-          <iframe src="https://www.youtube.com/embed/xvFZjo5PgG0?rel=0" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/_q7MnK_2QFI" allowfullscreen></iframe>
           <div class="video-title">Venum - PUB</div>
         </div>
 
         <div class="video">
-          <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY?rel=0" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/XOG37yLswio" allowfullscreen></iframe>
           <div class="video-title">Restaurant LE LEON</div>
         </div>
 
         <div class="video">
-          <iframe src="https://www.youtube.com/embed/o01e4a2QGqQ?rel=0" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/zZD8K0tTuzo" allowfullscreen></iframe>
           <div class="video-title">Portrait de Stéphanie Valmorex</div>
         </div>
 
         <div class="video">
-          <iframe src="https://www.youtube.com/embed/PjGZ2-N_E4E?rel=0" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/9GQS8eGeZlk" allowfullscreen></iframe>
           <div class="video-title">KidnaPink Final Officiel</div>
         </div>
 
         <div class="video">
-          <iframe src="https://www.youtube.com/embed/WJzQJ-0rW7Y?rel=0" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/6bbMbT8_QGE" allowfullscreen></iframe>
           <div class="video-title">ALONE</div>
         </div>
 
         <div class="video">
-          <iframe src="https://www.youtube.com/embed/v_tG2_l_8p4?rel=0" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/5S_ke4JsViI" allowfullscreen></iframe>
           <div class="video-title">Dessert spécial diabétique - Ensemble contre le diabète ( Julien LEVENEUR )</div>
         </div>
       </div>
@@ -853,26 +777,19 @@
           <div class="carousel-container" id="carousel-aerienne">
             <div class="carousel-track">
               <div class="photo-item">
-                <a href="images/Drone/DJI_0457.jpg" data-src-large="images/Drone/DJI_0457.jpg" class="photo-lightbox-trigger">
-                  <img src="images/Drone/DJI_0457.jpg" alt="Photo Aérienne 1">
-                </a>
+                <img src="images/Drone/DJI_0457.jpg" alt="Aerial view of a coastal town with turquoise ocean waves breaking along a sandy shoreline, houses and buildings nestled on green hills, clear sky above, conveying a peaceful and expansive atmosphere">
                 <div class="photo-title">Aérienne 1</div>
               </div>
               <div class="photo-item">
-                <a href="images/Drone/DJI_0459.jpg" data-src-large="images/Drone/DJI_0459.jpg" class="photo-lightbox-trigger">
-                  <img src="images/Drone/DJI_0459.jpg" alt="Photo Aérienne 2">
-                </a>
+                <img src="images/Drone/DJI_0459.jpg" alt="Photo Aérienne 2">
                 <div class="photo-title">Aérienne 2</div>
               </div>
               <div class="photo-item">
-                <a href="images/Drone/DJI_0460.jpg" data-src-large="images/Drone/DJI_0460.jpg" class="photo-lightbox-trigger">
-                  <img src="images/Drone/DJI_0460.jpg" alt="Photo Aérienne 3">
-                </a>
+                <img src="images/Drone/DJI_0460.jpg" alt="Photo Aérienne 3">
                 <div class="photo-title">Aérienne 3</div>
               </div>
               <div class="photo-item">
-                <a href="images/Drone/DJI_0461.jpg" data-src-large="images/Drone/DJI_0461.jpg" class="photo-lightbox-trigger">
-                  <img src="images/Drone/DJI_0461.jpg" alt="Photo Aérienne 4"> </a>
+                <img src="https://placehold.co/400x200/333333/E0E0E0?text=Aerienne+4" alt="Photo Aérienne 4">
                 <div class="photo-title">Aérienne 4</div>
               </div>
             </div>
@@ -888,28 +805,16 @@
           <div class="carousel-container" id="carousel-portrait">
             <div class="carousel-track">
               <div class="photo-item">
-                <a href="images/Portrait/nom-de-votre-portrait-1.jpg" data-src-large="images/Portrait/nom-de-votre-portrait-1.jpg" class="photo-lightbox-trigger">
-                  <img src="images/Portrait/nom-de-votre-portrait-1.jpg" alt="Portrait 1">
-                </a>
+                <img src="https://placehold.co/400x200/333333/E0E0E0?text=Portrait+1" alt="Portrait 1">
                 <div class="photo-title">Portrait 1</div>
               </div>
               <div class="photo-item">
-                <a href="images/Portrait/nom-de-votre-portrait-2.jpg" data-src-large="images/Portrait/nom-de-votre-portrait-2.jpg" class="photo-lightbox-trigger">
-                  <img src="images/Portrait/nom-de-votre-portrait-2.jpg" alt="Portrait 2">
-                </a>
+                <img src="https://placehold.co/400x200/333333/E0E0E0?text=Portrait+2" alt="Portrait 2">
                 <div class="photo-title">Portrait 2</div>
               </div>
               <div class="photo-item">
-                <a href="images/Portrait/nom-de-votre-portrait-3.jpg" data-src-large="images/Portrait/nom-de-votre-portrait-3.jpg" class="photo-lightbox-trigger">
-                  <img src="images/Portrait/nom-de-votre-portrait-3.jpg" alt="Portrait 3">
-                </a>
+                <img src="https://placehold.co/400x200/333333/E0E0E0?text=Portrait+3" alt="Portrait 3">
                 <div class="photo-title">Portrait 3</div>
-              </div>
-              <div class="photo-item">
-                <a href="images/Portrait/nom-de-votre-portrait-4.jpg" data-src-large="images/Portrait/nom-de-votre-portrait-4.jpg" class="photo-lightbox-trigger">
-                  <img src="images/Portrait/nom-de-votre-portrait-4.jpg" alt="Portrait 4">
-                </a>
-                <div class="photo-title">Portrait 4</div>
               </div>
             </div>
             <div class="carousel-nav-buttons">
@@ -924,33 +829,23 @@
           <div class="carousel-container" id="carousel-paysage">
             <div class="carousel-track">
               <div class="photo-item">
-                <a href="images/Paysage/nom-de-votre-paysage-1.jpg" data-src-large="images/Paysage/nom-de-votre-paysage-1.jpg" class="photo-lightbox-trigger">
-                  <img src="images/Paysage/nom-de-votre-paysage-1.jpg" alt="Paysage 1">
-                </a>
+                <img src="https://placehold.co/400x200/333333/E0E0E0?text=Paysage+1" alt="Paysage 1">
                 <div class="photo-title">Paysage 1</div>
               </div>
               <div class="photo-item">
-                <a href="images/Paysage/nom-de-votre-paysage-2.jpg" data-src-large="images/Paysage/nom-de-votre-paysage-2.jpg" class="photo-lightbox-trigger">
-                  <img src="images/Paysage/nom-de-votre-paysage-2.jpg" alt="Paysage 2">
-                </a>
+                <img src="https://placehold.co/400x200/333333/E0E0E0?text=Paysage+2" alt="Paysage 2">
                 <div class="photo-title">Paysage 2</div>
               </div>
               <div class="photo-item">
-                <a href="images/Paysage/nom-de-votre-paysage-3.jpg" data-src-large="images/Paysage/nom-de-votre-paysage-3.jpg" class="photo-lightbox-trigger">
-                  <img src="images/Paysage/nom-de-votre-paysage-3.jpg" alt="Paysage 3">
-                </a>
+                <img src="https://placehold.co/400x200/333333/E0E0E0?text=Paysage+3" alt="Paysage 3">
                 <div class="photo-title">Paysage 3</div>
               </div>
               <div class="photo-item">
-                <a href="images/Paysage/nom-de-votre-paysage-4.jpg" data-src-large="images/Paysage/nom-de-votre-paysage-4.jpg" class="photo-lightbox-trigger">
-                  <img src="images/Paysage/nom-de-votre-paysage-4.jpg" alt="Paysage 4">
-                </a>
+                <img src="https://placehold.co/400x200/333333/E0E0E0?text=Paysage+4" alt="Paysage 4">
                 <div class="photo-title">Paysage 4</div>
               </div>
               <div class="photo-item">
-                <a href="images/Paysage/nom-de-votre-paysage-5.jpg" data-src-large="images/Paysage/nom-de-votre-paysage-5.jpg" class="photo-lightbox-trigger">
-                  <img src="images/Paysage/nom-de-votre-paysage-5.jpg" alt="Paysage 5">
-                </a>
+                <img src="https://placehold.co/400x200/333333/E0E0E0?text=Paysage+5" alt="Paysage 5">
                 <div class="photo-title">Paysage 5</div>
               </div>
             </div>
@@ -986,10 +881,10 @@
         </div>
       </div>
       <div class="contact-info" style="margin-top: 2rem;">
-        <p><i class="fas fa-envelope"></i> Email : <a href="mailto:contact@jeremiefavre.com">contact@jeremiefavre.com</a></p>
-        <p><i class="fab fa-instagram"></i> Instagram : <a href="https://instagram.com/j3remie_fvr" target="_blank">@j3remie_fvr</a></p>
+        <p><i class="fas fa-envelope"></i> Email : <a href="mailto:contact@jeremiefavre.com"> contact@jeremiefavre.com</a></p>
+        <p><i class="fab fa-instagram"></i> Instagram : <a href="https://instagram.com/j3remie_fvr" target="_blank"> @j3remie_fvr</a></p>
         <p><i class="fas fa-map-marker-alt"></i> Basé à La Réunion</p>
-        <p><i class="fas fa-phone"></i> Téléphone : <a href="tel:+262693112398">0693112398</a></p>
+        <p><i class="fas fa-phone"></i> Téléphone : <a href="tel:+262693112398"> +262 693 11 23 98</a></p>
       </div>
     </div>
   </section>
@@ -1000,285 +895,6 @@
 
   <button id="back-to-top" title="Retour en haut"><i class="fas fa-arrow-up"></i></button>
 
-  <div id="lightbox" class="lightbox">
-    <span class="close-button">×</span>
-    <img class="lightbox-content" id="img-large">
-    <div id="lightbox-caption" class="lightbox-caption"></div>
-  </div>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Script pour l'animation de scroll (Intersection Observer)
-      const sections = document.querySelectorAll('section');
-
-      const observerOptions = {
-        root: null, /* viewport */
-        rootMargin: '0px',
-        threshold: 0.1 /* 10% de la section visible */
-      };
-
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          // Pour les sections, la classe 'is-visible' est ajoutée pour les animations
-          // mais elles sont visibles par défaut via CSS pour éviter le contenu manquant.
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            // observer.unobserve(entry.target); // Optionnel: pour une animation qui ne se déclenche qu'une fois
-          } else {
-            // Optionnel: Supprimer la classe si la section sort du viewport pour réinitialiser l'animation
-            // entry.target.classList.remove('is-visible');
-          }
-        });
-      }, observerOptions);
-
-      sections.forEach(section => {
-        observer.observe(section);
-      });
-
-      // Script pour le bouton "Retour en haut"
-      const backToTopButton = document.getElementById('back-to-top');
-
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) { // Affiche le bouton après 300px de défilement
-          backToTopButton.style.display = 'flex'; // Utilisez 'flex' pour centrer l'icône
-        } else {
-          backToTopButton.style.display = 'none';
-        }
-      });
-
-      backToTopButton.addEventListener('click', () => {
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-      });
-
-      // Script pour la soumission du formulaire de contact
-      const contactForm = document.querySelector('.contact-form form');
-      const successMessage = document.getElementById('successMessage');
-
-      contactForm.addEventListener('submit', async (event) => {
-        event.preventDefault(); // Empêche la soumission par défaut du formulaire
-
-        const formData = new FormData(contactForm);
-        try {
-          const response = await fetch(contactForm.action, {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json' // Important pour que Formspree renvoie du JSON
-            }
-          });
-
-          if (response.ok) {
-            contactForm.reset(); // Vide le formulaire
-            successMessage.classList.remove('hidden');
-            successMessage.classList.add('show');
-            // Cache le message après quelques secondes
-            setTimeout(() => {
-              successMessage.classList.remove('show');
-              successMessage.classList.add('hidden');
-            }, 5000); // Message visible pendant 5 secondes
-          } else {
-            // Gérer les erreurs (par exemple, afficher un message d'erreur dans la console)
-            console.error('Échec de la soumission du formulaire.');
-          }
-        } catch (error) {
-          console.error('Erreur réseau ou autre:', error);
-        }
-      });
-
-      // Script pour la section contact collapsible
-      const contactSection = document.getElementById('contact'); // Cible la section entière pour le clic
-      const contactContent = document.getElementById('contactContent');
-      const contactToggleIcon = document.getElementById('contactToggleIcon');
-
-      // Mémoriser l'état déplié/replié
-      const isContactExpanded = localStorage.getItem('contactExpanded') === 'true';
-      if (isContactExpanded) {
-          contactContent.classList.add('expanded');
-          contactToggleIcon.classList.add('rotated');
-      }
-
-      contactSection.addEventListener('click', (event) => {
-          // Si le clic est sur le titre (h2) ou l'icône, bascule l'état
-          if (event.target.closest('h2')) { // Vérifie si le clic est à l'intérieur du h2 ou sur l'icône
-              contactContent.classList.toggle('expanded');
-              contactToggleIcon.classList.toggle('rotated');
-              // Sauvegarder l'état
-              const isExpanded = contactContent.classList.contains('expanded');
-              localStorage.setItem('contactExpanded', isExpanded);
-          }
-      });
-
-      // --- SCRIPT POUR LES CARROUSELS PHOTO ---
-      // Fonction pour initialiser un carrousel
-      function initializeCarousel(carouselId) {
-        const carouselContainer = document.getElementById(carouselId);
-        if (!carouselContainer) return;
-
-        const carouselTrack = carouselContainer.querySelector('.carousel-track');
-        const photoItems = Array.from(carouselTrack.querySelectorAll('.photo-item')); // Convertir en Array
-        const prevButton = carouselContainer.querySelector('.prev-button');
-        const nextButton = carouselContainer.querySelector('.next-button');
-
-        let currentIndex = 0;
-        let itemsPerView = 1;
-        let autoScrollInterval;
-        const autoScrollDelay = 3000; // Défilement toutes les 3 secondes
-        const manualInteractionPause = 5000; // Pause de 5 secondes après interaction manuelle
-
-        // Fonction pour calculer les éléments par page
-        const calculateItemsPerPage = () => {
-            if (photoItems.length === 0) {
-                itemsPerView = 1;
-                return;
-            }
-            // Attendre que l'image soit chargée pour avoir une largeur correcte
-            const firstItem = photoItems[0];
-            if (firstItem.offsetWidth === 0 && firstItem.querySelector('img')) {
-                firstItem.querySelector('img').onload = () => {
-                    updateCarouselPosition(); // Recalculer après chargement de l'image
-                };
-                return; // Sortir et attendre le chargement
-            }
-
-            const itemWidth = firstItem.offsetWidth + (parseFloat(getComputedStyle(firstItem).marginRight) || 0);
-            const containerWidth = carouselContainer.offsetWidth;
-
-            if (itemWidth > 0 && containerWidth > 0) {
-                itemsPerView = Math.floor(containerWidth / itemWidth);
-                itemsPerView = Math.max(1, itemsPerView); // Au moins 1 élément par vue
-            } else {
-                itemsPerView = 1; // Fallback si les largeurs ne sont pas encore disponibles
-            }
-            // Mettre à jour la variable CSS pour la largeur des éléments
-            carouselContainer.style.setProperty('--items-per-view', itemsPerView);
-            carouselContainer.style.setProperty('--gap-width', '1rem'); /* Assurez-vous que c'est cohérent avec le CSS */
-        };
-
-        // Fonction pour mettre à jour la position du carrousel
-        const updateCarouselPosition = () => {
-          calculateItemsPerPage();
-          const itemWidth = photoItems.length > 0 ? photoItems[0].offsetWidth + (parseFloat(getComputedStyle(photoItems[0]).marginRight) || 0) : 0;
-          carouselTrack.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-
-          prevButton.disabled = currentIndex === 0;
-          nextButton.disabled = currentIndex >= photoItems.length - itemsPerView;
-        };
-
-        // Démarrer le défilement automatique
-        const startAutoScroll = () => {
-            stopAutoScroll(); // S'assurer qu'il n'y a qu'un seul intervalle
-            if (photoItems.length <= itemsPerView) return; // Pas besoin de défiler si tout rentre
-            autoScrollInterval = setInterval(() => {
-                currentIndex++;
-                if (currentIndex > photoItems.length - itemsPerView) {
-                    currentIndex = 0; // Revenir au début
-                }
-                updateCarouselPosition();
-            }, autoScrollDelay);
-        };
-
-        // Arrêter le défilement automatique
-        const stopAutoScroll = () => {
-            clearInterval(autoScrollInterval);
-        };
-
-        // Écouteurs d'événements pour les boutons de navigation
-        prevButton.addEventListener('click', () => {
-          stopAutoScroll();
-          if (currentIndex > 0) {
-            currentIndex = Math.max(0, currentIndex - itemsPerView);
-            updateCarouselPosition();
-          }
-          setTimeout(startAutoScroll, manualInteractionPause); // Reprendre après un délai
-        });
-
-        nextButton.addEventListener('click', () => {
-          stopAutoScroll();
-          if (currentIndex < photoItems.length - itemsPerView) {
-            currentIndex = Math.min(photoItems.length - itemsPerView, currentIndex + itemsPerView);
-            updateCarouselPosition();
-          }
-          setTimeout(startAutoScroll, manualInteractionPause); // Reprendre après un délai
-        });
-
-        // Pause/Reprise du défilement automatique au survol de la souris
-        carouselContainer.addEventListener('mouseenter', stopAutoScroll);
-        carouselContainer.addEventListener('mouseleave', startAutoScroll);
-
-
-        // Initialisation après le chargement des images pour des largeurs correctes
-        window.addEventListener('load', () => {
-            updateCarouselPosition(); // Mise à jour initiale après chargement complet
-            startAutoScroll(); // Démarrer le défilement automatique
-        });
-
-        // Gérer le redimensionnement de la fenêtre
-        window.addEventListener('resize', () => {
-            currentIndex = 0; // Réinitialiser l'index pour éviter les problèmes de positionnement
-            updateCarouselPosition();
-            stopAutoScroll(); // Arrêter et redémarrer le défilement automatique
-            startAutoScroll();
-        });
-      }
-
-      // Initialiser chaque carrousel par son ID
-      initializeCarousel('carousel-aerienne');
-      initializeCarousel('carousel-portrait');
-      initializeCarousel('carousel-paysage');
-
-
-      // --- SCRIPT POUR LA LIGHTBOX (AGRANDISSEMENT DES PHOTOS) ---
-      const lightbox = document.getElementById('lightbox');
-      const lightboxImg = document.getElementById('img-large');
-      const lightboxCaption = document.getElementById('lightbox-caption');
-      const closeButton = document.querySelector('.close-button');
-
-      // Récupère tous les liens qui déclenchent la lightbox
-      const lightboxTriggers = document.querySelectorAll('.photo-lightbox-trigger');
-
-      lightboxTriggers.forEach(trigger => {
-          trigger.addEventListener('click', (e) => {
-              e.preventDefault(); // Empêche le navigateur de suivre le lien directement
-
-              const largeSrc = trigger.getAttribute('data-src-large');
-              const altText = trigger.querySelector('img').alt; // Prend l'alt de l'image
-              // Tente de récupérer le titre de la photo (div.photo-title)
-              const photoTitleElement = trigger.closest('.photo-item').querySelector('.photo-title');
-              const photoTitle = photoTitleElement ? photoTitleElement.textContent : altText;
-
-              lightbox.classList.add('active'); // Affiche la lightbox
-              lightboxImg.src = largeSrc; // Charge l'image en grande taille
-              lightboxCaption.textContent = photoTitle; // Affiche le titre/légende
-
-              document.body.style.overflow = 'hidden'; // Empêche le défilement de la page
-          });
-      });
-
-      // Fermer la lightbox quand on clique sur le bouton de fermeture
-      closeButton.addEventListener('click', () => {
-          lightbox.classList.remove('active');
-          document.body.style.overflow = 'auto'; // Réactive le défilement de la page
-      });
-
-      // Fermer la lightbox quand on clique en dehors de l'image
-      lightbox.addEventListener('click', (e) => {
-          if (e.target === lightbox) { // Si le clic est sur l'arrière-plan de la lightbox, pas l'image
-              lightbox.classList.remove('active');
-              document.body.style.overflow = 'auto';
-          }
-      });
-
-      // Fermer la lightbox avec la touche Échap
-      document.addEventListener('keydown', (e) => {
-          if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-              lightbox.classList.remove('active');
-              document.body.style.overflow = 'auto';
-          }
-      });
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
