@@ -245,13 +245,13 @@
       border-radius: 10px; /* Coins plus arrondis */
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Ombre plus douce */
       border: 1px solid rgba(255,255,255,0.1); /* Bordure subtile */
-      transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.6s ease; /* Animation sur hover et scroll */
-      opacity: 1; /* Rendu toujours visible par défaut */
-      transform: translateY(0); /* Rendu toujours visible par défaut */
+      transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.6s ease, transform 0.6s ease; /* Animation sur hover et scroll */
+      opacity: 0; /* Initial state for scroll animation */
+      transform: translateY(20px); /* Initial state for scroll animation */
     }
     section.is-visible {
-      opacity: 1; /* Visible une fois dans le viewport */
-      transform: translateY(0); /* Remonte à sa position normale */
+      opacity: 1; /* Visible once in viewport */
+      transform: translateY(0); /* Moves to normal position */
     }
     section:hover {
       transform: translateY(-5px);
@@ -402,6 +402,34 @@
     }
     .hidden {
       display: none;
+    }
+
+    /* Styles pour la section contact collapsible */
+    #contact h2 {
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      user-select: none; /* Empêche la sélection de texte au clic */
+    }
+    #contactToggleIcon {
+      transition: transform 0.3s ease;
+    }
+    #contactToggleIcon.rotated {
+      transform: rotate(180deg);
+    }
+    .contact-content {
+      max-height: 0; /* Initialement replié */
+      overflow: hidden;
+      transition: max-height 0.7s ease-in-out, padding 0.7s ease-in-out; /* Transition pour la hauteur et le padding */
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    .contact-content.expanded {
+      max-height: 1000px; /* Valeur suffisamment grande pour que tout le contenu soit visible */
+      padding-top: 1.5rem; /* Ajoute du padding quand la section est ouverte */
+      padding-bottom: 1rem; /* Ajoute du padding quand la section est ouverte */
     }
 
 
@@ -613,30 +641,32 @@
   </div>
 
   <section id="contact" class="contact section-white">
-    <h2>Contact</h2>
-    <div class="contact-form">
-      <form action="https://formspree.io/f/mgvkgnjg" method="POST">
-        <label for="name">Nom :</label>
-        <input type="text" id="name" name="name" required aria-label="Votre nom">
+    <h2>Contact <i id="contactToggleIcon" class="fas fa-chevron-down"></i></h2>
+    <div id="contactContent" class="contact-content">
+      <div class="contact-form">
+        <form action="https://formspree.io/f/mgvkgnjg" method="POST">
+          <label for="name">Nom :</label>
+          <input type="text" id="name" name="name" required aria-label="Votre nom">
 
-        <label for="email">Email :</label>
-        <input type="email" id="email" name="email" required aria-label="Votre adresse email">
+          <label for="email">Email :</label>
+          <input type="email" id="email" name="email" required aria-label="Votre adresse email">
 
-        <label for="message">Message :</label>
-        <textarea id="message" name="message" rows="5" required aria-label="Votre message"></textarea>
+          <label for="message">Message :</label>
+          <textarea id="message" name="message" rows="5" required aria-label="Votre message"></textarea>
 
-        <button type="submit">Envoyer le message</button>
-      </form>
-      <div id="successMessage" class="success-message hidden">
-        <p>Votre message a été envoyé avec succès !</p>
+          <button type="submit">Envoyer le message</button>
+        </form>
+        <div id="successMessage" class="success-message hidden">
+          <p>Votre message a été envoyé avec succès !</p>
+        </div>
       </div>
-    </div>
-    <div class="contact-info" style="margin-top: 2rem;">
-      <p><i class="fas fa-envelope"></i> Email : <a href="mailto:contact@jeremiefavre.com">contact@jeremiefavre.com</a></p>
-      <p><i class="fab fa-instagram"></i> Instagram : <a href="https://instagram.com/jeremiefavre" target="_blank">@jeremiefavre</a></p>
-      <p><i class="fab fa-vimeo"></i> Vimeo : <a href="https://vimeo.com/jeremiefavre" target="_blank">vimeo.com/jeremiefavre</a></p>
-      <p><i class="fas fa-map-marker-alt"></i> Basé à La Réunion</p>
-      <p><i class="fas fa-phone"></i> Téléphone : +262 692 123 456 (exemple)</p>
+      <div class="contact-info" style="margin-top: 2rem;">
+        <p><i class="fas fa-envelope"></i> Email : <a href="mailto:contact@jeremiefavre.com">contact@jeremiefavre.com</a></p>
+        <p><i class="fab fa-instagram"></i> Instagram : <a href="https://instagram.com/jeremiefavre" target="_blank">@jeremiefavre</a></p>
+        <p><i class="fab fa-vimeo"></i> Vimeo : <a href="https://vimeo.com/jeremiefavre" target="_blank">vimeo.com/jeremiefavre</a></p>
+        <p><i class="fas fa-map-marker-alt"></i> Basé à La Réunion</p>
+        <p><i class="fas fa-phone"></i> Téléphone : +262 692 123 456 (exemple)</p>
+      </div>
     </div>
   </section>
 
