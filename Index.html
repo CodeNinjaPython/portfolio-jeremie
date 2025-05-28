@@ -79,13 +79,13 @@
       color: var(--white);
       padding: 4rem 1rem 3rem; /* Réduction du padding-bottom, nav est déplacée */
       text-align: center;
-      position: relative; /* Nécessaire pour les pseudo-éléments et la nav */
-      overflow: visible; /* Permet aux pseudo-éléments de dépasser */
+      position: relative; /* Nécessaire pour les pseudo-elements et la nav */
+      overflow: visible; /* Permet aux pseudo-elements de dépasser */
       margin-bottom: 0; /* Supprime la marge en bas de l'en-tête */
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Ombre plus prononcée */
     }
 
-    /* Effet "papier déchiré" en bas de l'en-tête */
+    /* Effet "papier déchiré" en bas de l'en-tête (simple skew) */
     header::after {
       content: '';
       position: absolute;
@@ -204,7 +204,7 @@
     .main-content {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 0; /* Pas de gap direct entre les sections, les déchirures gèrent l'espacement */
+      gap: 5rem; /* Espace pour les pseudo-éléments inclinés */
       max-width: 950px; /* Largeur maximale légèrement augmentée */
       margin: auto;
       padding: 0 1.5rem; /* Plus de rembourrage sur les côtés */
@@ -214,21 +214,16 @@
     /* Sections de contenu */
     section {
       background-color: var(--dark-grey); /* Fond gris foncé pour les sections de contenu */
-      padding: 0; /* Le padding sera sur le contenu interne */
+      padding: 2.5rem; /* Padding appliqué directement sur la section */
       border-radius: 10px; /* Coins plus arrondis */
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Ombre plus douce */
       border: 1px solid rgba(255,255,255,0.1); /* Bordure subtile */
       transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation sur hover */
       opacity: 1; /* Rendu toujours visible par défaut */
       transform: translateY(0); /* Rendu toujours visible par default */
-      position: relative; /* Pour positionner les images de déchirure */
-      overflow: hidden; /* Cache le contenu qui dépasse les bords des déchirures */
-      margin-bottom: 60px; /* Espace pour la déchirure du bas */
+      position: relative; /* Pour positionner les pseudo-éléments de déchirure */
+      overflow: visible; /* Permet aux pseudo-éléments de dépasser */
     }
-    section:last-of-type { /* Pas de marge en bas pour la dernière section */
-      margin-bottom: 0;
-    }
-
     section.is-visible {
       opacity: 1;
       transform: translateY(0);
@@ -238,35 +233,27 @@
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
     }
 
-    /* Conteneur interne pour le contenu de la section */
-    .section-inner-content {
-      padding: 2.5rem; /* Padding appliqué ici */
-      position: relative;
-      z-index: 2; /* Assure que le contenu est au-dessus des déchirures */
-    }
-
-    /* Styles pour les images de déchirure */
-    .dechirure {
+    /* Effet "papier déchiré" (skew) au bas de chaque section */
+    section::after {
+      content: '';
       position: absolute;
+      bottom: -30px; /* Positionne l'effet en dessous de la section */
       left: 0;
       width: 100%;
-      height: 60px; /* Hauteur de l'image de déchirure */
-      object-fit: cover; /* Assure que l'image couvre la zone sans déformation excessive */
-      pointer-events: none; /* Permet de cliquer à travers l'image si elle recouvre du contenu */
-      z-index: 1; /* En dessous du contenu mais au-dessus du fond de la section */
-    }
-    .dechirure.haut {
-      top: 0;
-      transform: scaleY(-1); /* Inverse l'image pour la déchirure du haut si elle est conçue pour le bas */
-      transform-origin: center center;
-    }
-    .dechirure.bas {
-      bottom: 0;
-      transform: rotate(1deg); /* Légère rotation pour un aspect plus naturel */
-      transform-origin: center bottom;
+      height: 60px; /* Hauteur de l'effet de "déchirure" */
+      background-color: var(--black); /* Révèle le fond noir du corps */
+      transform: skewY(2deg); /* Crée une légère inclinaison vers le haut */
+      transform-origin: bottom left;
+      z-index: 5; /* S'assure qu'il est au-dessus du contenu principal */
+      box-shadow: 0 8px 15px rgba(0,0,0,0.5); /* Ombre pour la profondeur */
     }
 
-    /* Effet papier déchiré pour les sections blanches */
+    /* Supprime l'effet de déchirure en haut des sections */
+    section::before {
+      content: none; /* Annule le pseudo-élément ::before */
+    }
+
+
     .section-white {
       background-color: var(--white);
       color: var(--dark-grey);
@@ -279,14 +266,15 @@
     .section-white a {
       color: var(--dark-grey);
     }
-    .section-white .dechirure.haut {
-      /* Si vous avez une image de déchirure blanche sur fond clair pour le haut, utilisez-la ici */
-      /* background-image: url('images/dechire-haut-blanc.png'); */
+    /* Ajustements pour les sections blanches : la "déchirure" est la couleur de la section */
+    .section-white::after {
+      background-color: var(--white); /* Le "papier" déchiré est blanc */
+      transform: skewY(-2deg); /* Rotation légèrement différente pour le bas */
+      transform-origin: bottom right;
     }
-    .section-white .dechirure.bas {
-      /* Si vous avez une image de déchirure blanche sur fond clair pour le bas, utilisez-la ici */
-      /* background-image: url('images/dechire-bas-blanc.png'); */
-      transform: rotate(-1deg); /* Inclinaison inverse pour un effet différent */
+    /* Supprime l'effet de déchirure en haut des sections blanches */
+    .section-white::before {
+      content: none; /* Annule le pseudo-élément ::before */
     }
 
 
@@ -494,8 +482,8 @@
       color: var(--white);
       font-size: 0.9rem;
       box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
-      position: relative; /* Nécessaire pour les pseudo-éléments */
-      overflow: visible; /* Permet aux pseudo-éléments de dépasser */
+      position: relative; /* Nécessaire pour les pseudo-elements */
+      overflow: visible; /* Permet aux pseudo-elements de dépasser */
     }
 
     /* Effet "papier déchiré" en haut du pied de page */
@@ -589,119 +577,103 @@
 
   <div class="main-content">
     <section id="about">
-      <img src="https://placehold.co/1200x60/000000/FFFFFF?text=DECHIRURE-HAUT" class="dechirure haut" alt="Déchirure de papier en haut">
-      <div class="section-inner-content">
-        <h2>À propos de ma démarche</h2>
-        <p>
-          Animé par la passion de l'image et du mouvement, je suis Jérémie Favre, vidéaste basé à La Réunion. Ma démarche créative consiste à transformer des idées en récits visuels captivants. Que ce soit pour des clips dynamiques, des documentaires immersifs ou des publicités percutantes, je m'engage à donner vie à chaque projet, de la conception à la post-production.<br>
-          Mon expertise s'étend de la coordination complète des tournages à la maîtrise des prises de vue aériennes avec drone stabilisé et FPV, offrant des perspectives uniques à vos projets.
-        </p>
-      </div>
-      <img src="5887c27fbc2fc2ef3a186047.jpg" class="dechirure bas" alt="Déchirure de papier en bas">
+      <h2>À propos de ma démarche</h2>
+      <p>
+        Animé par la passion de l'image et du mouvement, je suis Jérémie Favre, vidéaste basé à La Réunion. Ma démarche créative consiste à transformer des idées en récits visuels captivants. Que ce soit pour des clips dynamiques, des documentaires immersifs ou des publicités percutantes, je m'engage à donner vie à chaque projet, de la conception à la post-production.<br>
+        Mon expertise s'étend de la coordination complète des tournages à la maîtrise des prises de vue aériennes avec drone stabilisé et FPV, offrant des perspectives uniques à vos projets.
+      </p>
     </section>
 
     <section id="skills">
-      <img src="https://placehold.co/1200x60/000000/FFFFFF?text=DECHIRURE-HAUT" class="dechirure haut" alt="Déchirure de papier en haut">
-      <div class="section-inner-content">
-        <h2>Mon Expertise</h2>
-        <div class="skills-grid">
-          <div>
-            <h3>Mes Outils Créatifs</h3>
-            <div class="skill-item"><i class="fab fa-adobe"></i> Premiere Pro : Maîtrise du montage vidéo professionnel.</div>
-            <div class="skill-item"><i class="fab fa-adobe"></i> After Effects : Création d'effets visuels et animations.</div>
-            <div class="skill-item"><i class="fab fa-adobe"></i> Photoshop : Retouche d'image et conception graphique.</div>
-            <div class="skill-item"><i class="fab fa-adobe"></i> Lightroom : Optimisation et catalogage des images.</div>
-            <div class="skill-item"><i class="fas fa-video"></i> Production Vidéo : De l'idée au produit final.</div>
-            <div class="skill-item"><i class="fas fa-film"></i> Montage Vidéo : Narration visuelle et rythme.</div>
-            <div class="skill-item"><i class="fas fa-drone"></i> Pilotage Drone : Perspectives aériennes uniques.</div>
-          </div>
+      <h2>Mon Expertise</h2>
+      <div class="skills-grid">
+        <div>
+          <h3>Mes Outils Créatifs</h3>
+          <div class="skill-item"><i class="fab fa-adobe"></i> Premiere Pro : Maîtrise du montage vidéo professionnel.</div>
+          <div class="skill-item"><i class="fab fa-adobe"></i> After Effects : Création d'effets visuels et animations.</div>
+          <div class="skill-item"><i class="fab fa-adobe"></i> Photoshop : Retouche d'image et conception graphique.</div>
+          <div class="skill-item"><i class="fab fa-adobe"></i> Lightroom : Optimisation et catalogage des images.</div>
+          <div class="skill-item"><i class="fas fa-video"></i> Production Vidéo : De l'idée au produit final.</div>
+          <div class="skill-item"><i class="fas fa-film"></i> Montage Vidéo : Narration visuelle et rythme.</div>
+          <div class="skill-item"><i class="fas fa-drone"></i> Pilotage Drone : Perspectives aériennes uniques.</div>
         </div>
       </div>
-      <img src="5887c27fbc2fc2ef3a186047.jpg" class="dechirure bas" alt="Déchirure de papier en bas">
     </section>
 
     <section id="portfolio" class="section-white">
-      <img src="https://placehold.co/1200x60/FFFFFF/000000?text=DECHIRURE-HAUT-BLANC" class="dechirure haut" alt="Déchirure de papier en haut">
-      <div class="section-inner-content">
-        <h2>Portfolio Vidéo</h2>
-        <div class="gallery">
-          <div class="video">
-            <iframe src="https://www.youtube.com/embed/qtrdrRYwMoA" allowfullscreen></iframe>
-            <div class="video-title">LIVRE DU DESTIN Court metrage</div>
-          </div>
+      <h2>Portfolio Vidéo</h2>
+      <div class="gallery">
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/qtrdrRYwMoA" allowfullscreen></iframe>
+          <div class="video-title">LIVRE DU DESTIN Court metrage</div>
+        </div>
 
-          <div class="video">
-            <iframe src="https://www.youtube.com/embed/j_FrzbnDIuY" allowfullscreen></iframe>
-            <div class="video-title">AURORA - Court Métrages</div>
-          </div>
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/j_FrzbnDIuY" allowfullscreen></iframe>
+          <div class="video-title">AURORA - Court Métrages</div>
+        </div>
 
-          <div class="video">
-            <iframe src="https://www.youtube.com/embed/_q7MnK_2QFI" allowfullscreen></iframe>
-            <div class="video-title">Venum - PUB</div>
-          </div>
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/_q7MnK_2QFI" allowfullscreen></iframe>
+          <div class="video-title">Venum - PUB</div>
+        </div>
 
-          <div class="video">
-            <iframe src="https://www.youtube.com/embed/XOG37yLswio" allowfullscreen></iframe>
-            <div class="video-title">Restaurant LE LEON</div>
-          </div>
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/XOG37yLswio" allowfullscreen></iframe>
+          <div class="video-title">Restaurant LE LEON</div>
+        </div>
 
-          <div class="video">
-            <iframe src="https://www.youtube.com/embed/zZD8K0tTuzo" allowfullscreen></iframe>
-            <div class="video-title">Portrait de Stéphanie Valmorex</div>
-          </div>
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/zZD8K0tTuzo" allowfullscreen></iframe>
+          <div class="video-title">Portrait de Stéphanie Valmorex</div>
+        </div>
 
-          <div class="video">
-            <iframe src="https://www.youtube.com/embed/9GQS8eGeZlk" allowfullscreen></iframe>
-            <div class="video-title">KidnaPink Final Officiel</div>
-          </div>
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/9GQS8eGeZlk" allowfullscreen></iframe>
+          <div class="video-title">KidnaPink Final Officiel</div>
+        </div>
 
-          <div class="video">
-            <iframe src="https://www.youtube.com/embed/6bbMbT8_QGE" allowfullscreen></iframe>
-            <div class="video-title">ALONE</div>
-          </div>
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/6bbMbT8_QGE" allowfullscreen></iframe>
+          <div class="video-title">ALONE</div>
+        </div>
 
-          <div class="video">
-            <iframe src="https://www.youtube.com/embed/5S_ke4JsViI" allowfullscreen></iframe>
-            <div class="video-title">Dessert spécial diabétique - Ensemble contre le diabète ( Julien LEVENEUR )</div>
-          </div>
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/5S_ke4JsViI" allowfullscreen></iframe>
+          <div class="video-title">Dessert spécial diabétique - Ensemble contre le diabète ( Julien LEVENEUR )</div>
         </div>
       </div>
-      <img src="5887c27fbc2fc2ef3a186047.jpg" class="dechirure bas" alt="Déchirure de papier en bas">
     </section>
   </div>
 
   <section id="contact" class="contact section-white">
-    <img src="https://placehold.co/1200x60/FFFFFF/000000?text=DECHIRURE-HAUT-BLANC" class="dechirure haut" alt="Déchirure de papier en haut">
-    <div class="section-inner-content">
-      <h2>Contact <i id="contactToggleIcon" class="fas fa-chevron-down"></i></h2>
-      <div id="contactContent" class="contact-content">
-        <div class="contact-form">
-          <form action="https://formspree.io/f/mgvkgnjg" method="POST">
-            <label for="name">Nom :</label>
-            <input type="text" id="name" name="name" required aria-label="Votre nom">
+    <h2>Contact <i id="contactToggleIcon" class="fas fa-chevron-down"></i></h2>
+    <div id="contactContent" class="contact-content">
+      <div class="contact-form">
+        <form action="https://formspree.io/f/mgvkgnjg" method="POST">
+          <label for="name">Nom :</label>
+          <input type="text" id="name" name="name" required aria-label="Votre nom">
 
-            <label for="email">Email :</label>
-            <input type="email" id="email" name="email" required aria-label="Votre adresse email">
+          <label for="email">Email :</label>
+          <input type="email" id="email" name="email" required aria-label="Votre adresse email">
 
-            <label for="message">Message :</label>
-            <textarea id="message" name="message" rows="5" required aria-label="Votre message"></textarea>
+          <label for="message">Message :</label>
+          <textarea id="message" name="message" rows="5" required aria-label="Votre message"></textarea>
 
-            <button type="submit">Envoyer le message</button>
-          </form>
-          <div id="successMessage" class="success-message hidden">
-            <p>Votre message a été envoyé avec succès !</p>
-          </div>
-        </div>
-        <div class="contact-info" style="margin-top: 2rem;">
-          <p><i class="fas fa-envelope"></i> Email : <a href="mailto:contact@jeremiefavre.com">contact@jeremiefavre.com</a></p>
-          <p><i class="fab fa-instagram"></i> Instagram : <a href="https://instagram.com/jeremiefavre" target="_blank">@jeremiefavre</a></p>
-          <p><i class="fab fa-vimeo"></i> Vimeo : <a href="https://vimeo.com/jeremiefavre" target="_blank">vimeo.com/jeremiefavre</a></p>
-          <p><i class="fas fa-map-marker-alt"></i> Basé à La Réunion</p>
-          <p><i class="fas fa-phone"></i> Téléphone : +262 692 123 456 (exemple)</p>
+          <button type="submit">Envoyer le message</button>
+        </form>
+        <div id="successMessage" class="success-message hidden">
+          <p>Votre message a été envoyé avec succès !</p>
         </div>
       </div>
+      <div class="contact-info" style="margin-top: 2rem;">
+        <p><i class="fas fa-envelope"></i> Email : <a href="mailto:contact@jeremiefavre.com">contact@jeremiefavre.com</a></p>
+        <p><i class="fab fa-instagram"></i> Instagram : <a href="https://instagram.com/jeremiefavre" target="_blank">@jeremiefavre</a></p>
+        <p><i class="fab fa-vimeo"></i> Vimeo : <a href="https://vimeo.com/jeremiefavre" target="_blank">vimeo.com/jeremiefavre</a></p>
+        <p><i class="fas fa-map-marker-alt"></i> Basé à La Réunion</p>
+        <p><i class="fas fa-phone"></i> Téléphone : +262 692 123 456 (exemple)</p>
+      </div>
     </div>
-    <img src="5887c27fbc2fc2ef3a186047.jpg" class="dechirure bas" alt="Déchirure de papier en bas">
   </section>
 
   <footer>
