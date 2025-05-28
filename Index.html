@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jérémie FAVRE - Vidéaste</title>
+  <meta name="description" content="Portfolio de Jérémie Favre, vidéaste et cadreur-monteur basé à La Réunion. Découvrez mes projets vidéo, compétences et contactez-moi pour vos réalisations.">
+  <meta name="keywords" content="Jérémie Favre, vidéaste, cadreur, monteur, La Réunion, production vidéo, after effects, premiere pro, drone, FPV, portfolio, vidéo, film, publicité">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
@@ -282,18 +284,40 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.3);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       border: 1px solid rgba(255,255,255,0.05);
+      cursor: pointer; /* Indique qu'il est cliquable */
     }
     .video-item:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 16px rgba(0,0,0,0.4);
     }
-    iframe {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      border: none;
-      border-radius: 8px 8px 0 0; /* Coins arrondis en haut */
-      display: block;
+    .video-item iframe { /* Cache l'iframe original pour la modale */
+        display: none;
     }
+    .video-item .thumbnail { /* Style de l'aperçu */
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        border-radius: 8px 8px 0 0;
+        position: relative;
+    }
+    .video-item .thumbnail::after { /* Icône Play */
+        content: '\f144'; /* FontAwesome play icon */
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        font-size: 3em;
+        color: rgba(255,255,255,0.8);
+        text-shadow: 0 0 10px rgba(0,0,0,0.5);
+        transition: transform 0.2s ease-in-out;
+    }
+    .video-item .thumbnail:hover::after {
+        transform: scale(1.1);
+    }
+
     .video-info {
       padding: 1rem;
       color: var(--white);
@@ -481,13 +505,16 @@
       height: 100%; /* Full height */
       overflow: auto; /* Enable scroll if needed */
       background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+      padding-top: 60px; /* Pour laisser de la place au bouton fermer */
     }
 
     .modal-content {
       margin: auto;
       display: block;
-      max-width: 80%;
-      max-height: 80%;
+      width: 90%;
+      max-width: 900px; /* Max width for video */
+      height: auto;
+      aspect-ratio: 16 / 9; /* Maintain aspect ratio for video */
     }
 
     /* Add Animation */
@@ -524,6 +551,38 @@
       color: #bbb;
       text-decoration: none;
       cursor: pointer;
+    }
+
+    /* Media queries pour la responsivité */
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 2.8rem;
+        }
+        h2 {
+            font-size: 1.8rem;
+        }
+        .top-banner {
+            font-size: 1.4rem;
+            padding: 8px 50px;
+            left: -30px;
+        }
+        nav ul {
+            flex-direction: column;
+            gap: 1rem;
+        }
+        nav a {
+            font-size: 1rem;
+        }
+        section {
+            padding: 1.5rem;
+        }
+        .profile-photo {
+            width: 140px;
+            height: 140px;
+        }
+        .modal-content {
+            width: 95%;
+        }
     }
   </style>
 </head>
@@ -580,32 +639,32 @@
     <section id="portfolio" class="section-white">
       <h2>Portfolio Vidéo</h2>
       <div class="video-grid">
-        <div class="video-item">
-          <iframe src="https://youtu.be/qtrdrRYwMoA" title="[TITRE DE LA VIDÉO 1]"></iframe>
+        <div class="video-item" data-video-url="https://www.youtube.com/embed/2?autoplay=1&rel=0">
+          <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/2/hqdefault.jpg');"></div>
           <div class="video-info">
-            <h3>[TITRE DE LA VIDÉO 1]</h3>
-            <p>[DESCRIPTION DE LA VIDÉO 1]</p>
+            <h3>LIVRE DU DESTIN - Court metrage</h3>
+            <p>[DESCRIPTION DE LA VIDÉO 1 - Ajoutez une description détaillée ici]</p>
           </div>
         </div>
-        <div class="video-item">
-          <iframe src="https://youtu.be/j_FrzbnDIuY" title="[TITRE DE LA VIDÉO 2]"></iframe>
+        <div class="video-item" data-video-url="https://www.youtube.com/embed/3?autoplay=1&rel=0">
+          <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/3/hqdefault.jpg');"></div>
           <div class="video-info">
-            <h3>[TITRE DE LA VIDÉO 2]</h3>
-            <p>[DESCRIPTION DE LA VIDÉO 2]</p>
+            <h3>AURORA - Court Métrages</h3>
+            <p>[DESCRIPTION DE LA VIDÉO 2 - Ajoutez une description détaillée ici]</p>
           </div>
         </div>
-        <div class="video-item">
-          <iframe src="https://youtu.be/_q7MnK_2QFI" title="[TITRE DE LA VIDÉO 3]"></iframe>
+        <div class="video-item" data-video-url="https://www.youtube.com/embed/4?autoplay=1&rel=0">
+          <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/4/hqdefault.jpg');"></div>
           <div class="video-info">
-            <h3>[TITRE DE LA VIDÉO 3]</h3>
-            <p>[DESCRIPTION DE LA VIDÉO 3]</p>
+            <h3>Venum - PUB</h3>
+            <p>[DESCRIPTION DE LA VIDÉO 3 - Ajoutez une description détaillée ici]</p>
           </div>
         </div>
-        <div class="video-item">
-          <iframe src="https://youtu.be/9GQS8eGeZlk" title="[TITRE DE LA VIDÉO 4]"></iframe>
+        <div class="video-item" data-video-url="https://www.youtube.com/embed/5?autoplay=1&rel=0">
+          <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/5/hqdefault.jpg');"></div>
           <div class="video-info">
-            <h3>[TITRE DE LA VIDÉO 4]</h3>
-            <p>[DESCRIPTION DE LA VIDÉO 4]</p>
+            <h3>KidnaPink Final Officiel</h3>
+            <p>[DESCRIPTION DE LA VIDÉO 4 - Ajoutez une description détaillée ici]</p>
           </div>
         </div>
       </div>
@@ -615,8 +674,7 @@
   <section id="contact" class="contact section-white">
     <h2>Contact</h2>
     <div class="contact-form">
-      <form action="#" method="POST">
-        <label for="name">Nom :</label>
+      <form action="YOUR_FORM_SUBMISSION_SERVICE_URL" method="POST"> <label for="name">Nom :</label>
         <input type="text" id="name" name="name" required aria-label="Votre nom">
 
         <label for="email">Email :</label>
@@ -644,8 +702,8 @@
   <button id="back-to-top" title="Retour en haut"><i class="fas fa-arrow-up"></i></button>
 
   <div id="videoModal" class="modal">
-    <span class="close">&times;</span>
-    <iframe class="modal-content" id="modalVideo"></iframe>
+    <span class="close">×</span>
+    <iframe class="modal-content" id="modalVideo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
 
   <script>
@@ -690,30 +748,55 @@
         });
       });
 
-       // Script pour la modale vidéo
-       const videoItems = document.querySelectorAll('.video-item');
-       const modal = document.getElementById('videoModal');
-       const modalVideo = document.getElementById('modalVideo');
-       const closeBtn = document.querySelector('.close');
+      // Script pour la modale vidéo
+      const videoItems = document.querySelectorAll('.video-item');
+      const modal = document.getElementById('videoModal');
+      const modalVideo = document.getElementById('modalVideo');
+      const closeBtn = document.querySelector('.close');
 
-       videoItems.forEach(item => {
-           item.addEventListener('click', () => {
-               modal.style.display = 'block';
-               modalVideo.src = item.querySelector('iframe').src; // Set the video source
-           });
-       });
+      videoItems.forEach(item => {
+          // Extraire l'ID de la vidéo de l'URL youtube.com
+          const youtubeUrl = item.dataset.videoUrl;
+          let videoId = '';
+          const youtubeMatch = youtubeUrl.match(/(?:youtube\.com\/(?:[^\/]+\/.+\/|\/(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
+          if (youtubeMatch && youtubeMatch[1]) {
+              videoId = youtubeMatch[1];
+          }
 
-       closeBtn.addEventListener('click', () => {
-           modal.style.display = 'none';
-           modalVideo.src = ''; // Stop video when closing
-       });
+          // Générer l'URL de la miniature et la définir
+          if (videoId) {
+              const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+              item.querySelector('.thumbnail').style.backgroundImage = `url('${thumbnailUrl}')`;
+          }
 
-       window.addEventListener('click', (event) => {
-           if (event.target == modal) {
-               modal.style.display = 'none';
-               modalVideo.src = ''; // Stop video when clicking outside
-           }
-       });
+          item.addEventListener('click', () => {
+              modal.style.display = 'flex'; // Utiliser flex pour centrer facilement
+              modalVideo.src = item.dataset.videoUrl; // Utiliser l'URL complète avec autoplay
+              // Assurer que le focus est sur la modale pour l'accessibilité
+              modal.focus();
+          });
+      });
+
+      closeBtn.addEventListener('click', () => {
+          modal.style.display = 'none';
+          modalVideo.src = ''; // Arrête la vidéo en réinitialisant la source
+      });
+
+      // Fermer la modale si l'on clique en dehors de la vidéo
+      modal.addEventListener('click', (event) => {
+          if (event.target === modal) {
+              modal.style.display = 'none';
+              modalVideo.src = ''; // Arrête la vidéo
+          }
+      });
+
+      // Fermer la modale avec la touche Échap
+      document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape' && modal.style.display === 'flex') {
+              modal.style.display = 'none';
+              modalVideo.src = ''; // Arrête la vidéo
+          }
+      });
     });
   </script>
 </body>
