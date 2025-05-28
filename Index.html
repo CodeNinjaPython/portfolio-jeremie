@@ -211,33 +211,6 @@
       position: relative; /* Pour les séparateurs de section */
     }
 
-    /* Séparateur de section angulaire */
-    .section-separator {
-      position: relative;
-      height: 40px; /* Hauteur de l'espace pour le séparateur */
-      margin-top: -20px; /* Remonte pour chevaucher la section précédente */
-      margin-bottom: -20px; /* Descend pour chevaucher la section suivante */
-      overflow: hidden; /* Cache les débordements du pseudo-élément */
-      z-index: 4; /* Assure qu'il est entre les sections */
-    }
-    .section-separator::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: var(--black); /* Fond de la bande */
-      transform: skewY(1deg); /* Légère inclinaison */
-      transform-origin: top right;
-      box-shadow: 0 5px 10px rgba(0,0,0,0.3); /* Ombre pour la profondeur */
-    }
-    .section-separator-reverse::before {
-      transform: skewY(-1deg); /* Inclinaison inverse */
-      transform-origin: top left;
-    }
-
-
     /* Sections de contenu */
     section {
       background-color: var(--dark-grey); /* Fond gris foncé pour les sections de contenu */
@@ -245,13 +218,15 @@
       border-radius: 10px; /* Coins plus arrondis */
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Ombre plus douce */
       border: 1px solid rgba(255,255,255,0.1); /* Bordure subtile */
-      transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.6s ease, transform 0.6s ease; /* Animation sur hover et scroll */
-      opacity: 0; /* Initial state for scroll animation */
-      transform: translateY(20px); /* Initial state for scroll animation */
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation sur hover */
+      opacity: 1; /* Rendu toujours visible par défaut */
+      transform: translateY(0); /* Rendu toujours visible par default */
     }
     section.is-visible {
-      opacity: 1; /* Visible once in viewport */
-      transform: translateY(0); /* Moves to normal position */
+      /* Ces règles ne sont plus nécessaires pour la visibilité initiale,
+         mais peuvent être utilisées pour des animations d'entrée plus subtiles si réactivées */
+      opacity: 1;
+      transform: translateY(0);
     }
     section:hover {
       transform: translateY(-5px);
@@ -574,8 +549,6 @@
       </p>
     </section>
 
-    <div class="section-separator section-separator-reverse"></div>
-
     <section id="skills">
       <h2>Mon Expertise</h2>
       <div class="skills-grid">
@@ -591,8 +564,6 @@
         </div>
       </div>
     </section>
-
-    <div class="section-separator"></div>
 
     <section id="portfolio" class="section-white">
       <h2>Portfolio Vidéo</h2>
