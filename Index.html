@@ -29,11 +29,11 @@
       overflow-x: hidden; /* Empêche le défilement horizontal dû aux rotations */
       /* Motif de fond plus complexe pour imiter la texture du CV */
       background-image:
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-      background-size: 20px 20px, 20px 20px, 10px 10px, 10px 10px;
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(rgba(255,255,255,0.01) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.01) 1px, transparent 1px);
+      background-size: 30px 30px, 30px 30px, 15px 15px, 15px 15px;
       background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
     }
 
@@ -75,11 +75,11 @@
     header {
       background: var(--dark-grey); /* Fond gris foncé pour l'en-tête */
       color: var(--white);
-      padding: 4rem 1rem 3rem; /* MODIFICATION : Réduction du padding-bottom, nav est déplacée */
+      padding: 4rem 1rem 3rem; /* Réduction du padding-bottom, nav est déplacée */
       text-align: center;
       position: relative; /* Nécessaire pour les pseudo-éléments et la nav */
-      overflow: visible; /* IMPORTANT : Permet aux pseudo-éléments de dépasser */
-      margin-bottom: 0; /* MODIFICATION : Supprime la marge en bas de l'en-tête */
+      overflow: visible; /* Permet aux pseudo-éléments de dépasser */
+      margin-bottom: 0; /* Supprime la marge en bas de l'en-tête */
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Ombre plus prononcée */
     }
 
@@ -87,15 +87,15 @@
     header::after {
       content: '';
       position: absolute;
-      bottom: -20px; /* Ajustez pour contrôler le chevauchement avec la section suivante */
+      bottom: -30px; /* Ajusté pour un chevauchement plus prononcé */
       left: 0;
       width: 100%;
-      height: 40px; /* Hauteur de l'effet de "déchirure" */
+      height: 60px; /* Hauteur de l'effet de "déchirure" augmentée */
       background-color: var(--black); /* Correspond au fond du corps */
       transform: skewY(2deg); /* Crée une légère inclinaison vers le haut */
       transform-origin: bottom left;
       z-index: 5; /* S'assure qu'il est au-dessus du contenu principal mais en dessous de la nav */
-      box-shadow: 0 5px 10px rgba(0,0,0,0.3); /* Ombre pour la profondeur */
+      box-shadow: 0 8px 15px rgba(0,0,0,0.5); /* Ombre plus forte pour la profondeur */
     }
 
     .header-content {
@@ -151,10 +151,10 @@
 
     /* Navigation */
     nav {
-      background-color: var(--black); /* MODIFICATION : Totalement opaque */
+      background-color: var(--black); /* Totalement opaque */
       padding: 1.5rem 0;
       width: 100%;
-      margin-top: -3rem; /* MODIFICATION : Remonte la nav pour chevaucher l'en-tête */
+      margin-top: -3rem; /* Remonte la nav pour chevaucher l'en-tête */
       z-index: 10; /* S'assure que la nav est au-dessus de tout */
       box-shadow: 0 4px 8px rgba(0,0,0,0.3);
       position: relative; /* Nécessaire pour que z-index fonctionne */
@@ -206,19 +206,35 @@
       max-width: 950px; /* Largeur maximale légèrement augmentée */
       margin: auto;
       padding: 0 1.5rem; /* Plus de rembourrage sur les côtés */
+      position: relative; /* Pour les séparateurs de section */
     }
 
-    @media (min-width: 768px) {
-      .main-content {
-        /* Ajustement de la grille pour que la section "Mon Expertise" prenne toute la largeur */
-        grid-template-columns: 1fr;
-      }
-      .top-banner {
-        left: -80px; /* Ajustement pour les écrans plus larges */
-        font-size: 2.2rem;
-        padding: 15px 100px;
-      }
+    /* Séparateur de section angulaire */
+    .section-separator {
+      position: relative;
+      height: 40px; /* Hauteur de l'espace pour le séparateur */
+      margin-top: -20px; /* Remonte pour chevaucher la section précédente */
+      margin-bottom: -20px; /* Descend pour chevaucher la section suivante */
+      overflow: hidden; /* Cache les débordements du pseudo-élément */
+      z-index: 4; /* Assure qu'il est entre les sections */
     }
+    .section-separator::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--black); /* Fond de la bande */
+      transform: skewY(1deg); /* Légère inclinaison */
+      transform-origin: top right;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.3); /* Ombre pour la profondeur */
+    }
+    .section-separator-reverse::before {
+      transform: skewY(-1deg); /* Inclinaison inverse */
+      transform-origin: top left;
+    }
+
 
     /* Sections de contenu */
     section {
@@ -227,7 +243,13 @@
       border-radius: 10px; /* Coins plus arrondis */
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Ombre plus douce */
       border: 1px solid rgba(255,255,255,0.1); /* Bordure subtile */
-      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation sur hover */
+      transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.6s ease, transform 0.6s ease; /* Animation sur hover et scroll */
+      opacity: 0; /* État initial caché pour l'animation de scroll */
+      transform: translateY(20px); /* Légèrement décalé vers le bas pour l'animation */
+    }
+    section.is-visible {
+      opacity: 1; /* Visible une fois dans le viewport */
+      transform: translateY(0); /* Remonte à sa position normale */
     }
     section:hover {
       transform: translateY(-5px); /* Légère élévation au survol */
@@ -414,15 +436,38 @@
     footer::before {
       content: '';
       position: absolute;
-      top: -20px; /* Ajustez pour contrôler le chevauchement avec la section précédente */
+      top: -30px; /* Ajusté pour un chevauchement plus prononcé */
       left: 0;
       width: 100%;
-      height: 40px;
+      height: 60px; /* Hauteur augmentée */
       background-color: var(--black); /* Correspond au fond du corps */
       transform: skewY(-2deg); /* Crée une légère inclinaison vers le bas */
       transform-origin: top left;
       z-index: 5;
-      box-shadow: 0 -5px 10px rgba(0,0,0,0.3);
+      box-shadow: 0 -8px 15px rgba(0,0,0,0.5); /* Ombre plus forte */
+    }
+
+    /* Bouton retour en haut */
+    #back-to-top {
+      display: none; /* Caché par défaut */
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--accent-color);
+      color: var(--black);
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      z-index: 100;
+    }
+    #back-to-top:hover {
+      background-color: var(--white);
+      transform: translateY(-3px);
     }
   </style>
 </head>
@@ -436,7 +481,7 @@
       <h1>Jérémie FAVRE</h1>
       <p>Vidéaste basé à La Réunion</p>
     </div>
-    </header>
+  </header>
 
   <nav>
     <ul>
@@ -456,6 +501,8 @@
       </p>
     </section>
 
+    <div class="section-separator section-separator-reverse"></div>
+
     <section id="skills">
       <h2>Mon Expertise</h2>
       <div class="skills-grid">
@@ -471,6 +518,8 @@
         </div>
       </div>
     </section>
+
+    <div class="section-separator"></div>
 
     <section id="portfolio" class="section-white">
       <h2>Portfolio Vidéo</h2>
@@ -520,5 +569,51 @@
   <footer>
     <p>© 2025 Jérémie FAVRE. Tous droits réservés.</p>
   </footer>
+
+  <button id="back-to-top" title="Retour en haut"><i class="fas fa-arrow-up"></i></button>
+
+  <script>
+    // Script pour l'animation de scroll (Intersection Observer)
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('section');
+
+      const observerOptions = {
+        root: null, /* viewport */
+        rootMargin: '0px',
+        threshold: 0.1 /* 10% de la section visible */
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target); // Arrête d'observer une fois visible
+          }
+        });
+      }, observerOptions);
+
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+
+      // Script pour le bouton "Retour en haut"
+      const backToTopButton = document.getElementById('back-to-top');
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) { // Affiche le bouton après 300px de défilement
+          backToTopButton.style.display = 'block';
+        } else {
+          backToTopButton.style.display = 'none';
+        }
+      });
+
+      backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
 </body>
 </html>
