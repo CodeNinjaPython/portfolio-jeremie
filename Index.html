@@ -417,6 +417,7 @@
       box-shadow: 0 4px 8px var(--shadow-color);
       transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease;
       border: 1px solid var(--border-color);
+      cursor: pointer; /* Ajout d'un curseur pour indiquer que c'est cliquable */
     }
     .video:hover {
       transform: translateY(-5px);
@@ -436,6 +437,7 @@
       border: none;
       border-radius: 8px;
       display: block;
+      pointer-events: none; /* Empêche le clic direct sur l'iframe pour que le div gère l'événement */
     }
 
     /* Styles pour la galerie photo */
@@ -1204,7 +1206,7 @@
       </div>
       <div class="contact-info" style="margin-top: 2rem;">
         <p><i class="fas fa-envelope"></i> Email : <a href="mailto:contact@jeremiefavre.com">contact@jeremiefavre.com</a></p>
-        <p><i class="fab fa-instagram"></i> Instagram : <a href="https://instagram.com/j3remie_fvr" target="_blank">@j3remie_fvr</a></p>
+        <p><i class="fab fa-instagram"></i> Instagram : <a href="https://instagram.com/j3remie_fvr" target="_blank" onclick="gtag('event', 'clic_instagram', { event_category: 'Réseaux sociaux', event_label: 'Instagram j3remie_fvr' });">@j3remie_fvr</a></p>
         <p><i class="fas fa-map-marker-alt"></i> Basé à La Réunion</p>
         <p><i class="fas fa-phone"></i> Téléphone : <a href="tel:+262693112398">0693112398</a></p>
       </div>
@@ -1311,6 +1313,11 @@
             headers: { 'Accept': 'application/json' }
           });
           if (response.ok) {
+            // Événement Google Analytics pour la soumission réussie du formulaire
+            gtag('event', 'formulaire_envoyé', {
+              event_category: 'Contact',
+              event_label: 'Formulaire réussi'
+            });
             contactForm.reset();
             successMessage.classList.remove('hidden');
             successMessage.classList.add('show');
@@ -1491,6 +1498,12 @@
           lightboxImage.alt = photo.altText;
           lightboxCaption.textContent = photo.title;
 
+          // Événement Google Analytics pour l'ouverture de la lightbox
+          gtag('event', 'lightbox_ouverte', {
+            event_category: 'Galerie',
+            event_label: photo.title
+          });
+
           lightbox.classList.add('active');
           document.body.style.overflow = 'hidden';
       }
@@ -1520,6 +1533,19 @@
                   closeLightboxBtn.click();
               }
           }
+      });
+
+      // --- LOGIQUE DE SUIVI DES CLICS SUR LES VIDÉOS ---
+      // Ajoute des écouteurs d'événements aux conteneurs vidéo pour suivre les clics
+      document.querySelectorAll('.video').forEach(videoDiv => {
+        videoDiv.addEventListener('click', () => {
+          const videoTitleElement = videoDiv.querySelector('.video-title');
+          const videoTitle = videoTitleElement ? videoTitleElement.textContent : 'Vidéo sans titre';
+          gtag('event', 'video_play', {
+            event_category: 'Vidéos',
+            event_label: videoTitle
+          });
+        });
       });
 
       // --- LOGIQUE DU LOADER ---
