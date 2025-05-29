@@ -14,7 +14,9 @@
   <meta property="og:title" content="Jérémie FAVRE - Vidéaste à La Réunion">
   <meta property="og:description" content="Découvrez le portfolio de Jérémie Favre, vidéaste et cadreur-monteur basé à La Réunion. Des clips dynamiques aux documentaires immersifs.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://votre-site.com"> <meta property="og:image" content="https://votre-site.com/unnamed.jpg"> <meta property="og:image:alt" content="Logo de Jérémie Favre">
+  <meta property="og:url" content="https://votre-site.com">
+  <meta property="og:image" content="https://votre-site.com/unnamed.jpg">
+  <meta property="og:image:alt" content="Logo de Jérémie Favre">
   <meta property="og:locale" content="fr_FR">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZSLE032V4E"></script>
@@ -50,9 +52,6 @@
       --link-color: var(--text-color);
       --link-hover-color: var(--accent-color);
       --icon-color: var(--accent-color);
-      --header-skew-bg: var(--bg-color); /* Le fond de l'effet déchiré correspond au fond du body */
-      --section-skew-bg: var(--bg-color);
-      --footer-skew-bg: var(--bg-color);
       --success-bg: #d4edda;
       --success-text: #155724;
       --success-border: #c3e6cb;
@@ -82,24 +81,17 @@
       --link-color: var(--text-color);
       --link-hover-color: var(--accent-color);
       --icon-color: var(--accent-color);
-      --header-skew-bg: var(--bg-color);
-      --section-skew-bg: var(--bg-color);
-      --footer-skew-bg: var(--bg-color);
-      /* Les couleurs du message de succès restent les mêmes */
     }
 
     /* Styles généraux du corps */
-    html {
-      scroll-behavior: smooth; /* Active le défilement fluide */
-    }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       font-family: 'Lato', Arial, sans-serif;
       line-height: 1.6;
-      background-color: var(--bg-color); /* Utilisation de la variable */
-      color: var(--text-color); /* Utilisation de la variable */
-      overflow-x: hidden; /* Empêche le défilement horizontal dû aux rotations */
-      /* Motif de fond plus complexe pour imiter la texture du CV */
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      overflow-x: hidden;
       background-image:
         linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px),
@@ -107,9 +99,8 @@
         linear-gradient(90deg, rgba(255,255,255,0.01) 1px, transparent 1px);
       background-size: 30px 30px, 30px 30px, 15px 15px, 15px 15px;
       background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
-      transition: background-color 0.5s ease, color 0.5s ease; /* Transition douce pour le changement de thème */
+      transition: background-color 0.5s ease, color 0.5s ease;
     }
-    /* Ajustement du motif de fond pour le thème clair */
     body.light-theme {
       background-image:
         linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
@@ -118,13 +109,12 @@
         linear-gradient(90deg, rgba(0,0,0,0.01) 1px, transparent 1px);
     }
 
-
     /* Styles des titres */
     h1, h2, h3 {
       font-family: 'Bebas Neue', sans-serif;
       text-transform: uppercase;
       letter-spacing: 2px;
-      color: var(--text-color); /* Utilisation de la variable */
+      color: var(--text-color);
       margin-top: 0;
       transition: color 0.5s ease;
     }
@@ -134,14 +124,14 @@
       margin-bottom: 0.5rem;
       transform: rotate(-3deg);
       display: inline-block;
-      background-color: var(--bg-color); /* Utilisation de la variable */
+      background-color: var(--bg-color);
       padding: 0 15px;
       position: relative;
       z-index: 1;
     }
     h2 {
       font-size: 2.2rem;
-      border-bottom: 3px solid var(--accent-color); /* Utilisation de la variable */
+      border-bottom: 3px solid var(--accent-color);
       padding-bottom: 0.5rem;
       margin-bottom: 1.5rem;
       display: inline-block;
@@ -152,24 +142,24 @@
     h3 {
       font-size: 1.5rem;
       margin-bottom: 1rem;
-      color: var(--accent-color); /* Utilisation de la variable */
+      color: var(--accent-color);
       transition: color 0.5s ease;
     }
 
     /* En-tête */
     header {
-      background: var(--header-bg); /* Utilisation de la variable */
+      background: var(--header-bg);
       color: var(--text-color);
       padding: 4rem 1rem 3rem;
       text-align: center;
       position: relative;
       overflow: visible;
       margin-bottom: 0;
-      box-shadow: 0 8px 16px var(--shadow-color); /* Utilisation de la variable */
+      box-shadow: 0 8px 16px var(--shadow-color);
       transition: background 0.5s ease, box-shadow 0.5s ease;
     }
 
-    /* Effet "papier déchiré" en bas de l'en-tête (simple skew) */
+    /* Effet "papier déchiré" en bas de l'en-tête */
     header::after {
       content: '';
       position: absolute;
@@ -177,11 +167,11 @@
       left: 0;
       width: 100%;
       height: 60px;
-      background-color: var(--header-skew-bg); /* Utilisation de la variable */
+      background-color: var(--bg-color); /* Correspond au fond du body */
       transform: skewY(2deg);
       transform-origin: bottom left;
       z-index: 5;
-      box-shadow: 0 8px 15px var(--shadow-color); /* Utilisation de la variable */
+      box-shadow: 0 8px 15px var(--shadow-color);
       transition: background-color 0.5s ease, box-shadow 0.5s ease;
     }
 
@@ -201,10 +191,10 @@
       height: 180px;
       border-radius: 50%;
       background-color: var(--light-grey);
-      border: 6px solid var(--text-color); /* Utilisation de la variable */
+      border: 6px solid var(--text-color);
       overflow: hidden;
       margin-bottom: 1.5rem;
-      box-shadow: 0 0 0 10px rgba(255,255,255,0.1); /* Peut rester fixe ou être une variable */
+      box-shadow: 0 0 0 10px rgba(255,255,255,0.1);
       transition: border-color 0.5s ease;
     }
     .profile-photo img {
@@ -225,29 +215,29 @@
       position: absolute;
       top: 20px;
       left: -50px;
-      background-color: var(--accent-color); /* Utilisation de la variable */
-      color: var(--bg-color); /* Utilisation de la variable */
+      background-color: var(--accent-color);
+      color: var(--bg-color);
       padding: 10px 80px;
       font-family: 'Bebas Neue', sans-serif;
       font-size: 1.8rem;
       letter-spacing: 2px;
       transform: rotate(-10deg);
       z-index: 3;
-      box-shadow: 2px 2px 8px var(--shadow-color); /* Utilisation de la variable */
+      box-shadow: 2px 2px 8px var(--shadow-color);
       transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
     }
 
     /* Navigation */
     nav {
-      background-color: var(--nav-bg); /* Utilisation de la variable */
+      background-color: var(--nav-bg);
       padding: 1.5rem 0;
       width: 100%;
       margin-top: -3rem;
       z-index: 10;
-      box-shadow: 0 4px 8px var(--shadow-color); /* Utilisation de la variable */
+      box-shadow: 0 4px 8px var(--shadow-color);
       position: relative;
       transition: background-color 0.5s ease, box-shadow 0.5s ease;
-      display: flex; /* Pour aligner les éléments de la nav */
+      display: flex;
       justify-content: center;
       align-items: center;
     }
@@ -258,10 +248,10 @@
       display: flex;
       justify-content: center;
       gap: 2rem;
-      flex-grow: 1; /* Permet à la liste de prendre de l'espace */
+      flex-grow: 1;
     }
     nav a {
-      color: var(--link-color); /* Utilisation de la variable */
+      color: var(--link-color);
       text-decoration: none;
       font-family: 'Bebas Neue', sans-serif;
       font-size: 1.1rem;
@@ -271,17 +261,17 @@
       position: relative;
     }
     nav a:hover {
-      color: var(--link-hover-color); /* Utilisation de la variable */
+      color: var(--link-hover-color);
       transform: translateY(-5px);
     }
-    nav a::after { /* Soulignement animé */
+    nav a::after {
       content: '';
       position: absolute;
       bottom: 0;
       left: 50%;
       width: 100%;
       height: 2px;
-      background-color: var(--accent-color); /* Utilisation de la variable */
+      background-color: var(--accent-color);
       transform: translateX(-50%) scaleX(0);
       transform-origin: center;
       transition: transform 0.3s ease-out, background-color 0.5s ease;
@@ -294,17 +284,16 @@
     #theme-toggle {
       background: none;
       border: none;
-      color: var(--link-color); /* Utilisation de la variable */
+      color: var(--link-color);
       font-size: 1.5rem;
       cursor: pointer;
-      margin-right: 1.5rem; /* Espace à droite de la nav */
+      margin-right: 1.5rem;
       transition: color 0.3s ease;
       padding: 0.5rem;
     }
     #theme-toggle:hover {
-      color: var(--link-hover-color); /* Utilisation de la variable */
+      color: var(--link-hover-color);
     }
-
 
     /* Contenu principal (grille) */
     .main-content {
@@ -319,14 +308,14 @@
 
     /* Sections de contenu */
     section {
-      background-color: var(--section-bg); /* Utilisation de la variable */
+      background-color: var(--section-bg);
       padding: 2.5rem;
       border-radius: 10px;
-      box-shadow: 0 6px 12px var(--shadow-color); /* Utilisation de la variable */
-      border: 1px solid var(--border-color); /* Utilisation de la variable */
+      box-shadow: 0 6px 12px var(--shadow-color);
+      border: 1px solid var(--border-color);
       transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease, border-color 0.5s ease;
-      opacity: 1;
-      transform: translateY(0);
+      opacity: 1; /* Initial state for animation */
+      transform: translateY(0); /* Initial state for animation */
       position: relative;
       overflow: visible;
     }
@@ -347,9 +336,9 @@
       left: 0;
       width: 100%;
       height: 60px;
-      background-color: var(--section-skew-bg); /* Utilisation de la variable */
+      background-color: var(--bg-color); /* Correspond au fond du body */
       z-index: 5;
-      box-shadow: 0 8px 15px var(--shadow-color); /* Utilisation de la variable */
+      box-shadow: 0 8px 15px var(--shadow-color);
       transition: background-color 0.5s ease, box-shadow 0.5s ease;
     }
 
@@ -368,24 +357,23 @@
       transform-origin: bottom right;
     }
 
-
     .section-white {
-      background-color: var(--section-white-bg); /* Utilisation de la variable */
-      color: var(--section-white-text); /* Utilisation de la variable */
+      background-color: var(--section-white-bg);
+      color: var(--section-white-text);
       box-shadow: 0 6px 12px var(--shadow-color);
       transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
     }
     .section-white h2, .section-white h3 {
-      color: var(--section-white-text); /* Utilisation de la variable */
-      border-bottom-color: var(--section-white-text); /* Utilisation de la variable */
+      color: var(--section-white-text);
+      border-bottom-color: var(--section-white-text);
       transition: color 0.5s ease, border-bottom-color 0.5s ease;
     }
     .section-white a {
-      color: var(--section-white-text); /* Utilisation de la variable */
+      color: var(--section-white-text);
     }
     /* Ajustements pour les sections blanches : la "déchirure" est la couleur de la section */
     .section-white:not(#contact)::after {
-      background-color: var(--section-white-bg); /* Utilisation de la variable */
+      background-color: var(--section-white-bg);
       transition: background-color 0.5s ease;
     }
     /* Supprime l'effet de déchirure en haut des sections blanches */
@@ -403,7 +391,6 @@
       transform-origin: bottom left;
     }
 
-
     /* Grille vidéo (Portfolio) */
     .gallery {
       display: grid;
@@ -411,13 +398,13 @@
       gap: 1.5rem;
     }
     .video {
-      background-color: var(--nav-bg); /* Utilisation de la variable (similaire à nav-bg) */
+      background-color: var(--nav-bg);
       padding: 15px;
       border-radius: 8px;
       box-shadow: 0 4px 8px var(--shadow-color);
       transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease;
       border: 1px solid var(--border-color);
-      cursor: pointer; /* Ajout d'un curseur pour indiquer que c'est cliquable */
+      cursor: pointer;
     }
     .video:hover {
       transform: translateY(-5px);
@@ -428,7 +415,7 @@
       margin-top: 10px;
       font-weight: bold;
       font-size: 1.1rem;
-      color: var(--accent-color); /* Utilisation de la variable */
+      color: var(--accent-color);
       transition: color 0.5s ease;
     }
     iframe {
@@ -437,16 +424,16 @@
       border: none;
       border-radius: 8px;
       display: block;
-      pointer-events: none; /* Empêche le clic direct sur l'iframe pour que le div gère l'événement */
+      pointer-events: none;
     }
 
     /* Styles pour la galerie photo */
     .photo-category {
         margin-bottom: 2rem;
-        border: 1px solid var(--border-color); /* Utilisation de la variable */
+        border: 1px solid var(--border-color);
         border-radius: 8px;
         overflow: hidden;
-        background-color: var(--section-bg); /* Utilisation de la variable */
+        background-color: var(--section-bg);
         box-shadow: 0 4px 8px var(--shadow-color);
         transition: background-color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
     }
@@ -459,8 +446,8 @@
         justify-content: space-between;
         align-items: center;
         padding: 1rem 1.5rem;
-        background-color: var(--nav-bg); /* Utilisation de la variable */
-        color: var(--text-color); /* Utilisation de la variable */
+        background-color: var(--nav-bg);
+        color: var(--text-color);
         font-family: 'Bebas Neue', sans-serif;
         font-size: 1.5rem;
         letter-spacing: 1px;
@@ -485,11 +472,11 @@
         width: calc(100% / var(--items-per-view, 1) - var(--gap-width, 1rem) * (var(--items-per-view, 1) - 1) / var(--items-per-view, 1));
         max-width: 300px;
         margin-right: 1rem;
-        background-color: var(--section-bg); /* Utilisation de la variable */
+        background-color: var(--section-bg);
         padding: 10px;
         border-radius: 8px;
         box-shadow: 0 4px 8px var(--shadow-color);
-        border: 1px solid var(--border-color); /* Utilisation de la variable */
+        border: 1px solid var(--border-color);
         text-align: center;
         transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease, border-color 0.5s ease;
     }
@@ -512,7 +499,7 @@
     .photo-title {
         font-weight: bold;
         font-size: 0.9rem;
-        color: var(--accent-color); /* Utilisation de la variable */
+        color: var(--accent-color);
         transition: color 0.5s ease;
     }
 
@@ -529,8 +516,8 @@
     }
 
     .carousel-nav-button {
-        background-color: rgba(0, 0, 0, 0.5); /* Peut rester fixe */
-        color: #fff; /* Peut rester fixe */
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
         border: none;
         border-radius: 50%;
         width: 40px;
@@ -559,7 +546,6 @@
         cursor: not-allowed;
     }
 
-
     /* Informations de contact */
     .contact-info p {
       margin-bottom: 1rem;
@@ -568,27 +554,27 @@
       align-items: center;
     }
     .contact-info a {
-      color: var(--link-color); /* Utilisation de la variable */
+      color: var(--link-color);
       text-decoration: none;
       transition: color 0.3s ease;
     }
     .section-white .contact-info a {
-      color: var(--section-white-text); /* Utilisation de la variable */
+      color: var(--section-white-text);
     }
     .contact-info a:hover {
-      color: var(--link-hover-color); /* Utilisation de la variable */
+      color: var(--link-hover-color);
     }
     .section-white .contact-info a:hover {
-      color: var(--accent-color); /* Accent pour le thème clair */
+      color: var(--accent-color);
     }
     .contact-info i {
       margin-right: 12px;
       font-size: 1.3rem;
-      color: var(--icon-color); /* Utilisation de la variable */
+      color: var(--icon-color);
       transition: color 0.5s ease;
     }
     .section-white .contact-info i {
-      color: var(--section-white-text); /* Utilisation de la variable */
+      color: var(--section-white-text);
     }
 
     /* Formulaire de contact */
@@ -596,7 +582,7 @@
       display: block;
       margin-bottom: 0.5rem;
       font-weight: bold;
-      color: var(--form-text); /* Utilisation de la variable */
+      color: var(--form-text);
       transition: color 0.5s ease;
     }
     .contact-form input[type="text"],
@@ -605,10 +591,10 @@
       width: calc(100% - 20px);
       padding: 10px;
       margin-bottom: 1.5rem;
-      border: 1px solid var(--form-border); /* Utilisation de la variable */
+      border: 1px solid var(--form-border);
       border-radius: 5px;
-      background-color: var(--form-bg); /* Utilisation de la variable */
-      color: var(--form-text); /* Utilisation de la variable */
+      background-color: var(--form-bg);
+      color: var(--form-text);
       font-family: 'Lato', Arial, sans-serif;
       font-size: 1rem;
       transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
@@ -621,12 +607,12 @@
     .contact-form input[type="email"]:focus,
     .contact-form textarea:focus {
       outline: none;
-      border-color: var(--accent-color); /* Utilisation de la variable */
+      border-color: var(--accent-color);
       box-shadow: 0 0 5px var(--shadow-color);
     }
     .contact-form button {
-      background-color: var(--button-bg); /* Utilisation de la variable */
-      color: var(--button-text); /* Utilisation de la variable */
+      background-color: var(--button-bg);
+      color: var(--button-text);
       padding: 12px 25px;
       border: none;
       border-radius: 5px;
@@ -638,7 +624,7 @@
       transform: rotate(-2deg);
     }
     .contact-form button:hover {
-      background-color: var(--button-hover-bg); /* Utilisation de la variable */
+      background-color: var(--button-hover-bg);
       transform: rotate(-2deg) scale(1.05);
     }
 
@@ -688,12 +674,11 @@
       padding-bottom: 0;
     }
     .contact-content.expanded {
-      max-height: 1000px !important;
+      max-height: 1000px !important; /* Suffisamment grand pour contenir le contenu */
       min-height: 200px;
       padding-top: 1.5rem;
       padding-bottom: 1rem;
     }
-
 
     /* Grille des compétences */
     .skills-grid {
@@ -708,7 +693,7 @@
     }
     .skills-grid li::before {
       content: '•';
-      color: var(--accent-color); /* Utilisation de la variable */
+      color: var(--accent-color);
       display: inline-block;
       width: 1em;
       margin-left: -1em;
@@ -723,7 +708,7 @@
     }
     .skill-item i {
       font-size: 1.6rem;
-      color: var(--icon-color); /* Utilisation de la variable */
+      color: var(--icon-color);
       transition: color 0.5s ease;
     }
 
@@ -732,8 +717,8 @@
       text-align: center;
       padding: 2.5rem 1rem;
       margin-top: 4rem;
-      background-color: var(--footer-bg); /* Utilisation de la variable */
-      color: var(--text-color); /* Utilisation de la variable */
+      background-color: var(--footer-bg);
+      color: var(--text-color);
       font-size: 0.9rem;
       box-shadow: 0 -4px 8px var(--shadow-color);
       position: relative;
@@ -749,7 +734,7 @@
       left: 0;
       width: 100%;
       height: 60px;
-      background-color: var(--footer-skew-bg); /* Utilisation de la variable */
+      background-color: var(--bg-color); /* Correspond au fond du body */
       transform: skewY(-2deg);
       transform-origin: top left;
       z-index: 5;
@@ -763,8 +748,8 @@
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background-color: var(--accent-color); /* Utilisation de la variable */
-      color: var(--bg-color); /* Utilisation de la variable */
+      background-color: var(--accent-color);
+      color: var(--bg-color);
       border: none;
       border-radius: 50%;
       width: 50px;
@@ -776,7 +761,7 @@
       z-index: 100;
     }
     #back-to-top:hover {
-      background-color: var(--text-color); /* Utilisation de la variable */
+      background-color: var(--text-color);
       transform: translateY(-3px);
     }
 
@@ -789,7 +774,7 @@
       top: 0;
       width: 100%;
       height: 100%;
-      overflow: hidden; /* Changed to hidden to prevent scroll during zoom/pan */
+      overflow: hidden;
       background-color: rgba(0,0,0,0.9);
     }
 
@@ -820,28 +805,27 @@
     .lightbox-content.zoomable {
         cursor: zoom-in;
         transition: transform 0.3s ease-in-out;
-        transform-origin: center center; /* Ensures zoom is from the center */
+        transform-origin: center center;
     }
 
     .lightbox-content.zoomed {
-        transform: scale(2); /* Example zoom level */
+        transform: scale(2);
         cursor: grab;
-        /* Allow dragging when zoomed */
-        touch-action: none; /* Prevent default touch actions like pan-zoom */
+        touch-action: none;
     }
 
     /* Adjust close button for better visibility */
     .close-button {
       position: absolute;
-      top: 20px; /* Slightly adjusted */
-      right: 25px; /* Slightly adjusted */
+      top: 20px;
+      right: 25px;
       color: #f1f1f1;
-      font-size: 45px; /* Slightly larger */
+      font-size: 45px;
       font-weight: bold;
       transition: 0.3s;
       cursor: pointer;
       z-index: 1001;
-      background-color: rgba(0,0,0,0.5); /* Add background for visibility */
+      background-color: rgba(0,0,0,0.5);
       border-radius: 50%;
       width: 50px;
       height: 50px;
@@ -908,8 +892,8 @@
         padding: 15px 25px;
         border-radius: 8px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        z-index: 1002; /* Above lightbox */
-        display: none; /* Hidden by default */
+        z-index: 1002;
+        display: none;
         font-weight: bold;
         text-align: center;
         opacity: 0;
@@ -928,7 +912,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: var(--loader-bg); /* Utilisation de la variable */
+      background-color: var(--loader-bg);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -956,7 +940,7 @@
       font-family: 'Bebas Neue', sans-serif;
       text-transform: uppercase;
       letter-spacing: 2px;
-      color: var(--loader-text); /* Utilisation de la variable */
+      color: var(--loader-text);
       margin: 0;
       padding: 0;
       text-align: center;
@@ -980,41 +964,30 @@
       to { transform: scale(1.05); opacity: 1; }
     }
 
-
     /* Media queries pour la responsivité */
     @media (max-width: 768px) {
-        h1 {
-            font-size: 2.8rem;
-        }
-        h2 {
-            font-size: 1.8rem;
-        }
+        h1 { font-size: 2.8rem; }
+        h2 { font-size: 1.8rem; }
         .top-banner {
             font-size: 1.4rem;
             padding: 8px 50px;
-            left: -30px; /* Adjusted from -50px */
+            left: -30px;
         }
         nav ul {
             flex-direction: column;
             gap: 1rem;
         }
-        nav a {
-            font-size: 1rem;
-        }
-        section {
-            padding: 1.5rem;
-        }
+        nav a { font-size: 1rem; }
+        section { padding: 1.5rem; }
         .profile-photo {
             width: 140px;
             height: 140px;
         }
         .photo-item {
-            width: 100%; /* Ensures single item per row */
-            margin-right: 0; /* Remove margin for single item when it's the only one per row */
+            width: 100%;
+            margin-right: 0;
         }
-        .carousel-nav-buttons {
-            padding: 0 5px;
-        }
+        .carousel-nav-buttons { padding: 0 5px; }
         nav {
           flex-direction: column;
           padding-bottom: 1rem;
@@ -1027,12 +1000,8 @@
             width: 100px;
             height: 100px;
         }
-        #loader h1 {
-            font-size: 2.5rem;
-        }
-        #loader p {
-            font-size: 1.2rem;
-        }
+        #loader h1 { font-size: 2.5rem; }
+        #loader p { font-size: 1.2rem; }
         .close-button {
             font-size: 35px;
             width: 40px;
@@ -1047,82 +1016,50 @@
             left: 10px;
             right: 10px;
         }
-        .lightbox-content.zoomed {
-            transform: scale(1.5); /* Less zoom on mobile */
-        }
-        /* Specific adjustments for smaller screens within this breakpoint */
-        .contact-info p, .skill-item {
-            font-size: 1rem; /* Slightly smaller text for better fit */
-        }
-        .contact-info i, .skill-item i {
-            font-size: 1.4rem; /* Adjust icon size */
-        }
+        .lightbox-content.zoomed { transform: scale(1.5); }
+        .contact-info p, .skill-item { font-size: 1rem; }
+        .contact-info i, .skill-item i { font-size: 1.4rem; }
         .contact-form input, .contact-form textarea {
-            width: calc(100% - 20px); /* Ensure full width */
-            padding: 8px; /* Slightly less padding */
-            margin-bottom: 1rem; /* Less margin */
+            width: calc(100% - 20px);
+            padding: 8px;
+            margin-bottom: 1rem;
         }
         .contact-form button {
-            padding: 10px 20px; /* Smaller button */
+            padding: 10px 20px;
             font-size: 1.1rem;
         }
         .success-message {
             padding: 0.8rem;
             font-size: 0.9rem;
         }
-        footer {
-            padding: 1.5rem 1rem; /* Reduced footer padding */
-        }
+        footer { padding: 1.5rem 1rem; }
     }
 
-    /* New breakpoint for very small mobile devices (e.g., iPhone SE, older Androids) */
     @media (max-width: 480px) {
-        h1 {
-            font-size: 2.2rem;
-        }
-        h2 {
-            font-size: 1.5rem;
-        }
+        h1 { font-size: 2.2rem; }
+        h2 { font-size: 1.5rem; }
         .top-banner {
             font-size: 1.2rem;
             padding: 6px 40px;
-            left: -10px; /* Even further adjustment */
+            left: -10px;
         }
-        header {
-            padding: 3rem 0.5rem 2rem; /* Reduced header padding */
-        }
+        header { padding: 3rem 0.5rem 2rem; }
         .profile-photo {
             width: 120px;
             height: 120px;
         }
-        nav ul {
-            gap: 0.8rem;
-        }
-        nav a {
-            padding: 0.4rem 0.8rem;
-        }
+        nav ul { gap: 0.8rem; }
+        nav a { padding: 0.4rem 0.8rem; }
         .main-content {
-            gap: 3rem; /* Reduced gap between sections */
-            padding: 0 1rem; /* Reduced horizontal padding */
+            gap: 3rem;
+            padding: 0 1rem;
         }
-        section {
-            padding: 1rem; /* Reduced section padding */
-        }
-        .video {
-            padding: 10px; /* Reduced video item padding */
-        }
-        .video-title {
-            font-size: 1rem;
-        }
-        .photo-item {
-            padding: 8px; /* Reduced photo item padding */
-        }
-        .photo-item img {
-            height: 150px; /* Slightly smaller image height */
-        }
-        .photo-title {
-            font-size: 0.85rem;
-        }
+        section { padding: 1rem; }
+        .video { padding: 10px; }
+        .video-title { font-size: 1rem; }
+        .photo-item { padding: 8px; }
+        .photo-item img { height: 150px; }
+        .photo-title { font-size: 0.85rem; }
         #back-to-top {
             width: 40px;
             height: 40px;
@@ -1414,69 +1351,53 @@
       const themeIcon = document.getElementById('theme-icon');
       const body = document.body;
 
-      // Fonction pour appliquer le thème
+      // Applique le thème sauvegardé ou la préférence système
       const applyTheme = (theme) => {
-        if (theme === 'light') {
-          body.classList.add('light-theme');
-          themeIcon.classList.remove('fa-moon');
-          themeIcon.classList.add('fa-sun');
-          themeToggle.setAttribute('aria-label', 'Basculer vers le thème sombre');
-        } else {
-          body.classList.remove('light-theme');
-          themeIcon.classList.remove('fa-sun');
-          themeIcon.classList.add('fa-moon');
-          themeToggle.setAttribute('aria-label', 'Basculer vers le thème clair');
-        }
+        const isLight = theme === 'light';
+        body.classList.toggle('light-theme', isLight);
+        themeIcon.classList.toggle('fa-moon', !isLight);
+        themeIcon.classList.toggle('fa-sun', isLight);
+        themeToggle.setAttribute('aria-label', `Basculer vers le thème ${isLight ? 'sombre' : 'clair'}`);
       };
 
-      // Vérifie le thème sauvegardé dans localStorage ou utilise la préférence système
       const savedTheme = localStorage.getItem('theme');
       if (savedTheme) {
         applyTheme(savedTheme);
       } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-        // Si aucune préférence sauvegardée, utilise la préférence système
         applyTheme('light');
       } else {
-        applyTheme('dark'); // Thème sombre par défaut
+        applyTheme('dark');
       }
 
       // Écouteur d'événement pour le bouton de basculement
       themeToggle.addEventListener('click', () => {
-        if (body.classList.contains('light-theme')) {
-          applyTheme('dark');
-          localStorage.setItem('theme', 'dark');
-        } else {
-          applyTheme('light');
-          localStorage.setItem('theme', 'light');
-        }
+        const newTheme = body.classList.contains('light-theme') ? 'dark' : 'light';
+        applyTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
       });
 
-      // Intersection Observer pour les sections
+      // Intersection Observer pour les sections (animations à l'apparition)
       const sections = document.querySelectorAll('section');
       const observerOptions = {
         root: null,
         rootMargin: '0px',
         threshold: 0.1
       };
-      const observer = new IntersectionObserver((entries, observer) => {
+      const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('is-visible');
+            // Optionnel: Désactiver l'observation après la première apparition
+            // observer.unobserve(entry.target);
           }
         });
       }, observerOptions);
-      sections.forEach(section => {
-        observer.observe(section);
-      });
+      sections.forEach(section => observer.observe(section));
 
       // Bouton retour en haut
       const backToTopButton = document.getElementById('back-to-top');
       window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-          backToTopButton.style.display = 'flex';
-        } else {
-          backToTopButton.style.display = 'none';
-        }
+        backToTopButton.style.display = window.scrollY > 300 ? 'flex' : 'none';
       });
       backToTopButton.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1495,7 +1416,6 @@
             headers: { 'Accept': 'application/json' }
           });
           if (response.ok) {
-            // Événement Google Analytics pour la soumission réussie du formulaire
             gtag('event', 'formulaire_envoyé', {
               event_category: 'Contact',
               event_label: 'Formulaire réussi'
@@ -1519,7 +1439,7 @@
       const contactSection = document.getElementById('contact');
       const contactContent = document.getElementById('contactContent');
       const contactToggleIcon = document.getElementById('contactToggleIcon');
-      const isContactExpanded = localStorage.getItem('contactExpanded') === 'true'; // Récupère l'état depuis localStorage
+      const isContactExpanded = localStorage.getItem('contactExpanded') === 'true';
 
       // Applique l'état sauvegardé au chargement
       if (isContactExpanded) {
@@ -1528,341 +1448,339 @@
       }
 
       contactSection.addEventListener('click', (event) => {
-          // S'assure que le clic est sur le titre H2 ou son icône
           if (event.target.closest('h2')) {
               contactContent.classList.toggle('expanded');
               contactToggleIcon.classList.toggle('rotated');
-              // Sauvegarde l'état actuel dans localStorage
-              const isExpanded = contactContent.classList.contains('expanded');
-              localStorage.setItem('contactExpanded', isExpanded);
+              localStorage.setItem('contactExpanded', contactContent.classList.contains('expanded'));
           }
       });
 
       // --- LOGIQUE DU CARROUSEL (PHOTOS) ---
-      function initializeCarousel(carouselId) {
-        const carouselContainer = document.getElementById(carouselId);
-        if (!carouselContainer) return;
+      class Carousel {
+        constructor(carouselId) {
+          this.carouselContainer = document.getElementById(carouselId);
+          if (!this.carouselContainer) return;
 
-        const carouselTrack = carouselContainer.querySelector('.carousel-track');
-        const photoItems = Array.from(carouselTrack.querySelectorAll('.photo-item'));
-        const prevButton = carouselContainer.querySelector('.prev-button');
-        const nextButton = carouselContainer.querySelector('.next-button');
+          this.carouselTrack = this.carouselContainer.querySelector('.carousel-track');
+          this.photoItems = Array.from(this.carouselTrack.querySelectorAll('.photo-item'));
+          this.prevButton = this.carouselContainer.querySelector('.prev-button');
+          this.nextButton = this.carouselContainer.querySelector('.next-button');
 
-        let currentIndex = 0;
-        let itemsPerView = 1;
-        let autoScrollInterval;
-        const autoScrollDelay = 3000;
-        const manualInteractionPause = 5000;
+          this.currentIndex = 0;
+          this.itemsPerView = 1;
+          this.autoScrollInterval = null;
+          this.autoScrollDelay = 3000;
+          this.manualInteractionPause = 5000;
 
-        const calculateItemsPerPage = () => {
-            if (photoItems.length === 0) {
-                itemsPerView = 1;
-                return;
-            }
-            const firstItem = photoItems[0];
-            if (firstItem && firstItem.querySelector('img') && firstItem.querySelector('img').naturalWidth === 0) {
-                firstItem.querySelector('img').onload = () => {
-                    updateCarouselPosition();
-                };
-                return;
-            }
+          this.init();
+        }
 
-            const itemWidth = firstItem ? firstItem.offsetWidth + (parseFloat(getComputedStyle(firstItem).marginRight) || 0) : 0;
-            const containerWidth = carouselContainer.offsetWidth;
+        init() {
+          this.addEventListeners();
+          window.addEventListener('load', () => {
+            this.updateCarouselPosition();
+            this.startAutoScroll();
+          });
+          window.addEventListener('resize', () => {
+            this.currentIndex = 0; // Reset index on resize for simpler logic
+            this.updateCarouselPosition();
+            this.stopAutoScroll();
+            this.startAutoScroll();
+          });
+          // Initial calculation in case images are already loaded
+          this.calculateItemsPerPage();
+        }
 
-            if (itemWidth > 0 && containerWidth > 0) {
-                if (window.innerWidth >= 992) {
-                    itemsPerView = Math.floor(containerWidth / itemWidth);
-                    itemsPerView = Math.max(3, itemsPerView);
-                } else if (window.innerWidth >= 768) {
-                    itemsPerView = Math.floor(containerWidth / itemWidth);
-                    itemsPerView = Math.max(2, itemsPerView);
-                } else {
-                    itemsPerView = 1;
-                }
-                itemsPerView = Math.min(itemsPerView, photoItems.length);
-            } else {
-                itemsPerView = 1;
-            }
-            carouselContainer.style.setProperty('--items-per-view', itemsPerView);
-            carouselContainer.style.setProperty('--gap-width', '1rem');
-        };
-
-        const updateCarouselPosition = () => {
-          calculateItemsPerPage();
-          const itemWidth = photoItems.length > 0 ? photoItems[0].offsetWidth + (parseFloat(getComputedStyle(photoItems[0]).marginRight) || 0) : 0;
-          carouselTrack.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-
-          prevButton.disabled = currentIndex === 0;
-          nextButton.disabled = currentIndex >= photoItems.length - itemsPerView;
-        };
-
-        const startAutoScroll = () => {
-            stopAutoScroll();
-            if (photoItems.length <= itemsPerView) return;
-            autoScrollInterval = setInterval(() => {
-                currentIndex++;
-                if (currentIndex > photoItems.length - itemsPerView) {
-                    currentIndex = 0;
-                }
-                updateCarouselPosition();
-            }, autoScrollDelay);
-        };
-
-        const stopAutoScroll = () => {
-            clearInterval(autoScrollInterval);
-        };
-
-        prevButton.addEventListener('click', () => {
-          stopAutoScroll();
-          if (currentIndex > 0) {
-            currentIndex = Math.max(0, currentIndex - itemsPerView);
-            updateCarouselPosition();
+        calculateItemsPerPage() {
+          if (this.photoItems.length === 0) {
+              this.itemsPerView = 1;
+              return;
           }
-          setTimeout(startAutoScroll, manualInteractionPause);
-        });
-
-        nextButton.addEventListener('click', () => {
-          stopAutoScroll();
-          if (currentIndex < photoItems.length - itemsPerView) {
-            currentIndex = Math.min(photoItems.length - itemsPerView, currentIndex + itemsPerView);
-            updateCarouselPosition();
+          const firstItem = this.photoItems[0];
+          // Ensure image is loaded before calculating width
+          if (firstItem && firstItem.querySelector('img') && !firstItem.querySelector('img').complete) {
+              firstItem.querySelector('img').onload = () => this.updateCarouselPosition();
+              return;
           }
-          setTimeout(startAutoScroll, manualInteractionPause);
-        });
 
-        carouselContainer.addEventListener('mouseenter', stopAutoScroll);
-        carouselContainer.addEventListener('mouseleave', startAutoScroll);
+          const itemWidth = firstItem ? firstItem.offsetWidth + (parseFloat(getComputedStyle(firstItem).marginRight) || 0) : 0;
+          const containerWidth = this.carouselContainer.offsetWidth;
 
-        window.addEventListener('load', () => {
-            updateCarouselPosition();
-            startAutoScroll();
-        });
+          if (itemWidth > 0 && containerWidth > 0) {
+              if (window.innerWidth >= 992) {
+                  this.itemsPerView = Math.floor(containerWidth / itemWidth);
+                  this.itemsPerView = Math.max(3, this.itemsPerView); // Minimum 3 items on large screens
+              } else if (window.innerWidth >= 768) {
+                  this.itemsPerView = Math.floor(containerWidth / itemWidth);
+                  this.itemsPerView = Math.max(2, this.itemsPerView); // Minimum 2 items on medium screens
+              } else {
+                  this.itemsPerView = 1; // 1 item on small screens
+              }
+              this.itemsPerView = Math.min(this.itemsPerView, this.photoItems.length);
+          } else {
+              this.itemsPerView = 1;
+          }
+          this.carouselContainer.style.setProperty('--items-per-view', this.itemsPerView);
+          this.carouselContainer.style.setProperty('--gap-width', '1rem');
+        }
 
-        window.addEventListener('resize', () => {
-            currentIndex = 0;
-            updateCarouselPosition();
-            stopAutoScroll();
-            startAutoScroll();
-        });
+        updateCarouselPosition() {
+          this.calculateItemsPerPage();
+          const itemWidth = this.photoItems.length > 0 ? this.photoItems[0].offsetWidth + (parseFloat(getComputedStyle(this.photoItems[0]).marginRight) || 0) : 0;
+          this.carouselTrack.style.transform = `translateX(-${this.currentIndex * itemWidth}px)`;
+
+          this.prevButton.disabled = this.currentIndex === 0;
+          this.nextButton.disabled = this.currentIndex >= this.photoItems.length - this.itemsPerView;
+        }
+
+        startAutoScroll() {
+            this.stopAutoScroll();
+            if (this.photoItems.length <= this.itemsPerView) return;
+            this.autoScrollInterval = setInterval(() => {
+                this.currentIndex++;
+                if (this.currentIndex > this.photoItems.length - this.itemsPerView) {
+                    this.currentIndex = 0;
+                }
+                this.updateCarouselPosition();
+            }, this.autoScrollDelay);
+        }
+
+        stopAutoScroll() {
+            clearInterval(this.autoScrollInterval);
+        }
+
+        addEventListeners() {
+          this.prevButton.addEventListener('click', () => {
+            this.stopAutoScroll();
+            this.currentIndex = Math.max(0, this.currentIndex - this.itemsPerView);
+            this.updateCarouselPosition();
+            setTimeout(() => this.startAutoScroll(), this.manualInteractionPause);
+          });
+
+          this.nextButton.addEventListener('click', () => {
+            this.stopAutoScroll();
+            this.currentIndex = Math.min(this.photoItems.length - this.itemsPerView, this.currentIndex + this.itemsPerView);
+            this.updateCarouselPosition();
+            setTimeout(() => this.startAutoScroll(), this.manualInteractionPause);
+          });
+
+          this.carouselContainer.addEventListener('mouseenter', () => this.stopAutoScroll());
+          this.carouselContainer.addEventListener('mouseleave', () => this.startAutoScroll());
+        }
       }
 
-      initializeCarousel('carousel-aerienne');
-      initializeCarousel('carousel-portrait');
-      initializeCarousel('carousel-paysage');
-
+      new Carousel('carousel-aerienne');
+      new Carousel('carousel-portrait');
+      new Carousel('carousel-paysage');
 
       // --- LOGIQUE DE LA LIGHTBOX (PHOTOS) ---
-      const lightbox = document.getElementById('lightbox');
-      const lightboxImage = document.getElementById('lightbox-image');
-      const lightboxCaption = document.getElementById('lightbox-caption');
-      const closeLightboxBtn = document.querySelector('.close-button');
-      const lightboxPrevBtn = document.getElementById('lightbox-prev-btn');
-      const lightboxNextBtn = document.getElementById('lightbox-next-btn');
+      class Lightbox {
+        constructor() {
+          this.lightbox = document.getElementById('lightbox');
+          this.lightboxImage = document.getElementById('lightbox-image');
+          this.lightboxCaption = document.getElementById('lightbox-caption');
+          this.closeLightboxBtn = document.querySelector('.close-button');
+          this.lightboxPrevBtn = document.getElementById('lightbox-prev-btn');
+          this.lightboxNextBtn = document.getElementById('lightbox-next-btn');
 
-      let currentPhotoIndex = 0;
-      let allPhotoItems = [];
-      let isZoomed = false;
-      let startX = 0;
-      let startY = 0;
-      let translateX = 0;
-      let translateY = 0;
-      let isDragging = false;
+          this.currentPhotoIndex = 0;
+          this.allPhotoItems = [];
+          this.isZoomed = false;
+          this.startX = 0;
+          this.startY = 0;
+          this.translateX = 0;
+          this.translateY = 0;
+          this.isDragging = false;
+          this.touchStartX = 0;
+          this.touchEndX = 0;
+          this.touchStartY = 0;
+          this.touchEndY = 0;
+          this.swipeThreshold = 50;
 
-      const collectAllPhotos = () => {
-          allPhotoItems = [];
-          document.querySelectorAll('.photo-lightbox-trigger').forEach(trigger => {
-              allPhotoItems.push({
-                  srcLarge: trigger.getAttribute('data-src-large'),
-                  altText: trigger.querySelector('img').alt,
-                  title: trigger.closest('.photo-item').querySelector('.photo-title').textContent
-              });
-          });
-      };
-      collectAllPhotos();
+          this.init();
+        }
 
-      const showPhoto = (index) => {
+        init() {
+          this.collectAllPhotos();
+          this.addEventListeners();
+        }
+
+        collectAllPhotos() {
+          this.allPhotoItems = Array.from(document.querySelectorAll('.photo-lightbox-trigger')).map(trigger => ({
+            srcLarge: trigger.getAttribute('data-src-large'),
+            altText: trigger.querySelector('img').alt,
+            title: trigger.closest('.photo-item').querySelector('.photo-title').textContent
+          }));
+        }
+
+        showPhoto(index) {
           if (index < 0) {
-              currentPhotoIndex = allPhotoItems.length - 1;
-          } else if (index >= allPhotoItems.length) {
-              currentPhotoIndex = 0;
+            this.currentPhotoIndex = this.allPhotoItems.length - 1;
+          } else if (index >= this.allPhotoItems.length) {
+            this.currentPhotoIndex = 0;
           } else {
-              currentPhotoIndex = index;
+            this.currentPhotoIndex = index;
           }
 
-          const photo = allPhotoItems[currentPhotoIndex];
-          lightboxImage.src = photo.srcLarge;
-          lightboxImage.alt = photo.altText;
-          lightboxCaption.textContent = photo.title;
+          const photo = this.allPhotoItems[this.currentPhotoIndex];
+          this.lightboxImage.src = photo.srcLarge;
+          this.lightboxImage.alt = photo.altText;
+          this.lightboxCaption.textContent = photo.title;
 
-          // Reset zoom and position when changing photo
-          lightboxImage.classList.remove('zoomed');
-          lightboxImage.style.transform = '';
-          isZoomed = false;
-          translateX = 0;
-          translateY = 0;
+          // Réinitialiser le zoom et la position
+          this.lightboxImage.classList.remove('zoomed');
+          this.lightboxImage.style.transform = '';
+          this.isZoomed = false;
+          this.translateX = 0;
+          this.translateY = 0;
 
-          // Événement Google Analytics pour l'ouverture de la lightbox (ou changement de photo)
           gtag('event', 'lightbox_ouverte', {
             event_category: 'Galerie',
             event_label: photo.title
           });
-      };
+        }
 
-      const openPhotoLightbox = (index) => {
-          showPhoto(index);
-          lightbox.classList.add('active');
+        openPhotoLightbox(index) {
+          this.showPhoto(index);
+          this.lightbox.classList.add('active');
           document.body.style.overflow = 'hidden';
-          // Add event listeners for keyboard navigation when lightbox is open
-          document.addEventListener('keydown', handleKeyboardNavigation);
-      };
+          document.addEventListener('keydown', this.handleKeyboardNavigation.bind(this));
+        }
 
-      const closePhotoLightbox = () => {
-          lightbox.classList.remove('active');
+        closePhotoLightbox() {
+          this.lightbox.classList.remove('active');
           document.body.style.overflow = 'auto';
-          // Remove event listeners for keyboard navigation when lightbox is closed
-          document.removeEventListener('keydown', handleKeyboardNavigation);
-      };
+          document.removeEventListener('keydown', this.handleKeyboardNavigation.bind(this));
+        }
 
-      const handleKeyboardNavigation = (e) => {
-          if (lightbox.classList.contains('active')) {
-              if (e.key === 'Escape') {
-                  closePhotoLightbox();
-              } else if (e.key === 'ArrowLeft') {
-                  showPrevPhoto();
-              } else if (e.key === 'ArrowRight') {
-                  showNextPhoto();
-              }
+        handleKeyboardNavigation(e) {
+          if (this.lightbox.classList.contains('active')) {
+            if (e.key === 'Escape') {
+              this.closePhotoLightbox();
+            } else if (e.key === 'ArrowLeft') {
+              this.showPhoto(this.currentPhotoIndex - 1);
+            } else if (e.key === 'ArrowRight') {
+              this.showPhoto(this.currentPhotoIndex + 1);
+            }
           }
-      };
+        }
 
-      const showPrevPhoto = () => {
-          showPhoto(currentPhotoIndex - 1);
-      };
+        handleZoomClick(e) {
+          if (e.target === this.lightboxImage) {
+            this.isZoomed = !this.isZoomed;
+            this.lightboxImage.classList.toggle('zoomed', this.isZoomed);
+            this.lightboxImage.style.transform = this.isZoomed ? `scale(2) translate(${this.translateX}px, ${this.translateY}px)` : '';
+            this.lightboxImage.style.cursor = this.isZoomed ? 'grab' : 'zoom-in';
+          }
+        }
 
-      const showNextPhoto = () => {
-          showPhoto(currentPhotoIndex + 1);
-      };
+        handleMouseDown(e) {
+          if (this.isZoomed) {
+            this.isDragging = true;
+            this.startX = e.clientX - this.translateX;
+            this.startY = e.clientY - this.translateY;
+            this.lightboxImage.style.cursor = 'grabbing';
+          }
+        }
 
-      // Event listeners for lightbox triggers
-      document.querySelectorAll('.photo-lightbox-trigger').forEach((trigger, index) => {
-          trigger.addEventListener('click', (e) => {
+        handleMouseMove(e) {
+          if (this.isDragging) {
+            this.translateX = e.clientX - this.startX;
+            this.translateY = e.clientY - this.startY;
+            this.lightboxImage.style.transform = `scale(2) translate(${this.translateX}px, ${this.translateY}px)`;
+          }
+        }
+
+        handleMouseUp() {
+          this.isDragging = false;
+          if (this.isZoomed) {
+            this.lightboxImage.style.cursor = 'grab';
+          }
+        }
+
+        handleMouseLeave() {
+          this.isDragging = false;
+          if (this.isZoomed) {
+            this.lightboxImage.style.cursor = 'grab';
+          }
+        }
+
+        handleTouchStart(e) {
+            this.touchStartX = e.touches[0].clientX;
+            this.touchStartY = e.touches[0].clientY;
+            if (this.isZoomed) {
+                e.preventDefault(); // Empêche le défilement par défaut lors du zoom/pan
+            }
+        }
+
+        handleTouchMove(e) {
+            if (this.isZoomed && e.touches.length === 1) {
+                const deltaX = e.touches[0].clientX - this.touchStartX;
+                const deltaY = e.touches[0].clientY - this.touchStartY;
+                this.translateX += deltaX;
+                this.translateY += deltaY;
+                this.lightboxImage.style.transform = `scale(2) translate(${this.translateX}px, ${this.translateY}px)`;
+                this.touchStartX = e.touches[0].clientX;
+                this.touchStartY = e.touches[0].clientY;
+                e.preventDefault();
+            } else if (!this.isZoomed && e.touches.length === 1) {
+                this.touchEndX = e.touches[0].clientX;
+                this.touchEndY = e.touches[0].clientY;
+            }
+        }
+
+        handleTouchEnd() {
+            if (!this.isZoomed) {
+                const deltaX = this.touchEndX - this.touchStartX;
+                const deltaY = this.touchEndY - this.touchStartY;
+
+                if (Math.abs(deltaX) > this.swipeThreshold && Math.abs(deltaX) > Math.abs(deltaY)) {
+                    if (deltaX > 0) {
+                        this.showPhoto(this.currentPhotoIndex - 1); // Swipe vers la droite
+                    } else {
+                        this.showPhoto(this.currentPhotoIndex + 1); // Swipe vers la gauche
+                    }
+                }
+            }
+            this.touchStartX = 0;
+            this.touchEndX = 0;
+            this.touchStartY = 0;
+            this.touchEndY = 0;
+        }
+
+        addEventListeners() {
+          document.querySelectorAll('.photo-lightbox-trigger').forEach((trigger, index) => {
+            trigger.addEventListener('click', (e) => {
               e.preventDefault();
-              openPhotoLightbox(index);
+              this.openPhotoLightbox(index);
+            });
           });
-      });
 
-      // Event listeners for lightbox close button and navigation
-      closeLightboxBtn.addEventListener('click', closePhotoLightbox);
-      lightboxPrevBtn.addEventListener('click', showPrevPhoto);
-      lightboxNextBtn.addEventListener('click', showNextPhoto);
+          this.closeLightboxBtn.addEventListener('click', this.closePhotoLightbox.bind(this));
+          this.lightboxPrevBtn.addEventListener('click', () => this.showPhoto(this.currentPhotoIndex - 1));
+          this.lightboxNextBtn.addEventListener('click', () => this.showPhoto(this.currentPhotoIndex + 1));
+          this.lightbox.addEventListener('click', (e) => {
+            if (e.target === this.lightbox) {
+              this.closePhotoLightbox();
+            }
+          });
 
-      // Close lightbox on click outside image
-      lightbox.addEventListener('click', (e) => {
-          if (e.target === lightbox) {
-              closePhotoLightbox();
-          }
-      });
+          // Zoom et Drag
+          this.lightboxImage.addEventListener('click', this.handleZoomClick.bind(this));
+          this.lightboxImage.addEventListener('mousedown', this.handleMouseDown.bind(this));
+          this.lightboxImage.addEventListener('mousemove', this.handleMouseMove.bind(this));
+          this.lightboxImage.addEventListener('mouseup', this.handleMouseUp.bind(this));
+          this.lightboxImage.addEventListener('mouseleave', this.handleMouseLeave.bind(this));
 
-      // Zoom functionality
-      lightboxImage.addEventListener('click', (e) => {
-          if (e.target === lightboxImage) { // Ensure click is directly on the image
-              isZoomed = !isZoomed;
-              lightboxImage.classList.toggle('zoomed', isZoomed);
-              lightboxImage.style.transform = isZoomed ? `scale(2) translate(${translateX}px, ${translateY}px)` : '';
-              lightboxImage.style.cursor = isZoomed ? 'grab' : 'zoom-in';
-          }
-      });
-
-      // Drag functionality for zoomed image
-      lightboxImage.addEventListener('mousedown', (e) => {
-          if (isZoomed) {
-              isDragging = true;
-              startX = e.clientX - translateX;
-              startY = e.clientY - translateY;
-              lightboxImage.style.cursor = 'grabbing';
-          }
-      });
-
-      lightboxImage.addEventListener('mousemove', (e) => {
-          if (isDragging) {
-              translateX = e.clientX - startX;
-              translateY = e.clientY - startY;
-              lightboxImage.style.transform = `scale(2) translate(${translateX}px, ${translateY}px)`;
-          }
-      });
-
-      lightboxImage.addEventListener('mouseup', () => {
-          isDragging = false;
-          if (isZoomed) {
-              lightboxImage.style.cursor = 'grab';
-          }
-      });
-
-      lightboxImage.addEventListener('mouseleave', () => {
-          isDragging = false;
-          if (isZoomed) {
-              lightboxImage.style.cursor = 'grab';
-          }
-      });
-
-      // Mobile swipe navigation
-      let touchStartX = 0;
-      let touchEndX = 0;
-      let touchStartY = 0;
-      let touchEndY = 0;
-
-      lightboxImage.addEventListener('touchstart', (e) => {
-          touchStartX = e.touches[0].clientX;
-          touchStartY = e.touches[0].clientY;
-          // Prevent default scroll behavior if we intend to zoom/pan
-          if (isZoomed) {
-              e.preventDefault();
-          }
-      });
-
-      lightboxImage.addEventListener('touchmove', (e) => {
-          if (isZoomed && e.touches.length === 1) {
-              // Pan functionality when zoomed
-              const deltaX = e.touches[0].clientX - touchStartX;
-              const deltaY = e.touches[0].clientY - touchStartY;
-              translateX += deltaX;
-              translateY += deltaY;
-              lightboxImage.style.transform = `scale(2) translate(${translateX}px, ${translateY}px)`;
-              touchStartX = e.touches[0].clientX;
-              touchStartY = e.touches[0].clientY;
-              e.preventDefault(); // Prevent scrolling
-          } else if (!isZoomed && e.touches.length === 1) {
-              // Track for swipe when not zoomed
-              touchEndX = e.touches[0].clientX;
-              touchEndY = e.touches[0].clientY;
-          }
-      });
-
-      lightboxImage.addEventListener('touchend', () => {
-          if (!isZoomed) {
-              const swipeThreshold = 50; // Minimum distance for a swipe
-              const deltaX = touchEndX - touchStartX;
-              const deltaY = touchEndY - touchStartY;
-
-              // Ensure it's primarily a horizontal swipe
-              if (Math.abs(deltaX) > swipeThreshold && Math.abs(deltaX) > Math.abs(deltaY)) {
-                  if (deltaX > 0) {
-                      showPrevPhoto(); // Swiped right
-                  } else {
-                      showNextPhoto(); // Swiped left
-                  }
-              }
-          }
-          // Reset touch coordinates
-          touchStartX = 0;
-          touchEndX = 0;
-          touchStartY = 0;
-          touchEndY = 0;
-      });
+          // Touch events for mobile
+          this.lightboxImage.addEventListener('touchstart', this.handleTouchStart.bind(this));
+          this.lightboxImage.addEventListener('touchmove', this.handleTouchMove.bind(this));
+          this.lightboxImage.addEventListener('touchend', this.handleTouchEnd.bind(this));
+        }
+      }
+      new Lightbox();
 
       // --- LOGIQUE DE SUIVI DES CLICS SUR LES VIDÉOS ---
-      // Ajoute des écouteurs d'événements aux conteneurs vidéo pour suivre les clics
       document.querySelectorAll('.video').forEach(videoDiv => {
         videoDiv.addEventListener('click', () => {
           const videoTitleElement = videoDiv.querySelector('.video-title');
@@ -1876,23 +1794,15 @@
 
       // --- OFFLINE DETECTION ---
       const offlineMessage = document.getElementById('offline-message');
-
-      const showOfflineMessage = () => {
-          offlineMessage.classList.add('show');
+      const toggleOfflineMessage = (show) => {
+          offlineMessage.classList.toggle('show', show);
       };
 
-      const hideOfflineMessage = () => {
-          offlineMessage.classList.remove('show');
-      };
-
-      // Check initial online status
       if (!navigator.onLine) {
-          showOfflineMessage();
+          toggleOfflineMessage(true);
       }
-
-      // Listen for online/offline events
-      window.addEventListener('offline', showOfflineMessage);
-      window.addEventListener('online', hideOfflineMessage);
+      window.addEventListener('offline', () => toggleOfflineMessage(true));
+      window.addEventListener('online', () => toggleOfflineMessage(false));
 
       // --- LOGIQUE DU LOADER ---
       const loader = document.getElementById('loader');
