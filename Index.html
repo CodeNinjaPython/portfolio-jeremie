@@ -530,7 +530,7 @@
 
     .carousel-nav-button {
         background-color: rgba(0, 0, 0, 0.5); /* Peut rester fixe */
-        color: var(--white); /* Peut rester fixe */
+        color: #fff; /* Peut rester fixe */
         border: none;
         border-radius: 50%;
         width: 40px;
@@ -789,7 +789,7 @@
       top: 0;
       width: 100%;
       height: 100%;
-      overflow: auto;
+      overflow: hidden; /* Changed to hidden to prevent scroll during zoom/pan */
       background-color: rgba(0,0,0,0.9);
     }
 
@@ -816,23 +816,44 @@
       to {transform: scale(1)}
     }
 
+    /* Lightbox enhancements */
+    .lightbox-content.zoomable {
+        cursor: zoom-in;
+        transition: transform 0.3s ease-in-out;
+        transform-origin: center center; /* Ensures zoom is from the center */
+    }
+
+    .lightbox-content.zoomed {
+        transform: scale(2); /* Example zoom level */
+        cursor: grab;
+        /* Allow dragging when zoomed */
+        touch-action: none; /* Prevent default touch actions like pan-zoom */
+    }
+
+    /* Adjust close button for better visibility */
     .close-button {
       position: absolute;
-      top: 15px;
-      right: 35px;
+      top: 20px; /* Slightly adjusted */
+      right: 25px; /* Slightly adjusted */
       color: #f1f1f1;
-      font-size: 40px;
+      font-size: 45px; /* Slightly larger */
       font-weight: bold;
       transition: 0.3s;
       cursor: pointer;
       z-index: 1001;
+      background-color: rgba(0,0,0,0.5); /* Add background for visibility */
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .close-button:hover,
     .close-button:focus {
       color: #bbb;
-      text-decoration: none;
-      cursor: pointer;
+      background-color: rgba(0,0,0,0.7);
     }
 
     .lightbox-caption {
@@ -842,6 +863,62 @@
       font-size: 1.2rem;
       padding: 10px 0;
       max-width: 90%;
+    }
+
+    /* Lightbox navigation buttons */
+    .lightbox-nav-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #f1f1f1;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        font-size: 2rem;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 0.3s ease;
+        z-index: 1001;
+    }
+
+    .lightbox-nav-button:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .lightbox-nav-button.prev {
+        left: 20px;
+    }
+
+    .lightbox-nav-button.next {
+        right: 20px;
+    }
+
+    /* Styles for offline message */
+    #offline-message {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #ffc107; /* Warning yellow */
+        color: #343a40; /* Dark text */
+        padding: 15px 25px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        z-index: 1002; /* Above lightbox */
+        display: none; /* Hidden by default */
+        font-weight: bold;
+        text-align: center;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    #offline-message.show {
+        opacity: 1;
+        display: block;
     }
 
     /* Styles pour le loader */
@@ -915,7 +992,7 @@
         .top-banner {
             font-size: 1.4rem;
             padding: 8px 50px;
-            left: -30px;
+            left: -30px; /* Adjusted from -50px */
         }
         nav ul {
             flex-direction: column;
@@ -932,22 +1009,20 @@
             height: 140px;
         }
         .photo-item {
-            width: 100%;
+            width: 100%; /* Ensures single item per row */
+            margin-right: 0; /* Remove margin for single item when it's the only one per row */
         }
         .carousel-nav-buttons {
             padding: 0 5px;
         }
         nav {
-          flex-direction: column; /* La nav devient une colonne sur mobile */
-          padding-bottom: 1rem; /* Ajustement du padding */
+          flex-direction: column;
+          padding-bottom: 1rem;
         }
         #theme-toggle {
-          margin-top: 1rem; /* Espace le bouton du reste de la nav */
-          margin-right: 0; /* Centre le bouton */
+          margin-top: 1rem;
+          margin-right: 0;
         }
-
-
-        /* Ajustements pour le loader sur mobile */
         #loader img {
             width: 100px;
             height: 100px;
@@ -957,6 +1032,107 @@
         }
         #loader p {
             font-size: 1.2rem;
+        }
+        .close-button {
+            font-size: 35px;
+            width: 40px;
+            height: 40px;
+            top: 10px;
+            right: 10px;
+        }
+        .lightbox-nav-button {
+            width: 40px;
+            height: 40px;
+            font-size: 1.5rem;
+            left: 10px;
+            right: 10px;
+        }
+        .lightbox-content.zoomed {
+            transform: scale(1.5); /* Less zoom on mobile */
+        }
+        /* Specific adjustments for smaller screens within this breakpoint */
+        .contact-info p, .skill-item {
+            font-size: 1rem; /* Slightly smaller text for better fit */
+        }
+        .contact-info i, .skill-item i {
+            font-size: 1.4rem; /* Adjust icon size */
+        }
+        .contact-form input, .contact-form textarea {
+            width: calc(100% - 20px); /* Ensure full width */
+            padding: 8px; /* Slightly less padding */
+            margin-bottom: 1rem; /* Less margin */
+        }
+        .contact-form button {
+            padding: 10px 20px; /* Smaller button */
+            font-size: 1.1rem;
+        }
+        .success-message {
+            padding: 0.8rem;
+            font-size: 0.9rem;
+        }
+        footer {
+            padding: 1.5rem 1rem; /* Reduced footer padding */
+        }
+    }
+
+    /* New breakpoint for very small mobile devices (e.g., iPhone SE, older Androids) */
+    @media (max-width: 480px) {
+        h1 {
+            font-size: 2.2rem;
+        }
+        h2 {
+            font-size: 1.5rem;
+        }
+        .top-banner {
+            font-size: 1.2rem;
+            padding: 6px 40px;
+            left: -10px; /* Even further adjustment */
+        }
+        header {
+            padding: 3rem 0.5rem 2rem; /* Reduced header padding */
+        }
+        .profile-photo {
+            width: 120px;
+            height: 120px;
+        }
+        nav ul {
+            gap: 0.8rem;
+        }
+        nav a {
+            padding: 0.4rem 0.8rem;
+        }
+        .main-content {
+            gap: 3rem; /* Reduced gap between sections */
+            padding: 0 1rem; /* Reduced horizontal padding */
+        }
+        section {
+            padding: 1rem; /* Reduced section padding */
+        }
+        .video {
+            padding: 10px; /* Reduced video item padding */
+        }
+        .video-title {
+            font-size: 1rem;
+        }
+        .photo-item {
+            padding: 8px; /* Reduced photo item padding */
+        }
+        .photo-item img {
+            height: 150px; /* Slightly smaller image height */
+        }
+        .photo-title {
+            font-size: 0.85rem;
+        }
+        #back-to-top {
+            width: 40px;
+            height: 40px;
+            font-size: 1.2rem;
+            bottom: 15px;
+            right: 15px;
+        }
+        #offline-message {
+            padding: 10px 15px;
+            font-size: 0.9rem;
         }
     }
   </style>
@@ -1221,8 +1397,14 @@
 
   <div id="lightbox" class="lightbox">
     <span class="close-button">×</span>
-    <img class="lightbox-content" id="lightbox-image" src="" alt="Image agrandie">
+    <img class="lightbox-content zoomable" id="lightbox-image" src="" alt="Image agrandie">
     <div id="lightbox-caption" class="lightbox-caption"></div>
+    <button class="lightbox-nav-button prev" id="lightbox-prev-btn"><i class="fas fa-chevron-left"></i></button>
+    <button class="lightbox-nav-button next" id="lightbox-next-btn"><i class="fas fa-chevron-right"></i></button>
+  </div>
+
+  <div id="offline-message">
+    Vous êtes hors ligne, certaines vidéos peuvent ne pas s’afficher.
   </div>
 
   <script>
@@ -1475,9 +1657,17 @@
       const lightboxImage = document.getElementById('lightbox-image');
       const lightboxCaption = document.getElementById('lightbox-caption');
       const closeLightboxBtn = document.querySelector('.close-button');
+      const lightboxPrevBtn = document.getElementById('lightbox-prev-btn');
+      const lightboxNextBtn = document.getElementById('lightbox-next-btn');
 
       let currentPhotoIndex = 0;
       let allPhotoItems = [];
+      let isZoomed = false;
+      let startX = 0;
+      let startY = 0;
+      let translateX = 0;
+      let translateY = 0;
+      let isDragging = false;
 
       const collectAllPhotos = () => {
           allPhotoItems = [];
@@ -1491,23 +1681,70 @@
       };
       collectAllPhotos();
 
-      function openPhotoLightbox(index) {
-          currentPhotoIndex = index;
+      const showPhoto = (index) => {
+          if (index < 0) {
+              currentPhotoIndex = allPhotoItems.length - 1;
+          } else if (index >= allPhotoItems.length) {
+              currentPhotoIndex = 0;
+          } else {
+              currentPhotoIndex = index;
+          }
+
           const photo = allPhotoItems[currentPhotoIndex];
           lightboxImage.src = photo.srcLarge;
           lightboxImage.alt = photo.altText;
           lightboxCaption.textContent = photo.title;
 
-          // Événement Google Analytics pour l'ouverture de la lightbox
+          // Reset zoom and position when changing photo
+          lightboxImage.classList.remove('zoomed');
+          lightboxImage.style.transform = '';
+          isZoomed = false;
+          translateX = 0;
+          translateY = 0;
+
+          // Événement Google Analytics pour l'ouverture de la lightbox (ou changement de photo)
           gtag('event', 'lightbox_ouverte', {
             event_category: 'Galerie',
             event_label: photo.title
           });
+      };
 
+      const openPhotoLightbox = (index) => {
+          showPhoto(index);
           lightbox.classList.add('active');
           document.body.style.overflow = 'hidden';
-      }
+          // Add event listeners for keyboard navigation when lightbox is open
+          document.addEventListener('keydown', handleKeyboardNavigation);
+      };
 
+      const closePhotoLightbox = () => {
+          lightbox.classList.remove('active');
+          document.body.style.overflow = 'auto';
+          // Remove event listeners for keyboard navigation when lightbox is closed
+          document.removeEventListener('keydown', handleKeyboardNavigation);
+      };
+
+      const handleKeyboardNavigation = (e) => {
+          if (lightbox.classList.contains('active')) {
+              if (e.key === 'Escape') {
+                  closePhotoLightbox();
+              } else if (e.key === 'ArrowLeft') {
+                  showPrevPhoto();
+              } else if (e.key === 'ArrowRight') {
+                  showNextPhoto();
+              }
+          }
+      };
+
+      const showPrevPhoto = () => {
+          showPhoto(currentPhotoIndex - 1);
+      };
+
+      const showNextPhoto = () => {
+          showPhoto(currentPhotoIndex + 1);
+      };
+
+      // Event listeners for lightbox triggers
       document.querySelectorAll('.photo-lightbox-trigger').forEach((trigger, index) => {
           trigger.addEventListener('click', (e) => {
               e.preventDefault();
@@ -1515,24 +1752,113 @@
           });
       });
 
-      closeLightboxBtn.addEventListener('click', () => {
-          lightbox.classList.remove('active');
-          document.body.style.overflow = 'auto';
-      });
+      // Event listeners for lightbox close button and navigation
+      closeLightboxBtn.addEventListener('click', closePhotoLightbox);
+      lightboxPrevBtn.addEventListener('click', showPrevPhoto);
+      lightboxNextBtn.addEventListener('click', showNextPhoto);
 
+      // Close lightbox on click outside image
       lightbox.addEventListener('click', (e) => {
           if (e.target === lightbox) {
-              lightbox.classList.remove('active');
-              document.body.style.overflow = 'auto';
+              closePhotoLightbox();
           }
       });
 
-      document.addEventListener('keydown', (e) => {
-          if (lightbox.classList.contains('active')) {
-              if (e.key === 'Escape') {
-                  closeLightboxBtn.click();
+      // Zoom functionality
+      lightboxImage.addEventListener('click', (e) => {
+          if (e.target === lightboxImage) { // Ensure click is directly on the image
+              isZoomed = !isZoomed;
+              lightboxImage.classList.toggle('zoomed', isZoomed);
+              lightboxImage.style.transform = isZoomed ? `scale(2) translate(${translateX}px, ${translateY}px)` : '';
+              lightboxImage.style.cursor = isZoomed ? 'grab' : 'zoom-in';
+          }
+      });
+
+      // Drag functionality for zoomed image
+      lightboxImage.addEventListener('mousedown', (e) => {
+          if (isZoomed) {
+              isDragging = true;
+              startX = e.clientX - translateX;
+              startY = e.clientY - translateY;
+              lightboxImage.style.cursor = 'grabbing';
+          }
+      });
+
+      lightboxImage.addEventListener('mousemove', (e) => {
+          if (isDragging) {
+              translateX = e.clientX - startX;
+              translateY = e.clientY - startY;
+              lightboxImage.style.transform = `scale(2) translate(${translateX}px, ${translateY}px)`;
+          }
+      });
+
+      lightboxImage.addEventListener('mouseup', () => {
+          isDragging = false;
+          if (isZoomed) {
+              lightboxImage.style.cursor = 'grab';
+          }
+      });
+
+      lightboxImage.addEventListener('mouseleave', () => {
+          isDragging = false;
+          if (isZoomed) {
+              lightboxImage.style.cursor = 'grab';
+          }
+      });
+
+      // Mobile swipe navigation
+      let touchStartX = 0;
+      let touchEndX = 0;
+      let touchStartY = 0;
+      let touchEndY = 0;
+
+      lightboxImage.addEventListener('touchstart', (e) => {
+          touchStartX = e.touches[0].clientX;
+          touchStartY = e.touches[0].clientY;
+          // Prevent default scroll behavior if we intend to zoom/pan
+          if (isZoomed) {
+              e.preventDefault();
+          }
+      });
+
+      lightboxImage.addEventListener('touchmove', (e) => {
+          if (isZoomed && e.touches.length === 1) {
+              // Pan functionality when zoomed
+              const deltaX = e.touches[0].clientX - touchStartX;
+              const deltaY = e.touches[0].clientY - touchStartY;
+              translateX += deltaX;
+              translateY += deltaY;
+              lightboxImage.style.transform = `scale(2) translate(${translateX}px, ${translateY}px)`;
+              touchStartX = e.touches[0].clientX;
+              touchStartY = e.touches[0].clientY;
+              e.preventDefault(); // Prevent scrolling
+          } else if (!isZoomed && e.touches.length === 1) {
+              // Track for swipe when not zoomed
+              touchEndX = e.touches[0].clientX;
+              touchEndY = e.touches[0].clientY;
+          }
+      });
+
+      lightboxImage.addEventListener('touchend', () => {
+          if (!isZoomed) {
+              const swipeThreshold = 50; // Minimum distance for a swipe
+              const deltaX = touchEndX - touchStartX;
+              const deltaY = touchEndY - touchStartY;
+
+              // Ensure it's primarily a horizontal swipe
+              if (Math.abs(deltaX) > swipeThreshold && Math.abs(deltaX) > Math.abs(deltaY)) {
+                  if (deltaX > 0) {
+                      showPrevPhoto(); // Swiped right
+                  } else {
+                      showNextPhoto(); // Swiped left
+                  }
               }
           }
+          // Reset touch coordinates
+          touchStartX = 0;
+          touchEndX = 0;
+          touchStartY = 0;
+          touchEndY = 0;
       });
 
       // --- LOGIQUE DE SUIVI DES CLICS SUR LES VIDÉOS ---
@@ -1547,6 +1873,26 @@
           });
         });
       });
+
+      // --- OFFLINE DETECTION ---
+      const offlineMessage = document.getElementById('offline-message');
+
+      const showOfflineMessage = () => {
+          offlineMessage.classList.add('show');
+      };
+
+      const hideOfflineMessage = () => {
+          offlineMessage.classList.remove('show');
+      };
+
+      // Check initial online status
+      if (!navigator.onLine) {
+          showOfflineMessage();
+      }
+
+      // Listen for online/offline events
+      window.addEventListener('offline', showOfflineMessage);
+      window.addEventListener('online', hideOfflineMessage);
 
       // --- LOGIQUE DU LOADER ---
       const loader = document.getElementById('loader');
