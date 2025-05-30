@@ -203,7 +203,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1.5rem;
+      gap: 2rem; /* Augmenté pour plus d'espace */
     }
 
     .profile-photo {
@@ -226,8 +226,28 @@
 
     .header p {
       font-size: 1.3rem;
-      margin-top: 0;
       font-weight: 300;
+      /* margin-top et margin-bottom gérés par le gap du parent */
+    }
+
+    /* Styles pour les icônes de réseaux sociaux dans l'en-tête */
+    .social-links {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center; /* Centrer les icônes horizontalement */
+      /* margin-top géré par le gap du parent */
+    }
+
+    .social-links a {
+      color: var(--text-color);
+      font-size: 2rem;
+      transition: color 0.3s ease, transform 0.3s ease;
+      text-decoration: none; /* Assure que les liens ne sont pas soulignés */
+    }
+
+    .social-links a:hover {
+      color: var(--accent-color);
+      transform: scale(1.1);
     }
 
     /* Bannière "VIDÉASTE - CADREUR MONTEUR" */
@@ -252,7 +272,7 @@
       background-color: var(--nav-bg);
       padding: 1.5rem 0;
       width: 100%;
-      margin-top: -3rem;
+      margin-top: -2rem; /* Réduit le chevauchement avec l'en-tête */
       z-index: 10;
       box-shadow: 0 4px 8px var(--shadow-color);
       position: relative;
@@ -1108,7 +1128,12 @@
         <img src="unnamed.jpg" alt="Portrait de Jérémie Favre souriant, regardant l'objectif, centré dans un cercle à fond neutre, ambiance professionnelle et chaleureuse" style="width:100%; height:100%; object-fit:cover; object-position:center;">
       </div>
       <h1>Jérémie FAVRE</h1>
-      <p>Vidéaste basé à La Réunion</p>
+      <p>Votre nouvelle phrase ici</p>
+      <div class="social-links">
+        <a href="https://www.instagram.com/j3remie_fvr" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/j%C3%A9r%C3%A9mie-favre-98442a225/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.tiktok.com/@jeremie.favre" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+      </div>
     </div>
   </header>
 
