@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="9ca2ce88-942f-428b-9100-65869676c999" type="text/javascript" async></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jérémie FAVRE - Vidéaste</title>
+  <meta name="description" content="Portfolio de Jérémie Favre, vidéaste et cadreur-monteur basé à La Réunion. Découvrez mes projets vidéo, compétences et contactez-me pour vos réalisations.">
+  <meta name="keywords" content="Jérémie Favre, vidéaste, cadreur, monteur, La Réunion, production vidéo, after effects, premiere pro, drone, FPV, portfolio, vidéo, film, publicité">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#1a1a1a">
+
+  <meta property="og:title" content="Jérémie FAVRE - Vidéaste à La Réunion">
+  <meta property="og:description" content="Portfolio de Jérémie Favre, vidéaste et cadreur-monteur basé à La Réunion.">
+  <meta property="og:image" content="[Image of Jérémie Favre]"> <meta property="og:url" content="https://www.jeremiefavre.com">
+  <meta property="og:type" content="website">
+
+  <style>
+    /* Styles généraux */
+    body {
+      font-family: 'Lato', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #1a1a1a;
+      color: #f0f0f0;
+      line-height: 1.6;
+      overflow-x: hidden; /* Empêche le défilement horizontal */
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Bebas Neue', sans-serif;
+      color: #e0e0e0;
+      letter-spacing: 1.5px;
+    }
+
+    a {
+      color: #00bfff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #008cba;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Loader */
+    #loader {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #1a1a1a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      opacity: 1;
+      transition: opacity 0.5s ease-out;
+    }
+
+    #loader.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .spinner {
+      border: 8px solid rgba(255, 255, 255, 0.3);
+      border-top: 8px solid #00bfff;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Message hors ligne */
+    #offline-message {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #ffc107;
+      color: #333;
+      padding: 10px 20px;
+      border-radius: 5px;
+      z-index: 1000;
+      display: none;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    #offline-message.show {
+      display: block;
+      opacity: 1;
+    }
+
+    /* Header/Hero Section */
+    #hero {
+      position: relative;
+      background-color: #333; /* Couleur grise par défaut */
+      background-image: url('texture-de-papier-blanc.jpg'); /* Ajout de la texture */
+      background-size: cover; /* Couvre toute la zone */
+      background-position: center; /* Centre l'image */
+      background-repeat: no-repeat; /* Empêche la répétition */
+      background-blend-mode: multiply; /* Mélange la texture avec la couleur de fond */
+      padding: 100px 20px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5); /* Overlay sombre pour améliorer la lisibilité du texte */
+      z-index: 1;
+    }
+
+    #hero .content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    #hero .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #00bfff;
+      margin-bottom: 20px;
+      box-shadow: 0 0 15px rgba(0, 191, 255, 0.5);
+    }
+
+    #hero h1 {
+      font-size: 3.5em;
+      margin-bottom: 10px;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    #hero p {
+      font-size: 1.4em;
+      color: #e0e0e0;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    .social-links a {
+      color: #fff;
+      font-size: 1.8em;
+      margin: 0 15px;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: #00bfff;
+      transform: scale(1.2);
+    }
+
+    /* Section À Propos */
+    #about {
+      background-color: #2a2a2a;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    #about h2 {
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      color: #00bfff;
+    }
+
+    #about p {
+      font-size: 1.1em;
+      max-width: 800px;
+      margin: 0 auto 30px auto;
+      color: #ccc;
+    }
+
+    /* Section Compétences */
+    #skills {
+      background-color: #1a1a1a;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    #skills h2 {
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      color: #00bfff;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .skill-item {
+      background-color: #2a2a2a;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .skill-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 191, 255, 0.3);
+    }
+
+    .skill-item i {
+      font-size: 3em;
+      color: #00bfff;
+      margin-bottom: 15px;
+    }
+
+    .skill-item h3 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      color: #e0e0e0;
+    }
+
+    .skill-item p {
+      color: #ccc;
+    }
+
+    /* Section Portfolio */
+    #portfolio {
+      background-color: #2a2a2a;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    #portfolio h2 {
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      color: #00bfff;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .portfolio-item {
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .portfolio-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 191, 255, 0.3);
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .portfolio-item .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      height: 0;
+      overflow: hidden;
+    }
+
+    .portfolio-item .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .portfolio-item h3 {
+      font-size: 1.5em;
+      margin: 15px 0 10px;
+      color: #e0e0e0;
+      padding: 0 15px;
+    }
+
+    .portfolio-item p {
+      font-size: 0.95em;
+      color: #ccc;
+      padding: 0 15px 15px;
+    }
+
+    /* Section Contact */
+    #contact {
+      background-color: #1a1a1a;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    #contact h2 {
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      color: #00bfff;
+    }
+
+    #contact p {
+      font-size: 1.1em;
+      max-width: 800px;
+      margin: 0 auto 30px auto;
+      color: #ccc;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .contact-item {
+      background-color: #2a2a2a;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      flex: 1 1 250px;
+      min-width: 250px;
+    }
+
+    .contact-item i {
+      font-size: 2.5em;
+      color: #00bfff;
+      margin-bottom: 10px;
+    }
+
+    .contact-item h3 {
+      font-size: 1.3em;
+      margin-bottom: 5px;
+      color: #e0e0e0;
+    }
+
+    .contact-item p {
+      font-size: 1em;
+      color: #ccc;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #0d0d0d;
+      color: #aaa;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      #hero h1 {
+        font-size: 2.5em;
+      }
+
+      #hero p {
+        font-size: 1.2em;
+      }
+
+      .social-links a {
+        font-size: 1.5em;
+      }
+
+      #about h2, #skills h2, #portfolio h2, #contact h2 {
+        font-size: 2em;
+      }
+
+      .skills-grid, .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #hero {
+        padding: 80px 15px;
+      }
+
+      #hero h1 {
+        font-size: 2em;
+      }
+
+      #hero p {
+        font-size: 1em;
+      }
+
+      .social-links a {
+        font-size: 1.3em;
+        margin: 0 10px;
+      }
+
+      .contact-info {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX'); // Remplacez par votre ID de mesure GA4
+  </script>
+</head>
+<body>
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
+
+  <div id="offline-message">
+    Vous êtes hors ligne. Certaines fonctionnalités peuvent être limitées.
+  </div>
+
+  <header id="hero">
+    <div class="content">
+      <img src="https://placehold.co/150x150/00bfff/ffffff?text=JF" alt="Photo de profil de Jérémie Favre" class="profile-pic">
+      <h1>Jérémie FAVRE</h1>
+      <p>Vidéaste | Cadreur-Monteur | La Réunion</p>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/j%C3%A9r%C3%A9mie-favre-047b19225/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/jeremie_favre_video/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://vimeo.com/jeremiefavre" target="_blank" aria-label="Vimeo"><i class="fab fa-vimeo"></i></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="container">
+      <h2>À Propos de Moi</h2>
+      <p>Passionné par l'image et le mouvement, je suis un vidéaste, cadreur-monteur basé à La Réunion. Mon objectif est de transformer vos idées en récits visuels captivants. Fort d'une expérience variée, je maîtrise l'ensemble de la chaîne de production vidéo, de la conception à la post-production.</p>
+      <p>Que ce soit pour des clips promotionnels, des documentaires, des événements ou des projets plus artistiques, je m'engage à fournir un travail de qualité, adapté à vos besoins et à votre budget. J'utilise les dernières techniques et logiciels pour garantir un rendu professionnel et percutant.</p>
+    </section>
+
+    <section id="skills" class="container">
+      <h2>Mes Compétences</h2>
+      <div class="skills-grid">
+        <div class="skill-item">
+          <i class="fas fa-video"></i>
+          <h3>Production Vidéo</h3>
+          <p>De la pré-production à la livraison finale, je gère chaque étape avec rigueur et créativité.</p>
+        </div>
+        <div class="skill-item">
+          <i class="fas fa-camera"></i>
+          <h3>Cadrage</h3>
+          <p>Maîtrise des techniques de prise de vue, y compris drone et FPV pour des plans dynamiques.</p>
+        </div>
+        <div class="skill-item">
+          <i class="fas fa-cut"></i>
+          <h3>Montage Vidéo</h3>
+          <p>Expertise sur Adobe Premiere Pro et After Effects pour un montage fluide et des effets visuels.</p>
+        </div>
+        <div class="skill-item">
+          <i class="fas fa-lightbulb"></i>
+          <h3>Direction Artistique</h3>
+          <p>Conseil et accompagnement pour définir l'esthétique et le message de votre projet.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="container">
+      <h2>Mon Portfolio</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <div class="video-wrapper">
+            <iframe src="https://player.vimeo.com/video/VOTRE_ID_VIDEO_1?h=VOTRE_HASH_VIDEO_1&title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <h3 class="video-title">Titre du Projet Vidéo 1</h3>
+          <p>Description courte du projet vidéo 1. Mettez en avant les points clés et votre rôle.</p>
+        </div>
+        <div class="portfolio-item">
+          <div class="video-wrapper">
+            <iframe src="https://player.vimeo.com/video/VOTRE_ID_VIDEO_2?h=VOTRE_HASH_VIDEO_2&title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <h3 class="video-title">Titre du Projet Vidéo 2</h3>
+          <p>Description courte du projet vidéo 2. Mettez en avant les points clés et votre rôle.</p>
+        </div>
+        <div class="portfolio-item">
+          <div class="video-wrapper">
+            <iframe src="https://player.vimeo.com/video/VOTRE_ID_VIDEO_3?h=VOTRE_HASH_VIDEO_3&title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <h3 class="video-title">Titre du Projet Vidéo 3</h3>
+          <p>Description courte du projet vidéo 3. Mettez en avant les points clés et votre rôle.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="container">
+      <h2>Contactez-moi</h2>
+      <p>N'hésitez pas à me contacter pour discuter de vos projets ou pour toute question. Je suis disponible pour des missions à La Réunion et au-delà.</p>
+      <div class="contact-info">
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <h3>Email</h3>
+          <p><a href="mailto:contact@jeremiefavre.com">contact@jeremiefavre.com</a></p>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <h3>Téléphone</h3>
+          <p><a href="tel:+262692XXXXXX">+262 692 XX XX XX</a></p> </div>
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <h3>Localisation</h3>
+          <p>La Réunion, France</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Jérémie FAVRE. Tous droits réservés.</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // --- LOGIQUE GOOGLE ANALYTICS (GTAG) POUR LES VIDÉOS ---
+      const videoIframes = document.querySelectorAll('#portfolio .video-wrapper iframe');
+      videoIframes.forEach(iframe => {
+        iframe.addEventListener('load', () => {
+          // Cette partie est simplifiée car l'API Vimeo est plus complexe à gérer directement via l'iframe.
+          // Pour un suivi précis, il faudrait utiliser l'API Vimeo Player.js.
+          // Ici, on déclenche un événement générique au chargement de l'iframe.
+          const videoTitleElement = iframe.closest('.portfolio-item').querySelector('.video-title');
+          const videoTitle = videoTitleElement ? videoTitleElement.textContent : 'Vidéo sans titre';
+          gtag('event', 'video_play', {
+            event_category: 'Vidéos',
+            event_label: videoTitle
+          });
+        });
+      });
+
+      // --- OFFLINE DETECTION ---
+      const offlineMessage = document.getElementById('offline-message');
+      const toggleOfflineMessage = (show) => {
+          offlineMessage.classList.toggle('show', show);
+      };
+
+      if (!navigator.onLine) {
+          toggleOfflineMessage(true);
+      }
+      window.addEventListener('offline', () => toggleOfflineMessage(true));
+      window.addEventListener('online', () => toggleOfflineMessage(false));
+
+      // --- LOGIQUE DU LOADER ---
+      const loader = document.getElementById('loader');
+      window.addEventListener('load', () => {
+        loader.classList.add('hidden');
+        loader.addEventListener('transitionend', () => {
+          loader.remove();
+        });
+      });
+    });
+  </script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(registration => {
+            console.log('ServiceWorker registered: ', registration);
+          })
+          .catch(registrationError => {
+            console.log('ServiceWorker registration failed:
+    }
+  </script>
+</body>
+</html>

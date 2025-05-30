@@ -160,6 +160,23 @@
       margin-bottom: 0;
       box-shadow: 0 8px 16px var(--shadow-color);
       transition: background 0.5s ease, box-shadow 0.5s ease;
+      /* Suppression des propriétés de background-image directes */
+    }
+
+    /* Nouveau pseudo-élément pour la texture de papier froissé */
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('images/texture-de-papier-blanc.jpg'); /* Chemin mis à jour */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0.15; /* Ajustez cette valeur pour rendre la texture plus ou moins visible */
+      z-index: 1; /* S'assure que la texture est derrière le contenu mais devant la couleur de fond */
     }
 
     /* Effet "papier déchiré" en bas de l'en-tête */
@@ -180,7 +197,7 @@
 
     .header-content {
       position: relative;
-      z-index: 2;
+      z-index: 2; /* S'assure que le contenu est au-dessus de la texture */
       max-width: 900px;
       margin: auto;
       display: flex;
@@ -1021,7 +1038,7 @@
         }
         .lightbox-content.zoomed { transform: scale(1.5); }
         .contact-info p, .skill-item { font-size: 1rem; }
-        .contact-info i, .skill-item i { font-size: 1.4rem; }
+        .contact-info i { font-size: 1.4rem; }
         .contact-form input, .contact-form textarea {
             width: calc(100% - 20px);
             padding: 8px;
