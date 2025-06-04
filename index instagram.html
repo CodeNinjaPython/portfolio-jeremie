@@ -1,0 +1,2164 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<script async="" data-cbid="9ca2ce88-942f-428b-9100-65869676c999" id="Cookiebot" src="https://consent.cookiebot.com/uc.js" type="text/javascript"></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Jérémie FAVRE - Portfolio</title>
+<meta content="Portfolio de Jérémie Favre, vidéaste et cadreur-monteur basé à La Réunion. Découvrez mes projets vidéo, compétences et contactez-me pour vos réalisations." name="description"/>
+<meta content="Jérémie Favre, vidéaste, cadreur, monteur, La Réunion, production vidéo, after effects, premiere pro, drone, FPV, portfolio, vidéo, film, publicité" name="keywords"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<link href="/manifest.json" rel="manifest"/>
+<meta content="#1a1a1a" name="theme-color"/>
+<meta content="Jérémie FAVRE - Vidéaste à La Réunion" property="og:title"/>
+<meta content="Découvrez le portfolio de Jérémie Favre, vidéaste et cadreur-monteur basé à La Réunion. Des clips dynamiques aux documentaires immersifs." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://votre-site.com" property="og:url"/>
+<meta content="https://votre-site.com/unnamed.jpg" property="og:image"/>
+<meta content="Logo de Jérémie Favre" property="og:image:alt"/>
+<meta content="fr_FR" property="og:locale"/>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ZSLE032V4E"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZSLE032V4E'); // VOTRE ID DE MESURE GOOGLE ANALYTICS
+</script>
+<style>
+    /* Variables CSS pour les couleurs (Thème Sombre par défaut) */
+    :root {
+      --bg-color: #1a1a1a;
+      --text-color: #ffffff;
+      --header-bg: #333333;
+      --section-bg: #333333;
+      --section-white-bg: #ffffff;
+      --section-white-text: #333333;
+      --nav-bg: #1a1a1a;
+      --accent-color: #e0e0e0;
+      --border-color: rgba(255,255,255,0.1);
+      --shadow-color: rgba(0,0,0,0.4);
+      --loader-bg: #1a1a1a;
+      --loader-text: #ffffff;
+      --form-bg: #f4f4f4;
+      --form-text: #333333;
+      --form-border: #333333;
+      --button-bg: #333333;
+      --button-text: #ffffff;
+      --button-hover-bg: #000;
+      --footer-bg: #333333;
+      --link-color: var(--text-color);
+      --link-hover-color: var(--accent-color);
+      --icon-color: var(--accent-color);
+      --success-bg: #d4edda;
+      --success-text: #155724;
+      --success-border: #c3e6cb;
+    }
+
+    /* Variables pour le Thème Clair */
+    body.light-theme {
+      --bg-color: #f4f4f4;
+      --text-color: #333333;
+      --header-bg: #e0e0e0;
+      --section-bg: #ffffff;
+      --section-white-bg: #333333; /* Inversé pour les sections "blanches" */
+      --section-white-text: #ffffff;
+      --nav-bg: #e0e0e0;
+      --accent-color: #1a1a1a; /* Accent plus foncé pour le thème clair */
+      --border-color: rgba(0,0,0,0.1);
+      --shadow-color: rgba(0,0,0,0.2);
+      --loader-bg: #f4f4f4;
+      --loader-text: #333333;
+      --form-bg: #ffffff;
+      --form-text: #1a1a1a;
+      --form-border: #e0e0e0;
+      --button-bg: #1a1a1a;
+      --button-text: #ffffff;
+      --button-hover-bg: #333333;
+      --footer-bg: #e0e0e0;
+      --link-color: var(--text-color);
+      --link-hover-color: var(--accent-color);
+      --icon-color: var(--accent-color);
+    }
+
+    /* Styles généraux du corps */
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Lato', Arial, sans-serif;
+      line-height: 1.6;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      overflow-x: hidden;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(rgba(255,255,255,0.01) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.01) 1px, transparent 1px);
+      background-size: 30px 30px, 30px 30px, 15px 15px, 15px 15px;
+      background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
+      transition: background-color 0.5s ease, color 0.5s ease;
+    }
+    body.light-theme {
+      background-image:
+        linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px),
+        linear-gradient(rgba(0,0,0,0.01) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.01) 1px, transparent 1px);
+    }
+
+    /* Styles des titres */
+    h1, h2, h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--text-color);
+      margin-top: 0;
+      transition: color 0.5s ease;
+    }
+    h1 {
+      font-size: 4rem;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      transform: rotate(-3deg);
+      display: inline-block;
+      background-color: var(--bg-color);
+      padding: 0 15px;
+      position: relative;
+      z-index: 1;
+    }
+    h2 {
+      font-size: 2.2rem;
+      border-bottom: 3px solid var(--accent-color);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      display: inline-block;
+      transform: rotate(-1deg);
+      padding-right: 15px;
+      transition: border-color 0.5s ease;
+    }
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--accent-color);
+      transition: color 0.5s ease;
+    }
+
+    /* En-tête */
+    header {
+      background: var(--header-bg);
+      color: var(--text-color);
+      padding: 4rem 1rem 3rem;
+      text-align: center;
+      position: relative;
+      overflow: visible;
+      margin-bottom: 0;
+      box-shadow: 0 8px 16px var(--shadow-color);
+      transition: background 0.5s ease, box-shadow 0.5s ease;
+      /* Suppression des propriétés de background-image directes */
+    }
+
+    /* Nouveau pseudo-élément pour la texture de papier froissé */
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('images/texture-de-papier-blanc.jpg'); /* Chemin mis à jour */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0.15; /* Ajustez cette valeur pour rendre la texture plus ou moins visible */
+      z-index: 1; /* S'assure que la texture est derrière le contenu mais devant la couleur de fond */
+    }
+
+    /* Effet "papier déchiré" en bas de l'en-tête */
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -30px;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background-color: var(--bg-color); /* Correspond au fond du body */
+      transform: skewY(2deg);
+      transform-origin: bottom left;
+      z-index: 5;
+      box-shadow: 0 8px 15px var(--shadow-color);
+      transition: background-color 0.5s ease, box-shadow 0.5s ease;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 2; /* S'assure que le contenu est au-dessus de la texture */
+      max-width: 900px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem; /* Augmenté pour plus d'espace */
+    }
+
+    .profile-photo {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background-color: var(--light-grey);
+      border: 6px solid var(--text-color);
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 0 0 10px rgba(255,255,255,0.1);
+      transition: border-color 0.5s ease;
+    }
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .header p {
+      font-size: 1.3rem;
+      font-weight: 300;
+      /* margin-top et margin-bottom gérés par le gap du parent */
+    }
+
+    /* Styles pour les icônes de réseaux sociaux dans l'en-tête */
+    .social-links {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center; /* Centrer les icônes horizontalement */
+      /* margin-top géré par le gap du parent */
+    }
+
+    .social-links a {
+      color: var(--text-color);
+      font-size: 2rem;
+      transition: color 0.3s ease, transform 0.3s ease;
+      text-decoration: none; /* Assure que les liens ne sont pas soulignés */
+    }
+
+    .social-links a:hover {
+      color: var(--accent-color);
+      transform: scale(1.1);
+    }
+
+    /* Bannière "VIDÉASTE - CADREUR MONTEUR" */
+    .top-banner {
+      position: absolute;
+      top: 20px;
+      left: -50px;
+      background-color: var(--accent-color);
+      color: var(--bg-color);
+      padding: 10px 80px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+      transform: rotate(-10deg);
+      z-index: 3;
+      box-shadow: 2px 2px 8px var(--shadow-color);
+      transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
+    }
+
+    /* Navigation */
+    nav {
+      background-color: var(--nav-bg);
+      padding: 1.5rem 0;
+      width: 100%;
+      margin-top: -2rem; /* Réduit le chevauchement avec l'en-tête */
+      z-index: 10;
+      box-shadow: 0 4px 8px var(--shadow-color);
+      position: relative;
+      transition: background-color 0.5s ease, box-shadow 0.5s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-grow: 1;
+    }
+    nav a {
+      color: var(--link-color);
+      text-decoration: none;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      padding: 0.5rem 1rem;
+      transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+      position: relative;
+    }
+    nav a:hover {
+      color: var(--link-hover-color);
+      transform: translateY(-5px);
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 100%;
+      height: 2px;
+      background-color: var(--accent-color);
+      transform: translateX(-50%) scaleX(0);
+      transform-origin: center;
+      transition: transform 0.3s ease-out, background-color 0.5s ease;
+    }
+    nav a:hover::after {
+      transform: translateX(-50%) scaleX(1);
+    }
+
+    /* Bouton de thème */
+    #theme-toggle {
+      background: none;
+      border: none;
+      color: var(--link-color);
+      font-size: 1.5rem;
+      cursor: pointer;
+      margin-right: 1.5rem;
+      transition: color 0.3s ease;
+      padding: 0.5rem;
+    }
+    #theme-toggle:hover {
+      color: var(--link-hover-color);
+    }
+
+    /* Contenu principal (grille) */
+    .main-content {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 5rem;
+      max-width: 950px;
+      margin: auto;
+      padding: 0 1.5rem;
+      position: relative;
+    }
+
+    /* Sections de contenu */
+    section {
+      background-color: var(--section-bg);
+      padding: 2.5rem;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px var(--shadow-color);
+      border: 1px solid var(--border-color);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease, border-color 0.5s ease;
+      opacity: 1; /* Initial state for animation */
+      transform: translateY(0); /* Initial state for animation */
+      position: relative;
+      overflow: visible;
+    }
+    section.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px var(--shadow-color);
+    }
+
+    /* Effet "papier déchiré" (skew) au bas de chaque section, SAUF la dernière */
+    section:not(#contact)::after {
+      content: '';
+      position: absolute;
+      bottom: -30px;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background-color: var(--bg-color); /* Correspond au fond du body */
+      z-index: 5;
+      box-shadow: 0 8px 15px var(--shadow-color);
+      transition: background-color 0.5s ease, box-shadow 0.5s ease;
+    }
+
+    /* Supprime l'effet de déchirure en haut des sections */
+    section::before {
+      content: none;
+    }
+
+    /* Alternance de l'inclinaison pour les sections sombres */
+    section:not(#contact):nth-child(odd)::after {
+      transform: skewY(2deg);
+      transform-origin: bottom left;
+    }
+    section:not(#contact):nth-child(even)::after {
+      transform: skewY(-2deg);
+      transform-origin: bottom right;
+    }
+
+    .section-white {
+      background-color: var(--section-white-bg);
+      color: var(--section-white-text);
+      box-shadow: 0 6px 12px var(--shadow-color);
+      transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
+    }
+    .section-white h2, .section-white h3 {
+      color: var(--section-white-text);
+      border-bottom-color: var(--section-white-text);
+      transition: color 0.5s ease, border-bottom-color 0.5s ease;
+    }
+    .section-white a {
+      color: var(--section-white-text);
+    }
+    /* Ajustements pour les sections blanches : la "déchirure" est la couleur de la section */
+    .section-white:not(#contact)::after {
+      background-color: var(--section-white-bg);
+      transition: background-color 0.5s ease;
+    }
+    /* Supprime l'effet de déchirure en haut des sections blanches */
+    .section-white::before {
+      content: none;
+    }
+
+    /* Alternance de l'inclinaison pour les sections blanches */
+    .section-white:not(#contact):nth-child(odd)::after {
+      transform: skewY(-2deg);
+      transform-origin: bottom right;
+    }
+    .section-white:not(#contact):nth-child(even)::after {
+      transform: skewY(2deg);
+      transform-origin: bottom left;
+    }
+
+    /* Grille vidéo (Portfolio) */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .video {
+      background-color: var(--nav-bg);
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px var(--shadow-color);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease;
+      border: 1px solid var(--border-color);
+      cursor: pointer;
+    }
+    .video:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px var(--shadow-color);
+    }
+    .video-title {
+      text-align: center;
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: var(--accent-color);
+      transition: color 0.5s ease;
+    }
+    iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: none;
+      border-radius: 8px;
+      display: block;
+      pointer-events: none;
+    }
+
+    /* Styles pour la galerie photo */
+    .photo-category {
+        margin-bottom: 2rem;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        overflow: hidden;
+        background-color: var(--section-bg);
+        box-shadow: 0 4px 8px var(--shadow-color);
+        transition: background-color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
+    }
+    .photo-category:last-child {
+        margin-bottom: 0;
+    }
+
+    .category-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1.5rem;
+        background-color: var(--nav-bg);
+        color: var(--text-color);
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+        user-select: none;
+        transition: background-color 0.5s ease, color 0.5s ease;
+    }
+
+    /* Carrousel styles */
+    .carousel-container {
+        position: relative;
+        overflow: hidden;
+        padding: 1.5rem;
+    }
+
+    .carousel-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .photo-item {
+        flex: 0 0 auto;
+        width: calc(100% / var(--items-per-view, 1) - var(--gap-width, 1rem) * (var(--items-per-view, 1) - 1) / var(--items-per-view, 1));
+        max-width: 300px;
+        margin-right: 1rem;
+        background-color: var(--section-bg);
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px var(--shadow-color);
+        border: 1px solid var(--border-color);
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease, border-color 0.5s ease;
+    }
+    .photo-item:hover {
+        transform: translateY(-5px) scale(1.03);
+        box-shadow: 0 8px 20px var(--shadow-color);
+    }
+
+    .photo-item:last-child {
+        margin-right: 0;
+    }
+
+    .photo-item img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    .photo-title {
+        font-weight: bold;
+        font-size: 0.9rem;
+        color: var(--accent-color);
+        transition: color 0.5s ease;
+    }
+
+    .carousel-nav-buttons {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+        left: 0;
+        right: 0;
+        z-index: 10;
+    }
+
+    .carousel-nav-button {
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 0.3s ease;
+    }
+
+    .carousel-nav-button.prev-button {
+        margin-left: 1.5rem;
+    }
+
+    .carousel-nav-button.next-button {
+        margin-right: 1.5rem;
+    }
+
+    .carousel-nav-button:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    .carousel-nav-button:disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+    }
+
+    /* Informations de contact */
+    .contact-info p {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+    }
+    .contact-info a {
+      color: var(--link-color);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .section-white .contact-info a {
+      color: var(--section-white-text);
+    }
+    .contact-info a:hover {
+      color: var(--link-hover-color);
+    }
+    .section-white .contact-info a:hover {
+      color: var(--accent-color);
+    }
+    .contact-info i {
+      margin-right: 12px;
+      font-size: 1.3rem;
+      color: var(--icon-color);
+      transition: color 0.5s ease;
+    }
+    .section-white .contact-info i {
+      color: var(--section-white-text);
+    }
+
+    /* Formulaire de contact */
+    .contact-form label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+      color: var(--form-text);
+      transition: color 0.5s ease;
+    }
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--form-border);
+      border-radius: 5px;
+      background-color: var(--form-bg);
+      color: var(--form-text);
+      font-family: 'Lato', Arial, sans-serif;
+      font-size: 1rem;
+      transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+    }
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    .contact-form input[type="text"]:focus,
+    .contact-form input[type="email"]:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: var(--accent-color);
+      box-shadow: 0 0 5px var(--shadow-color);
+    }
+    .contact-form button {
+      background-color: var(--button-bg);
+      color: var(--button-text);
+      padding: 12px 25px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+      transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+      transform: rotate(-2deg);
+    }
+    .contact-form button:hover {
+      background-color: var(--button-hover-bg);
+      transform: rotate(-2deg) scale(1.05);
+    }
+
+    /* Styles pour le message de succès */
+    .success-message {
+      background-color: var(--success-bg);
+      color: var(--success-text);
+      border: 1px solid var(--success-border);
+      padding: 1rem;
+      margin-top: 1.5rem;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: bold;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+    .success-message.show {
+      opacity: 1;
+    }
+    .hidden {
+      display: none;
+    }
+
+    /* Styles pour la section contact collapsible */
+    #contact {
+        margin-top: 5rem;
+    }
+    #contact h2 {
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      user-select: none;
+    }
+    #contactToggleIcon {
+      transition: transform 0.3s ease;
+    }
+    #contactToggleIcon.rotated {
+      transform: rotate(180deg);
+    }
+    .contact-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.7s ease-in-out, padding 0.7s ease-in-out;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    .contact-content.expanded {
+      max-height: 1000px !important; /* Suffisamment grand pour contenir le contenu */
+      min-height: 200px;
+      padding-top: 1.5rem;
+      padding-bottom: 1rem;
+    }
+
+    /* Grille des compétences */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .skills-grid ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .skills-grid li::before {
+      content: '•';
+      color: var(--accent-color);
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+      transition: color 0.5s ease;
+    }
+    .skill-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 0.8rem;
+      font-size: 1.1rem;
+    }
+    .skill-item i {
+      font-size: 1.6rem;
+      color: var(--icon-color);
+      transition: color 0.5s ease;
+    }
+
+    /* Pied de page */
+    footer {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      margin-top: 4rem;
+      background-color: var(--footer-bg);
+      color: var(--text-color);
+      font-size: 0.9rem;
+      box-shadow: 0 -4px 8px var(--shadow-color);
+      position: relative;
+      overflow: visible;
+      transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
+    }
+
+    /* Effet "papier déchiré" en haut du pied de page */
+    footer::before {
+      content: '';
+      position: absolute;
+      top: -30px;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background-color: var(--bg-color); /* Correspond au fond du body */
+      transform: skewY(-2deg);
+      transform-origin: top left;
+      z-index: 5;
+      box-shadow: 0 -8px 15px var(--shadow-color);
+      transition: background-color 0.5s ease, box-shadow 0.5s ease;
+    }
+
+    /* Bouton retour en haut */
+    #back-to-top {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--accent-color);
+      color: var(--bg-color);
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      box-shadow: 0 4px 8px var(--shadow-color);
+      transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+      z-index: 100;
+    }
+    #back-to-top:hover {
+      background-color: var(--text-color);
+      transform: translateY(-3px);
+    }
+
+    /* Styles pour la Lightbox (Modale) */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: rgba(0,0,0,0.9);
+    }
+
+    .lightbox.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .lightbox-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80vh;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.8);
+      animation-name: zoom;
+      animation-duration: 0.6s;
+    }
+
+    @keyframes zoom {
+      from {transform: scale(0.1)}
+      to {transform: scale(1)}
+    }
+
+    /* Lightbox enhancements */
+    .lightbox-content.zoomable {
+        cursor: zoom-in;
+        transition: transform 0.3s ease-in-out;
+        transform-origin: center center;
+    }
+
+    .lightbox-content.zoomed {
+        transform: scale(2);
+        cursor: grab;
+        touch-action: none;
+    }
+
+    /* Adjust close button for better visibility */
+    .close-button {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      color: #f1f1f1;
+      font-size: 45px;
+      font-weight: bold;
+      transition: 0.3s;
+      cursor: pointer;
+      z-index: 1001;
+      background-color: rgba(0,0,0,0.5);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .close-button:hover,
+    .close-button:focus {
+      color: #bbb;
+      background-color: rgba(0,0,0,0.7);
+    }
+
+    .lightbox-caption {
+      margin-top: 15px;
+      text-align: center;
+      color: #ccc;
+      font-size: 1.2rem;
+      padding: 10px 0;
+      max-width: 90%;
+    }
+
+    /* Lightbox navigation buttons */
+    .lightbox-nav-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #f1f1f1;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        font-size: 2rem;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 0.3s ease;
+        z-index: 1001;
+    }
+
+    .lightbox-nav-button:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .lightbox-nav-button.prev {
+        left: 20px;
+    }
+
+    .lightbox-nav-button.next {
+        right: 20px;
+    }
+
+    /* Styles for offline message */
+    #offline-message {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #ffc107; /* Warning yellow */
+        color: #343a40; /* Dark text */
+        padding: 15px 25px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        z-index: 1002;
+        display: none;
+        font-weight: bold;
+        text-align: center;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    #offline-message.show {
+        opacity: 1;
+        display: block;
+    }
+
+    /* Styles pour le loader */
+    #loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--loader-bg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      opacity: 1;
+      transition: opacity 0.5s ease-out, background-color 0.5s ease;
+    }
+
+    #loader.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    #loader img {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      margin-bottom: 1rem;
+      border-radius: 50%;
+      animation: pulse 1.5s infinite alternate;
+    }
+
+    #loader h1, #loader p {
+      font-family: 'Bebas Neue', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--loader-text);
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      animation: pulse 1.5s infinite alternate;
+      transition: color 0.5s ease;
+    }
+
+    #loader h1 {
+      font-size: 3.5rem;
+      line-height: 1;
+    }
+
+    #loader p {
+      font-size: 1.6rem;
+      font-weight: 300;
+      margin-top: 0.5rem;
+    }
+
+    @keyframes pulse {
+      from { transform: scale(0.95); opacity: 0.8; }
+      to { transform: scale(1.05); opacity: 1; }
+    }
+
+    /* Media queries pour la responsivité */
+    @media (max-width: 768px) {
+        h1 { font-size: 2.8rem; }
+        h2 { font-size: 1.8rem; }
+        .top-banner {
+            font-size: 1.4rem;
+            padding: 8px 50px;
+            left: -30px;
+        }
+        nav ul {
+            flex-direction: column;
+            gap: 1rem;
+        }
+        nav a { font-size: 1rem; }
+        section { padding: 1.5rem; }
+        .profile-photo {
+            width: 140px;
+            height: 140px;
+        }
+        .photo-item {
+            width: 100%;
+            margin-right: 0;
+        }
+        .carousel-nav-buttons { padding: 0 5px; }
+        nav {
+          flex-direction: column;
+          padding-bottom: 1rem;
+        }
+        #theme-toggle {
+          margin-top: 1rem;
+          margin-right: 0;
+        }
+        #loader img {
+            width: 100px;
+            height: 100px;
+        }
+        #loader h1 { font-size: 2.5rem; }
+        #loader p { font-size: 1.2rem; }
+        .close-button {
+            font-size: 35px;
+            width: 40px;
+            height: 40px;
+            top: 10px;
+            right: 10px;
+        }
+        .lightbox-nav-button {
+            width: 40px;
+            height: 40px;
+            font-size: 1.5rem;
+            left: 10px;
+            right: 10px;
+        }
+        .lightbox-content.zoomed { transform: scale(1.5); }
+        .contact-info p, .skill-item { font-size: 1rem; }
+        .contact-info i { font-size: 1.4rem; }
+        .contact-form input, .contact-form textarea {
+            width: calc(100% - 20px);
+            padding: 8px;
+            margin-bottom: 1rem;
+        }
+        .contact-form button {
+            padding: 10px 20px;
+            font-size: 1.1rem;
+        }
+        .success-message {
+            padding: 0.8rem;
+            font-size: 0.9rem;
+        }
+        footer { padding: 1.5rem 1rem; }
+    }
+
+    @media (max-width: 480px) {
+        h1 { font-size: 2.2rem; }
+        h2 { font-size: 1.5rem; }
+        .top-banner {
+            font-size: 1.2rem;
+            padding: 6px 40px;
+            left: -10px;
+        }
+        header { padding: 3rem 0.5rem 2rem; }
+        .profile-photo {
+            width: 120px;
+            height: 120px;
+        }
+        nav ul { gap: 0.8rem; }
+        nav a { padding: 0.4rem 0.8rem; }
+        .main-content {
+            gap: 3rem;
+            padding: 0 1rem;
+        }
+        section { padding: 1rem; }
+        .video { padding: 10px; }
+        .video-title { font-size: 1rem; }
+        .photo-item { padding: 8px; }
+        .photo-item img { height: 150px; }
+        .photo-title { font-size: 0.85rem; }
+        #back-to-top {
+            width: 40px;
+            height: 40px;
+            font-size: 1.2rem;
+            bottom: 15px;
+            right: 15px;
+        }
+        #offline-message {
+            padding: 10px 15px;
+            font-size: 0.9rem;
+        }
+    }
+
+    /* Styles pour la modale vidéo améliorée */
+    .video-lightbox-content {
+      background-color: #1a1a1a;
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 900px;
+      width: 90%;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      color: white;
+    }
+
+    #videoModal iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .video-description h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .video-description p {
+      margin: 5px 0;
+    }
+
+    /* NOUVEAU: Styles pour la Lightbox Instagram */
+    .instagram-popup {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 90%; /* Largeur responsive */
+        max-width: 600px; /* Largeur maximale pour les grands écrans */
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        position: relative;
+        border-radius: 12px;
+        text-align: center;
+        animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.95); }
+        to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Le bouton de fermeture est partagé avec .close-button */
+    .instagram-popup .close-button {
+        color: #aaa; /* Couleur spécifique pour le bouton de fermeture de l'Instagram popup */
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+        background-color: transparent; /* Pas de fond pour ce bouton */
+        box-shadow: none; /* Pas d'ombre */
+    }
+
+    .instagram-popup .close-button:hover,
+    .instagram-popup .close-button:focus {
+        color: black; /* Couleur au survol */
+        background-color: transparent;
+    }
+
+    #instagramPostContainer {
+        margin-top: 20px;
+    }
+
+    #instagramPostContainer img,
+    #instagramPostContainer video {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto 15px auto; /* Centré, avec espace en dessous */
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    #instagramPostContainer p {
+        font-size: 1.1em;
+        color: #333;
+        line-height: 1.5;
+        margin-bottom: 10px;
+    }
+
+    #instagramPostContainer a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    #instagramPostContainer a:hover {
+        text-decoration: underline;
+    }
+
+    #instagramPostContainer h3 {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #222;
+    }
+
+    /* Styles pour le bouton Instagram dans la nav */
+    .instagram-button {
+        display: inline-block;
+        background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); /* Dégradé Instagram */
+        color: white;
+        padding: 12px 25px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: transform 0.2s ease, box-shadow 0.3s ease;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .instagram-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    }
+
+    .instagram-button i {
+        font-size: 1.2em;
+    }
+</style>
+</head>
+<body>
+<div id="loader">
+<img alt="Logo Jérémie Favre, portrait stylisé de Jérémie Favre dans un cercle sur fond neutre, ambiance professionnelle et épurée" src="unnamed.jpg" style="border-radius:50%; width:120px; height:120px; object-fit:cover; background:#f4f4f4;"/>
+<h1>Jérémie FAVRE</h1>
+<p>Portfolio</p>
+</div>
+<header>
+<div class="top-banner">VIDÉASTE - CADREUR MONTEUR</div>
+<div class="header-content">
+<div class="profile-photo">
+<img alt="Portrait de Jérémie Favre souriant, regardant l'objectif, centré dans un cercle à fond neutre, ambiance professionnelle et chaleureuse" src="unnamed.jpg" style="width:100%; height:100%; object-fit:cover; object-position:center;"/>
+</div>
+<h1>Jérémie FAVRE</h1>
+<p style="
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0 0 0rem 0;
+  color: var(--accent-color);
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1.5px;
+  text-shadow: 1px 2px 8px rgba(0,0,0,0.10);
+  background: linear-gradient(90deg, #e0e0e0 0%, #bdbdbd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  padding: 0 10px;
+  border-radius: 6px;
+">
+  Raconter le monde, un plan à la fois.
+</p>
+<div class="social-links">
+<a aria-label="Instagram" href="https://www.instagram.com/j3remie_fvr" target="_blank"><i class="fab fa-instagram"></i></a>
+<a aria-label="LinkedIn" href="https://www.linkedin.com/in/jérémie-favre-a402a9239/" target="_blank"><i class="fab fa-linkedin"></i></a>
+<a aria-label="TikTok" href="https://www.tiktok.com/@jerem_fvr" target="_blank"><i class="fab fa-tiktok"></i></a>
+</div>
+</div>
+</header>
+<nav>
+<ul>
+<li><a href="#about">À propos</a></li>
+<li><a href="#skills">Mon Expertise</a></li>
+<li><a href="#portfolio">Portfolio</a></li>
+<li><a href="#photos">Vitrine Photo</a></li>
+<li><a href="#contact">Contact</a></li>
+<!-- NOUVEAU: Bouton pour ouvrir la Lightbox Instagram -->
+<li>
+    <button class="instagram-button" id="openInstagramLightboxBtn">
+        <i class="fab fa-instagram"></i> Mon dernier post
+    </button>
+</li>
+</ul>
+<button aria-label="Basculer le thème clair/sombre" id="theme-toggle">
+<i class="fas fa-moon" id="theme-icon"></i>
+</button>
+</nav>
+<div class="main-content">
+<section id="about">
+<h2>À propos de moi</h2>
+<p>
+        Passionné par l'image et le mouvement, je suis Jérémie Favre, vidéaste indépendant basé à La Réunion. J'aime transformer des idées en récits visuels et donner vie à chaque projet, de la conception à la post-production.<br/>
+        J'explore la coordination des tournages et la prise de vue aérienne avec drone stabilisé ou FPV, pour apporter des perspectives originales à vos projets.
+      </p>
+</section>
+<section id="skills">
+<h2>Mon Expertise</h2>
+<div class="skills-grid">
+<div>
+<h3>Mes Outils Créatifs</h3>
+<div class="skill-item"><i class="fas fa-cut"></i> Premiere Pro : Maîtrise du montage vidéo professionnel.</div>
+<div class="skill-item"><i class="fas fa-magic"></i> After Effects : Création d'effets visuels et animations.</div>
+<div class="skill-item"><i class="fas fa-image"></i> Photoshop : Retouche d'image et conception graphique.</div>
+<div class="skill-item"><i class="fas fa-adjust"></i> Lightroom : Optimisation et catalogage des images.</div>
+<div class="skill-item"><i class="fas fa-video"></i> Production Vidéo : De l'idée au produit final.</div>
+<div class="skill-item"><i class="fas fa-film"></i> Montage Vidéo : Narration visuelle et rythme.</div>
+<div class="skill-item"><i class="fas fa-helicopter"></i> Pilotage Drone : Perspectives aériennes uniques.</div>
+</div>
+</div>
+</section>
+<section class="section-white" id="portfolio">
+<h2>Portfolio Vidéo</h2>
+<div class="gallery">
+<div class="video" data-camera="RED SCARLET" data-date="2024" data-director="Loïc Bege - Jérémie Favre" data-iframe="https://www.youtube.com/embed/qtrdrRYwMoA" data-location="Parc des palmiers" data-title="LIVRE DU DESTIN">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/qtrdrRYwMoA"></iframe>
+<div class="video-title">LIVRE DU DESTIN Court metrage</div>
+</div>
+<div class="video" data-camera="RED SCARLET" data-date="2024" data-director="Wesley Themyr - Jérémie Favre - Dhiessene Virapin" data-iframe="https://www.youtube.com/embed/j_FrzbnDIuY" data-location="Plaine des sables" data-title="AURORA">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/j_FrzbnDIuY"></iframe>
+<div class="video-title">AURORA - Court Métrages</div>
+</div>
+<div class="video" data-camera="Sony A7 IV" data-date="2024" data-director="Jérémie Favre" data-iframe="https://www.youtube.com/embed/_q7MnK_2QFI" data-location="Parking sous terrain Saint-Leu" data-title="VENUM PUB">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/_q7MnK_2QFI"></iframe>
+<div class="video-title">Venum - PUB</div>
+</div>
+<div class="video" data-camera="Sony A7 IV + Sony A6700" data-date="2024" data-director="Jérémie Favre" data-iframe="https://www.youtube.com/embed/XOG37yLswio" data-location="Saint-Gilles" data-title="Restaurant LE LEON">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/XOG37yLswio"></iframe>
+<div class="video-title">Restaurant LE LEON</div>
+</div>
+<div class="video" data-camera="Sony A7 IV" data-date="2024" data-director="Jérémie Favre" data-iframe="https://www.youtube.com/embed/zZD8K0tTuzo" data-location="Champ de canne" data-title="Portrait Stéphanie Valmorex">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/zZD8K0tTuzo"></iframe>
+<div class="video-title">Portrait de Stéphanie Valmorex</div>
+</div>
+<div class="video" data-camera="Sony A7 IV" data-date="2024" data-director="Jérémie Favre" data-iframe="https://www.youtube.com/embed/9GQS8eGeZlk" data-location="Studio et extérieur" data-title="KidnaPink Final">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/9GQS8eGeZlk"></iframe>
+<div class="video-title">KidnaPink Final Officiel</div>
+</div>
+<div class="video" data-camera="Sony A7 IV" data-date="2024" data-director="Jérémie Favre" data-iframe="https://www.youtube.com/embed/6bbMbT8_QGE" data-location="Littoral Ouest" data-title="ALONE">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/6bbMbT8_QGE"></iframe>
+<div class="video-title">ALONE</div>
+</div>
+<div class="video" data-camera="Sony A7 III" data-date="2024" data-director="Jérémie Favre" data-iframe="https://www.youtube.com/embed/5S_ke4JsViI" data-location="Chez Julien Leveneur" data-title="Dessert Diabétique">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/5S_ke4JsViI"></iframe>
+<div class="video-title">Dessert spécial diabétique - Ensemble contre le diabète ( Julien LEVENEUR )</div>
+</div>
+</div>
+</section>
+<section id="photos">
+<h2>Vitrine Photo</h2>
+<div class="photo-categories-container">
+<div class="photo-category">
+<h3 class="category-title">Photo Aérienne</h3>
+<div class="carousel-container" id="carousel-aerienne">
+<div class="carousel-track">
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="images/Drone/DJI_0457.jpg" href="images/Drone/DJI_0457.jpg">
+<img alt="Vue aérienne d'une ville côtière avec plage et vagues turquoise." src="images/Drone/DJI_0457.jpg"/>
+</a>
+<div class="photo-title">Bleu Infini</div>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="images/Drone/DJI_0459.jpg" href="images/Drone/DJI_0459.jpg">
+<img alt="Vagues turquoise roulant vers une plage de sable bordée d'un brise-lames et d'une marina remplie de bateaux, maisons résidentielles et collines verdoyantes en arrière-plan sous un ciel partiellement nuageux, atmosphère côtière calme et étendue." src="images/Drone/DJI_0459.jpg"/>
+</a>
+<div class="photo-title">Azur & Rivages</div>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="images/Drone/DJI_0460.jpg" href="images/Drone/DJI_0460.jpg">
+<img alt="Ville côtière bordée par l'océan turquoise avec des vagues douces, une plage de sable, une marina avec des bateaux, et des maisons nichées parmi des collines verdoyantes sous un ciel partiellement nuageux, atmosphère tranquille et étendue." src="images/Drone/DJI_0460.jpg"/>
+</a>
+<div class="photo-title">Émeraude Côtière</div>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="images/Drone/DJI_0466.jpg" href="images/Drone/DJI_0466.jpg">
+<img alt="White catamaran boat floating alone on deep blue ocean water viewed from above with sunlight reflecting on the waves, creating a sense of tranquility and vastness" src="images/Drone/DJI_0466.jpg"/>
+</a>
+<div class="photo-title">Solitude Bleue</div>
+</div>
+</div>
+<div class="carousel-nav-buttons">
+<button class="carousel-nav-button prev-button" data-carousel="aerienne"><i class="fas fa-chevron-left"></i></button>
+<button class="carousel-nav-button next-button" data-carousel="aerienne"><i class="fas fa-chevron-right"></i></button>
+</div>
+</div>
+</div>
+<div class="photo-category">
+<h3 class="category-title">Portrait</h3>
+<div class="carousel-container" id="carousel-portrait">
+<div class="carousel-track">
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="https://placehold.co/1200x800/333/fff?text=Portrait+1+Large" href="https://placehold.co/600x400/333/fff?text=Portrait+1">
+<img alt="Portrait 1" src="https://placehold.co/300x180/333/fff?text=Portrait+1"/>
+</a>
+<div class="photo-title">Portrait 1</div>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="https://placehold.co/1200x800/333/fff?text=Portrait+2+Large" href="https://placehold.co/600x400/333/fff?text=Portrait+2">
+<img alt="Portrait 2" src="https://placehold.co/300x180/333/fff?text=Portrait+2"/>
+</a>
+<div class="photo-title">Portrait 2</div>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="https://placehold.co/1200x800/333/fff?text=Portrait+3+Large" href="https://placehold.co/600x400/333/fff?text=Portrait+3">
+<img alt="Portrait 3" src="https://placehold.co/300x180/333/fff?text=Portrait+3"/>
+</a>
+<div class="photo-title">Portrait 3</div>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="https://placehold.co/1200x800/333/fff?text=Portrait+4+Large" href="https://placehold.co/600x400/333/fff?text=Portrait+4">
+<img alt="Portrait 4" src="https://placehold.co/300x180/333/fff?text=Portrait+4"/>
+</a>
+<div class="photo-title">Portrait 4</div>
+</div>
+</div>
+<div class="carousel-nav-buttons">
+<button class="carousel-nav-button prev-button" data-carousel="portrait"><i class="fas fa-chevron-left"></i></button>
+<button class="carousel-nav-button next-button" data-carousel="portrait"><i class="fas fa-chevron-right"></i></button>
+</div>
+</div>
+</div>
+<div class="photo-category">
+<h3 class="category-title">Paysage</h3>
+<div class="carousel-container" id="carousel-paysage">
+<div class="carousel-track">
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="https://placehold.co/1200x800/333/fff?text=Paysage+1+Large" href="https://placehold.co/600x400/333/fff?text=Paysage+1">
+<img alt="Paysage 1" src="https://placehold.co/300x180/333/fff?text=Paysage+1"/>
+</a>
+<div class="photo-title">Paysage 1</div>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="https://placehold.co/1200x800/333/fff?text=Paysage+2+Large" href="https://placehold.co/600x400/333/fff?text=Paysage+2">
+<img alt="Paysage 2" src="https://placehold.co/300x180/333/fff?text=Paysage+2"/>
+</a>
+<div class="photo-title">Paysage 2</div>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="https://placehold.co/1200x800/333/fff?text=Paysage+3+Large" href="https://placehold.co/600x400/333/fff?text=Paysage+3">
+<img alt="Paysage 3" src="https://placehold.co/300x180/333/fff?text=Paysage+3"/>
+</a>
+<div class="photo-title">Paysage 3</div>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="https://placehold.co/1200x800/333/fff?text=Paysage+4+Large" href="https://placehold.co/600x400/333/fff?text=Paysage+4">
+<img alt="Paysage 4" src="https://placehold.co/300x180/333/fff?text=Paysage+4"/>
+</a>
+<div class="photo-title">Paysage 4</div>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="https://placehold.co/1200x800/333/fff?text=Paysage+5+Large" href="https://placehold.co/600x400/333/fff?text=Paysage+5">
+<img alt="Paysage 5" src="https://placehold.co/300x180/333/fff?text=Paysage+5"/>
+</a>
+<div class="photo-title">Paysage 5</div>
+</div>
+</div>
+<div class="carousel-nav-buttons">
+<button class="carousel-nav-button prev-button" data-carousel="paysage"><i class="fas fa-chevron-left"></i></button>
+<button class="carousel-nav-button next-button" data-carousel="paysage"><i class="fas fa-chevron-right"></i></button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<section class="contact section-white" id="contact">
+<h2>Contact <i class="fas fa-chevron-down" id="contactToggleIcon"></i></h2>
+<div class="contact-content" id="contactContent">
+<div class="contact-form">
+<form action="https://formspree.io/f/mgvkgnjg" method="POST">
+<label for="name">Nom :</label>
+<input aria-label="Votre nom" id="name" name="name" required="" type="text"/>
+<label for="email">Email :</label>
+<input aria-label="Votre adresse email" id="email" name="email" required="" type="email"/>
+<label for="message">Message :</label>
+<textarea aria-label="Votre message" id="message" name="message" required="" rows="5"></textarea>
+<button type="submit">Envoyer le message</button>
+</form>
+<div class="success-message hidden" id="successMessage">
+<p>Votre message a été envoyé avec succès !</p>
+</div>
+</div>
+<div class="contact-info" style="margin-top: 2rem;">
+<p><i class="fas fa-envelope"></i> Email : <a href="mailto:contact@jeremiefavre.com">contact@jeremiefavre.com</a></p>
+<p><i class="fab fa-instagram"></i> Instagram : <a href="https://instagram.com/j3remie_fvr" onclick="gtag('event', 'clic_instagram', { event_category: 'Réseaux sociaux', event_label: 'Instagram j3remie_fvr' });" target="_blank">@j3remie_fvr</a></p>
+<p><i class="fas fa-map-marker-alt"></i> Basé à La Réunion</p>
+<p><i class="fas fa-phone"></i> Téléphone : <a href="tel:+262693112398">0693112398</a></p>
+</div>
+</div>
+</section>
+<footer>
+<p>© 2025 Jérémie FAVRE. Tous droits réservés.</p>
+</footer>
+<button id="back-to-top" title="Retour en haut"><i class="fas fa-arrow-up"></i></button>
+<div class="lightbox" id="lightbox">
+<span class="close-button">×</span>
+<img alt="Image agrandie" class="lightbox-content zoomable" id="lightbox-image" src=""/>
+<div class="lightbox-caption" id="lightbox-caption"></div>
+<button class="lightbox-nav-button prev" id="lightbox-prev-btn"><i class="fas fa-chevron-left"></i></button>
+<button class="lightbox-nav-button next" id="lightbox-next-btn"><i class="fas fa-chevron-right"></i></button>
+</div>
+<div id="offline-message">
+    Vous êtes hors ligne, certaines vidéos peuvent ne pas s’afficher.
+  </div>
+
+<!-- Modale Vidéo améliorée (EXISTANT) -->
+<div class="lightbox" id="videoModal">
+<div class="video-popup" style="max-width:900px; width:90%; background:#000; border-radius:12px; overflow:hidden;">
+<div class="video-part" style="background:#000;">
+<iframe id="videoModalIframe" src="" allowfullscreen style="width:100%; height:500px; border:none; pointer-events:auto;"></iframe>
+</div>
+<div class="description-part" style="background:#f5f1e6; color:#111; padding:2rem; font-family:'Lato',sans-serif;">
+<h3 id="videoTitle" style="font-family:'Bebas Neue',sans-serif; font-size:2rem; margin-bottom:1rem; color:#222;"></h3>
+<p style="margin:0.5rem 0;">🎬 <strong>Réalisateur :</strong> <span id="videoDirector"></span></p>
+<p style="margin:0.5rem 0;">🎥 <strong>Matériel :</strong> <span id="videoCamera"></span></p>
+<p style="margin:0.5rem 0;">📍 <strong>Lieu :</strong> <span id="videoLocation"></span></p>
+<p style="margin:0.5rem 0;">🗓 <strong>Date :</strong> <span id="videoDate"></span></p>
+</div>
+</div>
+<span class="close-button" onclick="closeVideoModal()" style="position:absolute;top:30px;right:30px;font-size:2rem;color:white;cursor:pointer;">×</span>
+</div>
+
+<!-- NOUVEAU: Lightbox Instagram -->
+<div class="lightbox" id="instagramLightbox">
+    <div class="instagram-popup">
+        <span class="close-button" onclick="closeInstagramLightbox()">×</span>
+        <h3>Mon dernier post Instagram</h3>
+        <div id="instagramPostContainer">
+            <p>Chargement du post Instagram...</p>
+        </div>
+    </div>
+</div>
+
+<!-- Firebase SDKs - Ajoutez-les avant votre script principal -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+<!-- OU pour Cloud Firestore, si vous choisissez cela : -->
+<!-- <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script> -->
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // --- LOGIQUE DU THÈME CLAIR/SOMBRE ---
+      const themeToggle = document.getElementById('theme-toggle');
+      const themeIcon = document.getElementById('theme-icon');
+      const body = document.body;
+
+      // Applique le thème sauvegardé ou la préférence système
+      const applyTheme = (theme) => {
+        const isLight = theme === 'light';
+        body.classList.toggle('light-theme', isLight);
+        themeIcon.classList.toggle('fa-moon', !isLight);
+        themeIcon.classList.toggle('fa-sun', isLight);
+        themeToggle.setAttribute('aria-label', `Basculer vers le thème ${isLight ? 'sombre' : 'clair'}`);
+      };
+
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        applyTheme(savedTheme);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        applyTheme('light');
+      } else {
+        applyTheme('dark');
+      }
+
+      // Écouteur d'événement pour le bouton de basculement
+      themeToggle.addEventListener('click', () => {
+        const newTheme = body.classList.contains('light-theme') ? 'dark' : 'light';
+        applyTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
+      });
+
+      // Intersection Observer pour les sections (animations à l'apparition)
+      const sections = document.querySelectorAll('section');
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            // Optionnel: Désactiver l'observation après la première apparition
+            // observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+      sections.forEach(section => observer.observe(section));
+
+      // Bouton retour en haut
+      const backToTopButton = document.getElementById('back-to-top');
+      window.addEventListener('scroll', () => {
+        backToTopButton.style.display = window.scrollY > 300 ? 'flex' : 'none';
+      });
+      backToTopButton.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // Soumission du formulaire de contact
+      const contactForm = document.querySelector('.contact-form form');
+      const successMessage = document.getElementById('successMessage');
+      contactForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const formData = new FormData(contactForm);
+        try {
+          const response = await fetch(contactForm.action, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          });
+          if (response.ok) {
+            gtag('event', 'formulaire_envoyé', {
+              event_category: 'Contact',
+              event_label: 'Formulaire réussi'
+            });
+            contactForm.reset();
+            successMessage.classList.remove('hidden');
+            successMessage.classList.add('show');
+            setTimeout(() => {
+              successMessage.classList.remove('show');
+              successMessage.classList.add('hidden');
+            }, 5000);
+          } else {
+            console.error('Échec de la soumission du formulaire.');
+          }
+        } catch (error) {
+          console.error('Erreur réseau ou autre:', error);
+        }
+      });
+
+      // Section Contact pliable
+      const contactSection = document.getElementById('contact');
+      const contactContent = document.getElementById('contactContent');
+      const contactToggleIcon = document.getElementById('contactToggleIcon');
+      const isContactExpanded = localStorage.getItem('contactExpanded') === 'true';
+
+      // Applique l'état sauvegardé au chargement
+      if (isContactExpanded) {
+          contactContent.classList.add('expanded');
+          contactToggleIcon.classList.add('rotated');
+      }
+
+      contactSection.addEventListener('click', (event) => {
+          if (event.target.closest('h2')) {
+              contactContent.classList.toggle('expanded');
+              contactToggleIcon.classList.toggle('rotated');
+              localStorage.setItem('contactExpanded', contactContent.classList.contains('expanded'));
+          }
+      });
+
+      // --- LOGIQUE DU CARROUSEL (PHOTOS) ---
+      class Carousel {
+        constructor(carouselId) {
+          this.carouselContainer = document.getElementById(carouselId);
+          if (!this.carouselContainer) return;
+
+          this.carouselTrack = this.carouselContainer.querySelector('.carousel-track');
+          this.photoItems = Array.from(this.carouselTrack.querySelectorAll('.photo-item'));
+          this.prevButton = this.carouselContainer.querySelector('.prev-button');
+          this.nextButton = this.carouselContainer.querySelector('.next-button');
+
+          this.currentIndex = 0;
+          this.itemsPerView = 1;
+          this.autoScrollInterval = null;
+          this.autoScrollDelay = 3000;
+          this.manualInteractionPause = 5000;
+
+          this.init();
+        }
+
+        init() {
+          this.addEventListeners();
+          window.addEventListener('load', () => {
+            this.updateCarouselPosition();
+            this.startAutoScroll();
+          });
+          window.addEventListener('resize', () => {
+            this.currentIndex = 0; // Réinitialiser l'index au redimensionnement pour une logique plus simple
+            this.updateCarouselPosition();
+            this.stopAutoScroll();
+            this.startAutoScroll();
+          });
+          // Calcul initial au cas où les images sont déjà chargées
+          this.calculateItemsPerPage();
+        }
+
+        calculateItemsPerPage() {
+          if (this.photoItems.length === 0) {
+              this.itemsPerView = 1;
+              return;
+          }
+          const firstItem = this.photoItems[0];
+          // S'assurer que l'image est chargée avant de calculer la largeur
+          if (firstItem && firstItem.querySelector('img') && !firstItem.querySelector('img').complete) {
+              firstItem.querySelector('img').onload = () => this.updateCarouselPosition();
+              return;
+          }
+
+          const itemWidth = firstItem ? firstItem.offsetWidth + (parseFloat(getComputedStyle(firstItem).marginRight) || 0) : 0;
+          const containerWidth = this.carouselContainer.offsetWidth;
+
+          if (itemWidth > 0 && containerWidth > 0) {
+              if (window.innerWidth >= 992) {
+                  this.itemsPerView = Math.floor(containerWidth / itemWidth);
+                  this.itemsPerView = Math.max(3, this.itemsPerView); // Minimum 3 éléments sur les grands écrans
+              } else if (window.innerWidth >= 768) {
+                  this.itemsPerView = Math.floor(containerWidth / itemWidth);
+                  this.itemsPerView = Math.max(2, this.itemsPerView); // Minimum 2 éléments sur les écrans moyens
+              } else {
+                  this.itemsPerView = 1; // 1 élément sur les petits écrans
+              }
+              this.itemsPerView = Math.min(this.itemsPerView, this.photoItems.length);
+          } else {
+              this.itemsPerView = 1;
+          }
+          this.carouselContainer.style.setProperty('--items-per-view', this.itemsPerView);
+          this.carouselContainer.style.setProperty('--gap-width', '1rem');
+        }
+
+        updateCarouselPosition() {
+          this.calculateItemsPerPage();
+          const itemWidth = this.photoItems.length > 0 ? this.photoItems[0].offsetWidth + (parseFloat(getComputedStyle(this.photoItems[0]).marginRight) || 0) : 0;
+          this.carouselTrack.style.transform = `translateX(-${this.currentIndex * itemWidth}px)`;
+
+          this.prevButton.disabled = this.currentIndex === 0;
+          this.nextButton.disabled = this.currentIndex >= this.photoItems.length - this.itemsPerView;
+        }
+
+        startAutoScroll() {
+            this.stopAutoScroll();
+            if (this.photoItems.length <= this.itemsPerView) return;
+            this.autoScrollInterval = setInterval(() => {
+                this.currentIndex++;
+                if (this.currentIndex > this.photoItems.length - this.itemsPerView) {
+                    this.currentIndex = 0;
+                }
+                this.updateCarouselPosition();
+            }, this.autoScrollDelay);
+        }
+
+        stopAutoScroll() {
+            clearInterval(this.autoScrollInterval);
+        }
+
+        addEventListeners() {
+          this.prevButton.addEventListener('click', () => {
+            this.stopAutoScroll();
+            this.currentIndex = Math.max(0, this.currentIndex - this.itemsPerView);
+            this.updateCarouselPosition();
+            setTimeout(() => this.startAutoScroll(), this.manualInteractionPause);
+          });
+
+          this.nextButton.addEventListener('click', () => {
+            this.stopAutoScroll();
+            this.currentIndex = Math.min(this.photoItems.length - this.itemsPerView, this.currentIndex + this.itemsPerView);
+            this.updateCarouselPosition();
+            setTimeout(() => this.startAutoScroll(), this.manualInteractionPause);
+          });
+
+          this.carouselContainer.addEventListener('mouseenter', () => this.stopAutoScroll());
+          this.carouselContainer.addEventListener('mouseleave', () => this.startAutoScroll());
+        }
+      }
+
+      new Carousel('carousel-aerienne');
+      new Carousel('carousel-portrait');
+      new Carousel('carousel-paysage');
+
+      // --- LOGIQUE DE LA LIGHTBOX (PHOTOS) ---
+      class Lightbox {
+        constructor() {
+          this.lightbox = document.getElementById('lightbox');
+          this.lightboxImage = document.getElementById('lightbox-image');
+          this.lightboxCaption = document.getElementById('lightbox-caption');
+          this.closeLightboxBtn = document.querySelector('.close-button'); // Utilise le sélecteur générique
+          this.lightboxPrevBtn = document.getElementById('lightbox-prev-btn');
+          this.lightboxNextBtn = document.getElementById('lightbox-next-btn');
+
+          this.currentPhotoIndex = 0;
+          this.allPhotoItems = [];
+          this.isZoomed = false;
+          this.startX = 0;
+          this.startY = 0;
+          this.translateX = 0;
+          this.translateY = 0;
+          this.isDragging = false;
+          this.touchStartX = 0;
+          this.touchEndX = 0;
+          this.touchStartY = 0;
+          this.touchEndY = 0;
+          this.swipeThreshold = 50;
+
+          this.init();
+        }
+
+        init() {
+          this.collectAllPhotos();
+          this.addEventListeners();
+        }
+
+        collectAllPhotos() {
+          this.allPhotoItems = Array.from(document.querySelectorAll('.photo-lightbox-trigger')).map(trigger => ({
+            srcLarge: trigger.getAttribute('data-src-large'),
+            altText: trigger.querySelector('img').alt,
+            title: trigger.closest('.photo-item').querySelector('.photo-title').textContent
+          }));
+        }
+
+        showPhoto(index) {
+          if (index < 0) {
+            this.currentPhotoIndex = this.allPhotoItems.length - 1;
+          } else if (index >= this.allPhotoItems.length) {
+            this.currentPhotoIndex = 0;
+          } else {
+            this.currentPhotoIndex = index;
+          }
+
+          const photo = this.allPhotoItems[this.currentPhotoIndex];
+          this.lightboxImage.src = photo.srcLarge;
+          this.lightboxImage.alt = photo.altText;
+          this.lightboxCaption.textContent = photo.title;
+
+          // Réinitialiser le zoom et la position
+          this.lightboxImage.classList.remove('zoomed');
+          this.lightboxImage.style.transform = '';
+          this.isZoomed = false;
+          this.translateX = 0;
+          this.translateY = 0;
+
+          gtag('event', 'lightbox_ouverte', {
+            event_category: 'Galerie',
+            event_label: photo.title
+          });
+        }
+
+        openPhotoLightbox(index) {
+          this.showPhoto(index);
+          this.lightbox.classList.add('active');
+          document.body.style.overflow = 'hidden';
+          document.addEventListener('keydown', this.handleKeyboardNavigation.bind(this));
+        }
+
+        closePhotoLightbox() {
+          this.lightbox.classList.remove('active');
+          document.body.style.overflow = 'auto';
+          document.removeEventListener('keydown', this.handleKeyboardNavigation.bind(this));
+        }
+
+        handleKeyboardNavigation(e) {
+          if (this.lightbox.classList.contains('active')) {
+            if (e.key === 'Escape') {
+              this.closePhotoLightbox();
+            } else if (e.key === 'ArrowLeft') {
+              this.showPhoto(this.currentPhotoIndex - 1);
+            } else if (e.key === 'ArrowRight') {
+              this.showPhoto(this.currentPhotoIndex + 1);
+            }
+          }
+        }
+
+        handleZoomClick(e) {
+          if (e.target === this.lightboxImage) {
+            this.isZoomed = !this.isZoomed;
+            this.lightboxImage.classList.toggle('zoomed', this.isZoomed);
+            this.lightboxImage.style.transform = this.isZoomed ? `scale(2) translate(${this.translateX}px, ${this.translateY}px)` : '';
+            this.lightboxImage.style.cursor = this.isZoomed ? 'grab' : 'zoom-in';
+          }
+        }
+
+        handleMouseDown(e) {
+          if (this.isZoomed) {
+            this.isDragging = true;
+            this.startX = e.clientX - this.translateX;
+            this.startY = e.clientY - this.translateY;
+            this.lightboxImage.style.cursor = 'grabbing';
+          }
+        }
+
+        handleMouseMove(e) {
+          if (this.isDragging) {
+            this.translateX = e.clientX - this.startX;
+            this.translateY = e.clientY - this.startY;
+            this.lightboxImage.style.transform = `scale(2) translate(${this.translateX}px, ${this.translateY}px)`;
+          }
+        }
+
+        handleMouseUp() {
+          this.isDragging = false;
+          if (this.isZoomed) {
+            this.lightboxImage.style.cursor = 'grab';
+          }
+        }
+
+        handleMouseLeave() {
+          this.isDragging = false;
+          if (this.isZoomed) {
+            this.lightboxImage.style.cursor = 'grab';
+          }
+        }
+
+        handleTouchStart(e) {
+            this.touchStartX = e.touches[0].clientX;
+            this.touchStartY = e.touches[0].clientY;
+            if (this.isZoomed) {
+                e.preventDefault(); // Empêche le défilement par défaut lors du zoom/pan
+            }
+        }
+
+        handleTouchMove(e) {
+            if (this.isZoomed && e.touches.length === 1) {
+                const deltaX = e.touches[0].clientX - this.touchStartX;
+                const deltaY = e.touches[0].clientY - this.touchStartY;
+                this.translateX += deltaX;
+                this.translateY += deltaY;
+                this.lightboxImage.style.transform = `scale(2) translate(${this.translateX}px, ${this.translateY}px)`;
+                this.touchStartX = e.touches[0].clientX;
+                this.touchStartY = e.touches[0].clientY;
+                e.preventDefault();
+            } else if (!this.isZoomed && e.touches.length === 1) {
+                this.touchEndX = e.touches[0].clientX;
+                this.touchEndY = e.touches[0].clientY;
+            }
+        }
+
+        handleTouchEnd() {
+            if (!this.isZoomed) {
+                const deltaX = this.touchEndX - this.touchStartX;
+                const deltaY = this.touchEndY - this.touchStartY;
+
+                if (Math.abs(deltaX) > this.swipeThreshold && Math.abs(deltaX) > Math.abs(deltaY)) {
+                    if (deltaX > 0) {
+                        this.showPhoto(this.currentPhotoIndex - 1); // Swipe vers la droite
+                    } else {
+                        this.showPhoto(this.currentPhotoIndex + 1); // Swipe vers la gauche
+                    }
+                }
+            }
+            this.touchStartX = 0;
+            this.touchEndX = 0;
+            this.touchStartY = 0;
+            this.touchEndY = 0;
+        }
+
+        addEventListeners() {
+          document.querySelectorAll('.photo-lightbox-trigger').forEach((trigger, index) => {
+            trigger.addEventListener('click', (e) => {
+              e.preventDefault();
+              this.openPhotoLightbox(index);
+            });
+          });
+
+          this.closeLightboxBtn.addEventListener('click', this.closePhotoLightbox.bind(this));
+          this.lightboxPrevBtn.addEventListener('click', () => this.showPhoto(this.currentPhotoIndex - 1));
+          this.lightboxNextBtn.addEventListener('click', () => this.showPhoto(this.currentPhotoIndex + 1));
+          this.lightbox.addEventListener('click', (e) => {
+            if (e.target === this.lightbox) {
+              this.closePhotoLightbox();
+            }
+          });
+
+          // Zoom et Drag
+          this.lightboxImage.addEventListener('click', this.handleZoomClick.bind(this));
+          this.lightboxImage.addEventListener('mousedown', this.handleMouseDown.bind(this));
+          this.lightboxImage.addEventListener('mousemove', this.handleMouseMove.bind(this));
+          this.lightboxImage.addEventListener('mouseup', this.handleMouseUp.bind(this));
+          this.lightboxImage.addEventListener('mouseleave', this.handleMouseLeave.bind(this));
+
+          // Événements tactiles pour mobile
+          this.lightboxImage.addEventListener('touchstart', this.handleTouchStart.bind(this));
+          this.lightboxImage.addEventListener('touchmove', this.handleTouchMove.bind(this));
+          this.lightboxImage.addEventListener('touchend', this.handleTouchEnd.bind(this));
+        }
+      }
+      new Lightbox();
+
+      // --- LOGIQUE DE SUIVI DES CLICS SUR LES VIDÉOS ---
+      document.querySelectorAll('.video').forEach(videoDiv => {
+        videoDiv.addEventListener('click', () => {
+          const videoTitleElement = videoDiv.querySelector('.video-title');
+          const videoTitle = videoTitleElement ? videoTitleElement.textContent : 'Vidéo sans titre';
+          gtag('event', 'video_play', {
+            event_category: 'Vidéos',
+            event_label: videoTitle
+          });
+        });
+      });
+
+      // --- OFFLINE DETECTION ---
+      const offlineMessage = document.getElementById('offline-message');
+      const toggleOfflineMessage = (show) => {
+          offlineMessage.classList.toggle('show', show);
+      };
+
+      if (!navigator.onLine) {
+          toggleOfflineMessage(true);
+      }
+      window.addEventListener('offline', () => toggleOfflineMessage(true));
+      window.addEventListener('online', () => toggleOfflineMessage(false));
+
+      // --- LOGIQUE DU LOADER ---
+      const loader = document.getElementById('loader');
+      window.addEventListener('load', () => {
+        loader.classList.add('hidden');
+        loader.addEventListener('transitionend', () => {
+          loader.remove();
+        });
+      });
+
+      // --- ENREGISTREMENT DU SERVICE WORKER ---
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js')
+            .then(registration => {
+              console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            })
+            .catch(err => {
+              console.log('ServiceWorker registration failed: ', err);
+            });
+        });
+      }
+
+    // Script pour modale vidéo enrichie (EXISTANT - Réorganisé pour être dans le même bloc de script)
+    document.querySelectorAll('.video').forEach(video => {
+      video.addEventListener('click', () => {
+        document.getElementById('videoModal').classList.add('active');
+        document.getElementById('videoModalIframe').src = video.dataset.iframe;
+        document.getElementById('videoTitle').textContent = video.dataset.title;
+        document.getElementById('videoDirector').textContent = video.dataset.director;
+        document.getElementById('videoCamera').textContent = video.dataset.camera;
+        document.getElementById('videoLocation').textContent = video.dataset.location;
+        document.getElementById('videoDate').textContent = video.dataset.date;
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeVideoModal() {
+      document.getElementById('videoModal').classList.remove('active');
+      document.getElementById('videoModalIframe').src = "";
+      document.body.style.overflow = 'auto';
+    }
+
+    // NOUVEAU: Script pour Lightbox Instagram
+    // Votre configuration Firebase (REMPLACEZ AVEC VOTRE VRAIE CONFIG)
+    const firebaseConfig = {
+        apiKey: "AIzaSyAORWbN3pDEhMlpVz3Mb1uyJz_bM44w7JA",
+        authDomain: "portfolio-jeremie-favre.firebaseapp.com",
+        projectId: "portfolio-jeremie-favre",
+        storageBucket: "portfolio-jeremie-favre.firebasestorage.app",
+        messagingSenderId: "958529482559",
+        appId: "1:958529482559:web:e01cab1b4f86d437736d8a",
+        measurementId: "G-V8GS2X4LQP"
+    };
+
+    // Initialiser Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    // Obtenir une référence au service de base de données (Realtime Database)
+    const database = firebase.database();
+    // OU pour Cloud Firestore:
+    // const db = firebase.firestore(); // Décommentez et utilisez si vous préférez Firestore
+
+    // Obtenir les éléments de la Lightbox Instagram
+    const openInstagramLightboxBtn = document.getElementById('openInstagramLightboxBtn');
+    const instagramLightbox = document.getElementById('instagramLightbox');
+    const instagramPostContainer = document.getElementById('instagramPostContainer');
+
+    // Fonction pour ouvrir la Lightbox Instagram
+    function openInstagramLightbox() {
+        instagramLightbox.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Empêche le défilement du corps
+        fetchLatestInstagramPost(); // Charger le post lors de l'ouverture
+    }
+
+    // Fonction pour fermer la Lightbox Instagram
+    function closeInstagramLightbox() {
+        instagramLightbox.classList.remove('active');
+        document.body.style.overflow = 'auto'; // Rétablit le défilement
+        instagramPostContainer.innerHTML = '<p>Chargement du post Instagram...</p>'; // Réinitialiser le contenu
+    }
+
+    // Fonction pour récupérer le dernier post Instagram depuis Firebase
+    async function fetchLatestInstagramPost() {
+        instagramPostContainer.innerHTML = '<p>Chargement du post Instagram...</p>'; // Afficher le message de chargement
+
+        try {
+            // --- Pour Firebase Realtime Database ---
+            // Assurez-vous que vos données de post sont stockées sous 'instagram/latestPost'
+            const snapshot = await database.ref('instagram/latestPost').once('value');
+            const postData = snapshot.val();
+
+            if (postData) {
+                displayInstagramPost(postData);
+            } else {
+                instagramPostContainer.innerHTML = '<p>Aucun post Instagram trouvé dans Firebase. Veuillez vérifier votre configuration Firebase ou vos fonctions Cloud.</p>';
+            }
+
+            // --- Pour Cloud Firestore (si vous préférez) ---
+            /*
+            // Décommentez et utilisez si vous utilisez Firestore
+            const querySnapshot = await db.collection('instagramPosts')
+                                           .orderBy('timestamp', 'desc') // Assurez-vous d'avoir un champ 'timestamp'
+                                           .limit(1)
+                                           .get();
+
+            if (!querySnapshot.empty) {
+                const postData = querySnapshot.docs[0].data();
+                displayInstagramPost(postData);
+            } else {
+                instagramPostContainer.innerHTML = '<p>Aucun post Instagram trouvé dans Firestore.</p>';
+            }
+            */
+
+        } catch (error) {
+            console.error("Erreur lors de la récupération du post Instagram depuis Firebase:", error);
+            instagramPostContainer.innerHTML = '<p>Erreur lors du chargement du post. Veuillez réessayer plus tard.</p>';
+        }
+    }
+
+    // Fonction pour afficher le post Instagram dans la Lightbox
+    function displayInstagramPost(post) {
+        let htmlContent = `<h3>${post.caption ? post.caption.substring(0, 100) + '...' : 'Dernier post Instagram'}</h3>`; // Tronquer la légende pour le titre
+        if (post.media_type === 'IMAGE' || post.media_type === 'CAROUSEL_ALBUM') {
+            htmlContent += `<img src="${post.media_url}" alt="Instagram Post">`;
+        } else if (post.media_type === 'VIDEO') {
+            htmlContent += `<video controls src="${post.media_url}" style="max-width: 100%; height: auto;"></video>`;
+        }
+
+        if (post.caption) {
+            // Garder la légende complète sous le média
+            htmlContent += `<p>${post.caption}</p>`;
+        }
+        htmlContent += `<p><a href="${post.permalink}" target="_blank" rel="noopener noreferrer">Voir sur Instagram</a></p>`;
+
+        instagramPostContainer.innerHTML = htmlContent;
+    }
+
+    // Écouteurs d'événements pour la Lightbox Instagram
+    openInstagramLightboxBtn.addEventListener('click', openInstagramLightbox);
+
+    // Fermer la Lightbox si cliqué en dehors du contenu (pour les deux modales)
+    window.addEventListener('click', (event) => {
+        if (event.target === instagramLightbox) {
+            closeInstagramLightbox();
+        }
+        if (event.target === document.getElementById('videoModal')) { // ID de votre modale vidéo existante
+            closeVideoModal();
+        }
+    });
+
+</script>
+</body>
+</html>
