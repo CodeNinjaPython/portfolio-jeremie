@@ -843,7 +843,9 @@ function closeVideoModal() {
 
     /* Bouton retour en haut */
     #back-to-top {
-      display: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       position: fixed;
       bottom: 20px;
       right: 20px;
@@ -1697,7 +1699,7 @@ LightWidget WIDGET END -->
         }
 
         addEventListeners() {
-          this.prevButton.addEventListener('click', () => {
+                   this.prevButton.addEventListener('click', () => {
             this.stopAutoScroll();
             this.currentIndex = Math.max(0, this.currentIndex - this.itemsPerView);
             this.updateCarouselPosition();
