@@ -2002,45 +2002,69 @@ LightWidget WIDGET END -->
         });
       }
     });
-  
-// Script pour modale vidéo enrichie
-document.querySelectorAll('.video').forEach(video => {
-  video.addEventListener('click', () => {
-    document.getElementById('videoModal').classList.add('active');
-    document.getElementById('videoModalIframe').src = video.dataset.iframe;
-    document.getElementById('videoTitle').textContent = video.dataset.title;
-    document.getElementById('videoDirector').textContent = video.dataset.director;
-    document.getElementById('videoCamera').textContent = video.dataset.camera;
-    document.getElementById('videoLocation').textContent = video.dataset.location;
-    document.getElementById('videoDate').textContent = video.dataset.date;
-    document.body.style.overflow = 'hidden';
-  });
-});
-
-function closeVideoModal() {
-  document.getElementById('videoModal').classList.remove('active');
-  document.getElementById('videoModalIframe').src = "";
-  document.body.style.overflow = 'auto';
-}
-
-</script>
-
+  </script>
+</body>
+</html>
 <!-- Modale Vidéo améliorée -->
+    <div class="lightbox" id="videoModal">
+        <div class="video-popup">
+            <div class="video-part">
+                <iframe id="videoModalIframe" src="" allowfullscreen style="width:100%; height:500px; border:none; pointer-events:auto;"></iframe>
+            </div>
+            <div class="description-part">
+                <h3 id="videoTitle"></h3>
+                <p>🎬 <strong>Réalisateur :</strong> <span id="videoDirector"></span></p>
+                <p>🎥 <strong>Matériel :</strong> <span id="videoCamera"></span></p>
+                <p>📍 <strong>Lieu :</strong> <span id="videoLocation"></span></p>
+                <p>🗓 <strong>Date :</strong> <span id="videoDate"></span></p>
+            </div>
+        </div>
+        <span class="close-button" onclick="closeVideoModal()">×</span>
+    </div>
 
-<div class="lightbox" id="videoModal">
-<div class="video-popup" style="max-width:900px; width:90%; background:#000; border-radius:12px; overflow:hidden;">
-<div class="video-part" style="background:#000;">
-<iframe id="videoModalIframe" src="" allowfullscreen style="width:100%; height:500px; border:none; pointer-events:auto;"></iframe>
-</div>
-<div class="description-part" style="background:#f5f1e6; color:#111; padding:2rem; font-family:'Lato',sans-serif;">
-<h3 id="videoTitle" style="font-family:'Bebas Neue',sans-serif; font-size:2rem; margin-bottom:1rem; color:#222;"></h3>
-<p style="margin:0.5rem 0;">🎬 <strong>Réalisateur :</strong> <span id="videoDirector"></span></p>
-<p style="margin:0.5rem 0;">🎥 <strong>Matériel :</strong> <span id="videoCamera"></span></p>
-<p style="margin:0.5rem 0;">📍 <strong>Lieu :</strong> <span id="videoLocation"></span></p>
-<p style="margin:0.5rem 0;">🗓 <strong>Date :</strong> <span id="videoDate"></span></p>
-</div>
-</div>
-<span class="close-button" onclick="closeVideoModal()" style="position:absolute;top:30px;right:30px;font-size:2rem;color:white;cursor:pointer;">×</span>
-</div>
+    <!-- Script JavaScript unique et consolidé -->
+    <script>
+        // Fonction pour fermer la modale
+        function closeVideoModal() {
+            document.getElementById('videoModal').classList.remove('active');
+            document.getElementById('videoModalIframe').src = "";
+            document.body.style.overflow = 'auto';
+        }
+
+        // Événement d'écoute pour l'ouverture de la modale
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.video').forEach(video => {
+                video.addEventListener('click', () => {
+                    const iframe = video.dataset.iframe || '';
+                    const title = video.dataset.title || 'Titre non disponible';
+                    const director = video.dataset.director || 'Réalisateur inconnu';
+                    const camera = video.dataset.camera || 'Matériel non spécifié';
+                    const location = video.dataset.location || 'Lieu non spécifié';
+                    const date = video.dataset.date || 'Date non spécifiée';
+                    
+                    // Remplir les informations de la modale
+                    document.getElementById('videoModalIframe').src = iframe;
+                    document.getElementById('videoTitle').textContent = title;
+                    document.getElementById('videoDirector').textContent = director;
+                    document.getElementById('videoCamera').textContent = camera;
+                    document.getElementById('videoLocation').textContent = location;
+                    document.getElementById('videoDate').textContent = date;
+                    
+                    // Afficher la modale et cacher le défilement du corps de la page
+                    document.getElementById('videoModal').classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            // Gérer les clics en dehors de la modale pour la fermer
+            window.addEventListener('click', (e) => {
+                const videoModal = document.getElementById('videoModal');
+                if (e.target === videoModal) {
+                    closeVideoModal();
+                }
+            });
+        });
+
+    </script>
 </body>
 </html>
