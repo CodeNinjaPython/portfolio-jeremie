@@ -6,13 +6,20 @@
 // Script pour modale vidéo enrichie
 document.querySelectorAll('.video').forEach(video => {
   video.addEventListener('click', () => {
+    const iframe = video.dataset.iframe || '';
+    const title = video.dataset.title || 'Titre non disponible';
+    const director = video.dataset.director || 'Réalisateur inconnu';
+    const camera = video.dataset.camera || 'Matériel non spécifié';
+    const location = video.dataset.location || 'Lieu non spécifié';
+    const date = video.dataset.date || 'Date non spécifiée';
+
     document.getElementById('videoModal').classList.add('active');
-    document.getElementById('videoModalIframe').src = video.dataset.iframe;
-    document.getElementById('videoTitle').textContent = video.dataset.title;
-    document.getElementById('videoDirector').textContent = video.dataset.director;
-    document.getElementById('videoCamera').textContent = video.dataset.camera;
-    document.getElementById('videoLocation').textContent = video.dataset.location;
-    document.getElementById('videoDate').textContent = video.dataset.date;
+    document.getElementById('videoModalIframe').src = iframe;
+    document.getElementById('videoTitle').textContent = title;
+    document.getElementById('videoDirector').textContent = director;
+    document.getElementById('videoCamera').textContent = camera;
+    document.getElementById('videoLocation').textContent = location;
+    document.getElementById('videoDate').textContent = date;
     document.body.style.overflow = 'hidden';
   });
 });
@@ -1209,7 +1216,7 @@ function closeVideoModal() {
 <img alt="Logo Jérémie Favre, portrait stylisé de Jérémie Favre dans un cercle sur fond neutre, ambiance professionnelle et épurée" src="unnamed.jpg" style="border-radius:50%; width:120px; height:120px; object-fit:cover; background:#f4f4f4;"/>
 <h1>Jérémie FAVRE</h1>
 <p>Portfolio</p>
-</div>
+</div> <!-- End of video gallery -->
 <header>
 <div class="top-banner">VIDÉASTE - CADREUR MONTEUR</div>
 <div class="header-content">
@@ -1316,12 +1323,13 @@ function closeVideoModal() {
 <div class="video-title">ALONE - COURT-MÉTRAGE</div>
 </div>
 <div class="video" data-camera="Sony A6700" data-date="2024" data-director="Wesley Themyr - Jérémie Favre" data-iframe="https://www.youtube.com/embed/5S_ke4JsViI" data-location="Chez Julien Leveneur" data-title="Dessert Diabétique">
-<iframe allowfullscreen="" src="https://www.youtube.com/embed/5S_ke4JsViI"></iframe>
+<img src="https://img.youtube.com/vi/5S_ke4JsViI/0.jpg" alt="Dessert spécial diabétique - Ensemble contre le diabète ( Julien LEVENEUR )" class="video-placeholder" />
 <div class="video-title">Dessert spécial diabétique - Ensemble contre le diabète ( Julien LEVENEUR )</div>
 </div>
 <div class="video" data-camera="Sony A7 IV" data-date="2025" data-director="Sendil Souprayenmestry - Loïc Bege - Jérémie Favre" data-iframe="https://www.youtube.com/embed/RHYnoJ17VnQ" data-location="La Réunion" data-title="Zembrocal - CONCOURS DE COURT-MÉTRAGE KISA NOU LÉ">
 <iframe allowfullscreen="" src="https://www.youtube.com/embed/RHYnoJ17VnQ"></iframe>
 <div class="video-title">Zembrocal - CONCOURS DE COURT-MÉTRAGE KISA NOU LÉ</div>
+</div>
 </div>
 </div>
 </section>
@@ -1499,6 +1507,17 @@ LightWidget WIDGET END -->
   </div>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
+      // Lazy-load iframes on video click
+      document.querySelectorAll('.video').forEach(video => {
+        video.addEventListener('click', () => {
+          if (!video.querySelector('iframe')) {
+            const iframe = document.createElement('iframe');
+            iframe.src = video.dataset.iframe;
+            iframe.allowFullscreen = true;
+            video.querySelector('.video-placeholder').replaceWith(iframe);
+          }
+        });
+      });
       // --- LOGIQUE DU THÈME CLAIR/SOMBRE ---
       const themeToggle = document.getElementById('theme-toggle');
       const themeIcon = document.getElementById('theme-icon');
