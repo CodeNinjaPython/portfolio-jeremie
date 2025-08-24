@@ -6,20 +6,13 @@
 // Script pour modale vidéo enrichie
 document.querySelectorAll('.video').forEach(video => {
   video.addEventListener('click', () => {
-    const iframe = video.dataset.iframe || '';
-    const title = video.dataset.title || 'Titre non disponible';
-    const director = video.dataset.director || 'Réalisateur inconnu';
-    const camera = video.dataset.camera || 'Matériel non spécifié';
-    const location = video.dataset.location || 'Lieu non spécifié';
-    const date = video.dataset.date || 'Date non spécifiée';
-
     document.getElementById('videoModal').classList.add('active');
-    document.getElementById('videoModalIframe').src = iframe;
-    document.getElementById('videoTitle').textContent = title;
-    document.getElementById('videoDirector').textContent = director;
-    document.getElementById('videoCamera').textContent = camera;
-    document.getElementById('videoLocation').textContent = location;
-    document.getElementById('videoDate').textContent = date;
+    document.getElementById('videoModalIframe').src = video.dataset.iframe;
+    document.getElementById('videoTitle').textContent = video.dataset.title;
+    document.getElementById('videoDirector').textContent = video.dataset.director;
+    document.getElementById('videoCamera').textContent = video.dataset.camera;
+    document.getElementById('videoLocation').textContent = video.dataset.location;
+    document.getElementById('videoDate').textContent = video.dataset.date;
     document.body.style.overflow = 'hidden';
   });
 });
@@ -1211,11 +1204,12 @@ function closeVideoModal() {
 
 </style>
 </head>
+<body>
 <div id="loader">
 <img alt="Logo Jérémie Favre, portrait stylisé de Jérémie Favre dans un cercle sur fond neutre, ambiance professionnelle et épurée" src="unnamed.jpg" style="border-radius:50%; width:120px; height:120px; object-fit:cover; background:#f4f4f4;"/>
 <h1>Jérémie FAVRE</h1>
 <p>Portfolio</p>
-</div> <!-- End of video gallery -->
+</div>
 <header>
 <div class="top-banner">VIDÉASTE - CADREUR MONTEUR</div>
 <div class="header-content">
@@ -1275,6 +1269,7 @@ function closeVideoModal() {
         J'explore la coordination des tournages et la prise de vue aérienne avec drone stabilisé ou FPV, pour apporter des perspectives originales à vos projets.
       </p>
 </section>
+<section id="skills">
 <h2>Mes Outils Créatifs</h2>
 <div class="skills-grid">
 <div>
@@ -1289,63 +1284,16 @@ function closeVideoModal() {
 </div>
 </div>
 </section>
-<body>
-    <!-- Rendu de la galerie vidéo -->
-          <section id="projets" class="section-white">
+<section class="section-white" id="portfolio">
 <h2>Portfolio Vidéo</h2>
 <div class="gallery">
 <div class="video" data-camera="RED SCARLET" data-date="2024" data-director="Loïc Bege - Jérémie Favre" data-iframe="https://www.youtube.com/embed/qtrdrRYwMoA" data-location="Parc des palmiers" data-title="LIVRE DU DESTIN - COURT-MÉTRAGE">
-<img src="https://img.youtube.com/vi/qtrdrRYwMoA/0.jpg" alt="LIVRE DU DESTIN - COURT-MÉTRAGE" class="video-placeholder" />
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/qtrdrRYwMoA"></iframe>
 <div class="video-title">LIVRE DU DESTIN - COURT-MÉTRAGE</div>
 </div>
 <div class="video" data-camera="RED SCARLET" data-date="2024" data-director="Wesley Themyr - Jérémie Favre - Dhiessene Virapin" data-iframe="https://www.youtube.com/embed/j_FrzbnDIuY" data-location="Plaine des sables" data-title="AURORA - COURT-MÉTRAGE">
-<img src="https://img.youtube.com/vi/j_FrzbnDIuY/0.jpg" alt="AURORA - COURT-MÉTRAGE" class="video-placeholder" />
-<div class="video-title">AURORA - COURT-MÉTRAGE</div>
-</div>
-<div class="video" data-camera="Sony A7 IV" data-date="2024" data-director="Jérémie Favre" data-iframe="https://www.youtube.com/embed/_q7MnK_2QFI" data-location="Parking sous terrain Saint-Leu" data-title="VENUM PUB">
-<img src="https://img.youtube.com/vi/_q7MnK_2QFI/0.jpg" alt="VENUM PUB" class="video-placeholder" />
-<div class="video-title">Venum - PUB</div>
-</div>
-<div class="video" data-camera="Sony A7 IV + Sony A6700" data-date="2024" data-director="Jérémie Favre" data-iframe="https://www.youtube.com/embed/XOG37yLswio" data-location="Saint-Gilles" data-title="Restaurant LE LEON">
-<img src="https://img.youtube.com/vi/XOG37yLswio/0.jpg" alt="Restaurant LE LEON" class="video-placeholder" />
-<div class="video-title">Restaurant LE LEON</div>
-</div>
-<div class="video" data-camera="Non spécifié" data-date="Non spécifiée" data-director="Inconnu" data-iframe="https://www.youtube.com/embed/zZD8K0tTuzo" data-location="Champ de canne" data-title="Portrait Stéphanie Valmorex">
-<img src="https://img.youtube.com/vi/zZD8K0tTuzo/0.jpg" alt="Portrait Stéphanie Valmorex" class="video-placeholder" />
-<div class="video-title">Portrait de Stéphanie Valmorex</div>
-</div>
-<div class="video" data-camera="Sony A7 IV" data-date="2024" data-director="Wesley Themyr - Julien Dennemont - Jérémie Favre" data-iframe="https://www.youtube.com/embed/9GQS8eGeZlk" data-location="Studio et extérieur" data-title="KidnaPink - COURT-MÉTRAGE">
-<img src="https://img.youtube.com/vi/9GQS8eGeZlk/0.jpg" alt="KidnaPink - COURT-MÉTRAGE" class="video-placeholder" />
-<div class="video-title">KidnaPink - COURT-MÉTRAGE</div>
-</div>
-<div class="video" data-camera="Sony A7 IV" data-date="2024" data-director="Wesley Themyr - Jérémie Favre" data-iframe="https://www.youtube.com/embed/6bbMbT8_QGE" data-location="Littoral Ouest" data-title="ALONE - COURT-MÉTRAGE">
-<img src="https://img.youtube.com/vi/6bbMbT8_QGE/0.jpg" alt="ALONE - COURT-MÉTRAGE" class="video-placeholder" />
-<div class="video-title">ALONE - COURT-MÉTRAGE</div>
-</div>
-<div class="video" data-camera="Sony A6700" data-date="2024" data-director="Wesley Themyr - Jérémie Favre" data-iframe="https://www.youtube.com/embed/5S_ke4JsViI" data-location="Chez Julien Leveneur" data-title="Dessert Diabétique">
-<img src="https://img.youtube.com/vi/5S_ke4JsViI/0.jpg" alt="Dessert spécial diabétique - Ensemble contre le diabète ( Julien LEVENEUR )" class="video-placeholder" />
-<div class="video-title">Dessert spécial diabétique - Ensemble contre le diabète ( Julien LEVENEUR )</div>
-</div>
-<div class="video" data-camera="Sony A7 IV" data-date="2025" data-director="Sendil Souprayenmestry - Loïc Bege - Jérémie Favre" data-iframe="https://www.youtube.com/embed/RHYnoJ17VnQ" data-location="La Réunion" data-title="Zembrocal - CONCOURS DE COURT-MÉTRAGE KISA NOU LÉ">
-<img src="https://img.youtube.com/vi/RHYnoJ17VnQ/0.jpg" alt="Zembrocal - CONCOURS DE COURT-MÉTRAGE KISA NOU LÉ" class="video-placeholder" />
-<div class="video-title">Zembrocal - CONCOURS DE COURT-MÉTRAGE KISA NOU LÉ</div>
-</div>
-<div class="video" data-camera="Sony A7 IV + Sony A7 III + A6700 " data-date="2024" data-director="Wesley Themyr - Crescence Jeannette - Jérémie Favre" data-iframe="https://www.youtube.com/embed/8SAUpdJsBJI" data-location="La Réunion" data-title="Régal azot'! Peu importe nout' kiltir !">
-<img src="https://img.youtube.com/vi/8SAUpdJsBJI/0.jpg" alt="Régal azot'! Peu importe nout' kiltir !" class="video-placeholder"/>
-<div class="video-title">Régal azot'! Peu importe nout' kiltir !</div>
-</div>
-</div>
-</section>  
-<!--   
-<h2>Portfolio Vidéo</h2>
-<div class="gallery">
-<div class="video" data-camera="RED SCARLET" data-date="2024" data-director="Loïc Bege - Jérémie Favre" data-iframe="https://www.youtube.com/embed/qtrdrRYwMoA" data-location="Parc des palmiers" data-title="LIVRE DU DESTIN">
-<iframe allowfullscreen="" src="https://www.youtube.com/embed/qtrdrRYwMoA"></iframe>
-<div class="video-title">LIVRE DU DESTIN Court metrage</div>
-</div>
-<div class="video" data-camera="RED SCARLET" data-date="2024" data-director="Wesley Themyr - Jérémie Favre - Dhiessene Virapin" data-iframe="https://www.youtube.com/embed/j_FrzbnDIuY" data-location="Plaine des sables" data-title="AURORA">
 <iframe allowfullscreen="" src="https://www.youtube.com/embed/j_FrzbnDIuY"></iframe>
-<div class="video-title">AURORA - Court Métrages</div>
+<div class="video-title">AURORA - COURT-MÉTRAGE</div>
 </div>
 <div class="video" data-camera="Sony A7 IV" data-date="2024" data-director="Jérémie Favre" data-iframe="https://www.youtube.com/embed/_q7MnK_2QFI" data-location="Parking sous terrain Saint-Leu" data-title="VENUM PUB">
 <iframe allowfullscreen="" src="https://www.youtube.com/embed/_q7MnK_2QFI"></iframe>
@@ -1355,24 +1303,27 @@ function closeVideoModal() {
 <iframe allowfullscreen="" src="https://www.youtube.com/embed/XOG37yLswio"></iframe>
 <div class="video-title">Restaurant LE LEON</div>
 </div>
-<div class="video" data-camera="Sony A7 IV" data-date="2024" data-director="Jérémie Favre" data-iframe="https://www.youtube.com/embed/zZD8K0tTuzo" data-location="Champ de canne" data-title="Portrait Stéphanie Valmorex">
+<div class="video" data-camera="" data-date="" data-director="" data-iframe="https://www.youtube.com/embed/zZD8K0tTuzo" data-location="Champ de canne" data-title="Portrait Stéphanie Valmorex">
 <iframe allowfullscreen="" src="https://www.youtube.com/embed/zZD8K0tTuzo"></iframe>
 <div class="video-title">Portrait de Stéphanie Valmorex</div>
 </div>
-<div class="video" data-camera="Sony A7 IV" data-date="2024" data-director="Jérémie Favre" data-iframe="https://www.youtube.com/embed/9GQS8eGeZlk" data-location="Studio et extérieur" data-title="KidnaPink Final">
+<div class="video" data-camera="Sony A7 IV" data-date="2024" data-director="Wesley Themyr - Julien Dennemont - Jérémie Favre" data-iframe="https://www.youtube.com/embed/9GQS8eGeZlk" data-location="Studio et extérieur" data-title="KidnaPink - COURT-MÉTRAGE">
 <iframe allowfullscreen="" src="https://www.youtube.com/embed/9GQS8eGeZlk"></iframe>
-<div class="video-title">KidnaPink Final Officiel</div>
+<div class="video-title">KidnaPink - COURT-MÉTRAGE</div>
 </div>
-<div class="video" data-camera="Sony A7 IV" data-date="2024" data-director="Jérémie Favre" data-iframe="https://www.youtube.com/embed/6bbMbT8_QGE" data-location="Littoral Ouest" data-title="ALONE">
+<div class="video" data-camera="Sony A7 IV" data-date="2024" data-director="Wesley Themyr -Jérémie Favre" data-iframe="https://www.youtube.com/embed/6bbMbT8_QGE" data-location="Littoral Ouest" data-title="ALONE - COURT-MÉTRAGE">
 <iframe allowfullscreen="" src="https://www.youtube.com/embed/6bbMbT8_QGE"></iframe>
-<div class="video-title">ALONE</div>
+<div class="video-title">ALONE - COURT-MÉTRAGE</div>
 </div>
-<div class="video" data-camera="Sony A7 III" data-date="2024" data-director="Jérémie Favre" data-iframe="https://www.youtube.com/embed/5S_ke4JsViI" data-location="Chez Julien Leveneur" data-title="Dessert Diabétique">
+<div class="video" data-camera="Sony A6700" data-date="2024" data-director="Wesley Themyr - Jérémie Favre" data-iframe="https://www.youtube.com/embed/5S_ke4JsViI" data-location="Chez Julien Leveneur" data-title="Dessert Diabétique">
 <iframe allowfullscreen="" src="https://www.youtube.com/embed/5S_ke4JsViI"></iframe>
 <div class="video-title">Dessert spécial diabétique - Ensemble contre le diabète ( Julien LEVENEUR )</div>
 </div>
+<div class="video" data-camera="Sony A7 IV" data-date="2025" data-director="Sendil Souprayenmestry - Loïc Bege - Jérémie Favre" data-iframe="https://www.youtube.com/embed/RHYnoJ17VnQ" data-location="La Réunion" data-title="Zembrocal - CONCOURS DE COURT-MÉTRAGE KISA NOU LÉ">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/RHYnoJ17VnQ"></iframe>
+<div class="video-title">Zembrocal - CONCOURS DE COURT-MÉTRAGE KISA NOU LÉ</div>
 </div>
-</section> -->
+</section>
 <section id="photos">
 <h2>Vitrine Photo</h2>
 <!-- Elfsight Instagram Feed | Untitled Instagram Feed -->
@@ -1547,17 +1498,6 @@ LightWidget WIDGET END -->
   </div>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // Lazy-load iframes on video click
-      document.querySelectorAll('.video').forEach(video => {
-        video.addEventListener('click', () => {
-          if (!video.querySelector('iframe')) {
-            const iframe = document.createElement('iframe');
-            iframe.src = video.dataset.iframe;
-            iframe.allowFullscreen = true;
-            video.querySelector('.video-placeholder').replaceWith(iframe);
-          }
-        });
-      });
       // --- LOGIQUE DU THÈME CLAIR/SOMBRE ---
       const themeToggle = document.getElementById('theme-toggle');
       const themeIcon = document.getElementById('theme-icon');
@@ -2038,70 +1978,45 @@ LightWidget WIDGET END -->
         });
       }
     });
-  </script>
-</body>
-</html>
+  
+// Script pour modale vidéo enrichie
+document.querySelectorAll('.video').forEach(video => {
+  video.addEventListener('click', () => {
+    document.getElementById('videoModal').classList.add('active');
+    document.getElementById('videoModalIframe').src = video.dataset.iframe;
+    document.getElementById('videoTitle').textContent = video.dataset.title;
+    document.getElementById('videoDirector').textContent = video.dataset.director;
+    document.getElementById('videoCamera').textContent = video.dataset.camera;
+    document.getElementById('videoLocation').textContent = video.dataset.location;
+    document.getElementById('videoDate').textContent = video.dataset.date;
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+function closeVideoModal() {
+  document.getElementById('videoModal').classList.remove('active');
+  document.getElementById('videoModalIframe').src = "";
+  document.body.style.overflow = 'auto';
+}
+
+</script>
 
 <!-- Modale Vidéo améliorée -->
-    <div class="lightbox" id="videoModal">
-        <div class="video-popup">
-            <div class="video-part">
-                <iframe id="videoModalIframe" src="" allowfullscreen style="width:100%; height:500px; border:none; pointer-events:auto;"></iframe>
-            </div>
-            <div class="description-part">
-                <h3 id="videoTitle"></h3>
-                <p>🎬 <strong>Réalisateur :</strong> <span id="videoDirector"></span></p>
-                <p>🎥 <strong>Matériel :</strong> <span id="videoCamera"></span></p>
-                <p>📍 <strong>Lieu :</strong> <span id="videoLocation"></span></p>
-                <p>🗓 <strong>Date :</strong> <span id="videoDate"></span></p>
-            </div>
-        </div>
-        <span class="close-button" onclick="closeVideoModal()">×</span>
-    </div>
 
-    <!-- Script JavaScript unique et consolidé -->
-    <script>
-        // Fonction pour fermer la modale
-        function closeVideoModal() {
-            document.getElementById('videoModal').classList.remove('active');
-            document.getElementById('videoModalIframe').src = "";
-            document.body.style.overflow = 'auto';
-        }
-
-        // Événement d'écoute pour l'ouverture de la modale
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.video').forEach(video => {
-                video.addEventListener('click', () => {
-                    const iframe = video.dataset.iframe || '';
-                    const title = video.dataset.title || 'Titre non disponible';
-                    const director = video.dataset.director || 'Réalisateur inconnu';
-                    const camera = video.dataset.camera || 'Matériel non spécifié';
-                    const location = video.dataset.location || 'Lieu non spécifié';
-                    const date = video.dataset.date || 'Date non spécifiée';
-                    
-                    // Remplir les informations de la modale
-                    document.getElementById('videoModalIframe').src = iframe;
-                    document.getElementById('videoTitle').textContent = title;
-                    document.getElementById('videoDirector').textContent = director;
-                    document.getElementById('videoCamera').textContent = camera;
-                    document.getElementById('videoLocation').textContent = location;
-                    document.getElementById('videoDate').textContent = date;
-                    
-                    // Afficher la modale et cacher le défilement du corps de la page
-                    document.getElementById('videoModal').classList.add('active');
-                    document.body.style.overflow = 'hidden';
-                });
-            });
-
-            // Gérer les clics en dehors de la modale pour la fermer
-            window.addEventListener('click', (e) => {
-                const videoModal = document.getElementById('videoModal');
-                if (e.target === videoModal) {
-                    closeVideoModal();
-                }
-            });
-        });
-
-    </script>
+<div class="lightbox" id="videoModal">
+<div class="video-popup" style="max-width:900px; width:90%; background:#000; border-radius:12px; overflow:hidden;">
+<div class="video-part" style="background:#000;">
+<iframe id="videoModalIframe" src="" allowfullscreen style="width:100%; height:500px; border:none; pointer-events:auto;"></iframe>
+</div>
+<div class="description-part" style="background:#f5f1e6; color:#111; padding:2rem; font-family:'Lato',sans-serif;">
+<h3 id="videoTitle" style="font-family:'Bebas Neue',sans-serif; font-size:2rem; margin-bottom:1rem; color:#222;"></h3>
+<p style="margin:0.5rem 0;">🎬 <strong>Réalisateur :</strong> <span id="videoDirector"></span></p>
+<p style="margin:0.5rem 0;">🎥 <strong>Matériel :</strong> <span id="videoCamera"></span></p>
+<p style="margin:0.5rem 0;">📍 <strong>Lieu :</strong> <span id="videoLocation"></span></p>
+<p style="margin:0.5rem 0;">🗓 <strong>Date :</strong> <span id="videoDate"></span></p>
+</div>
+</div>
+<span class="close-button" onclick="closeVideoModal()" style="position:absolute;top:30px;right:30px;font-size:2rem;color:white;cursor:pointer;">×</span>
+</div>
 </body>
 </html>
