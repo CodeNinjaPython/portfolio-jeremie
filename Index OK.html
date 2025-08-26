@@ -1,30 +1,94 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-    <script async="" data-cbid="9ca2ce88-942f-428b-9100-65869676c999" id="Cookiebot" src="https://consent.cookiebot.com/uc.js" type="text/javascript"></script>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Jérémie FAVRE - Portfolio</title>
-    <meta content="Portfolio de Jérémie Favre, vidéaste et cadreur-monteur basé à La Réunion. Découvrez mes projets vidéo, compétences et contactez-me pour vos réalisations." name="description"/>
-    <meta content="Jérémie Favre, vidéaste, cadreur, monteur, La Réunion, production vidéo, after effects, premiere pro, drone, FPV, portfolio, vidéo, film, publicité" name="keywords"/>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
-    <link href="/manifest.json" rel="manifest"/>
-    <meta content="#1a1a1a" name="theme-color"/>
-    <meta content="Jérémie FAVRE - Vidéaste à La Réunion" property="og:title"/>
-    <meta content="Découvrez le portfolio de Jérémie Favre, vidéaste et cadreur-monteur basé à La Réunion. Des clips dynamiques aux documentaires immersifs." property="og:description"/>
-    <meta content="website" property="og:type"/>
-    <meta content="https://votre-site.com" property="og:url"/>
-    <meta content="https://votre-site.com/unnamed.jpg" property="og:image"/>
-    <meta content="Logo de Jérémie Favre" property="og:image:alt"/>
-    <meta content="fr_FR" property="og:locale"/>
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ZSLE032V4E"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-ZSLE032V4E'); // VOTRE ID DE MESURE GOOGLE ANALYTICS
-    </script>
+<script async="" data-cbid="9ca2ce88-942f-428b-9100-65869676c999" id="Cookiebot" src="https://consent.cookiebot.com/uc.js" type="text/javascript">
+// Script pour modale vidéo enrichie
+document.querySelectorAll('.video').forEach(video => {
+  video.addEventListener('click', () => {
+    document.getElementById('videoModal').classList.add('active');
+    document.getElementById('videoModalIframe').src = video.dataset.iframe;
+    document.getElementById('videoTitle').textContent = video.dataset.title;
+    document.getElementById('videoDirector').textContent = video.dataset.director;
+    document.getElementById('videoCamera').textContent = video.dataset.camera;
+    document.getElementById('videoLocation').textContent = video.dataset.location;
+    document.getElementById('videoDate').textContent = video.dataset.date;
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+function closeVideoModal() {
+  document.getElementById('videoModal').classList.remove('active');
+  document.getElementById('videoModalIframe').src = "";
+  document.body.style.overflow = 'auto';
+}
+
+</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Jérémie FAVRE - Portfolio</title>
+<meta content="Portfolio de Jérémie Favre, vidéaste et cadreur-monteur basé à La Réunion. Découvrez mes projets vidéo, compétences et contactez-me pour vos réalisations." name="description"/>
+<meta content="Jérémie Favre, vidéaste, cadreur, monteur, La Réunion, production vidéo, after effects, premiere pro, drone, FPV, portfolio, vidéo, film, publicité" name="keywords"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<link href="/manifest.json" rel="manifest"/>
+<meta content="#1a1a1a" name="theme-color"/>
+<meta content="Jérémie FAVRE - Vidéaste à La Réunion" property="og:title"/>
+<meta content="Découvrez le portfolio de Jérémie Favre, vidéaste et cadreur-monteur basé à La Réunion. Des clips dynamiques aux documentaires immersifs." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://votre-site.com" property="og:url"/>
+<meta content="https://votre-site.com/unnamed.jpg" property="og:image"/>
+<meta content="Logo de Jérémie Favre" property="og:image:alt"/>
+<meta content="fr_FR" property="og:locale"/>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ZSLE032V4E">
+// Script pour modale vidéo enrichie
+document.querySelectorAll('.video').forEach(video => {
+  video.addEventListener('click', () => {
+    document.getElementById('videoModal').classList.add('active');
+    document.getElementById('videoModalIframe').src = video.dataset.iframe;
+    document.getElementById('videoTitle').textContent = video.dataset.title;
+    document.getElementById('videoDirector').textContent = video.dataset.director;
+    document.getElementById('videoCamera').textContent = video.dataset.camera;
+    document.getElementById('videoLocation').textContent = video.dataset.location;
+    document.getElementById('videoDate').textContent = video.dataset.date;
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+function closeVideoModal() {
+  document.getElementById('videoModal').classList.remove('active');
+  document.getElementById('videoModalIframe').src = "";
+  document.body.style.overflow = 'auto';
+}
+
+</script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZSLE032V4E'); // VOTRE ID DE MESURE GOOGLE ANALYTICS
+  
+// Script pour modale vidéo enrichie
+document.querySelectorAll('.video').forEach(video => {
+  video.addEventListener('click', () => {
+    document.getElementById('videoModal').classList.add('active');
+    document.getElementById('videoModalIframe').src = video.dataset.iframe;
+    document.getElementById('videoTitle').textContent = video.dataset.title;
+    document.getElementById('videoDirector').textContent = video.dataset.director;
+    document.getElementById('videoCamera').textContent = video.dataset.camera;
+    document.getElementById('videoLocation').textContent = video.dataset.location;
+    document.getElementById('videoDate').textContent = video.dataset.date;
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+function closeVideoModal() {
+  document.getElementById('videoModal').classList.remove('active');
+  document.getElementById('videoModalIframe').src = "";
+  document.body.style.overflow = 'auto';
+}
+
+</script>
 <style>
     /* Variables CSS pour les couleurs (Thème Sombre par défaut) */
     :root {
@@ -155,8 +219,10 @@
       margin-bottom: 0;
       box-shadow: 0 8px 16px var(--shadow-color);
       transition: background 0.5s ease, box-shadow 0.5s ease;
+      /* Suppression des propriétés de background-image directes */
     }
 
+    /* Nouveau pseudo-élément pour la texture de papier froissé */
     header::before {
       content: '';
       position: absolute;
@@ -164,14 +230,15 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url('images/texture-de-papier-blanc.jpg');
+      background-image: url('images/texture-de-papier-blanc.jpg'); /* Chemin mis à jour */
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      opacity: 0.15;
-      z-index: 1;
+      opacity: 0.15; /* Ajustez cette valeur pour rendre la texture plus ou moins visible */
+      z-index: 1; /* S'assure que la texture est derrière le contenu mais devant la couleur de fond */
     }
 
+    /* Effet "papier déchiré" en bas de l'en-tête */
     header::after {
       content: '';
       position: absolute;
@@ -179,7 +246,7 @@
       left: 0;
       width: 100%;
       height: 60px;
-      background-color: var(--bg-color);
+      background-color: var(--bg-color); /* Correspond au fond du body */
       transform: skewY(2deg);
       transform-origin: bottom left;
       z-index: 5;
@@ -189,13 +256,13 @@
 
     .header-content {
       position: relative;
-      z-index: 2;
+      z-index: 2; /* S'assure que le contenu est au-dessus de la texture */
       max-width: 900px;
       margin: auto;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 2rem;
+      gap: 2rem; /* Augmenté pour plus d'espace */
     }
 
     .profile-photo {
@@ -219,19 +286,22 @@
     .header p {
       font-size: 1.3rem;
       font-weight: 300;
+      /* margin-top et margin-bottom gérés par le gap du parent */
     }
 
+    /* Styles pour les icônes de réseaux sociaux dans l'en-tête */
     .social-links {
       display: flex;
       gap: 1.5rem;
-      justify-content: center;
+      justify-content: center; /* Centrer les icônes horizontalement */
+      /* margin-top géré par le gap du parent */
     }
 
     .social-links a {
       color: var(--text-color);
       font-size: 2rem;
       transition: color 0.3s ease, transform 0.3s ease;
-      text-decoration: none;
+      text-decoration: none; /* Assure que les liens ne sont pas soulignés */
     }
 
     .social-links a:hover {
@@ -239,6 +309,7 @@
       transform: scale(1.1);
     }
 
+    /* Bannière "VIDÉASTE - CADREUR MONTEUR" */
     .top-banner {
       position: absolute;
       top: 20px;
@@ -260,7 +331,7 @@
       background-color: var(--nav-bg);
       padding: 1.5rem 0;
       width: 100%;
-      margin-top: -2rem;
+      margin-top: -2rem; /* Réduit le chevauchement avec l'en-tête */
       z-index: 10;
       box-shadow: 0 4px 8px var(--shadow-color);
       position: relative;
@@ -342,8 +413,8 @@
       box-shadow: 0 6px 12px var(--shadow-color);
       border: 1px solid var(--border-color);
       transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease, border-color 0.5s ease;
-      opacity: 1;
-      transform: translateY(0);
+      opacity: 1; /* Initial state for animation */
+      transform: translateY(0); /* Initial state for animation */
       position: relative;
       overflow: visible;
     }
@@ -356,6 +427,7 @@
       box-shadow: 0 10px 20px var(--shadow-color);
     }
 
+    /* Effet "papier déchiré" (skew) au bas de chaque section, SAUF la dernière */
     section:not(#contact)::after {
       content: '';
       position: absolute;
@@ -363,16 +435,18 @@
       left: 0;
       width: 100%;
       height: 60px;
-      background-color: var(--bg-color);
+      background-color: var(--bg-color); /* Correspond au fond du body */
       z-index: 5;
       box-shadow: 0 8px 15px var(--shadow-color);
       transition: background-color 0.5s ease, box-shadow 0.5s ease;
     }
 
+    /* Supprime l'effet de déchirure en haut des sections */
     section::before {
       content: none;
     }
 
+    /* Alternance de l'inclinaison pour les sections sombres */
     section:not(#contact):nth-child(odd)::after {
       transform: skewY(2deg);
       transform-origin: bottom left;
@@ -396,14 +470,17 @@
     .section-white a {
       color: var(--section-white-text);
     }
+    /* Ajustements pour les sections blanches : la "déchirure" est la couleur de la section */
     .section-white:not(#contact)::after {
       background-color: var(--section-white-bg);
       transition: background-color 0.5s ease;
     }
+    /* Supprime l'effet de déchirure en haut des sections blanches */
     .section-white::before {
       content: none;
     }
 
+    /* Alternance de l'inclinaison pour les sections blanches */
     .section-white:not(#contact):nth-child(odd)::after {
       transform: skewY(-2deg);
       transform-origin: bottom right;
@@ -696,7 +773,7 @@
       padding-bottom: 0;
     }
     .contact-content.expanded {
-      max-height: 1000px !important;
+      max-height: 1000px !important; /* Suffisamment grand pour contenir le contenu */
       min-height: 200px;
       padding-top: 1.5rem;
       padding-bottom: 1rem;
@@ -748,6 +825,7 @@
       transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
     }
 
+    /* Effet "papier déchiré" en haut du pied de page */
     footer::before {
       content: '';
       position: absolute;
@@ -755,7 +833,7 @@
       left: 0;
       width: 100%;
       height: 60px;
-      background-color: var(--bg-color);
+      background-color: var(--bg-color); /* Correspond au fond du body */
       transform: skewY(-2deg);
       transform-origin: top left;
       z-index: 5;
@@ -788,7 +866,7 @@
       transform: translateY(-3px);
     }
 
-    /* Styles pour la Lightbox (Modale Photo) */
+    /* Styles pour la Lightbox (Modale) */
     .lightbox {
       display: none;
       position: fixed;
@@ -824,6 +902,7 @@
       to {transform: scale(1)}
     }
 
+    /* Lightbox enhancements */
     .lightbox-content.zoomable {
         cursor: zoom-in;
         transition: transform 0.3s ease-in-out;
@@ -836,6 +915,7 @@
         touch-action: none;
     }
 
+    /* Adjust close button for better visibility */
     .close-button {
       position: absolute;
       top: 20px;
@@ -870,6 +950,7 @@
       max-width: 90%;
     }
 
+    /* Lightbox navigation buttons */
     .lightbox-nav-button {
         position: absolute;
         top: 50%;
@@ -901,14 +982,14 @@
         right: 20px;
     }
 
-    /* Styles pour offline message */
+    /* Styles for offline message */
     #offline-message {
         position: fixed;
         bottom: 20px;
         left: 50%;
         transform: translateX(-50%);
-        background-color: #ffc107;
-        color: #343a40;
+        background-color: #ffc107; /* Warning yellow */
+        color: #343a40; /* Dark text */
         padding: 15px 25px;
         border-radius: 8px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -982,47 +1063,6 @@
     @keyframes pulse {
       from { transform: scale(0.95); opacity: 0.8; }
       to { transform: scale(1.05); opacity: 1; }
-    }
-
-    /* Styles pour la modale vidéo améliorée */
-    #videoModal .video-popup {
-        max-width: 900px;
-        width: 90%;
-        background: #000;
-        border-radius: 12px;
-        overflow: hidden;
-    }
-    #videoModal .video-part {
-        background: #000;
-    }
-    #videoModal #videoModalIframe {
-        width: 100%;
-        height: 500px;
-        border: none;
-        pointer-events: auto;
-    }
-    #videoModal .description-part {
-        background: #f5f1e6;
-        color: #111;
-        padding: 2rem;
-        font-family: 'Lato', sans-serif;
-    }
-    #videoModal .description-part #videoTitle {
-        font-family: 'Bebas Neue', sans-serif;
-        font-size: 2rem;
-        margin-bottom: 1rem;
-        color: #222;
-    }
-    #videoModal .description-part p {
-        margin: 0.5rem 0;
-    }
-    #videoModal .close-button {
-        position: absolute;
-        top: 30px;
-        right: 30px;
-        font-size: 2rem;
-        color: white;
-        cursor: pointer;
     }
 
     /* Media queries pour la responsivité */
@@ -1133,6 +1173,35 @@
             font-size: 0.9rem;
         }
     }
+  
+/* Styles pour la modale vidéo améliorée */
+.video-lightbox-content {
+  background-color: #1a1a1a;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 900px;
+  width: 90%;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  color: white;
+}
+
+#videoModal iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.video-description h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.video-description p {
+  margin: 5px 0;
+}
+
 </style>
 </head>
 <body>
@@ -1148,6 +1217,13 @@
 <img alt="Portrait de Jérémie Favre souriant, regardant l'objectif, centré dans un cercle à fond neutre, ambiance professionnelle et chaleureuse" src="unnamed.jpg" style="width:100%; height:100%; object-fit:cover; object-position:center;"/>
 </div>
 <h1>Jérémie FAVRE</h1>
+<!--
+<p style="font-size:1.2rem; font-weight:300; margin:0 0 1.5rem 0; color:var(--accent-color);">Créer, raconter, sublimer : l’image est mon langage.</p>
+<p style="font-size:1.2rem; font-weight:300; margin:0 0 1.5rem 0; color:var(--accent-color);">Chaque projet est une nouvelle histoire à révéler en images.</p>
+<p style="font-size:1.2rem; font-weight:300; margin:0 0 1.5rem 0; color:var(--accent-color);">L’émotion naît du regard, la magie du montage.</p>
+<p style="font-size:1.2rem; font-weight:300; margin:0 0 1.5rem 0; color:var(--accent-color);">L’image, c’est l’art de figer l’instant et de sublimer le réel.</p>
+<p style="font-size:1.2rem; font-weight:300; margin:0 0 1.5rem 0; color:var(--accent-color);">Mon objectif : donner vie à vos idées par la vidéo.</p>
+-->
 <p style="
   font-size: 1.5rem;
   font-weight: 400;
@@ -1197,6 +1273,7 @@
 <h2>Mes Outils Créatifs</h2>
 <div class="skills-grid">
 <div>
+<!-- <h3>Mes Outils Créatifs</h3> -->
 <div class="skill-item"><i class="fas fa-cut"></i> Premiere Pro : Maîtrise du montage vidéo professionnel.</div>
 <div class="skill-item"><i class="fas fa-magic"></i> After Effects : Création d'effets visuels et animations.</div>
 <div class="skill-item"><i class="fas fa-image"></i> Photoshop : Retouche d'image et conception graphique.</div>
@@ -1211,54 +1288,64 @@
 <h2>Portfolio Vidéo</h2>
 <div class="gallery">
 <div class="video" data-camera="RED SCARLET" data-date="2024" data-director="Loïc Bege - Jérémie Favre" data-iframe="https://www.youtube.com/embed/qtrdrRYwMoA" data-location="Parc des palmiers" data-title="LIVRE DU DESTIN - COURT METRAGE">
-<iframe title="Lecteur vidéo pour LIVRE DU DESTIN - COURT METRAGE" allowfullscreen="" src="https://www.youtube.com/embed/qtrdrRYwMoA"></iframe>
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/qtrdrRYwMoA"></iframe>
 <div class="video-title">LIVRE DU DESTIN - COURT METRAGE</div>
 </div>
 <div class="video" data-camera="RED SCARLET" data-date="2024" data-director="Wesley Themyr - Jérémie Favre - Dhiessene Virapin" data-iframe="https://www.youtube.com/embed/1J_S1kuRwHQ" data-location="Plaine des sables" data-title="AURORA - COURT METRAGE">
-<iframe title="Lecteur vidéo pour AURORA - COURT METRAGE" allowfullscreen="" src="https://www.youtube.com/embed/1J_S1kuRwHQ"></iframe>
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/1J_S1kuRwHQ"></iframe>
 <div class="video-title">AURORA - COURT METRAGE</div>
 </div>
 <div class="video" data-camera="Sony A7 IV" data-date="2024" data-director="Jérémie Favre" data-iframe="https://www.youtube.com/embed/_q7MnK_2QFI" data-location="Parking sous terrain Saint-Leu" data-title="VENUM - PUB">
-<iframe title="Lecteur vidéo pour Venum - PUB" allowfullscreen="" src="https://www.youtube.com/embed/_q7MnK_2QFI"></iframe>
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/_q7MnK_2QFI"></iframe>
 <div class="video-title">Venum - PUB</div>
 </div>
 <div class="video" data-camera="Sony A7 IV + Sony A6700" data-date="2024" data-director="Jérémie Favre" data-iframe="https://www.youtube.com/embed/XOG37yLswio" data-location="Saint-Gilles" data-title="Restaurant LE LEON">
-<iframe title="Lecteur vidéo pour Restaurant LE LEON" allowfullscreen="" src="https://www.youtube.com/embed/XOG37yLswio"></iframe>
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/XOG37yLswio"></iframe>
 <div class="video-title">Restaurant LE LEON</div>
 </div>
 <div class="video" data-camera="" data-date="" data-director="" data-iframe="https://www.youtube.com/embed/zZD8K0tTuzo" data-location="Champ de canne" data-title="Portrait Stéphanie Valmorex">
-<iframe title="Lecteur vidéo pour Portrait de Stéphanie Valmorex" allowfullscreen="" src="https://www.youtube.com/embed/zZD8K0tTuzo"></iframe>
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/zZD8K0tTuzo"></iframe>
 <div class="video-title">Portrait de Stéphanie Valmorex</div>
 </div>
 <div class="video" data-camera="Sony A7 IV" data-date="2024" data-director="Wesley Themyr - Julien Dennemont - Jérémie Favre" data-iframe="https://www.youtube.com/embed/9GQS8eGeZlk" data-location="Studio et extérieur" data-title="KidnaPink - COURT METRAGE">
-<iframe title="Lecteur vidéo pour KidnaPink - COURT METRAGE" allowfullscreen="" src="https://www.youtube.com/embed/9GQS8eGeZlk"></iframe>
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/9GQS8eGeZlk"></iframe>
 <div class="video-title">KidnaPink - COURT METRAGE</div>
 </div>
 <div class="video" data-camera="Sony A7 IV" data-date="2024" data-director="Jérémie Favre" data-iframe="https://www.youtube.com/embed/sxEDTsaQFHw" data-location="Littoral Ouest" data-title="ALONE - COURT METRAGE">
-<iframe title="Lecteur vidéo pour ALONE - COURT METRAGE" allowfullscreen="" src="https://www.youtube.com/embed/sxEDTsaQFHw"></iframe>
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/sxEDTsaQFHw"></iframe>
 <div class="video-title">ALONE - COURT METRAGE</div>
 </div>
 <div class="video" data-camera="Sony A6700" data-date="2024" data-director="Jérémie Favre" data-iframe="https://www.youtube.com/embed/5S_ke4JsViI" data-location="Chez Julien Leveneur" data-title="Dessert Diabétique">
-<iframe title="Lecteur vidéo pour Dessert spécial diabétique - Ensemble contre le diabète ( Julien LEVENEUR )" allowfullscreen="" src="https://www.youtube.com/embed/5S_ke4JsViI"></iframe>
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/5S_ke4JsViI"></iframe>
 <div class="video-title">Dessert spécial diabétique - Ensemble contre le diabète ( Julien LEVENEUR )</div>
 </div>
 <div class="video" data-camera="Sony A7 IV" data-date="2024" data-director="Jérémie Favre" data-iframe="https://www.youtube.com/embed/RHYnoJ17VnQ" data-location="La Réunion" data-title="Zembrocal - COURT METRAGE">
-<iframe title="Lecteur vidéo pour Zembrocal - COURT METRAGE" allowfullscreen="" src="https://www.youtube.com/embed/RHYnoJ17VnQ"></iframe>
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/RHYnoJ17VnQ"></iframe>
 <div class="video-title">Zembrocal - COURT METRAGE</div>
 </div>
 <div class="video" data-camera="Sony A7 IV + Sony A7 III + A6700" data-date="2024" data-director="Jérémie Favre" data-iframe="https://www.youtube.com/embed/8SAUpdJsBJI" data-location="La Réunion" data-title="Régal azot'! Peu importe nout' kiltir !">
-<iframe title="Lecteur vidéo pour Régal azot'! Peu importe nout' kiltir !" allowfullscreen="" src="https://www.youtube.com/embed/8SAUpdJsBJI"></iframe>
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/8SAUpdJsBJI"></iframe>
 <div class="video-title">Régal azot'! Peu importe nout' kiltir !</div>
 </div>
-</div>
+
 </section>
 <section id="photos">
 <h2>Vitrine Photo</h2>
+<!-- Elfsight Instagram Feed | Untitled Instagram Feed -->
 <div class="photo-category">
 <script src="https://static.elfsight.com/platform/platform.js" async></script>
 <h3 class="category-title">Quelques images</h3>
 <div class="elfsight-app-352bfc8c-4b61-420c-983b-79f1623f8368" data-elfsight-app-lazy></div>
 </div>
+<!-- LightWidget WIDGET START 
+<div class="photo-category">
+  <h3 class="category-title">Quelques photos</h3>
+  <div style="padding: 1.5rem;">
+    <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+    <iframe src="//lightwidget.com/widgets/9c73bd6b4e6c5795a5886b5231d6b04a.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+  </div>
+</div>
+LightWidget WIDGET END -->
 <div class="photo-categories-container">
 <div class="photo-category">
 <h3 class="category-title">Photo Aérienne</h3>
@@ -1295,6 +1382,83 @@
 </div>
 </div>
 </div>
+<!-- <div class="photo-category">
+<h3 class="category-title">Portrait</h3>
+<div class="carousel-container" id="carousel-portrait">
+<div class="carousel-track">
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="https://placehold.co/1200x800/333/fff?text=Portrait+1+Large" href="https://placehold.co/600x400/333/fff?text=Portrait+1">
+<img alt="Portrait 1" src="https://placehold.co/300x180/333/fff?text=Portrait+1"/>
+</a>
+<div class="photo-title">Portrait 1</div>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="https://placehold.co/1200x800/333/fff?text=Portrait+2+Large" href="https://placehold.co/600x400/333/fff?text=Portrait+2">
+<img alt="Portrait 2" src="https://placehold.co/300x180/333/fff?text=Portrait+2"/>
+</a>
+<div class="photo-title">Portrait 2</div>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="https://placehold.co/1200x800/333/fff?text=Portrait+3+Large" href="https://placehold.co/600x400/333/fff?text=Portrait+3">
+<img alt="Portrait 3" src="https://placehold.co/300x180/333/fff?text=Portrait+3"/>
+</a>
+<div class="photo-title">Portrait 3</div>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="https://placehold.co/1200x800/333/fff?text=Portrait+4+Large" href="https://placehold.co/600x400/333/fff?text=Portrait+4">
+<img alt="Portrait 4" src="https://placehold.co/300x180/333/fff?text=Portrait+4"/>
+</a>
+<div class="photo-title">Portrait 4</div>
+</div>
+</div>
+<div class="carousel-nav-buttons">
+<button class="carousel-nav-button prev-button" data-carousel="portrait"><i class="fas fa-chevron-left"></i></button>
+<button class="carousel-nav-button next-button" data-carousel="portrait"><i class="fas fa-chevron-right"></i></button>
+</div>
+</div>
+</div>
+<div class="photo-category">
+<h3 class="category-title">Paysage</h3>
+<div class="carousel-container" id="carousel-paysage">
+<div class="carousel-track">
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="https://placehold.co/1200x800/333/fff?text=Paysage+1+Large" href="https://placehold.co/600x400/333/fff?text=Paysage+1">
+<img alt="Paysage 1" src="https://placehold.co/300x180/333/fff?text=Paysage+1"/>
+</a>
+<div class="photo-title">Paysage 1</div>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="https://placehold.co/1200x800/333/fff?text=Paysage+2+Large" href="https://placehold.co/600x400/333/fff?text=Paysage+2">
+<img alt="Paysage 2" src="https://placehold.co/300x180/333/fff?text=Paysage+2"/>
+</a>
+<div class="photo-title">Paysage 2</div>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="https://placehold.co/1200x800/333/fff?text=Paysage+3+Large" href="https://placehold.co/600x400/333/fff?text=Paysage+3">
+<img alt="Paysage 3" src="https://placehold.co/300x180/333/fff?text=Paysage+3"/>
+</a>
+<div class="photo-title">Paysage 3</div>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="https://placehold.co/1200x800/333/fff?text=Paysage+4+Large" href="https://placehold.co/600x400/333/fff?text=Paysage+4">
+<img alt="Paysage 4" src="https://placehold.co/300x180/333/fff?text=Paysage+4"/>
+</a>
+<div class="photo-title">Paysage 4</div>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="https://placehold.co/1200x800/333/fff?text=Paysage+5+Large" href="https://placehold.co/600x400/333/fff?text=Paysage+5">
+<img alt="Paysage 5" src="https://placehold.co/300x180/333/fff?text=Paysage+5"/>
+</a>
+<div class="photo-title">Paysage 5</div>
+</div>
+</div>
+<div class="carousel-nav-buttons">
+<button class="carousel-nav-button prev-button" data-carousel="paysage"><i class="fas fa-chevron-left"></i></button>
+<button class="carousel-nav-button next-button" data-carousel="paysage"><i class="fas fa-chevron-right"></i></button>
+</div>
+</div>
+</div> -->
+
 </div>
 </section>
 </div>
@@ -1336,64 +1500,15 @@
 </div>
 <div id="offline-message">
     Vous êtes hors ligne, certaines vidéos peuvent ne pas s’afficher.
-</div>
-
-<!-- Modale Vidéo améliorée -->
-<div class="lightbox" id="videoModal">
-    <div class="video-popup">
-        <div class="video-part">
-            <iframe id="videoModalIframe" src="" allowfullscreen></iframe>
-        </div>
-        <div class="description-part">
-            <h3 id="videoTitle"></h3>
-            <p>🎬 <strong>Réalisateur :</strong> <span id="videoDirector"></span></p>
-            <p>🎥 <strong>Matériel :</strong> <span id="videoCamera"></span></p>
-            <p>📍 <strong>Lieu :</strong> <span id="videoLocation"></span></p>
-            <p>🗓 <strong>Date :</strong> <span id="videoDate"></span></p>
-        </div>
-    </div>
-    <span class="close-button" onclick="closeVideoModal()">×</span>
-</div>
-
-<!-- ======================================= -->
-<!-- SCRIPT GLOBAL CONSOLIDÉ -->
-<!-- ======================================= -->
+  </div>
 <script>
-    // --- GESTION DE LA MODALE VIDÉO ---
-    function openVideoModal(videoElement) {
-        const videoModal = document.getElementById('videoModal');
-        videoModal.classList.add('active');
-        document.getElementById('videoModalIframe').src = videoElement.dataset.iframe;
-        document.getElementById('videoTitle').textContent = videoElement.dataset.title;
-        document.getElementById('videoDirector').textContent = videoElement.dataset.director;
-        document.getElementById('videoCamera').textContent = videoElement.dataset.camera;
-        document.getElementById('videoLocation').textContent = videoElement.dataset.location;
-        document.getElementById('videoDate').textContent = videoElement.dataset.date;
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeVideoModal() {
-        const videoModal = document.getElementById('videoModal');
-        videoModal.classList.remove('active');
-        document.getElementById('videoModalIframe').src = "";
-        document.body.style.overflow = 'auto';
-    }
-
-    // --- SCRIPT PRINCIPAL APRÈS CHARGEMENT DU DOM ---
     document.addEventListener('DOMContentLoaded', () => {
-
-      // Initialisation des clics pour la modale vidéo
-      document.querySelectorAll('.video').forEach(video => {
-        video.addEventListener('click', () => {
-          openVideoModal(video);
-        });
-      });
-
       // --- LOGIQUE DU THÈME CLAIR/SOMBRE ---
       const themeToggle = document.getElementById('theme-toggle');
       const themeIcon = document.getElementById('theme-icon');
       const body = document.body;
 
+      // Applique le thème sauvegardé ou la préférence système
       const applyTheme = (theme) => {
         const isLight = theme === 'light';
         body.classList.toggle('light-theme', isLight);
@@ -1411,13 +1526,14 @@
         applyTheme('dark');
       }
 
+      // Écouteur d'événement pour le bouton de basculement
       themeToggle.addEventListener('click', () => {
         const newTheme = body.classList.contains('light-theme') ? 'dark' : 'light';
         applyTheme(newTheme);
         localStorage.setItem('theme', newTheme);
       });
 
-      // --- INTERSECTION OBSERVER POUR LES ANIMATIONS ---
+      // Intersection Observer pour les sections (animations à l'apparition)
       const sections = document.querySelectorAll('section');
       const observerOptions = {
         root: null,
@@ -1428,12 +1544,14 @@
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('is-visible');
+            // Optionnel: Désactiver l'observation après la première apparition
+            // observer.unobserve(entry.target);
           }
         });
       }, observerOptions);
       sections.forEach(section => observer.observe(section));
 
-      // --- BOUTON RETOUR EN HAUT ---
+      // Bouton retour en haut
       const backToTopButton = document.getElementById('back-to-top');
       window.addEventListener('scroll', () => {
         backToTopButton.style.display = window.scrollY > 300 ? 'flex' : 'none';
@@ -1442,7 +1560,7 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
 
-      // --- SOUMISSION DU FORMULAIRE DE CONTACT ---
+      // Soumission du formulaire de contact
       const contactForm = document.querySelector('.contact-form form');
       const successMessage = document.getElementById('successMessage');
       contactForm.addEventListener('submit', async (event) => {
@@ -1474,12 +1592,13 @@
         }
       });
 
-      // --- SECTION CONTACT PLIABLE ---
+      // Section Contact pliable
       const contactSection = document.getElementById('contact');
       const contactContent = document.getElementById('contactContent');
       const contactToggleIcon = document.getElementById('contactToggleIcon');
       const isContactExpanded = localStorage.getItem('contactExpanded') === 'true';
 
+      // Applique l'état sauvegardé au chargement
       if (isContactExpanded) {
           contactContent.classList.add('expanded');
           contactToggleIcon.classList.add('rotated');
@@ -1498,17 +1617,21 @@
         constructor(carouselId) {
           this.carouselContainer = document.getElementById(carouselId);
           if (!this.carouselContainer) return;
+
           this.carouselTrack = this.carouselContainer.querySelector('.carousel-track');
           this.photoItems = Array.from(this.carouselTrack.querySelectorAll('.photo-item'));
           this.prevButton = this.carouselContainer.querySelector('.prev-button');
           this.nextButton = this.carouselContainer.querySelector('.next-button');
+
           this.currentIndex = 0;
           this.itemsPerView = 1;
           this.autoScrollInterval = null;
           this.autoScrollDelay = 3000;
           this.manualInteractionPause = 5000;
+
           this.init();
         }
+
         init() {
           this.addEventListeners();
           window.addEventListener('load', () => {
@@ -1516,34 +1639,39 @@
             this.startAutoScroll();
           });
           window.addEventListener('resize', () => {
-            this.currentIndex = 0;
+            this.currentIndex = 0; // Reset index on resize for simpler logic
             this.updateCarouselPosition();
             this.stopAutoScroll();
             this.startAutoScroll();
           });
+          // Initial calculation in case images are already loaded
           this.calculateItemsPerPage();
         }
+
         calculateItemsPerPage() {
           if (this.photoItems.length === 0) {
               this.itemsPerView = 1;
               return;
           }
           const firstItem = this.photoItems[0];
+          // Ensure image is loaded before calculating width
           if (firstItem && firstItem.querySelector('img') && !firstItem.querySelector('img').complete) {
               firstItem.querySelector('img').onload = () => this.updateCarouselPosition();
               return;
           }
+
           const itemWidth = firstItem ? firstItem.offsetWidth + (parseFloat(getComputedStyle(firstItem).marginRight) || 0) : 0;
           const containerWidth = this.carouselContainer.offsetWidth;
+
           if (itemWidth > 0 && containerWidth > 0) {
               if (window.innerWidth >= 992) {
                   this.itemsPerView = Math.floor(containerWidth / itemWidth);
-                  this.itemsPerView = Math.max(3, this.itemsPerView);
+                  this.itemsPerView = Math.max(3, this.itemsPerView); // Minimum 3 items on large screens
               } else if (window.innerWidth >= 768) {
                   this.itemsPerView = Math.floor(containerWidth / itemWidth);
-                  this.itemsPerView = Math.max(2, this.itemsPerView);
+                  this.itemsPerView = Math.max(2, this.itemsPerView); // Minimum 2 items on medium screens
               } else {
-                  this.itemsPerView = 1;
+                  this.itemsPerView = 1; // 1 item on small screens
               }
               this.itemsPerView = Math.min(this.itemsPerView, this.photoItems.length);
           } else {
@@ -1552,13 +1680,16 @@
           this.carouselContainer.style.setProperty('--items-per-view', this.itemsPerView);
           this.carouselContainer.style.setProperty('--gap-width', '1rem');
         }
+
         updateCarouselPosition() {
           this.calculateItemsPerPage();
           const itemWidth = this.photoItems.length > 0 ? this.photoItems[0].offsetWidth + (parseFloat(getComputedStyle(this.photoItems[0]).marginRight) || 0) : 0;
           this.carouselTrack.style.transform = `translateX(-${this.currentIndex * itemWidth}px)`;
+
           this.prevButton.disabled = this.currentIndex === 0;
           this.nextButton.disabled = this.currentIndex >= this.photoItems.length - this.itemsPerView;
         }
+
         startAutoScroll() {
             this.stopAutoScroll();
             if (this.photoItems.length <= this.itemsPerView) return;
@@ -1570,26 +1701,31 @@
                 this.updateCarouselPosition();
             }, this.autoScrollDelay);
         }
+
         stopAutoScroll() {
             clearInterval(this.autoScrollInterval);
         }
+
         addEventListeners() {
-            this.prevButton.addEventListener('click', () => {
-                this.stopAutoScroll();
-                this.currentIndex = Math.max(0, this.currentIndex - this.itemsPerView);
-                this.updateCarouselPosition();
-                setTimeout(() => this.startAutoScroll(), this.manualInteractionPause);
-            });
-            this.nextButton.addEventListener('click', () => {
-                this.stopAutoScroll();
-                this.currentIndex = Math.min(this.photoItems.length - this.itemsPerView, this.currentIndex + this.itemsPerView);
-                this.updateCarouselPosition();
-                setTimeout(() => this.startAutoScroll(), this.manualInteractionPause);
-            });
-            this.carouselContainer.addEventListener('mouseenter', () => this.stopAutoScroll());
-            this.carouselContainer.addEventListener('mouseleave', () => this.startAutoScroll());
+                   this.prevButton.addEventListener('click', () => {
+            this.stopAutoScroll();
+            this.currentIndex = Math.max(0, this.currentIndex - this.itemsPerView);
+            this.updateCarouselPosition();
+            setTimeout(() => this.startAutoScroll(), this.manualInteractionPause);
+          });
+
+          this.nextButton.addEventListener('click', () => {
+            this.stopAutoScroll();
+            this.currentIndex = Math.min(this.photoItems.length - this.itemsPerView, this.currentIndex + this.itemsPerView);
+            this.updateCarouselPosition();
+            setTimeout(() => this.startAutoScroll(), this.manualInteractionPause);
+          });
+
+          this.carouselContainer.addEventListener('mouseenter', () => this.stopAutoScroll());
+          this.carouselContainer.addEventListener('mouseleave', () => this.startAutoScroll());
         }
       }
+
       new Carousel('carousel-aerienne');
       new Carousel('carousel-portrait');
       new Carousel('carousel-paysage');
@@ -1603,6 +1739,7 @@
           this.closeLightboxBtn = document.querySelector('.close-button');
           this.lightboxPrevBtn = document.getElementById('lightbox-prev-btn');
           this.lightboxNextBtn = document.getElementById('lightbox-next-btn');
+
           this.currentPhotoIndex = 0;
           this.allPhotoItems = [];
           this.isZoomed = false;
@@ -1616,12 +1753,15 @@
           this.touchStartY = 0;
           this.touchEndY = 0;
           this.swipeThreshold = 50;
+
           this.init();
         }
+
         init() {
           this.collectAllPhotos();
           this.addEventListeners();
         }
+
         collectAllPhotos() {
           this.allPhotoItems = Array.from(document.querySelectorAll('.photo-lightbox-trigger')).map(trigger => ({
             srcLarge: trigger.getAttribute('data-src-large'),
@@ -1629,6 +1769,7 @@
             title: trigger.closest('.photo-item').querySelector('.photo-title').textContent
           }));
         }
+
         showPhoto(index) {
           if (index < 0) {
             this.currentPhotoIndex = this.allPhotoItems.length - 1;
@@ -1637,38 +1778,50 @@
           } else {
             this.currentPhotoIndex = index;
           }
+
           const photo = this.allPhotoItems[this.currentPhotoIndex];
           this.lightboxImage.src = photo.srcLarge;
           this.lightboxImage.alt = photo.altText;
           this.lightboxCaption.textContent = photo.title;
+
+          // Réinitialiser le zoom et la position
           this.lightboxImage.classList.remove('zoomed');
           this.lightboxImage.style.transform = '';
           this.isZoomed = false;
           this.translateX = 0;
           this.translateY = 0;
+
           gtag('event', 'lightbox_ouverte', {
             event_category: 'Galerie',
             event_label: photo.title
           });
         }
+
         openPhotoLightbox(index) {
           this.showPhoto(index);
           this.lightbox.classList.add('active');
           document.body.style.overflow = 'hidden';
           document.addEventListener('keydown', this.handleKeyboardNavigation.bind(this));
         }
+
         closePhotoLightbox() {
           this.lightbox.classList.remove('active');
           document.body.style.overflow = 'auto';
           document.removeEventListener('keydown', this.handleKeyboardNavigation.bind(this));
         }
+
         handleKeyboardNavigation(e) {
           if (this.lightbox.classList.contains('active')) {
-            if (e.key === 'Escape') this.closePhotoLightbox();
-            else if (e.key === 'ArrowLeft') this.showPhoto(this.currentPhotoIndex - 1);
-            else if (e.key === 'ArrowRight') this.showPhoto(this.currentPhotoIndex + 1);
+            if (e.key === 'Escape') {
+              this.closePhotoLightbox();
+            } else if (e.key === 'ArrowLeft') {
+              this.showPhoto(this.currentPhotoIndex - 1);
+            } else if (e.key === 'ArrowRight') {
+              this.showPhoto(this.currentPhotoIndex + 1);
+            }
           }
         }
+
         handleZoomClick(e) {
           if (e.target === this.lightboxImage) {
             this.isZoomed = !this.isZoomed;
@@ -1677,6 +1830,7 @@
             this.lightboxImage.style.cursor = this.isZoomed ? 'grab' : 'zoom-in';
           }
         }
+
         handleMouseDown(e) {
           if (this.isZoomed) {
             this.isDragging = true;
@@ -1685,6 +1839,7 @@
             this.lightboxImage.style.cursor = 'grabbing';
           }
         }
+
         handleMouseMove(e) {
           if (this.isDragging) {
             this.translateX = e.clientX - this.startX;
@@ -1692,19 +1847,29 @@
             this.lightboxImage.style.transform = `scale(2) translate(${this.translateX}px, ${this.translateY}px)`;
           }
         }
+
         handleMouseUp() {
           this.isDragging = false;
-          if (this.isZoomed) this.lightboxImage.style.cursor = 'grab';
+          if (this.isZoomed) {
+            this.lightboxImage.style.cursor = 'grab';
+          }
         }
+
         handleMouseLeave() {
           this.isDragging = false;
-          if (this.isZoomed) this.lightboxImage.style.cursor = 'grab';
+          if (this.isZoomed) {
+            this.lightboxImage.style.cursor = 'grab';
+          }
         }
+
         handleTouchStart(e) {
             this.touchStartX = e.touches[0].clientX;
             this.touchStartY = e.touches[0].clientY;
-            if (this.isZoomed) e.preventDefault();
+            if (this.isZoomed) {
+                e.preventDefault(); // Empêche le défilement par défaut lors du zoom/pan
+            }
         }
+
         handleTouchMove(e) {
             if (this.isZoomed && e.touches.length === 1) {
                 const deltaX = e.touches[0].clientX - this.touchStartX;
@@ -1720,17 +1885,26 @@
                 this.touchEndY = e.touches[0].clientY;
             }
         }
+
         handleTouchEnd() {
             if (!this.isZoomed) {
                 const deltaX = this.touchEndX - this.touchStartX;
                 const deltaY = this.touchEndY - this.touchStartY;
+
                 if (Math.abs(deltaX) > this.swipeThreshold && Math.abs(deltaX) > Math.abs(deltaY)) {
-                    if (deltaX > 0) this.showPhoto(this.currentPhotoIndex - 1);
-                    else this.showPhoto(this.currentPhotoIndex + 1);
+                    if (deltaX > 0) {
+                        this.showPhoto(this.currentPhotoIndex - 1); // Swipe vers la droite
+                    } else {
+                        this.showPhoto(this.currentPhotoIndex + 1); // Swipe vers la gauche
+                    }
                 }
             }
-            this.touchStartX = 0; this.touchEndX = 0; this.touchStartY = 0; this.touchEndY = 0;
+            this.touchStartX = 0;
+            this.touchEndX = 0;
+            this.touchStartY = 0;
+            this.touchEndY = 0;
         }
+
         addEventListeners() {
           document.querySelectorAll('.photo-lightbox-trigger').forEach((trigger, index) => {
             trigger.addEventListener('click', (e) => {
@@ -1738,17 +1912,24 @@
               this.openPhotoLightbox(index);
             });
           });
+
           this.closeLightboxBtn.addEventListener('click', this.closePhotoLightbox.bind(this));
           this.lightboxPrevBtn.addEventListener('click', () => this.showPhoto(this.currentPhotoIndex - 1));
           this.lightboxNextBtn.addEventListener('click', () => this.showPhoto(this.currentPhotoIndex + 1));
           this.lightbox.addEventListener('click', (e) => {
-            if (e.target === this.lightbox) this.closePhotoLightbox();
+            if (e.target === this.lightbox) {
+              this.closePhotoLightbox();
+            }
           });
+
+          // Zoom et Drag
           this.lightboxImage.addEventListener('click', this.handleZoomClick.bind(this));
           this.lightboxImage.addEventListener('mousedown', this.handleMouseDown.bind(this));
           this.lightboxImage.addEventListener('mousemove', this.handleMouseMove.bind(this));
           this.lightboxImage.addEventListener('mouseup', this.handleMouseUp.bind(this));
           this.lightboxImage.addEventListener('mouseleave', this.handleMouseLeave.bind(this));
+
+          // Touch events for mobile
           this.lightboxImage.addEventListener('touchstart', this.handleTouchStart.bind(this));
           this.lightboxImage.addEventListener('touchmove', this.handleTouchMove.bind(this));
           this.lightboxImage.addEventListener('touchend', this.handleTouchEnd.bind(this));
@@ -1756,7 +1937,7 @@
       }
       new Lightbox();
 
-      // --- SUIVI DES CLICS SUR LES VIDÉOS ---
+      // --- LOGIQUE DE SUIVI DES CLICS SUR LES VIDÉOS ---
       document.querySelectorAll('.video').forEach(videoDiv => {
         videoDiv.addEventListener('click', () => {
           const videoTitleElement = videoDiv.querySelector('.video-title');
@@ -1768,33 +1949,79 @@
         });
       });
 
-      // --- DÉTECTION HORS LIGNE ---
+      // --- OFFLINE DETECTION ---
       const offlineMessage = document.getElementById('offline-message');
       const toggleOfflineMessage = (show) => {
           offlineMessage.classList.toggle('show', show);
       };
-      if (!navigator.onLine) toggleOfflineMessage(true);
+
+      if (!navigator.onLine) {
+          toggleOfflineMessage(true);
+      }
       window.addEventListener('offline', () => toggleOfflineMessage(true));
       window.addEventListener('online', () => toggleOfflineMessage(false));
+
+      // --- LOGIQUE DU LOADER ---
+      const loader = document.getElementById('loader');
+      window.addEventListener('load', () => {
+        loader.classList.add('hidden');
+        loader.addEventListener('transitionend', () => {
+          loader.remove();
+        });
+      });
 
       // --- ENREGISTREMENT DU SERVICE WORKER ---
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
           navigator.serviceWorker.register('/service-worker.js')
-            .then(registration => console.log('ServiceWorker registration successful with scope: ', registration.scope))
-            .catch(err => console.log('ServiceWorker registration failed: ', err));
+            .then(registration => {
+              console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            })
+            .catch(err => {
+              console.log('ServiceWorker registration failed: ', err);
+            });
         });
       }
     });
+  
+// Script pour modale vidéo enrichie
+document.querySelectorAll('.video').forEach(video => {
+  video.addEventListener('click', () => {
+    document.getElementById('videoModal').classList.add('active');
+    document.getElementById('videoModalIframe').src = video.dataset.iframe;
+    document.getElementById('videoTitle').textContent = video.dataset.title;
+    document.getElementById('videoDirector').textContent = video.dataset.director;
+    document.getElementById('videoCamera').textContent = video.dataset.camera;
+    document.getElementById('videoLocation').textContent = video.dataset.location;
+    document.getElementById('videoDate').textContent = video.dataset.date;
+    document.body.style.overflow = 'hidden';
+  });
+});
 
-    // --- GESTION DU LOADER ---
-    window.addEventListener('load', () => {
-      const loader = document.getElementById('loader');
-      loader.classList.add('hidden');
-      loader.addEventListener('transitionend', () => {
-        loader.remove();
-      });
-    });
+function closeVideoModal() {
+  document.getElementById('videoModal').classList.remove('active');
+  document.getElementById('videoModalIframe').src = "";
+  document.body.style.overflow = 'auto';
+}
+
 </script>
+
+<!-- Modale Vidéo améliorée -->
+
+<div class="lightbox" id="videoModal">
+<div class="video-popup" style="max-width:900px; width:90%; background:#000; border-radius:12px; overflow:hidden;">
+<div class="video-part" style="background:#000;">
+<iframe id="videoModalIframe" src="" allowfullscreen style="width:100%; height:500px; border:none; pointer-events:auto;"></iframe>
+</div>
+<div class="description-part" style="background:#f5f1e6; color:#111; padding:2rem; font-family:'Lato',sans-serif;">
+<h3 id="videoTitle" style="font-family:'Bebas Neue',sans-serif; font-size:2rem; margin-bottom:1rem; color:#222;"></h3>
+<p style="margin:0.5rem 0;">🎬 <strong>Réalisateur :</strong> <span id="videoDirector"></span></p>
+<p style="margin:0.5rem 0;">🎥 <strong>Matériel :</strong> <span id="videoCamera"></span></p>
+<p style="margin:0.5rem 0;">📍 <strong>Lieu :</strong> <span id="videoLocation"></span></p>
+<p style="margin:0.5rem 0;">🗓 <strong>Date :</strong> <span id="videoDate"></span></p>
+</div>
+</div>
+<span class="close-button" onclick="closeVideoModal()" style="position:absolute;top:30px;right:30px;font-size:2rem;color:white;cursor:pointer;">×</span>
+</div>
 </body>
 </html>
