@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie photo - Jérémie FVR</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #1a1a1a;
+            --grid-gap: 10px;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-weight: 200;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 10px;
+        }
+
+        .nav-back {
+            margin-bottom: 30px;
+        }
+
+        .nav-back a {
+            text-decoration: none;
+            color: #888;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .nav-back a:hover {
+            color: #000;
+        }
+
+        /* Grille Photo */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-gap: var(--grid-gap);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .photo-card {
+            position: relative;
+            overflow: hidden;
+            background-color: #f0f0f0;
+            aspect-ratio: 3 / 2;
+            cursor: pointer;
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            display: block;
+        }
+
+        .photo-card:hover img {
+            transform: scale(1.08);
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 80%;
+            position: relative;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 80vh;
+            display: block;
+            margin: auto;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+            border-radius: 2px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-sizing: border-box;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+
+        .lightbox-nav button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+            pointer-events: auto;
+            opacity: 0.5;
+            transition: opacity 0.3s;
+        }
+
+        .lightbox-nav button:hover {
+            opacity: 1;
+        }
+
+        .lightbox-caption {
+            color: white;
+            margin-top: 20px;
+            font-weight: 200;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        /* Animation au chargement */
+        .photo-card {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: appear 0.5s forwards;
+        }
+
+        @keyframes appear {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+            }
+            body {
+                padding: 10px;
+            }
+            .lightbox-nav button {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav-back" style="display:flex;align-items:center;gap:12px;">
+      <button type="button" onclick="(function(){ try{ window.open('','_self'); window.close(); }catch(e){} })()" style="background:none;border:none;color:#888;font-size:0.9rem;cursor:pointer;">RETOUR</button>
+    </div>
+
+    <header>
+        <h1>Galerie photo</h1>
+        <p style="color: #666; font-style: italic;">Capturer le moment présent</p>
+    </header>
+
+    <main class="gallery-grid" id="gallery">
+        <div class="photo-card" style="animation-delay: 0.1s;"><img src="images/Photo/DSC05258.jpg" alt="DSC05258"></div>
+        <div class="photo-card" style="animation-delay: 0.2s;"><img src="images/Photo/DSC05618.jpg" alt="DSC05618"></div>
+        <div class="photo-card" style="animation-delay: 0.3s;"><img src="images/Photo/Drone/DJI_0457.jpg" alt="DJI_0457"></div>
+        <div class="photo-card" style="animation-delay: 0.4s;"><img src="images/Photo/Drone/DJI_0459.jpg" alt="DJI_0459"></div>
+        <div class="photo-card" style="animation-delay: 0.5s;"><img src="images/Photo/Drone/DJI_0460.jpg" alt="DJI_0460"></div>
+        <div class="photo-card" style="animation-delay: 0.6s;"><img src="images/Photo/Drone/DJI_0466.jpg" alt="DJI_0466"></div>
+</main>  
+
+    <!-- Lightbox Structure -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" id="closeLightbox">&times;</span>
+        <div class="lightbox-nav">
+            <button id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+            <button id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightboxImg">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+    </div>
+
+    <footer style="margin-top: 100px; text-align: center; padding-bottom: 40px; color: #ccc; font-size: 0.8rem; letter-spacing: 1px;">
+        &copy; JÉRÉMIE FVR
+    </footer>
+
+    <script>
+        const gallery = document.getElementById('gallery');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxCaption = document.getElementById('lightboxCaption');
+        const closeBtn = document.getElementById('closeLightbox');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        
+        const cards = Array.from(document.querySelectorAll('.photo-card'));
+        let currentIndex = 0;
+
+        // Ouvrir la lightbox
+        cards.forEach((card, index) => {
+            card.addEventListener('click', () => {
+                currentIndex = index;
+                updateLightbox();
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Empêche le scroll
+            });
+        });
+
+        // Mettre à jour le contenu
+        function updateLightbox() {
+            const img = cards[currentIndex].querySelector('img');
+            lightboxImg.src = img.src;
+            lightboxCaption.textContent = img.alt;
+        }
+
+        // Navigation
+        function showNext() {
+            currentIndex = (currentIndex + 1) % cards.length;
+            updateLightbox();
+        }
+
+        function showPrev() {
+            currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+            updateLightbox();
+        }
+
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showNext();
+        });
+
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showPrev();
+        });
+
+        // Fermer la lightbox
+        closeBtn.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Raccourcis clavier
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            
+            if (e.key === 'Escape') closeBtn.click();
+            if (e.key === 'ArrowRight') showNext();
+            if (e.key === 'ArrowLeft') showPrev();
+        });
+    </script>
+
+</body>
+</html>

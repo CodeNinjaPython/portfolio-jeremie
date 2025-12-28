@@ -1,1138 +1,1186 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <script async="" data-cbid="9ca2ce88-942f-428b-9100-65869676c999" id="Cookiebot" src="https://consent.cookiebot.com/uc.js" type="text/javascript"></script>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Jérémie FAVRE - Portfolio</title>
-    <meta content="Portfolio de Jérémie Favre, vidéaste et cadreur-monteur basé à La Réunion. Découvrez mes projets vidéo, compétences et contactez-me pour vos réalisations." name="description"/>
-    <meta content="Jérémie Favre, vidéaste, cadreur, monteur, La Réunion, production vidéo, after effects, premiere pro, drone, FPV, portfolio, vidéo, film, publicité" name="keywords"/>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
-    <link href="/manifest.json" rel="manifest"/>
-    <meta content="#1a1a1a" name="theme-color"/>
-    <meta content="Jérémie FAVRE - Vidéaste à La Réunion" property="og:title"/>
-    <meta content="Découvrez le portfolio de Jérémie Favre, vidéaste et cadreur-monteur basé à La Réunion. Des clips dynamiques aux documentaires immersifs." property="og:description"/>
-    <meta content="website" property="og:type"/>
-    <meta content="https://votre-site.com" property="og:url"/>
-    <meta content="https://votre-site.com/unnamed.jpg" property="og:image"/>
-    <meta content="Logo de Jérémie Favre" property="og:image:alt"/>
-    <meta content="fr_FR" property="og:locale"/>
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ZSLE032V4E"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-ZSLE032V4E'); // VOTRE ID DE MESURE GOOGLE ANALYTICS
-    </script>
+  <script async="" data-cbid="9ca2ce88-942f-428b-9100-65869676c999" id="Cookiebot" src="https://consent.cookiebot.com/uc.js" type="text/javascript"></script>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Jérémie FAVRE - Portfolio</title>
+  <meta content="Portfolio de Jérémie Favre, vidéaste et cadreur-monteur basé à La Réunion. Découvrez mes projets vidéo, compétences et contactez-me pour vos réalisations." name="description"/>
+  <meta content="Jérémie Favre, vidéaste, cadreur, monteur, La Réunion, production vidéo, after effects, premiere pro, drone, FPV, portfolio, vidéo, film, publicité" name="keywords"/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+  <link href="/manifest.json" rel="manifest"/>
+  <meta content="#1a1a1a" name="theme-color"/>
+  <meta content="Jérémie FAVRE - Vidéaste à La Réunion" property="og:title"/>
+  <meta content="Découvrez le portfolio de Jérémie Favre, vidéaste et cadreur-monteur basé à La Réunion. Des clips dynamiques aux documentaires immersifs." property="og:description"/>
+  <meta content="website" property="og:type"/>
+  <meta content="https://votre-site.com" property="og:url"/>
+  <meta content="https://votre-site.com/unnamed.jpg" property="og:image"/>
+  <meta content="Logo de Jérémie Favre" property="og:image:alt"/>
+  <meta content="fr_FR" property="og:locale"/>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ZSLE032V4E"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZSLE032V4E'); // VOTRE ID DE MESURE GOOGLE ANALYTICS
+  </script>
 <style>
-    /* Variables CSS pour les couleurs (Thème Sombre par défaut) */
-    :root {
-      --bg-color: #1a1a1a;
-      --text-color: #ffffff;
-      --header-bg: #333333;
-      --section-bg: #333333;
-      --section-white-bg: #ffffff;
-      --section-white-text: #333333;
-      --nav-bg: #1a1a1a;
-      --accent-color: #e0e0e0;
-      --border-color: rgba(255,255,255,0.1);
-      --shadow-color: rgba(0,0,0,0.4);
-      --loader-bg: #1a1a1a;
-      --loader-text: #ffffff;
-      --form-bg: #f4f4f4;
-      --form-text: #333333;
-      --form-border: #333333;
-      --button-bg: #333333;
-      --button-text: #ffffff;
-      --button-hover-bg: #000;
-      --footer-bg: #333333;
-      --link-color: var(--text-color);
-      --link-hover-color: var(--accent-color);
-      --icon-color: var(--accent-color);
-      --success-bg: #d4edda;
-      --success-text: #155724;
-      --success-border: #c3e6cb;
-    }
+  /* ============================
+     VARIABLES GLOBALES (THÈMES)
+     ============================ */
+  :root {
+    --bg-color: #1a1a1a;
+    --text-color: #ffffff;
+    --header-bg: #333333;
+    --section-bg: #333333;
+    --section-white-bg: #ffffff;
+    --section-white-text: #333333;
+    --nav-bg: #1a1a1a;
+    --accent-color: #e0e0e0;
+    --border-color: rgba(255,255,255,0.1);
+    --shadow-color: rgba(0,0,0,0.4);
+    --loader-bg: #1a1a1a;
+    --loader-text: #ffffff;
+    --form-bg: #f4f4f4;
+    --form-text: #333333;
+    --form-border: #333333;
+    --button-bg: #333333;
+    --button-text: #ffffff;
+    --button-hover-bg: #000;
+    --footer-bg: #333333;
+    --link-color: var(--text-color);
+    --link-hover-color: var(--accent-color);
+    --icon-color: var(--accent-color);
+    --success-bg: #d4edda;
+    --success-text: #155724;
+    --success-border: #c3e6cb;
+  }
 
-    /* Variables pour le Thème Clair */
-    body.light-theme {
-      --bg-color: #f4f4f4;
-      --text-color: #333333;
-      --header-bg: #e0e0e0;
-      --section-bg: #ffffff;
-      --section-white-bg: #333333; /* Inversé pour les sections "blanches" */
-      --section-white-text: #ffffff;
-      --nav-bg: #e0e0e0;
-      --accent-color: #1a1a1a; /* Accent plus foncé pour le thème clair */
-      --border-color: rgba(0,0,0,0.1);
-      --shadow-color: rgba(0,0,0,0.2);
-      --loader-bg: #f4f4f4;
-      --loader-text: #333333;
-      --form-bg: #ffffff;
-      --form-text: #1a1a1a;
-      --form-border: #e0e0e0;
-      --button-bg: #1a1a1a;
-      --button-text: #ffffff;
-      --button-hover-bg: #333333;
-      --footer-bg: #e0e0e0;
-      --link-color: var(--text-color);
-      --link-hover-color: var(--accent-color);
-      --icon-color: var(--accent-color);
-    }
+  /* ============================
+     THÈME CLAIR (body.light-theme)
+     ============================ */
+  body.light-theme {
+    --bg-color: #f4f4f4;
+    --text-color: #333333;
+    --header-bg: #e0e0e0;
+    --section-bg: #ffffff;
+    --section-white-bg: #333333; /* Inversé pour les sections "blanches" */
+    --section-white-text: #ffffff;
+    --nav-bg: #e0e0e0;
+    --accent-color: #1a1a1a; /* Accent plus foncé pour le thème clair */
+    --border-color: rgba(0,0,0,0.1);
+    --shadow-color: rgba(0,0,0,0.2);
+    --loader-bg: #f4f4f4;
+    --loader-text: #333333;
+    --form-bg: #ffffff;
+    --form-text: #1a1a1a;
+    --form-border: #e0e0e0;
+    --button-bg: #1a1a1a;
+    --button-text: #ffffff;
+    --button-hover-bg: #333333;
+    --footer-bg: #e0e0e0;
+    --link-color: var(--text-color);
+    --link-hover-color: var(--accent-color);
+    --icon-color: var(--accent-color);
+  }
 
-    /* Styles généraux du corps */
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: 'Lato', Arial, sans-serif;
-      line-height: 1.6;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      overflow-x: hidden;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px),
-        linear-gradient(rgba(255,255,255,0.01) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.01) 1px, transparent 1px);
-      background-size: 30px 30px, 30px 30px, 15px 15px, 15px 15px;
-      background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
-      transition: background-color 0.5s ease, color 0.5s ease;
-    }
-    body.light-theme {
-      background-image:
-        linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px),
-        linear-gradient(rgba(0,0,0,0.01) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,0,0,0.01) 1px, transparent 1px);
-    }
+  /* ============================
+     STYLES GÉNÉRAUX (body, html)
+     ============================ */
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: 'Lato', Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+    background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(rgba(255,255,255,0.01) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.01) 1px, transparent 1px);
+    background-size: 30px 30px, 30px 30px, 15px 15px, 15px 15px;
+    background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+  body.light-theme {
+    background-image:
+    linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px),
+    linear-gradient(rgba(0,0,0,0.01) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.01) 1px, transparent 1px);
+  }
 
-    /* Styles des titres */
-    h1, h2, h3 {
-      font-family: 'Bebas Neue', sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--text-color);
-      margin-top: 0;
-      transition: color 0.5s ease;
-    }
-    h1 {
-      font-size: 4rem;
-      line-height: 1;
-      margin-bottom: 0.5rem;
-      transform: rotate(-3deg);
-      display: inline-block;
-      background-color: var(--bg-color);
-      padding: 0 15px;
-      position: relative;
-      z-index: 1;
-    }
-    h2 {
-      font-size: 2.2rem;
-      border-bottom: 3px solid var(--accent-color);
-      padding-bottom: 0.5rem;
-      margin-bottom: 1.5rem;
-      display: inline-block;
-      transform: rotate(-1deg);
-      padding-right: 15px;
-      transition: border-color 0.5s ease;
-    }
-    h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: var(--accent-color);
-      transition: color 0.5s ease;
-    }
+  /* ============================
+     TYPOGRAPHIE (H1, H2, H3)
+     ============================ */
+  h1, h2, h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-color);
+    margin-top: 0;
+    transition: color 0.5s ease;
+  }
+  h1 {
+    font-size: 4rem;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    transform: rotate(-3deg);
+    display: inline-block;
+    background-color: var(--bg-color);
+    padding: 0 15px;
+    position: relative;
+    z-index: 1;
+  }
+  h2 {
+    font-size: 2.2rem;
+    border-bottom: 3px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    transform: rotate(-1deg);
+    padding-right: 15px;
+    transition: border-color 0.5s ease;
+  }
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+    transition: color 0.5s ease;
+  }
 
-    /* En-tête */
-    header {
-      background: var(--header-bg);
-      color: var(--text-color);
-      padding: 4rem 1rem 3rem;
-      text-align: center;
-      position: relative;
-      overflow: visible;
-      margin-bottom: 0;
-      box-shadow: 0 8px 16px var(--shadow-color);
-      transition: background 0.5s ease, box-shadow 0.5s ease;
-    }
+  /* ============================
+     EN-TÊTE / HEADER
+     ============================ */
+  header {
+    background: var(--header-bg);
+    color: var(--text-color);
+    padding: 4rem 1rem 3rem;
+    text-align: center;
+    position: relative;
+    overflow: visible;
+    margin-bottom: 0;
+    box-shadow: 0 8px 16px var(--shadow-color);
+    transition: background 0.5s ease, box-shadow 0.5s ease;
+  }
 
-    header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('images/texture-de-papier-blanc.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      opacity: 0.15;
-      z-index: 1;
-    }
+  header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/texture-de-papier-blanc.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.15;
+    z-index: 1;
+  }
 
-    header::after {
-      content: '';
-      position: absolute;
-      bottom: -30px;
-      left: 0;
-      width: 100%;
-      height: 60px;
-      background-color: var(--bg-color);
-      transform: skewY(2deg);
-      transform-origin: bottom left;
-      z-index: 5;
-      box-shadow: 0 8px 15px var(--shadow-color);
-      transition: background-color 0.5s ease, box-shadow 0.5s ease;
-    }
+  header::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: var(--bg-color);
+    transform: skewY(2deg);
+    transform-origin: bottom left;
+    z-index: 5;
+    box-shadow: 0 8px 15px var(--shadow-color);
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
+  }
 
-    .header-content {
-      position: relative;
-      z-index: 2;
-      max-width: 900px;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2rem;
-    }
+  .header-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
 
-    .profile-photo {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      background-color: var(--light-grey);
-      border: 6px solid var(--text-color);
-      overflow: hidden;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 0 0 10px rgba(255,255,255,0.1);
-      transition: border-color 0.5s ease;
-    }
-    .profile-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-    }
+  .profile-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: var(--light-grey);
+    border: 6px solid var(--text-color);
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 0 0 10px rgba(255,255,255,0.1);
+    transition: border-color 0.5s ease;
+  }
+  .profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
 
-    .header p {
-      font-size: 1.3rem;
-      font-weight: 300;
-    }
+  .header p {
+    font-size: 1.3rem;
+    font-weight: 300;
+  }
 
-    .social-links {
-      display: flex;
-      gap: 1.5rem;
-      justify-content: center;
-    }
+  .social-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+  }
 
-    .social-links a {
-      color: var(--text-color);
-      font-size: 2rem;
-      transition: color 0.3s ease, transform 0.3s ease;
-      text-decoration: none;
-    }
+  .social-links a {
+    color: var(--text-color);
+    font-size: 2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+  }
 
-    .social-links a:hover {
-      color: var(--accent-color);
-      transform: scale(1.1);
-    }
+  .social-links a:hover {
+    color: var(--accent-color);
+    transform: scale(1.1);
+  }
 
+  .top-banner {
+    position: absolute;
+    top: 20px;
+    left: -50px;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    padding: 10px 80px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    transform: rotate(-10deg);
+    z-index: 3;
+    box-shadow: 2px 2px 8px var(--shadow-color);
+    transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
+  }
+
+  /* ============================
+     NAVIGATION
+     ============================ */
+  nav {
+    background-color: var(--nav-bg);
+    padding: 1.5rem 0;
+    width: 100%;
+    margin-top: -2rem;
+    z-index: 10;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    position: relative;
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-grow: 1;
+  }
+  nav a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+    position: relative;
+  }
+  nav a:hover {
+    color: var(--link-hover-color);
+    transform: translateY(-5px);
+  }
+  nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent-color);
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease-out, background-color 0.5s ease;
+  }
+  nav a:hover::after {
+    transform: translateX(-50%) scaleX(1);
+  }
+
+  /* ============================
+     BOUTON BASCULE THÈME
+     ============================ */
+  #theme-toggle {
+    background: none;
+    border: none;
+    color: var(--link-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-right: 1.5rem;
+    transition: color 0.3s ease;
+    padding: 0.5rem;
+  }
+  #theme-toggle:hover {
+    color: var(--link-hover-color);
+  }
+
+  /* ============================
+     CONTENU PRINCIPAL (GRILLE)
+     ============================ */
+  .main-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5rem;
+    max-width: 950px;
+    margin: auto;
+    padding: 0 1.5rem;
+    position: relative;
+  }
+
+  /* ============================
+     SECTIONS (CARTE / BLOC)
+     ============================ */
+  section {
+    background-color: var(--section-bg);
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px var(--shadow-color);
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease, border-color 0.5s ease;
+    opacity: 1;
+    transform: translateY(0);
+    position: relative;
+    overflow: visible;
+  }
+  section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px var(--shadow-color);
+  }
+
+  section:not(#contact)::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: var(--bg-color);
+    z-index: 5;
+    box-shadow: 0 8px 15px var(--shadow-color);
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
+  }
+
+  section::before {
+    content: none;
+  }
+
+  section:not(#contact):nth-child(odd)::after {
+    transform: skewY(2deg);
+    transform-origin: bottom left;
+  }
+  section:not(#contact):nth-child(even)::after {
+    transform: skewY(-2deg);
+    transform-origin: bottom right;
+  }
+
+  .section-white {
+    background-color: var(--section-white-bg);
+    color: var(--section-white-text);
+    box-shadow: 0 6px 12px var(--shadow-color);
+    transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
+  }
+  .section-white h2, .section-white h3 {
+    color: var(--section-white-text);
+    border-bottom-color: var(--section-white-text);
+    transition: color 0.5s ease, border-bottom-color 0.5s ease;
+  }
+  .section-white a {
+    color: var(--section-white-text);
+  }
+  .section-white:not(#contact)::after {
+    background-color: var(--section-white-bg);
+    transition: background-color 0.5s ease;
+  }
+  .section-white::before {
+    content: none;
+  }
+
+  .section-white:not(#contact):nth-child(odd)::after {
+    transform: skewY(-2deg);
+    transform-origin: bottom right;
+  }
+  .section-white:not(#contact):nth-child(even)::after {
+    transform: skewY(2deg);
+    transform-origin: bottom left;
+  }
+
+  /* ============================
+     GALLERY / VIDEOS (PORTFOLIO)
+     ============================ */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  .video {
+    background-color: var(--nav-bg);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+  }
+  .video:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px var(--shadow-color);
+  }
+  .video-title {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--accent-color);
+    transition: color 0.5s ease;
+  }
+  iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+    border-radius: 8px;
+    display: block;
+    pointer-events: none;
+  }
+
+  /* ============================
+     GALERIE PHOTO / CATÉGORIES
+     ============================ */
+  .photo-category {
+    margin-bottom: 2rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--section-bg);
+    box-shadow: 0 4px 8px var(--shadow-color);
+    transition: background-color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
+  }
+  .photo-category:last-child {
+    margin-bottom: 0;
+  }
+
+  .category-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background-color: var(--nav-bg);
+    color: var(--text-color);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    user-select: none;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+
+  /* ============================
+     CARROUSEL (PHOTOS)
+     ============================ */
+  .carousel-container {
+    position: relative;
+    overflow: hidden;
+    padding: 1.5rem;
+  }
+
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .photo-item {
+    flex: 0 0 auto;
+    width: calc(100% / var(--items-per-view, 1) - var(--gap-width, 1rem) * (var(--items-per-view, 1) - 1) / var(--items-per-view, 1));
+    max-width: 300px;
+    margin-right: 1rem;
+    background-color: var(--section-bg);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    border: 1px solid var(--border-color);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease, border-color 0.5s ease;
+  }
+  .photo-item:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 8px 20px var(--shadow-color);
+  }
+
+  .photo-item:last-child {
+    margin-right: 0;
+  }
+
+  .photo-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  .photo-title {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    transition: color 0.5s ease;
+  }
+
+  .carousel-nav-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    z-index: 10;
+  }
+
+  .carousel-nav-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+  }
+
+  .carousel-nav-button.prev-button {
+    margin-left: 1.5rem;
+  }
+
+  .carousel-nav-button.next-button {
+    margin-right: 1.5rem;
+  }
+
+  .carousel-nav-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  .carousel-nav-button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  /* ============================
+     CONTACT (INFOS & FORMULAIRE)
+     ============================ */
+  .contact-info p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+  }
+  .contact-info a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  .section-white .contact-info a {
+    color: var(--section-white-text);
+  }
+  .contact-info a:hover {
+    color: var(--link-hover-color);
+  }
+  .section-white .contact-info a:hover {
+    color: var(--accent-color);
+  }
+  .contact-info i {
+    margin-right: 12px;
+    font-size: 1.3rem;
+    color: var(--icon-color);
+    transition: color 0.5s ease;
+  }
+  .section-white .contact-info i {
+    color: var(--section-white-text);
+  }
+
+  /* ============================
+     FORMULAIRE DE CONTACT
+     ============================ */
+  .contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--form-text);
+    transition: color 0.5s ease;
+  }
+  .contact-form input[type="text"],
+  .contact-form input[type="email"],
+  .contact-form textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--form-border);
+    border-radius: 5px;
+    background-color: var(--form-bg);
+    color: var(--form-text);
+    font-family: 'Lato', Arial, sans-serif;
+    font-size: 1rem;
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+  }
+  .contact-form textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  .contact-form input[type="text"]:focus,
+  .contact-form input[type="email"]:focus,
+  .contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 5px var(--shadow-color);
+  }
+  .contact-form button {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+    transform: rotate(-2deg);
+  }
+  .contact-form button:hover {
+    background-color: var(--button-hover-bg);
+    transform: rotate(-2deg) scale(1.05);
+  }
+
+  /* ============================
+     MESSAGE DE SUCCÈS (FORM)
+     ============================ */
+  .success-message {
+    background-color: var(--success-bg);
+    color: var(--success-text);
+    border: 1px solid var(--success-border);
+    padding: 1rem;
+    margin-top: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  .success-message.show {
+    opacity: 1;
+  }
+  .hidden {
+    display: none;
+  }
+
+  /* ============================
+     CONTACT COLLAPSIBLE
+     ============================ */
+  #contact {
+    margin-top: 5rem;
+  }
+  #contact h2 {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    user-select: none;
+  }
+  #contactToggleIcon {
+    transition: transform 0.3s ease;
+  }
+  #contactToggleIcon.rotated {
+    transform: rotate(180deg);
+  }
+  .contact-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.7s ease-in-out, padding 0.7s ease-in-out;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .contact-content.expanded {
+    max-height: 1000px !important;
+    min-height: 200px;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+  }
+
+  /* ============================
+     GRILLE DES COMPÉTENCES
+     ============================ */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .skills-grid ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .skills-grid li::before {
+    content: '•';
+    color: var(--accent-color);
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    transition: color 0.5s ease;
+  }
+  .skill-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+  }
+  .skill-item i {
+    font-size: 1.6rem;
+    color: var(--icon-color);
+    transition: color 0.5s ease;
+  }
+
+  /* ============================
+     PIED DE PAGE / FOOTER
+     ============================ */
+  footer {
+    text-align: center;
+    padding: 2.5rem 1rem;
+    margin-top: 4rem;
+    background-color: var(--footer-bg);
+    color: var(--text-color);
+    font-size: 0.9rem;
+    box-shadow: 0 -4px 8px var(--shadow-color);
+    position: relative;
+    overflow: visible;
+    transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
+  }
+
+  footer::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: var(--bg-color);
+    transform: skewY(-2deg);
+    transform-origin: top left;
+    z-index: 5;
+    box-shadow: 0 -8px 15px var(--shadow-color);
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
+  }
+
+  /* ============================
+     BOUTON RETOUR EN HAUT
+     ============================ */
+  #back-to-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+    z-index: 100;
+  }
+  #back-to-top:hover {
+    background-color: var(--text-color);
+    transform: translateY(-3px);
+  }
+
+  /* ============================
+     LIGHTBOX / MODALE PHOTO
+     ============================ */
+  .lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.9);
+  }
+
+  .lightbox.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .lightbox-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.8);
+    animation-name: zoom;
+    animation-duration: 0.6s;
+  }
+
+  @keyframes zoom {
+    from {transform: scale(0.1)}
+    to {transform: scale(1)}
+  }
+
+  .lightbox-content.zoomable {
+    cursor: zoom-in;
+    transition: transform 0.3s ease-in-out;
+    transform-origin: center center;
+  }
+
+  .lightbox-content.zoomed {
+    transform: scale(2);
+    cursor: grab;
+    touch-action: none;
+  }
+
+  .close-button {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    color: #f1f1f1;
+    font-size: 45px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    z-index: 1001;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .close-button:hover,
+  .close-button:focus {
+    color: #bbb;
+    background-color: rgba(0,0,0,0.7);
+  }
+
+  .lightbox-caption {
+    margin-top: 15px;
+    text-align: center;
+    color: #ccc;
+    font-size: 1.2rem;
+    padding: 10px 0;
+    max-width: 90%;
+  }
+
+  .lightbox-nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    z-index: 1001;
+  }
+
+  .lightbox-nav-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .lightbox-nav-button.prev {
+    left: 20px;
+  }
+
+  .lightbox-nav-button.next {
+    right: 20px;
+  }
+
+  /* ============================
+     OFFLINE MESSAGE
+     ============================ */
+  #offline-message {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffc107;
+    color: #343a40;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1002;
+    display: none;
+    font-weight: bold;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  #offline-message.show {
+    opacity: 1;
+    display: block;
+  }
+
+  /* ============================
+     LOADER
+     ============================ */
+  #loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--loader-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.5s ease-out, background-color 0.5s ease;
+  }
+
+  #loader.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  #loader img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+    animation: pulse 1.5s infinite alternate;
+  }
+
+  #loader h1, #loader p {
+    font-family: 'Bebas Neue', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--loader-text);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    animation: pulse 1.5s infinite alternate;
+    transition: color 0.5s ease;
+  }
+
+  #loader h1 {
+    font-size: 3.5rem;
+    line-height: 1;
+  }
+
+  #loader p {
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin-top: 0.5rem;
+  }
+
+  @keyframes pulse {
+    from { transform: scale(0.95); opacity: 0.8; }
+    to { transform: scale(1.05); opacity: 1; }
+  }
+
+  /* ============================
+     MODALE VIDÉO (STYLE)
+     ============================ */
+  #videoModal .video-popup {
+    max-width: 900px;
+    width: 90%;
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  #videoModal .video-part {
+    background: #000;
+  }
+  #videoModal #videoModalIframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+    pointer-events: auto;
+  }
+  #videoModal .description-part {
+    background: #f5f1e6;
+    color: #111;
+    padding: 2rem;
+    font-family: 'Lato', sans-serif;
+  }
+  #videoModal .description-part #videoTitle {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #222;
+  }
+  #videoModal .description-part p {
+    margin: 0.5rem 0;
+  }
+  #videoModal .close-button {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+  }
+
+  /* ============================
+     MEDIA QUERIES
+     ============================ */
+  @media (max-width: 768px) {
+    h1 { font-size: 2.8rem; }
+    h2 { font-size: 1.8rem; }
     .top-banner {
-      position: absolute;
-      top: 20px;
-      left: -50px;
-      background-color: var(--accent-color);
-      color: var(--bg-color);
-      padding: 10px 80px;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.8rem;
-      letter-spacing: 2px;
-      transform: rotate(-10deg);
-      z-index: 3;
-      box-shadow: 2px 2px 8px var(--shadow-color);
-      transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
-    }
-
-    /* Navigation */
-    nav {
-      background-color: var(--nav-bg);
-      padding: 1.5rem 0;
-      width: 100%;
-      margin-top: -2rem;
-      z-index: 10;
-      box-shadow: 0 4px 8px var(--shadow-color);
-      position: relative;
-      transition: background-color 0.5s ease, box-shadow 0.5s ease;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      font-size: 1.4rem;
+      padding: 8px 50px;
+      left: -30px;
     }
     nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-grow: 1;
+      flex-direction: column;
+      gap: 1rem;
     }
-    nav a {
-      color: var(--link-color);
-      text-decoration: none;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.1rem;
-      letter-spacing: 1px;
-      padding: 0.5rem 1rem;
-      transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
-      position: relative;
+    nav a { font-size: 1rem; }
+    section { padding: 1.5rem; }
+    .profile-photo {
+      width: 140px;
+      height: 140px;
     }
-    nav a:hover {
-      color: var(--link-hover-color);
-      transform: translateY(-5px);
-    }
-    nav a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      width: 100%;
-      height: 2px;
-      background-color: var(--accent-color);
-      transform: translateX(-50%) scaleX(0);
-      transform-origin: center;
-      transition: transform 0.3s ease-out, background-color 0.5s ease;
-    }
-    nav a:hover::after {
-      transform: translateX(-50%) scaleX(1);
-    }
-
-    /* Bouton de thème */
-    #theme-toggle {
-      background: none;
-      border: none;
-      color: var(--link-color);
-      font-size: 1.5rem;
-      cursor: pointer;
-      margin-right: 1.5rem;
-      transition: color 0.3s ease;
-      padding: 0.5rem;
-    }
-    #theme-toggle:hover {
-      color: var(--link-hover-color);
-    }
-
-    /* Contenu principal (grille) */
-    .main-content {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 5rem;
-      max-width: 950px;
-      margin: auto;
-      padding: 0 1.5rem;
-      position: relative;
-    }
-
-    /* Sections de contenu */
-    section {
-      background-color: var(--section-bg);
-      padding: 2.5rem;
-      border-radius: 10px;
-      box-shadow: 0 6px 12px var(--shadow-color);
-      border: 1px solid var(--border-color);
-      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease, border-color 0.5s ease;
-      opacity: 1;
-      transform: translateY(0);
-      position: relative;
-      overflow: visible;
-    }
-    section.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    section:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px var(--shadow-color);
-    }
-
-    section:not(#contact)::after {
-      content: '';
-      position: absolute;
-      bottom: -30px;
-      left: 0;
-      width: 100%;
-      height: 60px;
-      background-color: var(--bg-color);
-      z-index: 5;
-      box-shadow: 0 8px 15px var(--shadow-color);
-      transition: background-color 0.5s ease, box-shadow 0.5s ease;
-    }
-
-    section::before {
-      content: none;
-    }
-
-    section:not(#contact):nth-child(odd)::after {
-      transform: skewY(2deg);
-      transform-origin: bottom left;
-    }
-    section:not(#contact):nth-child(even)::after {
-      transform: skewY(-2deg);
-      transform-origin: bottom right;
-    }
-
-    .section-white {
-      background-color: var(--section-white-bg);
-      color: var(--section-white-text);
-      box-shadow: 0 6px 12px var(--shadow-color);
-      transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
-    }
-    .section-white h2, .section-white h3 {
-      color: var(--section-white-text);
-      border-bottom-color: var(--section-white-text);
-      transition: color 0.5s ease, border-bottom-color 0.5s ease;
-    }
-    .section-white a {
-      color: var(--section-white-text);
-    }
-    .section-white:not(#contact)::after {
-      background-color: var(--section-white-bg);
-      transition: background-color 0.5s ease;
-    }
-    .section-white::before {
-      content: none;
-    }
-
-    .section-white:not(#contact):nth-child(odd)::after {
-      transform: skewY(-2deg);
-      transform-origin: bottom right;
-    }
-    .section-white:not(#contact):nth-child(even)::after {
-      transform: skewY(2deg);
-      transform-origin: bottom left;
-    }
-
-    /* Grille vidéo (Portfolio) */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-    }
-    .video {
-      background-color: var(--nav-bg);
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px var(--shadow-color);
-      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease;
-      border: 1px solid var(--border-color);
-      cursor: pointer;
-    }
-    .video:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px var(--shadow-color);
-    }
-    .video-title {
-      text-align: center;
-      margin-top: 10px;
-      font-weight: bold;
-      font-size: 1.1rem;
-      color: var(--accent-color);
-      transition: color 0.5s ease;
-    }
-    iframe {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      border: none;
-      border-radius: 8px;
-      display: block;
-      pointer-events: none;
-    }
-
-    /* Styles pour la galerie photo */
-    .photo-category {
-        margin-bottom: 2rem;
-        border: 1px solid var(--border-color);
-        border-radius: 8px;
-        overflow: hidden;
-        background-color: var(--section-bg);
-        box-shadow: 0 4px 8px var(--shadow-color);
-        transition: background-color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
-    }
-    .photo-category:last-child {
-        margin-bottom: 0;
-    }
-
-    .category-title {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem 1.5rem;
-        background-color: var(--nav-bg);
-        color: var(--text-color);
-        font-family: 'Bebas Neue', sans-serif;
-        font-size: 1.5rem;
-        letter-spacing: 1px;
-        user-select: none;
-        transition: background-color 0.5s ease, color 0.5s ease;
-    }
-
-    /* Carrousel styles */
-    .carousel-container {
-        position: relative;
-        overflow: hidden;
-        padding: 1.5rem;
-    }
-
-    .carousel-track {
-        display: flex;
-        transition: transform 0.5s ease-in-out;
-    }
-
     .photo-item {
-        flex: 0 0 auto;
-        width: calc(100% / var(--items-per-view, 1) - var(--gap-width, 1rem) * (var(--items-per-view, 1) - 1) / var(--items-per-view, 1));
-        max-width: 300px;
-        margin-right: 1rem;
-        background-color: var(--section-bg);
-        padding: 10px;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px var(--shadow-color);
-        border: 1px solid var(--border-color);
-        text-align: center;
-        transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease, border-color 0.5s ease;
+      width: 100%;
+      margin-right: 0;
     }
-    .photo-item:hover {
-        transform: translateY(-5px) scale(1.03);
-        box-shadow: 0 8px 20px var(--shadow-color);
-    }
-
-    .photo-item:last-child {
-        margin-right: 0;
-    }
-
-    .photo-item img {
-        width: 100%;
-        height: 180px;
-        object-fit: cover;
-        border-radius: 5px;
-        margin-bottom: 10px;
-    }
-    .photo-title {
-        font-weight: bold;
-        font-size: 0.9rem;
-        color: var(--accent-color);
-        transition: color 0.5s ease;
-    }
-
-    .carousel-nav-buttons {
-        position: absolute;
-        top: 50%;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        transform: translateY(-50%);
-        left: 0;
-        right: 0;
-        z-index: 10;
-    }
-
-    .carousel-nav-button {
-        background-color: rgba(0, 0, 0, 0.5);
-        color: #fff;
-        border: none;
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        font-size: 1.5rem;
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: background-color 0.3s ease;
-    }
-
-    .carousel-nav-button.prev-button {
-        margin-left: 1.5rem;
-    }
-
-    .carousel-nav-button.next-button {
-        margin-right: 1.5rem;
-    }
-
-    .carousel-nav-button:hover {
-        background-color: rgba(0, 0, 0, 0.8);
-    }
-    .carousel-nav-button:disabled {
-        opacity: 0.3;
-        cursor: not-allowed;
-    }
-
-    /* Informations de contact */
-    .contact-info p {
-      margin-bottom: 1rem;
-      font-size: 1.1rem;
-      display: flex;
-      align-items: center;
-    }
-    .contact-info a {
-      color: var(--link-color);
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    .section-white .contact-info a {
-      color: var(--section-white-text);
-    }
-    .contact-info a:hover {
-      color: var(--link-hover-color);
-    }
-    .section-white .contact-info a:hover {
-      color: var(--accent-color);
-    }
-    .contact-info i {
-      margin-right: 12px;
-      font-size: 1.3rem;
-      color: var(--icon-color);
-      transition: color 0.5s ease;
-    }
-    .section-white .contact-info i {
-      color: var(--section-white-text);
-    }
-
-    /* Formulaire de contact */
-    .contact-form label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-weight: bold;
-      color: var(--form-text);
-      transition: color 0.5s ease;
-    }
-    .contact-form input[type="text"],
-    .contact-form input[type="email"],
-    .contact-form textarea {
-      width: calc(100% - 20px);
-      padding: 10px;
-      margin-bottom: 1.5rem;
-      border: 1px solid var(--form-border);
-      border-radius: 5px;
-      background-color: var(--form-bg);
-      color: var(--form-text);
-      font-family: 'Lato', Arial, sans-serif;
-      font-size: 1rem;
-      transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
-    }
-    .contact-form textarea {
-      resize: vertical;
-      min-height: 100px;
-    }
-    .contact-form input[type="text"]:focus,
-    .contact-form input[type="email"]:focus,
-    .contact-form textarea:focus {
-      outline: none;
-      border-color: var(--accent-color);
-      box-shadow: 0 0 5px var(--shadow-color);
-    }
-    .contact-form button {
-      background-color: var(--button-bg);
-      color: var(--button-text);
-      padding: 12px 25px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.2rem;
-      letter-spacing: 1px;
-      transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
-      transform: rotate(-2deg);
-    }
-    .contact-form button:hover {
-      background-color: var(--button-hover-bg);
-      transform: rotate(-2deg) scale(1.05);
-    }
-
-    /* Styles pour le message de succès */
-    .success-message {
-      background-color: var(--success-bg);
-      color: var(--success-text);
-      border: 1px solid var(--success-border);
-      padding: 1rem;
-      margin-top: 1.5rem;
-      border-radius: 8px;
-      text-align: center;
-      font-weight: bold;
-      opacity: 0;
-      transition: opacity 0.5s ease-in-out;
-    }
-    .success-message.show {
-      opacity: 1;
-    }
-    .hidden {
-      display: none;
-    }
-
-    /* Styles pour la section contact collapsible */
-    #contact {
-        margin-top: 5rem;
-    }
-    #contact h2 {
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      user-select: none;
-    }
-    #contactToggleIcon {
-      transition: transform 0.3s ease;
-    }
-    #contactToggleIcon.rotated {
-      transform: rotate(180deg);
-    }
-    .contact-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.7s ease-in-out, padding 0.7s ease-in-out;
-      padding-top: 0;
-      padding-bottom: 0;
-    }
-    .contact-content.expanded {
-      max-height: 1000px !important;
-      min-height: 200px;
-      padding-top: 1.5rem;
+    .carousel-nav-buttons { padding: 0 5px; }
+    nav {
+      flex-direction: column;
       padding-bottom: 1rem;
     }
-
-    /* Grille des compétences */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
+    #theme-toggle {
+      margin-top: 1rem;
+      margin-right: 0;
     }
-    .skills-grid ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+    #loader img {
+      width: 100px;
+      height: 100px;
     }
-    .skills-grid li::before {
-      content: '•';
-      color: var(--accent-color);
-      display: inline-block;
-      width: 1em;
-      margin-left: -1em;
-      transition: color 0.5s ease;
+    #loader h1 { font-size: 2.5rem; }
+    #loader p { font-size: 1.2rem; }
+    .close-button {
+      font-size: 35px;
+      width: 40px;
+      height: 40px;
+      top: 10px;
+      right: 10px;
     }
-    .skill-item {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      margin-bottom: 0.8rem;
+    .lightbox-nav-button {
+      width: 40px;
+      height: 40px;
+      font-size: 1.5rem;
+      left: 10px;
+      right: 10px;
+    }
+    .lightbox-content.zoomed { transform: scale(1.5); }
+    .contact-info p, .skill-item { font-size: 1rem; }
+    .contact-info i { font-size: 1.4rem; }
+    .contact-form input, .contact-form textarea {
+      width: calc(100% - 20px);
+      padding: 8px;
+      margin-bottom: 1rem;
+    }
+    .contact-form button {
+      padding: 10px 20px;
       font-size: 1.1rem;
     }
-    .skill-item i {
-      font-size: 1.6rem;
-      color: var(--icon-color);
-      transition: color 0.5s ease;
-    }
-
-    /* Pied de page */
-    footer {
-      text-align: center;
-      padding: 2.5rem 1rem;
-      margin-top: 4rem;
-      background-color: var(--footer-bg);
-      color: var(--text-color);
+    .success-message {
+      padding: 0.8rem;
       font-size: 0.9rem;
-      box-shadow: 0 -4px 8px var(--shadow-color);
-      position: relative;
-      overflow: visible;
-      transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
     }
+    footer { padding: 1.5rem 1rem; }
+  }
 
-    footer::before {
-      content: '';
-      position: absolute;
-      top: -30px;
-      left: 0;
-      width: 100%;
-      height: 60px;
-      background-color: var(--bg-color);
-      transform: skewY(-2deg);
-      transform-origin: top left;
-      z-index: 5;
-      box-shadow: 0 -8px 15px var(--shadow-color);
-      transition: background-color 0.5s ease, box-shadow 0.5s ease;
-    }
-
-    /* Bouton retour en haut */
-    #back-to-top {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: var(--accent-color);
-      color: var(--bg-color);
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      font-size: 1.5rem;
-      cursor: pointer;
-      box-shadow: 0 4px 8px var(--shadow-color);
-      transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
-      z-index: 100;
-    }
-    #back-to-top:hover {
-      background-color: var(--text-color);
-      transform: translateY(-3px);
-    }
-
-    /* Styles pour la Lightbox (Modale Photo) */
-    .lightbox {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      background-color: rgba(0,0,0,0.9);
-    }
-
-    .lightbox.active {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-    }
-
-    .lightbox-content {
-      margin: auto;
-      display: block;
-      max-width: 90%;
-      max-height: 80vh;
-      border-radius: 8px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.8);
-      animation-name: zoom;
-      animation-duration: 0.6s;
-    }
-
-    @keyframes zoom {
-      from {transform: scale(0.1)}
-      to {transform: scale(1)}
-    }
-
-    .lightbox-content.zoomable {
-        cursor: zoom-in;
-        transition: transform 0.3s ease-in-out;
-        transform-origin: center center;
-    }
-
-    .lightbox-content.zoomed {
-        transform: scale(2);
-        cursor: grab;
-        touch-action: none;
-    }
-
-    .close-button {
-      position: absolute;
-      top: 20px;
-      right: 25px;
-      color: #f1f1f1;
-      font-size: 45px;
-      font-weight: bold;
-      transition: 0.3s;
-      cursor: pointer;
-      z-index: 1001;
-      background-color: rgba(0,0,0,0.5);
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .close-button:hover,
-    .close-button:focus {
-      color: #bbb;
-      background-color: rgba(0,0,0,0.7);
-    }
-
-    .lightbox-caption {
-      margin-top: 15px;
-      text-align: center;
-      color: #ccc;
+  @media (max-width: 480px) {
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.5rem; }
+    .top-banner {
       font-size: 1.2rem;
-      padding: 10px 0;
-      max-width: 90%;
+      padding: 6px 40px;
+      left: -10px;
     }
-
-    .lightbox-nav-button {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: rgba(0, 0, 0, 0.5);
-        color: #f1f1f1;
-        border: none;
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        font-size: 2rem;
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: background-color 0.3s ease;
-        z-index: 1001;
-    }
-
-    .lightbox-nav-button:hover {
-        background-color: rgba(0, 0, 0, 0.8);
-    }
-
-    .lightbox-nav-button.prev {
-        left: 20px;
-    }
-
-    .lightbox-nav-button.next {
-        right: 20px;
-    }
-
-    /* Styles pour offline message */
-    #offline-message {
-        position: fixed;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: #ffc107;
-        color: #343a40;
-        padding: 15px 25px;
-        border-radius: 8px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        z-index: 1002;
-        display: none;
-        font-weight: bold;
-        text-align: center;
-        opacity: 0;
-        transition: opacity 0.5s ease-in-out;
-    }
-
-    #offline-message.show {
-        opacity: 1;
-        display: block;
-    }
-
-    /* Styles pour le loader */
-    #loader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: var(--loader-bg);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      opacity: 1;
-      transition: opacity 0.5s ease-out, background-color 0.5s ease;
-    }
-
-    #loader.hidden {
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    #loader img {
+    header { padding: 3rem 0.5rem 2rem; }
+    .profile-photo {
       width: 120px;
       height: 120px;
-      object-fit: contain;
-      margin-bottom: 1rem;
-      border-radius: 50%;
-      animation: pulse 1.5s infinite alternate;
     }
-
-    #loader h1, #loader p {
-      font-family: 'Bebas Neue', sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--loader-text);
-      margin: 0;
-      padding: 0;
-      text-align: center;
-      animation: pulse 1.5s infinite alternate;
-      transition: color 0.5s ease;
+    nav ul { gap: 0.8rem; }
+    nav a { padding: 0.4rem 0.8rem; }
+    .main-content {
+      gap: 3rem;
+      padding: 0 1rem;
     }
-
-    #loader h1 {
-      font-size: 3.5rem;
-      line-height: 1;
+    section { padding: 1rem; }
+    .video { padding: 10px; }
+    .video-title { font-size: 1rem; }
+    .photo-item { padding: 8px; }
+    .photo-item img { height: 150px; }
+    .photo-title { font-size: 0.85rem; }
+    #back-to-top {
+      width: 40px;
+      height: 40px;
+      font-size: 1.2rem;
+      bottom: 15px;
+      right: 15px;
     }
-
-    #loader p {
-      font-size: 1.6rem;
-      font-weight: 300;
-      margin-top: 0.5rem;
+    #offline-message {
+      padding: 10px 15px;
+      font-size: 0.9rem;
     }
-
-    @keyframes pulse {
-      from { transform: scale(0.95); opacity: 0.8; }
-      to { transform: scale(1.05); opacity: 1; }
-    }
-
-    /* Styles pour la modale vidéo améliorée */
-    #videoModal .video-popup {
-        max-width: 900px;
-        width: 90%;
-        background: #000;
-        border-radius: 12px;
-        overflow: hidden;
-    }
-    #videoModal .video-part {
-        background: #000;
-    }
-    #videoModal #videoModalIframe {
-        width: 100%;
-        height: 500px;
-        border: none;
-        pointer-events: auto;
-    }
-    #videoModal .description-part {
-        background: #f5f1e6;
-        color: #111;
-        padding: 2rem;
-        font-family: 'Lato', sans-serif;
-    }
-    #videoModal .description-part #videoTitle {
-        font-family: 'Bebas Neue', sans-serif;
-        font-size: 2rem;
-        margin-bottom: 1rem;
-        color: #222;
-    }
-    #videoModal .description-part p {
-        margin: 0.5rem 0;
-    }
-    #videoModal .close-button {
-        position: absolute;
-        top: 30px;
-        right: 30px;
-        font-size: 2rem;
-        color: white;
-        cursor: pointer;
-    }
-
-    /* Media queries pour la responsivité */
-    @media (max-width: 768px) {
-        h1 { font-size: 2.8rem; }
-        h2 { font-size: 1.8rem; }
-        .top-banner {
-            font-size: 1.4rem;
-            padding: 8px 50px;
-            left: -30px;
-        }
-        nav ul {
-            flex-direction: column;
-            gap: 1rem;
-        }
-        nav a { font-size: 1rem; }
-        section { padding: 1.5rem; }
-        .profile-photo {
-            width: 140px;
-            height: 140px;
-        }
-        .photo-item {
-            width: 100%;
-            margin-right: 0;
-        }
-        .carousel-nav-buttons { padding: 0 5px; }
-        nav {
-          flex-direction: column;
-          padding-bottom: 1rem;
-        }
-        #theme-toggle {
-          margin-top: 1rem;
-          margin-right: 0;
-        }
-        #loader img {
-            width: 100px;
-            height: 100px;
-        }
-        #loader h1 { font-size: 2.5rem; }
-        #loader p { font-size: 1.2rem; }
-        .close-button {
-            font-size: 35px;
-            width: 40px;
-            height: 40px;
-            top: 10px;
-            right: 10px;
-        }
-        .lightbox-nav-button {
-            width: 40px;
-            height: 40px;
-            font-size: 1.5rem;
-            left: 10px;
-            right: 10px;
-        }
-        .lightbox-content.zoomed { transform: scale(1.5); }
-        .contact-info p, .skill-item { font-size: 1rem; }
-        .contact-info i { font-size: 1.4rem; }
-        .contact-form input, .contact-form textarea {
-            width: calc(100% - 20px);
-            padding: 8px;
-            margin-bottom: 1rem;
-        }
-        .contact-form button {
-            padding: 10px 20px;
-            font-size: 1.1rem;
-        }
-        .success-message {
-            padding: 0.8rem;
-            font-size: 0.9rem;
-        }
-        footer { padding: 1.5rem 1rem; }
-    }
-
-    @media (max-width: 480px) {
-        h1 { font-size: 2.2rem; }
-        h2 { font-size: 1.5rem; }
-        .top-banner {
-            font-size: 1.2rem;
-            padding: 6px 40px;
-            left: -10px;
-        }
-        header { padding: 3rem 0.5rem 2rem; }
-        .profile-photo {
-            width: 120px;
-            height: 120px;
-        }
-        nav ul { gap: 0.8rem; }
-        nav a { padding: 0.4rem 0.8rem; }
-        .main-content {
-            gap: 3rem;
-            padding: 0 1rem;
-        }
-        section { padding: 1rem; }
-        .video { padding: 10px; }
-        .video-title { font-size: 1rem; }
-        .photo-item { padding: 8px; }
-        .photo-item img { height: 150px; }
-        .photo-title { font-size: 0.85rem; }
-        #back-to-top {
-            width: 40px;
-            height: 40px;
-            font-size: 1.2rem;
-            bottom: 15px;
-            right: 15px;
-        }
-        #offline-message {
-            padding: 10px 15px;
-            font-size: 0.9rem;
-        }
-    }
+  }
 </style>
 </head>
 <body>
@@ -1189,9 +1237,9 @@
 <section id="about">
 <h2>À propos de moi</h2>
 <p>
-        Passionné par l'image et le mouvement, je suis Jérémie Favre, vidéaste indépendant basé à La Réunion. J'aime transformer des idées en récits visuels et donner vie à chaque projet, de la conception à la post-production.<br/>
-        J'explore la coordination des tournages et la prise de vue aérienne avec drone stabilisé ou FPV, pour apporter des perspectives originales à vos projets.
-      </p>
+    Passionné par l'image et le mouvement, je suis Jérémie Favre, vidéaste indépendant basé à La Réunion. J'aime transformer des idées en récits visuels et donner vie à chaque projet, de la conception à la post-production.<br/>
+    J'explore la coordination des tournages et la prise de vue aérienne avec drone stabilisé ou FPV, pour apporter des perspectives originales à vos projets.
+    </p>
 </section>
 <section id="skills">
 <h2>Mes Outils Créatifs</h2>
@@ -1278,76 +1326,151 @@
 <h3 class="category-title">Quelques images</h3>
 <div class="elfsight-app-352bfc8c-4b61-420c-983b-79f1623f8368" data-elfsight-app-lazy></div>
 </div>
+
+<!--/* ============================
+     CARROUSEL PHOTO - GALERIE
+     ============================ */-->
+
 <div class="photo-categories-container">
-<div class="photo-category">
-<h3 class="category-title">Photo Aérienne</h3>
-<div class="carousel-container" id="carousel-aerienne">
-<div class="carousel-track">
+  <div class="photo-category">
+    <h3 class="category-title">
+      <a href="Grille photo.html" target="_blank" style="color:#ffffff; text-decoration:none; display:inline-flex; align-items:center;">
+        Galerie
+        <i class="fas fa-external-link-alt" aria-hidden="true" style="margin-left:8px; color:#ffffff; font-size:0.9em;"></i>
+      </a>
+    </h3>
+    <div class="carousel-container" id="carousel-galerie">
+      <div class="carousel-track">
+<!--/* ============================
+      PHOTO--GALERIE
+     ============================ */-->
 <div class="photo-item">
-<a class="photo-lightbox-trigger" data-src-large="images/Drone/DJI_0457.jpg" href="images/Drone/DJI_0457.jpg">
-<img alt="Vue aérienne d'une ville côtière avec plage et vagues turquoise." src="images/Drone/DJI_0457.jpg"/>
+<a class="photo-lightbox-trigger" data-src-large="images/Photo/DSC05258.jpg" href="images/Photo/DSC05258.jpg">
+<img alt="Photo galerie - DSC05258" src="images/Photo/DSC05258.jpg"/>
 </a>
-<div class="photo-title">Bleu Infini</div>
 </div>
 <div class="photo-item">
-<a class="photo-lightbox-trigger" data-src-large="images/Drone/DJI_0459.jpg" href="images/Drone/DJI_0459.jpg">
-<img alt="Vagues turquoise roulant vers une plage de sable bordée d'un brise-lames et d'une marina remplie de bateaux, maisons résidentielles et collines verdoyantes en arrière-plan sous un ciel partiellement nuageux, atmosphère côtière calme et étendue." src="images/Drone/DJI_0459.jpg"/>
+<a class="photo-lightbox-trigger" data-src-large="images/Photo/DSC05618.jpg" href="images/Photo/DSC05618.jpg">
+<img alt="Photo galerie - DSC05618" src="images/Photo/DSC05618.jpg"/>
 </a>
-<div class="photo-title">Azur & Rivages</div>
 </div>
 <div class="photo-item">
-<a class="photo-lightbox-trigger" data-src-large="images/Drone/DJI_0460.jpg" href="images/Drone/DJI_0460.jpg">
-<img alt="Ville côtière bordée par l'océan turquoise avec des vagues douces, une plage de sable, une marina avec des bateaux, et des maisons nichées parmi des collines verdoyantes sous un ciel partiellement nuageux, atmosphère tranquille et étendue." src="images/Drone/DJI_0460.jpg"/>
+<a class="photo-lightbox-trigger" data-src-large="images/Photo/Drone/DJI_0457.jpg" href="images/Photo/Drone/DJI_0457.jpg">
+<img alt="Photo galerie - DJI_0457" src="images/Photo/Drone/DJI_0457.jpg"/>
 </a>
-<div class="photo-title">Émeraude Côtière</div>
 </div>
 <div class="photo-item">
-<a class="photo-lightbox-trigger" data-src-large="images/Drone/DJI_0466.jpg" href="images/Drone/DJI_0466.jpg">
-<img alt="White catamaran boat floating alone on deep blue ocean water viewed from above with sunlight reflecting on the waves, creating a sense of tranquility and vastness" src="images/Drone/DJI_0466.jpg"/>
+<a class="photo-lightbox-trigger" data-src-large="images/Photo/Drone/DJI_0459.jpg" href="images/Photo/Drone/DJI_0459.jpg">
+<img alt="Photo galerie - DJI_0459" src="images/Photo/Drone/DJI_0459.jpg"/>
 </a>
-<div class="photo-title">Solitude Bleue</div>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="images/Photo/Drone/DJI_0460.jpg" href="images/Photo/Drone/DJI_0460.jpg">
+<img alt="Photo galerie - DJI_0460" src="images/Photo/Drone/DJI_0460.jpg"/>
+</a>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="images/Photo/Drone/DJI_0466.jpg" href="images/Photo/Drone/DJI_0466.jpg">
+<img alt="Photo galerie - DJI_0466" src="images/Photo/Drone/DJI_0466.jpg"/>
+</a>
 </div>
 </div>
 <div class="carousel-nav-buttons">
-<button class="carousel-nav-button prev-button" data-carousel="aerienne"><i class="fas fa-chevron-left"></i></button>
-<button class="carousel-nav-button next-button" data-carousel="aerienne"><i class="fas fa-chevron-right"></i></button>
+  <button class="carousel-nav-button prev-button" data-carousel="galerie"><i class="fas fa-chevron-left"></i></button>
+  <button class="carousel-nav-button next-button" data-carousel="galerie"><i class="fas fa-chevron-right"></i></button>
 </div>
 </div>
 </div>
+</div>
+
+<!-- espace entre Galerie et Photo Mariage -->
+<div style="height:2.5rem;"></div>
+
+<!--/* ============================
+     CARROUSEL PHOTO - MARIAGE
+     ============================ */-->
 <div class="photo-categories-container">
-<div class="photo-category">
-<h3 class="category-title">Photo Mariage</h3>
+  <div class="photo-category">
+    <h3 class="category-title">
+      <a href="Grille photo Mariage.html" target="_blank" style="color:#ffffff; text-decoration:none; display:inline-flex; align-items:center;">
+        Mariage
+        <i class="fas fa-external-link-alt" aria-hidden="true" style="margin-left:8px; color:#ffffff; font-size:0.9em;"></i>
+      </a>
+    </h3>
 <div class="carousel-container" id="carousel-mariage">
-<div class="carousel-track">
+      <div class="carousel-track">
+<!--/* ============================
+      PHOTO--MARIAGE
+      ============================ */-->
 <div class="photo-item">
 <a class="photo-lightbox-trigger" data-src-large="images/Mariage/DSC08871.jpg" href="images/Mariage/DSC08871.jpg">
-<img alt="Mariage : échange de vœux intimes sous nuée de bulles." src="images/Mariage/DSC08871.jpg"/>
+<img alt="Photo mariage - DSC08871" src="images/Mariage/DSC08871.jpg"/>
 </a>
-<div class="photo-title">Échange de vœux</div>
 </div>
 <div class="photo-item">
 <a class="photo-lightbox-trigger" data-src-large="images/Mariage/DSC09222.jpg" href="images/Mariage/DSC09222.jpg">
-<img alt="Portrait du couple marchant main dans la main au coucher du soleil sur la plage." src="images/Mariage/DSC09222.jpg"/>
+<img alt="Photo mariage - DSC09222" src="images/Mariage/DSC09222.jpg"/>
 </a>
-<div class="photo-title">Azur & Rivages</div>
 </div>
 <div class="photo-item">
-  <a class="photo-lightbox-trigger" data-src-large="images/Mariage/ILCE-7m4099.jpg" href="images/Mariage/ILCE-7m4099.jpg">
-    <img alt="Portrait de mariage : couple sur la plage au coucher du soleil, ambiance romantique et lumière chaude." src="images/Mariage/ILCE-7m4099.jpg"/>
-  </a>
-  <div class="photo-title">Émeraude Côtière</div>
+<a class="photo-lightbox-trigger" data-src-large="images/Mariage/ILCE-7M4099.jpg" href="images/Mariage/ILCE-7M4099.jpg">
+<img alt="Photo mariage - ILCE-7M4099" src="images/Mariage/ILCE-7M4099.jpg"/>
+</a>
 </div>
 <div class="photo-item">
-  <a class="photo-lightbox-trigger" data-src-large="images/Mariage/ilce-7m4180.jpg" href="images/Mariage/ilce-7m4180.jpg">
-    <img alt="Mariage : portrait du couple, lumière douce et atmosphère chaleureuse" src="images/Mariage/ilce-7m4180.jpg"/>
-  </a>
-  <div class="photo-title">Portrait couple</div>
+<a class="photo-lightbox-trigger" data-src-large="images/Mariage/ILCE-7M4180.jpg" href="images/Mariage/ILCE-7M4180.jpg">
+<img alt="Photo mariage - ILCE-7M4180" src="images/Mariage/ILCE-7M4180.jpg"/>
+</a>
 </div>
 <div class="photo-item">
-  <a class="photo-lightbox-trigger" data-src-large="images/Mariage/ilce-7m4276.jpg" href="images/Mariage/ilce-7m4276.jpg">
-    <img alt="Mariage : mains entrelacées au coucher du soleil sur la plage, moment de complicité" src="images/Mariage/ilce-7m4276.jpg"/>
-  </a>
-  <div class="photo-title">Main dans la main</div>
+<a class="photo-lightbox-trigger" data-src-large="images/Mariage/ILCE-7M4276.jpg" href="images/Mariage/ILCE-7M4276.jpg">
+<img alt="Photo mariage - ILCE-7M4276" src="images/Mariage/ILCE-7M4276.jpg"/>
+</a>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="images/Mariage/Wesley/DSC01815.jpg" href="images/Mariage/Wesley/DSC01815.jpg">
+<img alt="Photo mariage - DSC01815" src="images/Mariage/Wesley/DSC01815.jpg"/>
+</a>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="images/Mariage/Wesley/DSC02209.jpg" href="images/Mariage/Wesley/DSC02209.jpg">
+<img alt="Photo mariage - DSC02209" src="images/Mariage/Wesley/DSC02209.jpg"/>
+</a>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="images/Mariage/Wesley/DSC02457.jpg" href="images/Mariage/Wesley/DSC02457.jpg">
+<img alt="Photo mariage - DSC02457" src="images/Mariage/Wesley/DSC02457.jpg"/>
+</a>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="images/Mariage/Wesley/DSC02531.jpg" href="images/Mariage/Wesley/DSC02531.jpg">
+<img alt="Photo mariage - DSC02531" src="images/Mariage/Wesley/DSC02531.jpg"/>
+</a>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="images/Mariage/Wesley/DSC03339.jpg" href="images/Mariage/Wesley/DSC03339.jpg">
+<img alt="Photo mariage - DSC03339" src="images/Mariage/Wesley/DSC03339.jpg"/>
+</a>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="images/Mariage/Wesley/DSC03361.jpg" href="images/Mariage/Wesley/DSC03361.jpg">
+<img alt="Photo mariage - DSC03361" src="images/Mariage/Wesley/DSC03361.jpg"/>
+</a>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="images/Mariage/Wesley/DSC03442.jpg" href="images/Mariage/Wesley/DSC03442.jpg">
+<img alt="Photo mariage - DSC03442" src="images/Mariage/Wesley/DSC03442.jpg"/>
+</a>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="images/Mariage/Wesley/DSC03484.jpg" href="images/Mariage/Wesley/DSC03484.jpg">
+<img alt="Photo mariage - DSC03484" src="images/Mariage/Wesley/DSC03484.jpg"/>
+</a>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="images/Mariage/Wesley/DSC03781.jpg" href="images/Mariage/Wesley/DSC03781.jpg">
+<img alt="Photo mariage - DSC03781" src="images/Mariage/Wesley/DSC03781.jpg"/>
+</a>
 </div>
 </div>
 <div class="carousel-nav-buttons">
@@ -1355,8 +1478,14 @@
 <button class="carousel-nav-button next-button" data-carousel="mariage"><i class="fas fa-chevron-right"></i></button>
 </div>
 </div>
+</div>
+</div>
 </section>
 </div>
+
+<!--/* ============================
+     SECTION CONTACT
+     ============================ */-->
 <section class="contact section-white" id="contact">
 <h2>Contact <i class="fas fa-chevron-down" id="contactToggleIcon"></i></h2>
 <div class="contact-content" id="contactContent">
@@ -1394,465 +1523,493 @@
 <button class="lightbox-nav-button next" id="lightbox-next-btn"><i class="fas fa-chevron-right"></i></button>
 </div>
 <div id="offline-message">
-    Vous êtes hors ligne, certaines vidéos peuvent ne pas s’afficher.
+  Vous êtes hors ligne, certaines vidéos peuvent ne pas s’afficher.
 </div>
 
 <!-- Modale Vidéo améliorée -->
 <div class="lightbox" id="videoModal">
-    <div class="video-popup">
-        <div class="video-part">
-            <iframe id="videoModalIframe" src="" allowfullscreen></iframe>
-        </div>
-        <div class="description-part">
-            <h3 id="videoTitle"></h3>
-            <p>🎬 <strong>Réalisateur :</strong> <span id="videoDirector"></span></p>
-            <p>🎥 <strong>Matériel :</strong> <span id="videoCamera"></span></p>
-            <p>📍 <strong>Lieu :</strong> <span id="videoLocation"></span></p>
-            <p>🗓 <strong>Date :</strong> <span id="videoDate"></span></p>
-        </div>
+  <div class="video-popup">
+    <div class="video-part">
+      <iframe id="videoModalIframe" src="" allowfullscreen></iframe>
     </div>
-    <span class="close-button" onclick="closeVideoModal()">×</span>
+    <div class="description-part">
+      <h3 id="videoTitle"></h3>
+      <p>🎬 <strong>Réalisateur :</strong> <span id="videoDirector"></span></p>
+      <p>🎥 <strong>Matériel :</strong> <span id="videoCamera"></span></p>
+      <p>📍 <strong>Lieu :</strong> <span id="videoLocation"></span></p>
+      <p>🗓 <strong>Date :</strong> <span id="videoDate"></span></p>
+    </div>
+  </div>
+  <span class="close-button" onclick="closeVideoModal()">×</span>
 </div>
 
-<!-- ======================================= -->
-<!-- SCRIPT GLOBAL CONSOLIDÉ -->
-<!-- ======================================= -->
+<!-- =======================================
+   SCRIPT GLOBAL CONSOLIDÉ (Commentaires ajoutés)
+   ======================================= -->
 <script>
-    // --- GESTION DE LA MODALE VIDÉO ---
-    function openVideoModal(videoElement) {
-        const videoModal = document.getElementById('videoModal');
-        videoModal.classList.add('active');
-        document.getElementById('videoModalIframe').src = videoElement.dataset.iframe;
-        document.getElementById('videoTitle').textContent = videoElement.dataset.title;
-        document.getElementById('videoDirector').textContent = videoElement.dataset.director;
-        document.getElementById('videoCamera').textContent = videoElement.dataset.camera;
-        document.getElementById('videoLocation').textContent = videoElement.dataset.location;
-        document.getElementById('videoDate').textContent = videoElement.dataset.date;
-        document.body.style.overflow = 'hidden';
+  /* ============================
+     MODALE VIDÉO (OUVRIR / FERMER)
+     ============================ */
+  function openVideoModal(videoElement) {
+    const videoModal = document.getElementById('videoModal');
+    videoModal.classList.add('active');
+    document.getElementById('videoModalIframe').src = videoElement.dataset.iframe;
+    document.getElementById('videoTitle').textContent = videoElement.dataset.title;
+    document.getElementById('videoDirector').textContent = videoElement.dataset.director;
+    document.getElementById('videoCamera').textContent = videoElement.dataset.camera;
+    document.getElementById('videoLocation').textContent = videoElement.dataset.location;
+    document.getElementById('videoDate').textContent = videoElement.dataset.date;
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeVideoModal() {
+    const videoModal = document.getElementById('videoModal');
+    videoModal.classList.remove('active');
+    document.getElementById('videoModalIframe').src = "";
+    document.body.style.overflow = 'auto';
+  }
+
+  /* ============================
+     SCRIPT PRINCIPAL : DOMContentLoaded
+     ============================ */
+  document.addEventListener('DOMContentLoaded', () => {
+
+    /* ----------------------------
+     INITIALISATION : CLIC SUR VIDÉOS (OUVRIR MODALE)
+     ---------------------------- */
+    document.querySelectorAll('.video').forEach(video => {
+    video.addEventListener('click', () => {
+      openVideoModal(video);
+    });
+    });
+
+    /* ----------------------------
+     THÈME CLAIR / SOMBRE
+     ---------------------------- */
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const body = document.body;
+
+    const applyTheme = (theme) => {
+    const isLight = theme === 'light';
+    body.classList.toggle('light-theme', isLight);
+    themeIcon.classList.toggle('fa-moon', !isLight);
+    themeIcon.classList.toggle('fa-sun', isLight);
+    themeToggle.setAttribute('aria-label', `Basculer vers le thème ${isLight ? 'sombre' : 'clair'}`);
+    };
+
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+    applyTheme(savedTheme);
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+    applyTheme('light');
+    } else {
+    applyTheme('dark');
     }
 
-    function closeVideoModal() {
-        const videoModal = document.getElementById('videoModal');
-        videoModal.classList.remove('active');
-        document.getElementById('videoModalIframe').src = "";
-        document.body.style.overflow = 'auto';
-    }
+    themeToggle.addEventListener('click', () => {
+    const newTheme = body.classList.contains('light-theme') ? 'dark' : 'light';
+    applyTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+    });
 
-    // --- SCRIPT PRINCIPAL APRÈS CHARGEMENT DU DOM ---
-    document.addEventListener('DOMContentLoaded', () => {
+    /* ----------------------------
+     INTERSECTION OBSERVER (ANIMATIONS SECTIONS)
+     ---------------------------- */
+    const sections = document.querySelectorAll('section');
+    const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+    };
+    const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      }
+    });
+    }, observerOptions);
+    sections.forEach(section => observer.observe(section));
 
-      // Initialisation des clics pour la modale vidéo
-      document.querySelectorAll('.video').forEach(video => {
-        video.addEventListener('click', () => {
-          openVideoModal(video);
-        });
+    /* ----------------------------
+     BOUTON RETOUR EN HAUT
+     ---------------------------- */
+    const backToTopButton = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+    backToTopButton.style.display = window.scrollY > 300 ? 'flex' : 'none';
+    });
+    backToTopButton.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    /* ----------------------------
+     SOUMISSION FORMULAIRE (Formspree)
+     ---------------------------- */
+    const contactForm = document.querySelector('.contact-form form');
+    const successMessage = document.getElementById('successMessage');
+    contactForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const formData = new FormData(contactForm);
+    try {
+      const response = await fetch(contactForm.action, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
       });
-
-      // --- LOGIQUE DU THÈME CLAIR/SOMBRE ---
-      const themeToggle = document.getElementById('theme-toggle');
-      const themeIcon = document.getElementById('theme-icon');
-      const body = document.body;
-
-      const applyTheme = (theme) => {
-        const isLight = theme === 'light';
-        body.classList.toggle('light-theme', isLight);
-        themeIcon.classList.toggle('fa-moon', !isLight);
-        themeIcon.classList.toggle('fa-sun', isLight);
-        themeToggle.setAttribute('aria-label', `Basculer vers le thème ${isLight ? 'sombre' : 'clair'}`);
-      };
-
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme) {
-        applyTheme(savedTheme);
-      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-        applyTheme('light');
+      if (response.ok) {
+      gtag('event', 'formulaire_envoyé', {
+        event_category: 'Contact',
+        event_label: 'Formulaire réussi'
+      });
+      contactForm.reset();
+      successMessage.classList.remove('hidden');
+      successMessage.classList.add('show');
+      setTimeout(() => {
+        successMessage.classList.remove('show');
+        successMessage.classList.add('hidden');
+      }, 5000);
       } else {
-        applyTheme('dark');
+      console.error('Échec de la soumission du formulaire.');
       }
+    } catch (error) {
+      console.error('Erreur réseau ou autre:', error);
+    }
+    });
 
-      themeToggle.addEventListener('click', () => {
-        const newTheme = body.classList.contains('light-theme') ? 'dark' : 'light';
-        applyTheme(newTheme);
-        localStorage.setItem('theme', newTheme);
-      });
+    /* ----------------------------
+     SECTION CONTACT PLIABLE (persist)
+     ---------------------------- */
+    const contactSection = document.getElementById('contact');
+    const contactContent = document.getElementById('contactContent');
+    const contactToggleIcon = document.getElementById('contactToggleIcon');
+    const isContactExpanded = localStorage.getItem('contactExpanded') === 'true';
 
-      // --- INTERSECTION OBSERVER POUR LES ANIMATIONS ---
-      const sections = document.querySelectorAll('section');
-      const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-      };
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-          }
-        });
-      }, observerOptions);
-      sections.forEach(section => observer.observe(section));
+    if (isContactExpanded) {
+      contactContent.classList.add('expanded');
+      contactToggleIcon.classList.add('rotated');
+    }
 
-      // --- BOUTON RETOUR EN HAUT ---
-      const backToTopButton = document.getElementById('back-to-top');
-      window.addEventListener('scroll', () => {
-        backToTopButton.style.display = window.scrollY > 300 ? 'flex' : 'none';
-      });
-      backToTopButton.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-
-      // --- SOUMISSION DU FORMULAIRE DE CONTACT ---
-      const contactForm = document.querySelector('.contact-form form');
-      const successMessage = document.getElementById('successMessage');
-      contactForm.addEventListener('submit', async (event) => {
-        event.preventDefault();
-        const formData = new FormData(contactForm);
-        try {
-          const response = await fetch(contactForm.action, {
-            method: 'POST',
-            body: formData,
-            headers: { 'Accept': 'application/json' }
-          });
-          if (response.ok) {
-            gtag('event', 'formulaire_envoyé', {
-              event_category: 'Contact',
-              event_label: 'Formulaire réussi'
-            });
-            contactForm.reset();
-            successMessage.classList.remove('hidden');
-            successMessage.classList.add('show');
-            setTimeout(() => {
-              successMessage.classList.remove('show');
-              successMessage.classList.add('hidden');
-            }, 5000);
-          } else {
-            console.error('Échec de la soumission du formulaire.');
-          }
-        } catch (error) {
-          console.error('Erreur réseau ou autre:', error);
-        }
-      });
-
-      // --- SECTION CONTACT PLIABLE ---
-      const contactSection = document.getElementById('contact');
-      const contactContent = document.getElementById('contactContent');
-      const contactToggleIcon = document.getElementById('contactToggleIcon');
-      const isContactExpanded = localStorage.getItem('contactExpanded') === 'true';
-
-      if (isContactExpanded) {
-          contactContent.classList.add('expanded');
-          contactToggleIcon.classList.add('rotated');
+    contactSection.addEventListener('click', (event) => {
+      if (event.target.closest('h2')) {
+        contactContent.classList.toggle('expanded');
+        contactToggleIcon.classList.toggle('rotated');
+        localStorage.setItem('contactExpanded', contactContent.classList.contains('expanded'));
       }
+    });
 
-      contactSection.addEventListener('click', (event) => {
-          if (event.target.closest('h2')) {
-              contactContent.classList.toggle('expanded');
-              contactToggleIcon.classList.toggle('rotated');
-              localStorage.setItem('contactExpanded', contactContent.classList.contains('expanded'));
-          }
+    /* ----------------------------
+     CARROUSEL : Classe et initialisation
+     ---------------------------- */
+    class Carousel {
+    constructor(carouselId) {
+      this.carouselContainer = document.getElementById(carouselId);
+      if (!this.carouselContainer) return;
+      this.carouselTrack = this.carouselContainer.querySelector('.carousel-track');
+      this.photoItems = Array.from(this.carouselTrack.querySelectorAll('.photo-item'));
+      this.prevButton = this.carouselContainer.querySelector('.prev-button');
+      this.nextButton = this.carouselContainer.querySelector('.next-button');
+      this.currentIndex = 0;
+      this.itemsPerView = 1;
+      this.autoScrollInterval = null;
+      this.autoScrollDelay = 3000;
+      this.manualInteractionPause = 5000;
+      this.init();
+    }
+    init() {
+      this.addEventListeners();
+      window.addEventListener('load', () => {
+      this.updateCarouselPosition();
+      this.startAutoScroll();
       });
-
-      // --- LOGIQUE DU CARROUSEL (PHOTOS) ---
-      class Carousel {
-        constructor(carouselId) {
-          this.carouselContainer = document.getElementById(carouselId);
-          if (!this.carouselContainer) return;
-          this.carouselTrack = this.carouselContainer.querySelector('.carousel-track');
-          this.photoItems = Array.from(this.carouselTrack.querySelectorAll('.photo-item'));
-          this.prevButton = this.carouselContainer.querySelector('.prev-button');
-          this.nextButton = this.carouselContainer.querySelector('.next-button');
-          this.currentIndex = 0;
+      window.addEventListener('resize', () => {
+      this.currentIndex = 0;
+      this.updateCarouselPosition();
+      this.stopAutoScroll();
+      this.startAutoScroll();
+      });
+      this.calculateItemsPerPage();
+    }
+    calculateItemsPerPage() {
+      if (this.photoItems.length === 0) {
+        this.itemsPerView = 1;
+        return;
+      }
+      const firstItem = this.photoItems[0];
+      if (firstItem && firstItem.querySelector('img') && !firstItem.querySelector('img').complete) {
+        firstItem.querySelector('img').onload = () => this.updateCarouselPosition();
+        return;
+      }
+      const itemWidth = firstItem ? firstItem.offsetWidth + (parseFloat(getComputedStyle(firstItem).marginRight) || 0) : 0;
+      const containerWidth = this.carouselContainer.offsetWidth;
+      if (itemWidth > 0 && containerWidth > 0) {
+        if (window.innerWidth >= 992) {
+          this.itemsPerView = Math.floor(containerWidth / itemWidth);
+          this.itemsPerView = Math.max(3, this.itemsPerView);
+        } else if (window.innerWidth >= 768) {
+          this.itemsPerView = Math.floor(containerWidth / itemWidth);
+          this.itemsPerView = Math.max(2, this.itemsPerView);
+        } else {
           this.itemsPerView = 1;
-          this.autoScrollInterval = null;
-          this.autoScrollDelay = 3000;
-          this.manualInteractionPause = 5000;
-          this.init();
         }
-        init() {
-          this.addEventListeners();
-          window.addEventListener('load', () => {
-            this.updateCarouselPosition();
-            this.startAutoScroll();
-          });
-          window.addEventListener('resize', () => {
-            this.currentIndex = 0;
-            this.updateCarouselPosition();
-            this.stopAutoScroll();
-            this.startAutoScroll();
-          });
-          this.calculateItemsPerPage();
-        }
-        calculateItemsPerPage() {
-          if (this.photoItems.length === 0) {
-              this.itemsPerView = 1;
-              return;
-          }
-          const firstItem = this.photoItems[0];
-          if (firstItem && firstItem.querySelector('img') && !firstItem.querySelector('img').complete) {
-              firstItem.querySelector('img').onload = () => this.updateCarouselPosition();
-              return;
-          }
-          const itemWidth = firstItem ? firstItem.offsetWidth + (parseFloat(getComputedStyle(firstItem).marginRight) || 0) : 0;
-          const containerWidth = this.carouselContainer.offsetWidth;
-          if (itemWidth > 0 && containerWidth > 0) {
-              if (window.innerWidth >= 992) {
-                  this.itemsPerView = Math.floor(containerWidth / itemWidth);
-                  this.itemsPerView = Math.max(3, this.itemsPerView);
-              } else if (window.innerWidth >= 768) {
-                  this.itemsPerView = Math.floor(containerWidth / itemWidth);
-                  this.itemsPerView = Math.max(2, this.itemsPerView);
-              } else {
-                  this.itemsPerView = 1;
-              }
-              this.itemsPerView = Math.min(this.itemsPerView, this.photoItems.length);
-          } else {
-              this.itemsPerView = 1;
-          }
-          this.carouselContainer.style.setProperty('--items-per-view', this.itemsPerView);
-          this.carouselContainer.style.setProperty('--gap-width', '1rem');
-        }
-        updateCarouselPosition() {
-          this.calculateItemsPerPage();
-          const itemWidth = this.photoItems.length > 0 ? this.photoItems[0].offsetWidth + (parseFloat(getComputedStyle(this.photoItems[0]).marginRight) || 0) : 0;
-          this.carouselTrack.style.transform = `translateX(-${this.currentIndex * itemWidth}px)`;
-          this.prevButton.disabled = this.currentIndex === 0;
-          this.nextButton.disabled = this.currentIndex >= this.photoItems.length - this.itemsPerView;
-        }
-        startAutoScroll() {
-            this.stopAutoScroll();
-            if (this.photoItems.length <= this.itemsPerView) return;
-            this.autoScrollInterval = setInterval(() => {
-                this.currentIndex++;
-                if (this.currentIndex > this.photoItems.length - this.itemsPerView) {
-                    this.currentIndex = 0;
-                }
-                this.updateCarouselPosition();
-            }, this.autoScrollDelay);
-        }
-        stopAutoScroll() {
-            clearInterval(this.autoScrollInterval);
-        }
-        addEventListeners() {
-            this.prevButton.addEventListener('click', () => {
-                this.stopAutoScroll();
-                this.currentIndex = Math.max(0, this.currentIndex - this.itemsPerView);
-                this.updateCarouselPosition();
-                setTimeout(() => this.startAutoScroll(), this.manualInteractionPause);
-            });
-            this.nextButton.addEventListener('click', () => {
-                this.stopAutoScroll();
-                this.currentIndex = Math.min(this.photoItems.length - this.itemsPerView, this.currentIndex + this.itemsPerView);
-                this.updateCarouselPosition();
-                setTimeout(() => this.startAutoScroll(), this.manualInteractionPause);
-            });
-            this.carouselContainer.addEventListener('mouseenter', () => this.stopAutoScroll());
-            this.carouselContainer.addEventListener('mouseleave', () => this.startAutoScroll());
-        }
+        this.itemsPerView = Math.min(this.itemsPerView, this.photoItems.length);
+      } else {
+        this.itemsPerView = 1;
       }
-      new Carousel('carousel-aerienne');
-      new Carousel('carousel-mariage');
-
-      // --- LOGIQUE DE LA LIGHTBOX (PHOTOS) ---
-      class Lightbox {
-        constructor() {
-          this.lightbox = document.getElementById('lightbox');
-          this.lightboxImage = document.getElementById('lightbox-image');
-          this.lightboxCaption = document.getElementById('lightbox-caption');
-          this.closeLightboxBtn = document.querySelector('.close-button');
-          this.lightboxPrevBtn = document.getElementById('lightbox-prev-btn');
-          this.lightboxNextBtn = document.getElementById('lightbox-next-btn');
-          this.currentPhotoIndex = 0;
-          this.allPhotoItems = [];
-          this.isZoomed = false;
-          this.startX = 0;
-          this.startY = 0;
-          this.translateX = 0;
-          this.translateY = 0;
-          this.isDragging = false;
-          this.touchStartX = 0;
-          this.touchEndX = 0;
-          this.touchStartY = 0;
-          this.touchEndY = 0;
-          this.swipeThreshold = 50;
-          this.init();
+      this.carouselContainer.style.setProperty('--items-per-view', this.itemsPerView);
+      this.carouselContainer.style.setProperty('--gap-width', '1rem');
+    }
+    updateCarouselPosition() {
+      this.calculateItemsPerPage();
+      const itemWidth = this.photoItems.length > 0 ? this.photoItems[0].offsetWidth + (parseFloat(getComputedStyle(this.photoItems[0]).marginRight) || 0) : 0;
+      this.carouselTrack.style.transform = `translateX(-${this.currentIndex * itemWidth}px)`;
+      this.prevButton.disabled = this.currentIndex === 0;
+      this.nextButton.disabled = this.currentIndex >= this.photoItems.length - this.itemsPerView;
+    }
+    startAutoScroll() {
+      this.stopAutoScroll();
+      if (this.photoItems.length <= this.itemsPerView) return;
+      this.autoScrollInterval = setInterval(() => {
+        this.currentIndex++;
+        if (this.currentIndex > this.photoItems.length - this.itemsPerView) {
+          this.currentIndex = 0;
         }
-        init() {
-          this.collectAllPhotos();
-          this.addEventListeners();
-        }
-        collectAllPhotos() {
-          this.allPhotoItems = Array.from(document.querySelectorAll('.photo-lightbox-trigger')).map(trigger => ({
-            srcLarge: trigger.getAttribute('data-src-large'),
-            altText: trigger.querySelector('img').alt,
-            title: trigger.closest('.photo-item').querySelector('.photo-title').textContent
-          }));
-        }
-        showPhoto(index) {
-          if (index < 0) {
-            this.currentPhotoIndex = this.allPhotoItems.length - 1;
-          } else if (index >= this.allPhotoItems.length) {
-            this.currentPhotoIndex = 0;
-          } else {
-            this.currentPhotoIndex = index;
-          }
-          const photo = this.allPhotoItems[this.currentPhotoIndex];
-          this.lightboxImage.src = photo.srcLarge;
-          this.lightboxImage.alt = photo.altText;
-          this.lightboxCaption.textContent = photo.title;
-          this.lightboxImage.classList.remove('zoomed');
-          this.lightboxImage.style.transform = '';
-          this.isZoomed = false;
-          this.translateX = 0;
-          this.translateY = 0;
-          gtag('event', 'lightbox_ouverte', {
-            event_category: 'Galerie',
-            event_label: photo.title
-          });
-        }
-        openPhotoLightbox(index) {
-          this.showPhoto(index);
-          this.lightbox.classList.add('active');
-          document.body.style.overflow = 'hidden';
-          document.addEventListener('keydown', this.handleKeyboardNavigation.bind(this));
-        }
-        closePhotoLightbox() {
-          this.lightbox.classList.remove('active');
-          document.body.style.overflow = 'auto';
-          document.removeEventListener('keydown', this.handleKeyboardNavigation.bind(this));
-        }
-        handleKeyboardNavigation(e) {
-          if (this.lightbox.classList.contains('active')) {
-            if (e.key === 'Escape') this.closePhotoLightbox();
-            else if (e.key === 'ArrowLeft') this.showPhoto(this.currentPhotoIndex - 1);
-            else if (e.key === 'ArrowRight') this.showPhoto(this.currentPhotoIndex + 1);
-          }
-        }
-        handleZoomClick(e) {
-          if (e.target === this.lightboxImage) {
-            this.isZoomed = !this.isZoomed;
-            this.lightboxImage.classList.toggle('zoomed', this.isZoomed);
-            this.lightboxImage.style.transform = this.isZoomed ? `scale(2) translate(${this.translateX}px, ${this.translateY}px)` : '';
-            this.lightboxImage.style.cursor = this.isZoomed ? 'grab' : 'zoom-in';
-          }
-        }
-        handleMouseDown(e) {
-          if (this.isZoomed) {
-            this.isDragging = true;
-            this.startX = e.clientX - this.translateX;
-            this.startY = e.clientY - this.translateY;
-            this.lightboxImage.style.cursor = 'grabbing';
-          }
-        }
-        handleMouseMove(e) {
-          if (this.isDragging) {
-            this.translateX = e.clientX - this.startX;
-            this.translateY = e.clientY - this.startY;
-            this.lightboxImage.style.transform = `scale(2) translate(${this.translateX}px, ${this.translateY}px)`;
-          }
-        }
-        handleMouseUp() {
-          this.isDragging = false;
-          if (this.isZoomed) this.lightboxImage.style.cursor = 'grab';
-        }
-        handleMouseLeave() {
-          this.isDragging = false;
-          if (this.isZoomed) this.lightboxImage.style.cursor = 'grab';
-        }
-        handleTouchStart(e) {
-            this.touchStartX = e.touches[0].clientX;
-            this.touchStartY = e.touches[0].clientY;
-            if (this.isZoomed) e.preventDefault();
-        }
-        handleTouchMove(e) {
-            if (this.isZoomed && e.touches.length === 1) {
-                const deltaX = e.touches[0].clientX - this.touchStartX;
-                const deltaY = e.touches[0].clientY - this.touchStartY;
-                this.translateX += deltaX;
-                this.translateY += deltaY;
-                this.lightboxImage.style.transform = `scale(2) translate(${this.translateX}px, ${this.translateY}px)`;
-                this.touchStartX = e.touches[0].clientX;
-                this.touchStartY = e.touches[0].clientY;
-                e.preventDefault();
-            } else if (!this.isZoomed && e.touches.length === 1) {
-                this.touchEndX = e.touches[0].clientX;
-                this.touchEndY = e.touches[0].clientY;
-            }
-        }
-        handleTouchEnd() {
-            if (!this.isZoomed) {
-                const deltaX = this.touchEndX - this.touchStartX;
-                const deltaY = this.touchEndY - this.touchStartY;
-                if (Math.abs(deltaX) > this.swipeThreshold && Math.abs(deltaX) > Math.abs(deltaY)) {
-                    if (deltaX > 0) this.showPhoto(this.currentPhotoIndex - 1);
-                    else this.showPhoto(this.currentPhotoIndex + 1);
-                }
-            }
-            this.touchStartX = 0; this.touchEndX = 0; this.touchStartY = 0; this.touchEndY = 0;
-        }
-        addEventListeners() {
-          document.querySelectorAll('.photo-lightbox-trigger').forEach((trigger, index) => {
-            trigger.addEventListener('click', (e) => {
-              e.preventDefault();
-              this.openPhotoLightbox(index);
-            });
-          });
-          this.closeLightboxBtn.addEventListener('click', this.closePhotoLightbox.bind(this));
-          this.lightboxPrevBtn.addEventListener('click', () => this.showPhoto(this.currentPhotoIndex - 1));
-          this.lightboxNextBtn.addEventListener('click', () => this.showPhoto(this.currentPhotoIndex + 1));
-          this.lightbox.addEventListener('click', (e) => {
-            if (e.target === this.lightbox) this.closePhotoLightbox();
-          });
-          this.lightboxImage.addEventListener('click', this.handleZoomClick.bind(this));
-          this.lightboxImage.addEventListener('mousedown', this.handleMouseDown.bind(this));
-          this.lightboxImage.addEventListener('mousemove', this.handleMouseMove.bind(this));
-          this.lightboxImage.addEventListener('mouseup', this.handleMouseUp.bind(this));
-          this.lightboxImage.addEventListener('mouseleave', this.handleMouseLeave.bind(this));
-          this.lightboxImage.addEventListener('touchstart', this.handleTouchStart.bind(this));
-          this.lightboxImage.addEventListener('touchmove', this.handleTouchMove.bind(this));
-          this.lightboxImage.addEventListener('touchend', this.handleTouchEnd.bind(this));
-        }
-      }
-      new Lightbox();
-
-      // --- SUIVI DES CLICS SUR LES VIDÉOS ---
-      document.querySelectorAll('.video').forEach(videoDiv => {
-        videoDiv.addEventListener('click', () => {
-          const videoTitleElement = videoDiv.querySelector('.video-title');
-          const videoTitle = videoTitleElement ? videoTitleElement.textContent : 'Vidéo sans titre';
-          gtag('event', 'video_play', {
-            event_category: 'Vidéos',
-            event_label: videoTitle
-          });
-        });
+        this.updateCarouselPosition();
+      }, this.autoScrollDelay);
+    }
+    stopAutoScroll() {
+      clearInterval(this.autoScrollInterval);
+    }
+    addEventListeners() {
+      this.prevButton.addEventListener('click', () => {
+        this.stopAutoScroll();
+        this.currentIndex = Math.max(0, this.currentIndex - this.itemsPerView);
+        this.updateCarouselPosition();
+        setTimeout(() => this.startAutoScroll(), this.manualInteractionPause);
       });
+      this.nextButton.addEventListener('click', () => {
+        this.stopAutoScroll();
+        this.currentIndex = Math.min(this.photoItems.length - this.itemsPerView, this.currentIndex + this.itemsPerView);
+        this.updateCarouselPosition();
+        setTimeout(() => this.startAutoScroll(), this.manualInteractionPause);
+      });
+      this.carouselContainer.addEventListener('mouseenter', () => this.stopAutoScroll());
+      this.carouselContainer.addEventListener('mouseleave', () => this.startAutoScroll());
+    }
+    }
+    new Carousel('carousel-galerie');
+    new Carousel('carousel-mariage');
 
-      // --- DÉTECTION HORS LIGNE ---
-      const offlineMessage = document.getElementById('offline-message');
-      const toggleOfflineMessage = (show) => {
-          offlineMessage.classList.toggle('show', show);
-      };
-      if (!navigator.onLine) toggleOfflineMessage(true);
-      window.addEventListener('offline', () => toggleOfflineMessage(true));
-      window.addEventListener('online', () => toggleOfflineMessage(false));
-
-      // --- ENREGISTREMENT DU SERVICE WORKER ---
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/service-worker.js')
-            .then(registration => console.log('ServiceWorker registration successful with scope: ', registration.scope))
-            .catch(err => console.log('ServiceWorker registration failed: ', err));
-        });
+    /* ----------------------------
+     LIGHTBOX (PHOTOS) : Classe et comportements
+     ---------------------------- */
+    class Lightbox {
+    constructor() {
+      this.lightbox = document.getElementById('lightbox');
+      this.lightboxImage = document.getElementById('lightbox-image');
+      this.lightboxCaption = document.getElementById('lightbox-caption');
+      this.closeLightboxBtn = document.querySelector('.close-button');
+      this.lightboxPrevBtn = document.getElementById('lightbox-prev-btn');
+      this.lightboxNextBtn = document.getElementById('lightbox-next-btn');
+      this.currentPhotoIndex = 0;
+      this.allPhotoItems = [];
+      this.isZoomed = false;
+      this.startX = 0;
+      this.startY = 0;
+      this.translateX = 0;
+      this.translateY = 0;
+      this.isDragging = false;
+      this.touchStartX = 0;
+      this.touchEndX = 0;
+      this.touchStartY = 0;
+      this.touchEndY = 0;
+      this.swipeThreshold = 50;
+      this.init();
+    }
+    init() {
+      this.collectAllPhotos();
+      this.addEventListeners();
+    }
+    collectAllPhotos() {
+      this.allPhotoItems = Array.from(document.querySelectorAll('.photo-lightbox-trigger')).map(trigger => ({
+      srcLarge: trigger.getAttribute('data-src-large'),
+      altText: trigger.querySelector('img').alt,
+      title: trigger.closest('.photo-item').querySelector('.photo-title').textContent
+      }));
+    }
+    showPhoto(index) {
+      if (index < 0) {
+      this.currentPhotoIndex = this.allPhotoItems.length - 1;
+      } else if (index >= this.allPhotoItems.length) {
+      this.currentPhotoIndex = 0;
+      } else {
+      this.currentPhotoIndex = index;
       }
+      const photo = this.allPhotoItems[this.currentPhotoIndex];
+      this.lightboxImage.src = photo.srcLarge;
+      this.lightboxImage.alt = photo.altText;
+      this.lightboxCaption.textContent = photo.title;
+      this.lightboxImage.classList.remove('zoomed');
+      this.lightboxImage.style.transform = '';
+      this.isZoomed = false;
+      this.translateX = 0;
+      this.translateY = 0;
+      gtag('event', 'lightbox_ouverte', {
+      event_category: 'Galerie',
+      event_label: photo.title
+      });
+    }
+    openPhotoLightbox(index) {
+      this.showPhoto(index);
+      this.lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      document.addEventListener('keydown', this.handleKeyboardNavigation.bind(this));
+    }
+    closePhotoLightbox() {
+      this.lightbox.classList.remove('active');
+      document.body.style.overflow = 'auto';
+      document.removeEventListener('keydown', this.handleKeyboardNavigation.bind(this));
+    }
+    handleKeyboardNavigation(e) {
+      if (this.lightbox.classList.contains('active')) {
+      if (e.key === 'Escape') this.closePhotoLightbox();
+      else if (e.key === 'ArrowLeft') this.showPhoto(this.currentPhotoIndex - 1);
+      else if (e.key === 'ArrowRight') this.showPhoto(this.currentPhotoIndex + 1);
+      }
+    }
+    handleZoomClick(e) {
+      if (e.target === this.lightboxImage) {
+      this.isZoomed = !this.isZoomed;
+      this.lightboxImage.classList.toggle('zoomed', this.isZoomed);
+      this.lightboxImage.style.transform = this.isZoomed ? `scale(2) translate(${this.translateX}px, ${this.translateY}px)` : '';
+      this.lightboxImage.style.cursor = this.isZoomed ? 'grab' : 'zoom-in';
+      }
+    }
+    handleMouseDown(e) {
+      if (this.isZoomed) {
+      this.isDragging = true;
+      this.startX = e.clientX - this.translateX;
+      this.startY = e.clientY - this.translateY;
+      this.lightboxImage.style.cursor = 'grabbing';
+      }
+    }
+    handleMouseMove(e) {
+      if (this.isDragging) {
+      this.translateX = e.clientX - this.startX;
+      this.translateY = e.clientY - this.startY;
+      this.lightboxImage.style.transform = `scale(2) translate(${this.translateX}px, ${this.translateY}px)`;
+      }
+    }
+    handleMouseUp() {
+      this.isDragging = false;
+      if (this.isZoomed) this.lightboxImage.style.cursor = 'grab';
+    }
+    handleMouseLeave() {
+      this.isDragging = false;
+      if (this.isZoomed) this.lightboxImage.style.cursor = 'grab';
+    }
+    handleTouchStart(e) {
+      this.touchStartX = e.touches[0].clientX;
+      this.touchStartY = e.touches[0].clientY;
+      if (this.isZoomed) e.preventDefault();
+    }
+    handleTouchMove(e) {
+      if (this.isZoomed && e.touches.length === 1) {
+        const deltaX = e.touches[0].clientX - this.touchStartX;
+        const deltaY = e.touches[0].clientY - this.touchStartY;
+        this.translateX += deltaX;
+        this.translateY += deltaY;
+        this.lightboxImage.style.transform = `scale(2) translate(${this.translateX}px, ${this.translateY}px)`;
+        this.touchStartX = e.touches[0].clientX;
+        this.touchStartY = e.touches[0].clientY;
+        e.preventDefault();
+      } else if (!this.isZoomed && e.touches.length === 1) {
+        this.touchEndX = e.touches[0].clientX;
+        this.touchEndY = e.touches[0].clientY;
+      }
+    }
+    handleTouchEnd() {
+      if (!this.isZoomed) {
+        const deltaX = this.touchEndX - this.touchStartX;
+        const deltaY = this.touchEndY - this.touchStartY;
+        if (Math.abs(deltaX) > this.swipeThreshold && Math.abs(deltaX) > Math.abs(deltaY)) {
+          if (deltaX > 0) this.showPhoto(this.currentPhotoIndex - 1);
+          else this.showPhoto(this.currentPhotoIndex + 1);
+        }
+      }
+      this.touchStartX = 0; this.touchEndX = 0; this.touchStartY = 0; this.touchEndY = 0;
+    }
+    addEventListeners() {
+      document.querySelectorAll('.photo-lightbox-trigger').forEach((trigger, index) => {
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.openPhotoLightbox(index);
+      });
+      });
+      this.closeLightboxBtn.addEventListener('click', this.closePhotoLightbox.bind(this));
+      this.lightboxPrevBtn.addEventListener('click', () => this.showPhoto(this.currentPhotoIndex - 1));
+      this.lightboxNextBtn.addEventListener('click', () => this.showPhoto(this.currentPhotoIndex + 1));
+      this.lightbox.addEventListener('click', (e) => {
+      if (e.target === this.lightbox) this.closePhotoLightbox();
+      });
+      this.lightboxImage.addEventListener('click', this.handleZoomClick.bind(this));
+      this.lightboxImage.addEventListener('mousedown', this.handleMouseDown.bind(this));
+      this.lightboxImage.addEventListener('mousemove', this.handleMouseMove.bind(this));
+      this.lightboxImage.addEventListener('mouseup', this.handleMouseUp.bind(this));
+      this.lightboxImage.addEventListener('mouseleave', this.handleMouseLeave.bind(this));
+      this.lightboxImage.addEventListener('touchstart', this.handleTouchStart.bind(this));
+      this.lightboxImage.addEventListener('touchmove', this.handleTouchMove.bind(this));
+      this.lightboxImage.addEventListener('touchend', this.handleTouchEnd.bind(this));
+    }
+    }
+    new Lightbox();
+
+    /* ----------------------------
+     SUIVI CLICS VIDÉO (gtag)
+     ---------------------------- */
+    document.querySelectorAll('.video').forEach(videoDiv => {
+    videoDiv.addEventListener('click', () => {
+      const videoTitleElement = videoDiv.querySelector('.video-title');
+      const videoTitle = videoTitleElement ? videoTitleElement.textContent : 'Vidéo sans titre';
+      gtag('event', 'video_play', {
+      event_category: 'Vidéos',
+      event_label: videoTitle
+      });
+    });
     });
 
-    // --- GESTION DU LOADER ---
+    /* ----------------------------
+     DÉTECTION HORS LIGNE / EN LIGNE
+     ---------------------------- */
+    const offlineMessage = document.getElementById('offline-message');
+    const toggleOfflineMessage = (show) => {
+      offlineMessage.classList.toggle('show', show);
+    };
+    if (!navigator.onLine) toggleOfflineMessage(true);
+    window.addEventListener('offline', () => toggleOfflineMessage(true));
+    window.addEventListener('online', () => toggleOfflineMessage(false));
+
+    /* ----------------------------
+     SERVICE WORKER (ENREGISTREMENT)
+     ---------------------------- */
+    if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      const loader = document.getElementById('loader');
-      loader.classList.add('hidden');
-      loader.addEventListener('transitionend', () => {
-        loader.remove();
-      });
+      navigator.serviceWorker.register('/service-worker.js')
+      .then(registration => console.log('ServiceWorker registration successful with scope: ', registration.scope))
+      .catch(err => console.log('ServiceWorker registration failed: ', err));
     });
+    }
+  });
+
+  /* ============================
+     LOADER : CACHAGE APRÈS LOAD
+     ============================ */
+  window.addEventListener('load', () => {
+    const loader = document.getElementById('loader');
+    loader.classList.add('hidden');
+    loader.addEventListener('transitionend', () => {
+    loader.remove();
+    });
+  });
 </script>
 </body>
 </html>
