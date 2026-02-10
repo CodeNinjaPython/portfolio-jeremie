@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <script async="" data-cbid="9ca2ce88-942f-428b-9100-65869676c999" id="Cookiebot" src="https://consent.cookiebot.com/uc.js" type="text/javascript"></script>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -341,10 +342,11 @@
      CONTENU PRINCIPAL (GRILLE)
      ============================ */
   .main-content {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 5rem;
-    max-width: 950px;
+    max-width: 1200px;
     margin: auto;
     padding: 0 1.5rem;
     position: relative;
@@ -364,6 +366,10 @@
     transform: translateY(0);
     position: relative;
     overflow: visible;
+    width: 100%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
   }
   section.is-visible {
     opacity: 1;
@@ -436,8 +442,9 @@
      ============================ */
   .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    justify-items: center;
   }
   .video {
     background-color: var(--nav-bg);
@@ -485,6 +492,11 @@
     margin-bottom: 0;
   }
 
+  .photo-categories-container {
+    display: flex;
+    justify-content: center;
+  }
+
   .category-title {
     display: flex;
     justify-content: space-between;
@@ -506,10 +518,13 @@
     position: relative;
     overflow: hidden;
     padding: 1.5rem;
+    display: flex;
+    justify-content: center;
   }
 
   .carousel-track {
     display: flex;
+    justify-content: center;
     transition: transform 0.5s ease-in-out;
   }
 
@@ -517,6 +532,8 @@
     flex: 0 0 auto;
     width: calc(100% / var(--items-per-view, 1) - var(--gap-width, 1rem) * (var(--items-per-view, 1) - 1) / var(--items-per-view, 1));
     max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
     margin-right: 1rem;
     background-color: var(--section-bg);
     padding: 10px;
@@ -1345,11 +1362,6 @@
       PHOTO--GALERIE
      ============================ */-->
 <div class="photo-item">
-<a class="photo-lightbox-trigger" data-src-large="images/Photo/DSC00354.jpg" href="images/Photo/DSC00354.jpg">
-<img alt="Photo galerie - DSC00354" src="images/Photo/DSC00354.jpg"/>
-</a>
-</div>
-<div class="photo-item">
 <a class="photo-lightbox-trigger" data-src-large="images/Photo/DSC05258.jpg" href="images/Photo/DSC05258.jpg">
 <img alt="Photo galerie - DSC05258" src="images/Photo/DSC05258.jpg"/>
 </a>
@@ -1419,6 +1431,101 @@
 <img alt="Photo galerie - P1144021" src="images/Photo/P1144021.jpg"/>
 </a>
 </div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="images/Photo/Rhum à manger1.jpg" href="images/Photo/Rhum à manger1.jpg">
+<img alt="Photo galerie - Rhum à manger1" src="images/Photo/Rhum à manger1.jpg"/>
+</a>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="images/Photo/Rhum à manger13.jpg" href="images/Photo/Rhum à manger13.jpg">
+<img alt="Photo galerie - Rhum à manger13" src="images/Photo/Rhum à manger13.jpg"/>
+</a>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="images/Photo/Rhum à manger14.jpg" href="images/Photo/Rhum à manger14.jpg">
+<img alt="Photo galerie - Rhum à manger14" src="images/Photo/Rhum à manger14.jpg"/>
+</a>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="images/Photo/Rhum à manger15.jpg" href="images/Photo/Rhum à manger15.jpg">
+<img alt="Photo galerie - Rhum à manger15" src="images/Photo/Rhum à manger15.jpg"/>
+</a>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="images/Photo/Rhum à manger16.jpg" href="images/Photo/Rhum à manger16.jpg">
+<img alt="Photo galerie - Rhum à manger16" src="images/Photo/Rhum à manger16.jpg"/>
+</a>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="images/Photo/Rhum à manger17.jpg" href="images/Photo/Rhum à manger17.jpg">
+<img alt="Photo galerie - Rhum à manger17" src="images/Photo/Rhum à manger17.jpg"/>
+</a>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="images/Photo/Rhum à manger18.jpg" href="images/Photo/Rhum à manger18.jpg">
+<img alt="Photo galerie - Rhum à manger18" src="images/Photo/Rhum à manger18.jpg"/>
+</a>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="images/Photo/Rhum à manger19.jpg" href="images/Photo/Rhum à manger19.jpg">
+<img alt="Photo galerie - Rhum à manger19" src="images/Photo/Rhum à manger19.jpg"/>
+</a>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="images/Photo/Rhum à manger20.jpg" href="images/Photo/Rhum à manger20.jpg">
+<img alt="Photo galerie - Rhum à manger20" src="images/Photo/Rhum à manger20.jpg"/>
+</a>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="images/Photo/Rhum à manger21.jpg" href="images/Photo/Rhum à manger21.jpg">
+<img alt="Photo galerie - Rhum à manger21" src="images/Photo/Rhum à manger21.jpg"/>
+</a>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="images/Photo/Rhum à manger22.jpg" href="images/Photo/Rhum à manger22.jpg">
+<img alt="Photo galerie - Rhum à manger22" src="images/Photo/Rhum à manger22.jpg"/>
+</a>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="images/Photo/Rhum à manger23.jpg" href="images/Photo/Rhum à manger23.jpg">
+<img alt="Photo galerie - Rhum à manger23" src="images/Photo/Rhum à manger23.jpg"/>
+</a>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="images/Photo/Rhum à manger24.jpg" href="images/Photo/Rhum à manger24.jpg">
+<img alt="Photo galerie - Rhum à manger24" src="images/Photo/Rhum à manger24.jpg"/>
+</a>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="images/Photo/Rhum à manger25.jpg" href="images/Photo/Rhum à manger25.jpg">
+<img alt="Photo galerie - Rhum à manger25" src="images/Photo/Rhum à manger25.jpg"/>
+</a>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="images/Photo/Rhum à manger26.jpg" href="images/Photo/Rhum à manger26.jpg">
+<img alt="Photo galerie - Rhum à manger26" src="images/Photo/Rhum à manger26.jpg"/>
+</a>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="images/Photo/Rhum à manger27.jpg" href="images/Photo/Rhum à manger27.jpg">
+<img alt="Photo galerie - Rhum à manger27" src="images/Photo/Rhum à manger27.jpg"/>
+</a>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="images/Photo/Rhum à manger28.jpg" href="images/Photo/Rhum à manger28.jpg">
+<img alt="Photo galerie - Rhum à manger28" src="images/Photo/Rhum à manger28.jpg"/>
+</a>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="images/Photo/Rhum à manger29.jpg" href="images/Photo/Rhum à manger29.jpg">
+<img alt="Photo galerie - Rhum à manger29" src="images/Photo/Rhum à manger29.jpg"/>
+</a>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="images/Photo/Rhum à manger30.jpg" href="images/Photo/Rhum à manger30.jpg">
+<img alt="Photo galerie - Rhum à manger30" src="images/Photo/Rhum à manger30.jpg"/>
+</a>
+</div>
 </div>
 <div class="carousel-nav-buttons">
   <button class="carousel-nav-button prev-button" data-carousel="galerie"><i class="fas fa-chevron-left"></i></button>
@@ -1447,66 +1554,6 @@
 <!--/* ============================
       PHOTO--MARIAGE
       ============================ */-->
-<div class="photo-item">
-<a class="photo-lightbox-trigger" data-src-large="images/Mariage/DSC00342.jpg" href="images/Mariage/DSC00342.jpg">
-<img alt="Photo mariage - DSC00342" src="images/Mariage/DSC00342.jpg"/>
-</a>
-</div>
-<div class="photo-item">
-<a class="photo-lightbox-trigger" data-src-large="images/Mariage/DSC00509.jpg" href="images/Mariage/DSC00509.jpg">
-<img alt="Photo mariage - DSC00509" src="images/Mariage/DSC00509.jpg"/>
-</a>
-</div>
-<div class="photo-item">
-<a class="photo-lightbox-trigger" data-src-large="images/Mariage/DSC00543.jpg" href="images/Mariage/DSC00543.jpg">
-<img alt="Photo mariage - DSC00543" src="images/Mariage/DSC00543.jpg"/>
-</a>
-</div>
-<div class="photo-item">
-<a class="photo-lightbox-trigger" data-src-large="images/Mariage/DSC00589.jpg" href="images/Mariage/DSC00589.jpg">
-<img alt="Photo mariage - DSC00589" src="images/Mariage/DSC00589.jpg"/>
-</a>
-</div>
-<div class="photo-item">
-<a class="photo-lightbox-trigger" data-src-large="images/Mariage/DSC00658.jpg" href="images/Mariage/DSC00658.jpg">
-<img alt="Photo mariage - DSC00658" src="images/Mariage/DSC00658.jpg"/>
-</a>
-</div>
-<div class="photo-item">
-<a class="photo-lightbox-trigger" data-src-large="images/Mariage/DSC00668.jpg" href="images/Mariage/DSC00668.jpg">
-<img alt="Photo mariage - DSC00668" src="images/Mariage/DSC00668.jpg"/>
-</a>
-</div>
-<div class="photo-item">
-<a class="photo-lightbox-trigger" data-src-large="images/Mariage/DSC00676.jpg" href="images/Mariage/DSC00676.jpg">
-<img alt="Photo mariage - DSC00676" src="images/Mariage/DSC00676.jpg"/>
-</a>
-</div>
-<div class="photo-item">
-<a class="photo-lightbox-trigger" data-src-large="images/Mariage/DSC00695-2.jpg" href="images/Mariage/DSC00695-2.jpg">
-<img alt="Photo mariage - DSC00695-2" src="images/Mariage/DSC00695-2.jpg"/>
-</a>
-</div>
-<div class="photo-item">
-<a class="photo-lightbox-trigger" data-src-large="images/Mariage/DSC00695.jpg" href="images/Mariage/DSC00695.jpg">
-<img alt="Photo mariage - DSC00695" src="images/Mariage/DSC00695.jpg"/>
-</a>
-</div>
-<div class="photo-item">
-<a class="photo-lightbox-trigger" data-src-large="images/Mariage/DSC00731.jpg" href="images/Mariage/DSC00731.jpg">
-<img alt="Photo mariage - DSC00731" src="images/Mariage/DSC00731.jpg"/>
-</a>
-</div>
-<div class="photo-item">
-<a class="photo-lightbox-trigger" data-src-large="images/Mariage/DSC00764.jpg" href="images/Mariage/DSC00764.jpg">
-<img alt="Photo mariage - DSC00764" src="images/Mariage/DSC00764.jpg"/>
-</a>
-</div>
-<div class="photo-item">
-<a class="photo-lightbox-trigger" data-src-large="images/Mariage/DSC00826.jpg" href="images/Mariage/DSC00826.jpg">
-<img alt="Photo mariage - DSC00826" src="images/Mariage/DSC00826.jpg"/>
-</a>
-</div>
 <div class="photo-item">
 <a class="photo-lightbox-trigger" data-src-large="images/Mariage/DSC04499.jpg" href="images/Mariage/DSC04499.jpg">
 <img alt="Photo mariage - DSC04499" src="images/Mariage/DSC04499.jpg"/>
@@ -1540,36 +1587,6 @@
 <div class="photo-item">
 <a class="photo-lightbox-trigger" data-src-large="images/Mariage/DSC05749.jpg" href="images/Mariage/DSC05749.jpg">
 <img alt="Photo mariage - DSC05749" src="images/Mariage/DSC05749.jpg"/>
-</a>
-</div>
-<div class="photo-item">
-<a class="photo-lightbox-trigger" data-src-large="images/Mariage/DSC06217.jpg" href="images/Mariage/DSC06217.jpg">
-<img alt="Photo mariage - DSC06217" src="images/Mariage/DSC06217.jpg"/>
-</a>
-</div>
-<div class="photo-item">
-<a class="photo-lightbox-trigger" data-src-large="images/Mariage/DSC06439.jpg" href="images/Mariage/DSC06439.jpg">
-<img alt="Photo mariage - DSC06439" src="images/Mariage/DSC06439.jpg"/>
-</a>
-</div>
-<div class="photo-item">
-<a class="photo-lightbox-trigger" data-src-large="images/Mariage/DSC07231.jpg" href="images/Mariage/DSC07231.jpg">
-<img alt="Photo mariage - DSC07231" src="images/Mariage/DSC07231.jpg"/>
-</a>
-</div>
-<div class="photo-item">
-<a class="photo-lightbox-trigger" data-src-large="images/Mariage/DSC07250.jpg" href="images/Mariage/DSC07250.jpg">
-<img alt="Photo mariage - DSC07250" src="images/Mariage/DSC07250.jpg"/>
-</a>
-</div>
-<div class="photo-item">
-<a class="photo-lightbox-trigger" data-src-large="images/Mariage/DSC07271.jpg" href="images/Mariage/DSC07271.jpg">
-<img alt="Photo mariage - DSC07271" src="images/Mariage/DSC07271.jpg"/>
-</a>
-</div>
-<div class="photo-item">
-<a class="photo-lightbox-trigger" data-src-large="images/Mariage/DSC07338.jpg" href="images/Mariage/DSC07338.jpg">
-<img alt="Photo mariage - DSC07338" src="images/Mariage/DSC07338.jpg"/>
 </a>
 </div>
 <div class="photo-item">
