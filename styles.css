@@ -35,6 +35,13 @@
   --accent-metallic: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   --accent-neon: #00ffcc;
   
+  /* Contact & Gallery Enhanced Colors */
+  --contact-primary: #00d4ff;
+  --contact-secondary: #ff006e;
+  --gallery-overlay: linear-gradient(135deg, #00d4ff, #ff006e);
+  --card-border: rgba(0, 212, 255, 0.5);
+  --glow-color: rgba(0, 212, 255, 0.3);
+  
   /* UI Elements */
   --border-color: rgba(255,255,255,0.08);
   --shadow-color: rgba(0,0,0,0.5);
@@ -742,7 +749,7 @@ section:nth-child(even) {
 }
 
 /* ============================
-   PHOTO GALLERY - Cards with Zoom
+   PHOTO GALLERY - ENHANCED
    ============================ */
 .photo-carousel-wrapper {
   position: relative;
@@ -773,19 +780,49 @@ section:nth-child(even) {
   border-radius: var(--radius-sm);
 }
 
+/* Photo Grid Layout - Responsive */
+.carousel-track,
+.photo-categories-container .photo-category > div:not(.carousel-track) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-md);
+  padding: var(--spacing-sm);
+}
+
+/* Enhanced Photo Cards with 3D Effects */
 .photo-item {
-  flex: 0 0 auto;
-  width: 300px;
-  height: 300px;
   position: relative;
   border-radius: var(--radius-lg);
   overflow: hidden;
   cursor: pointer;
-  transition: transform var(--transition-normal) ease;
+  transition: all var(--transition-normal) ease;
+  aspect-ratio: 4/3;
+  background: var(--glass-bg);
+  transform-style: preserve-3d;
+  perspective: 1000px;
 }
 
+/* Animated Border Gradient */
+.photo-item::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  background: var(--gallery-overlay);
+  border-radius: var(--radius-lg);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity var(--transition-normal) ease;
+  animation: rotateBorder 3s linear infinite;
+}
+
+.photo-item:hover::before {
+  opacity: 1;
+}
+
+/* 3D Hover Transform */
 .photo-item:hover {
-  transform: scale(1.05);
+  transform: translateY(-10px) perspective(1000px) rotateX(5deg);
+  box-shadow: 0 20px 60px rgba(0, 212, 255, 0.4), 0 0 80px rgba(255, 0, 110, 0.2);
   z-index: 10;
 }
 
@@ -793,30 +830,74 @@ section:nth-child(even) {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform var(--transition-slow) ease;
+  transition: transform var(--transition-slow) ease, filter var(--transition-normal) ease;
+  display: block;
 }
 
+/* Image Zoom on Hover */
 .photo-item:hover img {
   transform: scale(1.15);
+  filter: brightness(0.9);
 }
 
+/* Gradient Overlay with Text */
 .photo-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+  opacity: 0;
+  transition: opacity var(--transition-normal) ease;
+  pointer-events: none;
+}
+
+.photo-item:hover::after {
+  opacity: 1;
+}
+
+/* Lightbox Icon */
+.photo-item a::after {
   content: '\f00e';
   font-family: 'Font Awesome 6 Free';
   font-weight: 900;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 2rem;
+  transform: translate(-50%, -50%) scale(0);
+  font-size: 3rem;
   color: var(--button-text);
   opacity: 0;
-  transition: opacity var(--transition-fast) ease;
+  transition: all var(--transition-normal) ease;
   pointer-events: none;
+  z-index: 2;
+  text-shadow: 0 0 20px rgba(0, 212, 255, 0.8);
 }
 
-.photo-item:hover::after {
+.photo-item:hover a::after {
+  transform: translate(-50%, -50%) scale(1);
   opacity: 1;
+}
+
+/* Stagger Animation on Load */
+.photo-item {
+  animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.photo-item:nth-child(1) { animation-delay: 0.1s; }
+.photo-item:nth-child(2) { animation-delay: 0.2s; }
+.photo-item:nth-child(3) { animation-delay: 0.3s; }
+.photo-item:nth-child(4) { animation-delay: 0.4s; }
+.photo-item:nth-child(5) { animation-delay: 0.5s; }
+.photo-item:nth-child(6) { animation-delay: 0.6s; }
+.photo-item:nth-child(7) { animation-delay: 0.7s; }
+.photo-item:nth-child(8) { animation-delay: 0.8s; }
+
+/* For carousel layout - horizontal scrolling */
+.carousel-track .photo-item {
+  flex: 0 0 auto;
+  width: 300px;
+  height: 300px;
+  animation: none; /* No stagger for carousel */
 }
 
 /* Carousel Navigation Buttons */
@@ -851,13 +932,13 @@ section:nth-child(even) {
 }
 
 .carousel-nav-button:hover {
-  background: var(--accent-primary);
+  background: linear-gradient(135deg, var(--contact-primary), var(--contact-secondary));
   color: var(--button-text);
-  transform: scale(1.1);
-  box-shadow: 0 6px 20px var(--shadow-glow);
+  transform: scale(1.15);
+  box-shadow: 0 6px 25px var(--glow-color), 0 0 40px var(--glow-color);
 }
 
-/* Photo Lightbox */
+/* Photo Lightbox - Enhanced */
 .photo-lightbox {
   display: none;
   position: fixed;
@@ -865,8 +946,8 @@ section:nth-child(even) {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.95);
-  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(20px);
   z-index: 3000;
   animation: fadeIn var(--transition-normal) ease;
 }
@@ -889,7 +970,8 @@ section:nth-child(even) {
   max-height: 90vh;
   object-fit: contain;
   border-radius: var(--radius-md);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+  box-shadow: 0 20px 80px rgba(0, 212, 255, 0.3), 0 0 100px rgba(255, 0, 110, 0.2);
+  border: 2px solid var(--card-border);
 }
 
 .lightbox-close,
@@ -932,18 +1014,50 @@ section:nth-child(even) {
 .lightbox-close:hover,
 .lightbox-prev:hover,
 .lightbox-next:hover {
-  background: var(--accent-primary);
+  background: linear-gradient(135deg, var(--contact-primary), var(--contact-secondary));
   color: var(--button-text);
-  transform: scale(1.1);
-  box-shadow: 0 6px 20px var(--shadow-glow);
+  transform: scale(1.15);
+  box-shadow: 0 6px 25px var(--glow-color), 0 0 40px var(--glow-color);
 }
 
 .lightbox-prev:hover {
-  transform: translateY(-50%) scale(1.1);
+  transform: translateY(-50%) scale(1.15);
 }
 
 .lightbox-next:hover {
-  transform: translateY(-50%) scale(1.1);
+  transform: translateY(-50%) scale(1.15);
+}
+
+/* Loading Skeleton Animation */
+.photo-skeleton {
+  background: linear-gradient(90deg, var(--glass-bg) 25%, rgba(255, 255, 255, 0.08) 50%, var(--glass-bg) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius-lg);
+  aspect-ratio: 4/3;
+}
+
+/* Category Title with Icon */
+.category-title {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+  font-size: 1.5rem;
+  color: var(--text-color);
+  position: relative;
+  padding-bottom: var(--spacing-xs);
+}
+
+.category-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--gallery-overlay);
+  border-radius: var(--radius-sm);
 }
 
 /* ============================
@@ -1051,7 +1165,7 @@ button:active,
 }
 
 /* ============================
-   CONTACT SECTION
+   CONTACT SECTION - ENHANCED
    ============================ */
 .contact {
   position: relative;
@@ -1082,12 +1196,50 @@ button:active,
   max-height: 2000px;
 }
 
+/* Contact Info Cards - Glassmorphism with 3D Hover */
 .contact-info {
   margin-top: var(--spacing-md);
   padding: var(--spacing-md);
   background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-radius: var(--radius-lg);
   border: 1px solid var(--glass-border);
+  transition: all var(--transition-normal) ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-info::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, transparent, var(--glow-color), transparent 30%);
+  animation: rotate 4s linear infinite;
+  opacity: 0;
+  transition: opacity var(--transition-normal) ease;
+}
+
+.contact-info::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background: var(--section-white-bg);
+  border-radius: var(--radius-lg);
+  z-index: 0;
+}
+
+.contact-info:hover::before {
+  opacity: 1;
+}
+
+.contact-info:hover {
+  transform: translateY(-5px) perspective(1000px) rotateX(2deg);
+  box-shadow: 0 20px 40px var(--glow-color), 0 0 60px var(--glow-color);
+  border-color: var(--contact-primary);
 }
 
 .contact-info p {
@@ -1095,39 +1247,198 @@ button:active,
   align-items: center;
   gap: var(--spacing-sm);
   margin-bottom: var(--spacing-sm);
+  position: relative;
+  z-index: 1;
 }
 
 .contact-info i {
-  color: var(--accent-primary);
+  color: var(--contact-primary);
   font-size: 1.2rem;
   width: 30px;
+  transition: all 0.4s ease;
+}
+
+.contact-info:hover i {
+  transform: scale(1.2) rotate(10deg);
+  filter: drop-shadow(0 0 8px var(--contact-primary));
 }
 
 .contact-info a {
   color: var(--link-color);
   text-decoration: none;
-  transition: color var(--transition-fast) ease;
+  transition: all var(--transition-fast) ease;
+  position: relative;
+  z-index: 1;
 }
 
 .contact-info a:hover {
-  color: var(--link-hover-color);
-  text-decoration: underline;
+  color: var(--contact-primary);
+  text-decoration: none;
+  filter: drop-shadow(0 0 5px var(--contact-primary));
 }
 
-/* Success Message */
-.success-message {
-  background: var(--success-bg);
-  color: var(--success-text);
-  border: 1px solid var(--success-border);
-  padding: var(--spacing-md);
+/* Premium Contact Form */
+.contact-form {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.contact-form label {
+  font-weight: 600;
+  color: var(--section-white-text);
+  margin-bottom: var(--spacing-xs);
+  display: block;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 2px solid transparent;
   border-radius: var(--radius-md);
-  margin-top: var(--spacing-md);
-  text-align: center;
-  animation: slideInUp var(--transition-normal) ease;
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--section-white-text);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all var(--transition-normal) ease;
+  position: relative;
+  background-clip: padding-box;
+}
+
+.contact-form input[type="text"]::placeholder,
+.contact-form input[type="email"]::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(51, 51, 51, 0.5);
+  transition: all var(--transition-normal) ease;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border: 2px solid transparent;
+  background: rgba(0, 0, 0, 0.02);
+  box-shadow: 0 0 0 3px var(--glow-color);
+  transform: translateY(-2px);
+}
+
+/* Gradient Border Effect on Focus */
+.contact-form input[type="text"]:focus::before,
+.contact-form input[type="email"]:focus::before,
+.contact-form textarea:focus::before {
+  opacity: 1;
+}
+
+/* Animated Placeholder */
+.contact-form input[type="text"]:focus::placeholder,
+.contact-form input[type="email"]:focus::placeholder,
+.contact-form textarea:focus::placeholder {
+  transform: translateY(-5px);
+  opacity: 0.5;
+}
+
+/* Submit Button with Animations */
+.contact-form button[type="submit"] {
+  background: linear-gradient(135deg, var(--contact-primary), var(--contact-secondary));
+  color: var(--button-text);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: all var(--transition-normal) ease;
+  box-shadow: 0 4px 20px rgba(0, 212, 255, 0.4);
+  position: relative;
+  overflow: hidden;
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+.contact-form button[type="submit"]::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.contact-form button[type="submit"]:hover {
+  background: linear-gradient(135deg, var(--contact-secondary), var(--contact-primary));
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(0, 212, 255, 0.6), 0 0 40px rgba(255, 0, 110, 0.4);
+  animation: pulse 1s ease-in-out infinite;
+}
+
+.contact-form button[type="submit"]:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.contact-form button[type="submit"]:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+/* Success Toast Notification */
+.success-message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #00d4ff, #00ff88);
+  color: #ffffff;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 40px rgba(0, 212, 255, 0.5);
+  z-index: 9999;
+  animation: slideInRight 0.3s ease-out;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  min-width: 300px;
+  backdrop-filter: blur(10px);
+}
+
+.success-message::before {
+  content: '✓';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .success-message.hidden {
   display: none;
+}
+
+.success-message.show {
+  animation: slideInRight 0.3s ease-out;
+}
+
+.success-message.hide {
+  animation: slideOutRight 0.3s ease-in forwards;
 }
 
 /* ============================
@@ -1191,6 +1502,28 @@ footer a:hover {
   }
 }
 
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+}
+
 @keyframes zoomIn {
   from {
     opacity: 0;
@@ -1219,6 +1552,24 @@ footer a:hover {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateBorder {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
   }
 }
 
@@ -1290,7 +1641,13 @@ footer a:hover {
     grid-template-columns: repeat(2, 1fr);
   }
   
-  .photo-item {
+  /* Photo Grid - 2 columns */
+  .carousel-track,
+  .photo-categories-container .photo-category > div:not(.carousel-track) {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  .carousel-track .photo-item {
     width: 350px;
     height: 350px;
   }
@@ -1298,12 +1655,29 @@ footer a:hover {
   nav ul {
     gap: var(--spacing-md);
   }
+  
+  /* Contact form max-width on tablets */
+  .contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Success message positioning */
+  .success-message {
+    min-width: 350px;
+  }
 }
 
 /* Desktops (1024px and up) */
 @media (min-width: 1024px) {
   .gallery {
     grid-template-columns: repeat(3, 1fr);
+  }
+  
+  /* Photo Grid - 3 columns */
+  .carousel-track,
+  .photo-categories-container .photo-category > div:not(.carousel-track) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
   
   .skills-grid {
@@ -1324,6 +1698,12 @@ footer a:hover {
   .gallery {
     grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-lg);
+  }
+  
+  /* Photo Grid - 4 columns */
+  .carousel-track,
+  .photo-categories-container .photo-category > div:not(.carousel-track) {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   }
 }
 
@@ -1362,6 +1742,12 @@ footer a:hover {
     grid-template-columns: 1fr;
   }
   
+  /* Photo Grid - 1 column on mobile */
+  .carousel-track,
+  .photo-categories-container .photo-category > div:not(.carousel-track) {
+    grid-template-columns: 1fr;
+  }
+  
   .skills-grid {
     grid-template-columns: 1fr;
   }
@@ -1380,7 +1766,7 @@ footer a:hover {
     padding: var(--spacing-md) var(--spacing-sm);
   }
   
-  .photo-item {
+  .carousel-track .photo-item {
     width: 250px;
     height: 250px;
   }
@@ -1397,6 +1783,21 @@ footer a:hover {
     width: 40px;
     height: 40px;
     font-size: 1.2rem;
+  }
+  
+  /* Success message mobile adjustments */
+  .success-message {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    min-width: auto;
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.9rem;
+  }
+  
+  /* Contact form full width on mobile */
+  .contact-form {
+    max-width: 100%;
   }
 }
 
