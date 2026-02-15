@@ -1,0 +1,32 @@
+2026-02-15 17:34:05,127 - INFO - === SYNCHRONISATION AUTOMATIQUE DU PORTFOLIO ===
+2026-02-15 17:34:05,127 - INFO - 
+Traitement de la catégorie : MARIAGE
+2026-02-15 17:34:05,128 - INFO - Fichier Grille photo Mariage.html mis à jour avec succès.
+2026-02-15 17:34:05,128 - INFO - Fichier 'Grille photo Mariage.html' mis à jour (21 photos).
+2026-02-15 17:34:05,128 - ERROR - Le fichier index.html est introuvable.
+2026-02-15 17:34:05,128 - ERROR - Le fichier index.html est introuvable.
+2026-02-15 17:34:05,128 - ERROR - Zone de carrousel introuvable pour mariage dans index.html.
+2026-02-15 17:34:05,128 - INFO - 
+Traitement de la catégorie : GALERIE
+2026-02-15 17:34:05,129 - ERROR - Le fichier grille photo.html est introuvable.
+2026-02-15 17:34:05,129 - ERROR - Impossible de trouver la zone <main id="gallery"> dans grille photo.html.
+2026-02-15 17:34:05,129 - ERROR - Le fichier index.html est introuvable.
+2026-02-15 17:34:05,129 - ERROR - Le fichier index.html est introuvable.
+2026-02-15 17:34:05,129 - ERROR - Zone de carrousel introuvable pour galerie dans index.html.
+2026-02-15 17:34:05,129 - WARNING - 
+=== SYNCHRONISATION TERMINÉE AVEC DES ERREURS ===
+2026-02-15 17:34:15,382 - INFO - === SYNCHRONISATION AUTOMATIQUE DU PORTFOLIO ===
+2026-02-15 17:34:15,382 - INFO - 
+Traitement de la catégorie : MARIAGE
+2026-02-15 17:34:15,384 - INFO - Fichier Grille photo Mariage.html mis à jour avec succès.
+2026-02-15 17:34:15,384 - INFO - Fichier 'Grille photo Mariage.html' mis à jour (21 photos).
+2026-02-15 17:34:15,388 - INFO - Fichier Index.html mis à jour avec succès.
+2026-02-15 17:34:15,388 - INFO - Index.html (mariage) mis à jour.
+2026-02-15 17:34:15,388 - INFO - 
+Traitement de la catégorie : GALERIE
+2026-02-15 17:34:15,389 - INFO - Fichier Grille photo.html mis à jour avec succès.
+2026-02-15 17:34:15,389 - INFO - Fichier 'Grille photo.html' mis à jour (33 photos).
+2026-02-15 17:34:15,395 - INFO - Fichier Index.html mis à jour avec succès.
+2026-02-15 17:34:15,395 - INFO - Index.html (galerie) mis à jour.
+2026-02-15 17:34:15,395 - INFO - 
+=== SYNCHRONISATION TERMINÉE AVEC SUCCÈS ===
