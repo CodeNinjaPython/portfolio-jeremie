@@ -1,7 +1,6 @@
 /**
  * @fileoverview Portfolio application with scroll animations, contact form, and back-to-top functionality.
  * @author Jeremie
- * @version 2.0.0
  */
 
 /**
