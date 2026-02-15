@@ -1,0 +1,13 @@
+# Portfolio Jeremie - Python Dependencies
+# No external dependencies required for core functionality
+# Python standard library modules used:
+# - os
+# - re
+# - sys
+# - logging
+# - typing
+
+# Optional: For development and testing
+# pylint>=2.15.0  # Code quality checker
+# black>=23.0.0   # Code formatter
+# mypy>=1.0.0     # Type checker
