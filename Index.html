@@ -520,12 +520,12 @@
     overflow: hidden;
     padding: 1.5rem;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .carousel-track {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     transition: transform 0.5s ease-in-out;
   }
 
@@ -533,9 +533,7 @@
     flex: 0 0 auto;
     width: calc(100% / var(--items-per-view, 1) - var(--gap-width, 1rem) * (var(--items-per-view, 1) - 1) / var(--items-per-view, 1));
     max-width: 300px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-right: 1rem;
+    margin: 0 1rem 0 0;
     background-color: var(--section-bg);
     padding: 10px;
     border-radius: 8px;
@@ -1527,6 +1525,7 @@
 <img alt="Photo galerie - Rhum à manger1" src="images/Photo/Rhum à manger1.jpg"/>
 </a>
 </div>
+      </div>
       <div class="carousel-nav-buttons">
         <button class="carousel-nav-button prev-button" data-carousel="galerie"><i class="fas fa-chevron-left"></i></button>
         <button class="carousel-nav-button next-button" data-carousel="galerie"><i class="fas fa-chevron-right"></i></button>
