@@ -466,11 +466,13 @@
      ============================ */
   .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
     gap: 2rem;
     justify-items: center;
+    align-items: start;
   }
   .video {
+    width: min(100%, 460px);
     background-color: var(--nav-bg);
     padding: 15px;
     border-radius: 8px;
@@ -1121,6 +1123,13 @@
      MEDIA QUERIES
      ============================ */
   @media (max-width: 768px) {
+    .gallery {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .video {
+      width: min(100%, 680px);
+    }
     h1 { font-size: 2.8rem; }
     h2 { font-size: 1.8rem; }
     .top-banner {
@@ -1191,6 +1200,7 @@
   }
 
   @media (max-width: 480px) {
+    .gallery { gap: 1rem; }
     h1 { font-size: 2.2rem; }
     h2 { font-size: 1.5rem; }
     .top-banner {
@@ -1210,7 +1220,10 @@
       padding: 0 1rem;
     }
     section { padding: 1rem; }
-    .video { padding: 10px; }
+    .video {
+      width: 100%;
+      padding: 10px;
+    }
     .video-title { font-size: 1rem; }
     .photo-item { padding: 8px; }
     .photo-item img { height: 150px; }
