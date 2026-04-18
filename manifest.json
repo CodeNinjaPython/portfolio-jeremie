@@ -1,0 +1,16 @@
+{
+  "name": "Jérémie Favre - Portfolio",
+  "short_name": "JF Portfolio",
+  "description": "Portfolio de Jérémie Favre, vidéaste à La Réunion.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1a1a",
+  "theme_color": "#1a1a1a",
+  "icons": [
+    {
+      "src": "/unnamed.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}

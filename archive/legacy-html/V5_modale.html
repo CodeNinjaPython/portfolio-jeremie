@@ -1,28 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="9ca2ce88-942f-428b-9100-65869676c999" type="text/javascript" async>
-// Script pour modale vidéo enrichie
-document.querySelectorAll('.video').forEach(video => {
-  video.addEventListener('click', () => {
-    document.getElementById('videoModal').classList.add('active');
-    document.getElementById('videoModalIframe').src = video.dataset.iframe;
-    document.getElementById('videoTitle').textContent = video.dataset.title;
-    document.getElementById('videoDirector').textContent = video.dataset.director;
-    document.getElementById('videoCamera').textContent = video.dataset.camera;
-    document.getElementById('videoLocation').textContent = video.dataset.location;
-    document.getElementById('videoDate').textContent = video.dataset.date;
-    document.body.style.overflow = 'hidden';
-  });
-});
-
-function closeVideoModal() {
-  document.getElementById('videoModal').classList.remove('active');
-  document.getElementById('videoModalIframe').src = "";
-  document.body.style.overflow = 'auto';
-}
-
-</script>
+  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="9ca2ce88-942f-428b-9100-65869676c999" type="text/javascript" async></script>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,60 +17,18 @@ function closeVideoModal() {
   <meta property="og:title" content="Jérémie FAVRE - Vidéaste à La Réunion">
   <meta property="og:description" content="Découvrez le portfolio de Jérémie Favre, vidéaste et cadreur-monteur basé à La Réunion. Des clips dynamiques aux documentaires immersifs.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://votre-site.com">
-  <meta property="og:image" content="https://votre-site.com/unnamed.jpg">
+  <meta property="og:url" content="https://www.jeremiefavre.com/">
+  <meta property="og:image" content="https://www.jeremiefavre.com/unnamed.jpg">
   <meta property="og:image:alt" content="Logo de Jérémie Favre">
   <meta property="og:locale" content="fr_FR">
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZSLE032V4E">
-// Script pour modale vidéo enrichie
-document.querySelectorAll('.video').forEach(video => {
-  video.addEventListener('click', () => {
-    document.getElementById('videoModal').classList.add('active');
-    document.getElementById('videoModalIframe').src = video.dataset.iframe;
-    document.getElementById('videoTitle').textContent = video.dataset.title;
-    document.getElementById('videoDirector').textContent = video.dataset.director;
-    document.getElementById('videoCamera').textContent = video.dataset.camera;
-    document.getElementById('videoLocation').textContent = video.dataset.location;
-    document.getElementById('videoDate').textContent = video.dataset.date;
-    document.body.style.overflow = 'hidden';
-  });
-});
-
-function closeVideoModal() {
-  document.getElementById('videoModal').classList.remove('active');
-  document.getElementById('videoModalIframe').src = "";
-  document.body.style.overflow = 'auto';
-}
-
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZSLE032V4E"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-ZSLE032V4E'); // VOTRE ID DE MESURE GOOGLE ANALYTICS
-  
-// Script pour modale vidéo enrichie
-document.querySelectorAll('.video').forEach(video => {
-  video.addEventListener('click', () => {
-    document.getElementById('videoModal').classList.add('active');
-    document.getElementById('videoModalIframe').src = video.dataset.iframe;
-    document.getElementById('videoTitle').textContent = video.dataset.title;
-    document.getElementById('videoDirector').textContent = video.dataset.director;
-    document.getElementById('videoCamera').textContent = video.dataset.camera;
-    document.getElementById('videoLocation').textContent = video.dataset.location;
-    document.getElementById('videoDate').textContent = video.dataset.date;
-    document.body.style.overflow = 'hidden';
-  });
-});
-
-function closeVideoModal() {
-  document.getElementById('videoModal').classList.remove('active');
-  document.getElementById('videoModalIframe').src = "";
-  document.body.style.overflow = 'auto';
-}
-
-</script>
+  </script>
 
   <style>
     /* Variables CSS pour les couleurs (Thème Sombre par défaut) */
@@ -1175,36 +1112,7 @@ function closeVideoModal() {
             font-size: 0.9rem;
         }
     }
-  
-/* Styles pour la modale vidéo améliorée */
-.video-lightbox-content {
-  background-color: #1a1a1a;
-  padding: 2rem;
-  border-radius: 10px;
-  max-width: 900px;
-  width: 90%;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
-  color: white;
-}
-
-#videoModal iframe {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-}
-
-.video-description h3 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.video-description p {
-  margin: 5px 0;
-}
-
-</style>
+  </style>
 </head>
 <body>
   <div id="loader">
@@ -1270,7 +1178,7 @@ function closeVideoModal() {
     <section id="portfolio" class="section-white">
       <h2>Portfolio Vidéo</h2>
       <div class="gallery">
-        <div class="video" data-title="LIVRE DU DESTIN" data-director="Jérémie Favre" data-camera="Sony A7 III" data-location="La Réunion" data-date="2023" data-iframe="https://www.youtube.com/embed/qtrdrRYwMoA">
+        <div class="video">
           <iframe src="https://www.youtube.com/embed/qtrdrRYwMoA" allowfullscreen></iframe>
           <div class="video-title">LIVRE DU DESTIN Court metrage</div>
         </div>
@@ -1963,28 +1871,7 @@ function closeVideoModal() {
         });
       }
     });
-  
-// Script pour modale vidéo enrichie
-document.querySelectorAll('.video').forEach(video => {
-  video.addEventListener('click', () => {
-    document.getElementById('videoModal').classList.add('active');
-    document.getElementById('videoModalIframe').src = video.dataset.iframe;
-    document.getElementById('videoTitle').textContent = video.dataset.title;
-    document.getElementById('videoDirector').textContent = video.dataset.director;
-    document.getElementById('videoCamera').textContent = video.dataset.camera;
-    document.getElementById('videoLocation').textContent = video.dataset.location;
-    document.getElementById('videoDate').textContent = video.dataset.date;
-    document.body.style.overflow = 'hidden';
-  });
-});
-
-function closeVideoModal() {
-  document.getElementById('videoModal').classList.remove('active');
-  document.getElementById('videoModalIframe').src = "";
-  document.body.style.overflow = 'auto';
-}
-
-</script>
+  </script>
 
 <!-- Modale vidéo personnalisée -->
 <div id="videoModal" class="lightbox">
@@ -2040,44 +1927,7 @@ function closeVideoModal() {
       }
     });
   });
-
-// Script pour modale vidéo enrichie
-document.querySelectorAll('.video').forEach(video => {
-  video.addEventListener('click', () => {
-    document.getElementById('videoModal').classList.add('active');
-    document.getElementById('videoModalIframe').src = video.dataset.iframe;
-    document.getElementById('videoTitle').textContent = video.dataset.title;
-    document.getElementById('videoDirector').textContent = video.dataset.director;
-    document.getElementById('videoCamera').textContent = video.dataset.camera;
-    document.getElementById('videoLocation').textContent = video.dataset.location;
-    document.getElementById('videoDate').textContent = video.dataset.date;
-    document.body.style.overflow = 'hidden';
-  });
-});
-
-function closeVideoModal() {
-  document.getElementById('videoModal').classList.remove('active');
-  document.getElementById('videoModalIframe').src = "";
-  document.body.style.overflow = 'auto';
-}
-
 </script>
-
-
-<!-- Modale Vidéo améliorée -->
-<div id="videoModal" class="lightbox">
-  <span class="close-button" onclick="closeVideoModal()">×</span>
-  <div class="video-lightbox-content">
-    <iframe id="videoModalIframe" src="" allowfullscreen></iframe>
-    <div class="video-description">
-      <h3 id="videoTitle"></h3>
-      <p><strong>🎬 Réalisateur :</strong> <span id="videoDirector"></span></p>
-      <p><strong>🎥 Matériel :</strong> <span id="videoCamera"></span></p>
-      <p><strong>📍 Lieu :</strong> <span id="videoLocation"></span></p>
-      <p><strong>🗓 Date :</strong> <span id="videoDate"></span></p>
-    </div>
-  </div>
-</div>
 
 </body>
 </html>

@@ -1,36 +1,32 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="9ca2ce88-942f-428b-9100-65869676c999" type="text/javascript" async></script>
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jérémie FAVRE - Vidéaste</title>
-  <meta name="description" content="Portfolio de Jérémie Favre, vidéaste et cadreur-monteur basé à La Réunion. Découvrez mes projets vidéo, compétences et contactez-me pour vos réalisations.">
-  <meta name="keywords" content="Jérémie Favre, vidéaste, cadreur, monteur, La Réunion, production vidéo, after effects, premiere pro, drone, FPV, portfolio, vidéo, film, publicité">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-  <link rel="manifest" href="/manifest.json">
-  <meta name="theme-color" content="#1a1a1a">
-
-  <meta property="og:title" content="Jérémie FAVRE - Vidéaste à La Réunion">
-  <meta property="og:description" content="Découvrez le portfolio de Jérémie Favre, vidéaste et cadreur-monteur basé à La Réunion. Des clips dynamiques aux documentaires immersifs.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://votre-site.com">
-  <meta property="og:image" content="https://votre-site.com/unnamed.jpg">
-  <meta property="og:image:alt" content="Logo de Jérémie Favre">
-  <meta property="og:locale" content="fr_FR">
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZSLE032V4E"></script>
-  <script>
+<script async="" data-cbid="9ca2ce88-942f-428b-9100-65869676c999" id="Cookiebot" src="https://consent.cookiebot.com/uc.js" type="text/javascript"></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Jérémie FAVRE - Portfolio</title>
+<meta content="Portfolio de Jérémie Favre, vidéaste et cadreur-monteur basé à La Réunion. Découvrez mes projets vidéo, compétences et contactez-me pour vos réalisations." name="description"/>
+<meta content="Jérémie Favre, vidéaste, cadreur, monteur, La Réunion, production vidéo, after effects, premiere pro, drone, FPV, portfolio, vidéo, film, publicité" name="keywords"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<link href="/manifest.json" rel="manifest"/>
+<meta content="#1a1a1a" name="theme-color"/>
+<meta content="Jérémie FAVRE - Vidéaste à La Réunion" property="og:title"/>
+<meta content="Découvrez le portfolio de Jérémie Favre, vidéaste et cadreur-monteur basé à La Réunion. Des clips dynamiques aux documentaires immersifs." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.jeremiefavre.com/" property="og:url"/>
+<meta content="https://www.jeremiefavre.com/unnamed.jpg" property="og:image"/>
+<meta content="Logo de Jérémie Favre" property="og:image:alt"/>
+<meta content="fr_FR" property="og:locale"/>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ZSLE032V4E"></script>
+<script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-ZSLE032V4E'); // VOTRE ID DE MESURE GOOGLE ANALYTICS
-  </script>
-
-  <style>
+</script>
+<style>
     /* Variables CSS pour les couleurs (Thème Sombre par défaut) */
     :root {
       --bg-color: #1a1a1a;
@@ -160,6 +156,23 @@
       margin-bottom: 0;
       box-shadow: 0 8px 16px var(--shadow-color);
       transition: background 0.5s ease, box-shadow 0.5s ease;
+      /* Suppression des propriétés de background-image directes */
+    }
+
+    /* Nouveau pseudo-élément pour la texture de papier froissé */
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('images/texture-de-papier-blanc.jpg'); /* Chemin mis à jour */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0.15; /* Ajustez cette valeur pour rendre la texture plus ou moins visible */
+      z-index: 1; /* S'assure que la texture est derrière le contenu mais devant la couleur de fond */
     }
 
     /* Effet "papier déchiré" en bas de l'en-tête */
@@ -180,13 +193,13 @@
 
     .header-content {
       position: relative;
-      z-index: 2;
+      z-index: 2; /* S'assure que le contenu est au-dessus de la texture */
       max-width: 900px;
       margin: auto;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1.5rem;
+      gap: 2rem; /* Augmenté pour plus d'espace */
     }
 
     .profile-photo {
@@ -209,8 +222,28 @@
 
     .header p {
       font-size: 1.3rem;
-      margin-top: 0;
       font-weight: 300;
+      /* margin-top et margin-bottom gérés par le gap du parent */
+    }
+
+    /* Styles pour les icônes de réseaux sociaux dans l'en-tête */
+    .social-links {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center; /* Centrer les icônes horizontalement */
+      /* margin-top géré par le gap du parent */
+    }
+
+    .social-links a {
+      color: var(--text-color);
+      font-size: 2rem;
+      transition: color 0.3s ease, transform 0.3s ease;
+      text-decoration: none; /* Assure que les liens ne sont pas soulignés */
+    }
+
+    .social-links a:hover {
+      color: var(--accent-color);
+      transform: scale(1.1);
     }
 
     /* Bannière "VIDÉASTE - CADREUR MONTEUR" */
@@ -235,7 +268,7 @@
       background-color: var(--nav-bg);
       padding: 1.5rem 0;
       width: 100%;
-      margin-top: -3rem;
+      margin-top: -2rem; /* Réduit le chevauchement avec l'en-tête */
       z-index: 10;
       box-shadow: 0 4px 8px var(--shadow-color);
       position: relative;
@@ -421,80 +454,14 @@
       color: var(--accent-color);
       transition: color 0.5s ease;
     }
-    /* Styles pour les pages de projet */
-    .project-page {
-      background-color: var(--section-bg);
-      padding: 2.5rem;
-      border-radius: 10px;
-      box-shadow: 0 6px 12px var(--shadow-color);
-      border: 1px solid var(--border-color);
-      transition: background-color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
-      margin-top: 5rem; /* Espace au-dessus des pages de projet */
-    }
-
-    .project-page .video-container {
-      position: relative;
+    iframe {
       width: 100%;
-      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-      height: 0;
-      margin-bottom: 2rem;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-
-    .project-page .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      aspect-ratio: 16 / 9;
       border: none;
-      pointer-events: auto; /* Permet l'interaction avec la vidéo */
+      border-radius: 8px;
+      display: block;
+      pointer-events: none;
     }
-
-    .project-page h3 {
-      margin-top: 2rem;
-      color: var(--accent-color);
-    }
-
-    .project-page ul {
-      list-style: none;
-      padding: 0;
-      margin-bottom: 2rem;
-    }
-
-    .project-page ul li {
-      margin-bottom: 0.5rem;
-      display: flex;
-      align-items: flex-start;
-      gap: 0.8rem;
-    }
-
-    .project-page ul li i {
-      color: var(--icon-color);
-      font-size: 1.2rem;
-      margin-top: 0.2rem;
-    }
-
-    .project-page .back-button {
-      display: inline-block;
-      background-color: var(--button-bg);
-      color: var(--button-text);
-      padding: 10px 20px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-family: 'Bebas Neue', sans-serif;
-      letter-spacing: 1px;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-      margin-top: 2rem;
-    }
-
-    .project-page .back-button:hover {
-      background-color: var(--button-hover-bg);
-      transform: translateY(-2px);
-    }
-
 
     /* Styles pour la galerie photo */
     .photo-category {
@@ -1087,7 +1054,7 @@
         }
         .lightbox-content.zoomed { transform: scale(1.5); }
         .contact-info p, .skill-item { font-size: 1rem; }
-        .contact-info i, .skill-item i { font-size: 1.4rem; }
+        .contact-info i { font-size: 1.4rem; }
         .contact-form input, .contact-form textarea {
             width: calc(100% - 20px);
             padding: 8px;
@@ -1141,512 +1108,448 @@
             font-size: 0.9rem;
         }
     }
-  </style>
+
+    /* Styles pour la modale vidéo améliorée */
+    .video-lightbox-content {
+      background-color: #1a1a1a;
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 900px;
+      width: 90%;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      color: white;
+    }
+
+    #videoModal iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .video-description h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .video-description p {
+      margin: 5px 0;
+    }
+
+    /* NOUVEAU: Styles pour la Lightbox Instagram */
+    .instagram-popup {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 90%; /* Largeur responsive */
+        max-width: 600px; /* Largeur maximale pour les grands écrans */
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        position: relative;
+        border-radius: 12px;
+        text-align: center;
+        animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.95); }
+        to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Le bouton de fermeture est partagé avec .close-button */
+    .instagram-popup .close-button {
+        color: #aaa; /* Couleur spécifique pour le bouton de fermeture de l'Instagram popup */
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+        background-color: transparent; /* Pas de fond pour ce bouton */
+        box-shadow: none; /* Pas d'ombre */
+    }
+
+    .instagram-popup .close-button:hover,
+    .instagram-popup .close-button:focus {
+        color: black; /* Couleur au survol */
+        background-color: transparent;
+    }
+
+    #instagramPostContainer {
+        margin-top: 20px;
+    }
+
+    #instagramPostContainer img,
+    #instagramPostContainer video {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto 15px auto; /* Centré, avec espace en dessous */
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    #instagramPostContainer p {
+        font-size: 1.1em;
+        color: #333;
+        line-height: 1.5;
+        margin-bottom: 10px;
+    }
+
+    #instagramPostContainer a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    #instagramPostContainer a:hover {
+        text-decoration: underline;
+    }
+
+    #instagramPostContainer h3 {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #222;
+    }
+
+    /* Styles pour le bouton Instagram dans la nav */
+    .instagram-button {
+        display: inline-block;
+        background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); /* Dégradé Instagram */
+        color: white;
+        padding: 12px 25px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: transform 0.2s ease, box-shadow 0.3s ease;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .instagram-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    }
+
+    .instagram-button i {
+        font-size: 1.2em;
+    }
+</style>
 </head>
 <body>
-  <div id="loader">
-    <img src="unnamed.jpg" alt="Logo Jérémie Favre, portrait stylisé de Jérémie Favre dans un cercle sur fond neutre, ambiance professionnelle et épurée" style="border-radius:50%; width:120px; height:120px; object-fit:cover; background:#f4f4f4;">
-    <h1>Jérémie FAVRE</h1>
-    <p>Vidéaste</p>
-  </div>
-
-  <header>
-    <div class="top-banner">VIDÉASTE - CADREUR MONTEUR</div>
-    <div class="header-content">
-      <div class="profile-photo">
-        <img src="unnamed.jpg" alt="Portrait de Jérémie Favre souriant, regardant l'objectif, centré dans un cercle à fond neutre, ambiance professionnelle et chaleureuse" style="width:100%; height:100%; object-fit:cover; object-position:center;">
-      </div>
-      <h1>Jérémie FAVRE</h1>
-      <p>Vidéaste basé à La Réunion</p>
-    </div>
-  </header>
-
-  <nav>
-    <ul>
-      <li><a href="#about">À propos</a></li>
-      <li><a href="#skills">Mon Expertise</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#photos">Vitrine Photo</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <button id="theme-toggle" aria-label="Basculer le thème clair/sombre">
-      <i class="fas fa-moon" id="theme-icon"></i>
+<div id="loader">
+<img alt="Logo Jérémie Favre, portrait stylisé de Jérémie Favre dans un cercle sur fond neutre, ambiance professionnelle et épurée" src="unnamed.jpg" style="border-radius:50%; width:120px; height:120px; object-fit:cover; background:#f4f4f4;"/>
+<h1>Jérémie FAVRE</h1>
+<p>Portfolio</p>
+</div>
+<header>
+<div class="top-banner">VIDÉASTE - CADREUR MONTEUR</div>
+<div class="header-content">
+<div class="profile-photo">
+<img alt="Portrait de Jérémie Favre souriant, regardant l'objectif, centré dans un cercle à fond neutre, ambiance professionnelle et chaleureuse" src="unnamed.jpg" style="width:100%; height:100%; object-fit:cover; object-position:center;"/>
+</div>
+<h1>Jérémie FAVRE</h1>
+<p style="
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0 0 0rem 0;
+  color: var(--accent-color);
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1.5px;
+  text-shadow: 1px 2px 8px rgba(0,0,0,0.10);
+  background: linear-gradient(90deg, #e0e0e0 0%, #bdbdbd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  padding: 0 10px;
+  border-radius: 6px;
+">
+  Raconter le monde, un plan à la fois.
+</p>
+<div class="social-links">
+<a aria-label="Instagram" href="https://www.instagram.com/j3remie_fvr" target="_blank"><i class="fab fa-instagram"></i></a>
+<a aria-label="LinkedIn" href="https://www.linkedin.com/in/jérémie-favre-a402a9239/" target="_blank"><i class="fab fa-linkedin"></i></a>
+<a aria-label="TikTok" href="https://www.tiktok.com/@jerem_fvr" target="_blank"><i class="fab fa-tiktok"></i></a>
+</div>
+</div>
+</header>
+<nav>
+<ul>
+<li><a href="#about">À propos</a></li>
+<li><a href="#skills">Mon Expertise</a></li>
+<li><a href="#portfolio">Portfolio</a></li>
+<li><a href="#photos">Vitrine Photo</a></li>
+<li><a href="#contact">Contact</a></li>
+<!-- NOUVEAU: Bouton pour ouvrir la Lightbox Instagram -->
+<li>
+    <button class="instagram-button" id="openInstagramLightboxBtn">
+        <i class="fab fa-instagram"></i> Mon dernier post
     </button>
-  </nav>
-
-  <div class="main-content">
-    <section id="about">
-      <h2>À propos de ma démarche</h2>
-      <p>
-        Animé par la passion de l'image et du mouvement, je suis Jérémie Favre, vidéaste basé à La Réunion. Ma démarche créative consiste à transformer des idées en récits visuels captivants. Que ce soit pour des clips dynamiques, des documentaires immersifs ou des publicités percutantes, je m'engage à donner vie à chaque projet, de la conception à la post-production.<br>
-        Mon expertise s'étend de la coordination complète des tournages à la maîtrise des prises de vue aériennes avec drone stabilisé et FPV, offrant des perspectives uniques à vos projets.
+</li>
+</ul>
+<button aria-label="Basculer le thème clair/sombre" id="theme-toggle">
+<i class="fas fa-moon" id="theme-icon"></i>
+</button>
+</nav>
+<div class="main-content">
+<section id="about">
+<h2>À propos de moi</h2>
+<p>
+        Passionné par l'image et le mouvement, je suis Jérémie Favre, vidéaste indépendant basé à La Réunion. J'aime transformer des idées en récits visuels et donner vie à chaque projet, de la conception à la post-production.<br/>
+        J'explore la coordination des tournages et la prise de vue aérienne avec drone stabilisé ou FPV, pour apporter des perspectives originales à vos projets.
       </p>
-    </section>
-
-    <section id="skills">
-      <h2>Mon Expertise</h2>
-      <div class="skills-grid">
-        <div>
-          <h3>Mes Outils Créatifs</h3>
-          <div class="skill-item"><i class="fab fa-adobe"></i> Premiere Pro : Maîtrise du montage vidéo professionnel.</div>
-          <div class="skill-item"><i class="fab fa-adobe"></i> After Effects : Création d'effets visuels et animations.</div>
-          <div class="skill-item"><i class="fab fa-adobe"></i> Photoshop : Retouche d'image et conception graphique.</div>
-          <div class="skill-item"><i class="fab fa-adobe"></i> Lightroom : Optimisation et catalogage des images.</div>
-          <div class="skill-item"><i class="fas fa-video"></i> Production Vidéo : De l'idée au produit final.</div>
-          <div class="skill-item"><i class="fas fa-film"></i> Montage Vidéo : Narration visuelle et rythme.</div>
-          <div class="skill-item"><i class="fas fa-drone"></i> Pilotage Drone : Perspectives aériennes uniques.</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="portfolio" class="section-white">
-      <h2>Portfolio Vidéo</h2>
-      <div class="gallery">
-        <div class="video">
-          <a href="#project-livre-du-destin">
-            <img src="https://placehold.co/300x180/333/fff?text=Livre+du+Destin" alt="Miniature de la vidéo Livre du Destin" style="width:100%; aspect-ratio:16/9; border-radius:8px; display:block;">
-            <div class="video-title">LIVRE DU DESTIN Court metrage</div>
-          </a>
-        </div>
-
-        <div class="video">
-          <a href="#project-aurora">
-            <img src="https://placehold.co/300x180/333/fff?text=Aurora" alt="Miniature de la vidéo Aurora" style="width:100%; aspect-ratio:16/9; border-radius:8px; display:block;">
-            <div class="video-title">AURORA - Court Métrages</div>
-          </a>
-        </div>
-
-        <div class="video">
-          <a href="#project-venum">
-            <img src="https://placehold.co/300x180/333/fff?text=Venum+PUB" alt="Miniature de la vidéo Venum - PUB" style="width:100%; aspect-ratio:16/9; border-radius:8px; display:block;">
-            <div class="video-title">Venum - PUB</div>
-          </a>
-        </div>
-
-        <div class="video">
-          <a href="#project-restaurant-le-leon">
-            <img src="https://placehold.co/300x180/333/fff?text=Restaurant+Le+Leon" alt="Miniature de la vidéo Restaurant LE LEON" style="width:100%; aspect-ratio:16/9; border-radius:8px; display:block;">
-            <div class="video-title">Restaurant LE LEON</div>
-          </a>
-        </div>
-
-        <div class="video">
-          <a href="#project-stephanie-valmorex">
-            <img src="https://placehold.co/300x180/333/fff?text=Stephanie+Valmorex" alt="Miniature de la vidéo Portrait de Stéphanie Valmorex" style="width:100%; aspect-ratio:16/9; border-radius:8px; display:block;">
-            <div class="video-title">Portrait de Stéphanie Valmorex</div>
-          </a>
-        </div>
-
-        <div class="video">
-          <a href="#project-kidnapink">
-            <img src="https://placehold.co/300x180/333/fff?text=KidnaPink" alt="Miniature de la vidéo KidnaPink Final Officiel" style="width:100%; aspect-ratio:16/9; border-radius:8px; display:block;">
-            <div class="video-title">KidnaPink Final Officiel</div>
-          </a>
-        </div>
-
-        <div class="video">
-          <a href="#project-alone">
-            <img src="https://placehold.co/300x180/333/fff?text=ALONE" alt="Miniature de la vidéo ALONE" style="width:100%; aspect-ratio:16/9; border-radius:8px; display:block;">
-            <div class="video-title">ALONE</div>
-          </a>
-        </div>
-
-        <div class="video">
-          <a href="#project-diabetique">
-            <img src="https://placehold.co/300x180/333/fff?text=Dessert+Diabetique" alt="Miniature de la vidéo Dessert spécial diabétique" style="width:100%; aspect-ratio:16/9; border-radius:8px; display:block;">
-            <div class="video-title">Dessert spécial diabétique - Ensemble contre le diabète ( Julien LEVENEUR )</div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section id="project-livre-du-destin" class="project-page hidden-project">
-      <h2>LIVRE DU DESTIN - Court métrage</h2>
-      <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="LIVRE DU DESTIN Court metrage" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-      <h3>Contexte du projet</h3>
-      <p>Ce court métrage a été réalisé dans le cadre d'un projet personnel/professionnel visant à explorer des techniques narratives et visuelles innovantes. L'objectif était de créer une atmosphère immersive et de raconter une histoire complexe en un temps limité.</p>
-
-      <h3>Mon rôle exact</h3>
-      <ul>
-        <li><i class="fas fa-camera"></i> Cadreur principal</li>
-        <li><i class="fas fa-cut"></i> Monteur vidéo</li>
-        <li><i class="fas fa-lightbulb"></i> Co-scénariste et directeur artistique</li>
-      </ul>
-
-      <h3>Outils utilisés</h3>
-      <ul>
-        <li><i class="fab fa-adobe"></i> Adobe Premiere Pro (montage)</li>
-        <li><i class="fab fa-adobe"></i> Adobe After Effects (effets spéciaux)</li>
-        <li><i class="fas fa-camera"></i> Caméra Sony FX3</li>
-        <li><i class="fas fa-microphone"></i> Kit audio Rode NTG2</li>
-      </ul>
-
-      <h3>Coulisses / Making-of</h3>
-      <p>Le tournage a duré 3 jours intenses, avec une équipe réduite mais passionnée. Nous avons dû faire face à des défis logistiques, notamment la gestion de l'éclairage naturel et la coordination des acteurs dans des environnements variés. Le plus grand challenge a été de synchroniser les effets visuels complexes avec les prises de vue réelles pour un rendu fluide et crédible. Vous pouvez voir quelques photos des coulisses ci-dessous.</p>
-      <a href="#portfolio" class="back-button">Retour au Portfolio</a>
-    </section>
-
-    <section id="project-aurora" class="project-page hidden-project">
-      <h2>AURORA - Court Métrages</h2>
-      <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="AURORA - Court Métrages" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-      <h3>Contexte du projet</h3>
-      <p>Aurora est un court métrage expérimental explorant les thèmes de la solitude et de la reconnexion avec la nature. Il a été tourné dans des paysages grandioses pour accentuer le sentiment d'isolement et la beauté brute de l'environnement.</p>
-
-      <h3>Mon rôle exact</h3>
-      <ul>
-        <li><i class="fas fa-video"></i> Réalisateur</li>
-        <li><i class="fas fa-camera"></i> Cadreur principal</li>
-        <li><i class="fab fa-adobe"></i> Étalonneur (DaVinci Resolve)</li>
-      </ul>
-
-      <h3>Outils utilisés</h3>
-      <ul>
-        <li><i class="fab fa-adobe"></i> DaVinci Resolve (étalonnage)</li>
-        <li><i class="fab fa-adobe"></i> Adobe Premiere Pro (montage)</li>
-        <li><i class="fas fa-camera"></i> Blackmagic Pocket Cinema Camera 6K</li>
-        <li><i class="fas fa-drone"></i> DJI Mavic 3 (prises de vue aériennes)</li>
-      </ul>
-
-      <h3>Coulisses / Making-of</h3>
-      <p>Les conditions de tournage étaient parfois difficiles en raison des variations météorologiques en montagne. Nous avons dû être très flexibles et adapter nos plans en fonction de la lumière et des intempéries. L'utilisation du drone a permis d'obtenir des plans époustouflants qui renforcent l'immersion. Une anecdote amusante : nous avons failli perdre le drone à cause d'un vent inattendu !</p>
-      <a href="#portfolio" class="back-button">Retour au Portfolio</a>
-    </section>
-
-    <section id="project-venum" class="project-page hidden-project">
-      <h2>Venum - PUB</h2>
-      <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Venum - PUB" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-      <h3>Contexte du projet</h3>
-      <p>Cette publicité pour Venum visait à capturer l'énergie et la puissance de la marque à travers des scènes dynamiques d'entraînement et de combat. L'objectif était de produire un contenu percutant pour les réseaux sociaux et les campagnes marketing.</p>
-
-      <h3>Mon rôle exact</h3>
-      <ul>
-        <li><i class="fas fa-camera"></i> Cadreur principal</li>
-        <li><i class="fas fa-cut"></i> Monteur (coupes rapides et dynamiques)</li>
-        <li><i class="fas fa-lightbulb"></i> Consultant créatif pour la mise en scène</li>
-      </ul>
-
-      <h3>Outils utilisés</h3>
-      <ul>
-        <li><i class="fab fa-adobe"></i> Adobe Premiere Pro (montage rapide)</li>
-        <li><i class="fas fa-camera"></i> Sony Alpha 7S III</li>
-        <li><i class="fas fa-grip-horizontal"></i> Stabilisateur Ronin SC</li>
-      </ul>
-
-      <h3>Coulisses / Making-of</h3>
-      <p>Le tournage a eu lieu dans une salle de sport, nécessitant une gestion précise de l'éclairage pour mettre en valeur les athlètes et les produits. Nous avons utilisé des mouvements de caméra fluides et rapides pour accentuer l'intensité des scènes. La post-production a mis l'accent sur un étalonnage des couleurs percutant et des effets sonores immersifs.</p>
-      <a href="#portfolio" class="back-button">Retour au Portfolio</a>
-    </section>
-
-    <section id="project-restaurant-le-leon" class="project-page hidden-project">
-      <h2>Restaurant LE LEON</h2>
-      <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Restaurant LE LEON" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-      <h3>Contexte du projet</h3>
-      <p>Création d'une vidéo promotionnelle pour le restaurant LE LEON, mettant en avant l'ambiance, la cuisine et l'expérience client. L'objectif était de susciter l'envie et de donner un aperçu authentique de l'établissement.</p>
-
-      <h3>Mon rôle exact</h3>
-      <ul>
-        <li><i class="fas fa-video"></i> Réalisateur</li>
-        <li><i class="fas fa-camera"></i> Cadreur (focus sur la nourriture et l'ambiance)</li>
-        <li><i class="fas fa-cut"></i> Monteur</li>
-      </ul>
-
-      <h3>Outils utilisés</h3>
-      <ul>
-        <li><i class="fab fa-adobe"></i> Adobe Premiere Pro</li>
-        <li><i class="fas fa-camera"></i> Canon EOS R5</li>
-        <li><i class="fas fa-lightbulb"></i> Kit d'éclairage LED</li>
-      </ul>
-
-      <h3>Coulisses / Making-of</h3>
-      <p>Le défi principal a été de capturer la fraîcheur des plats et l'atmosphère chaleureuse du restaurant sans perturber le service. Nous avons travaillé en étroite collaboration avec le chef pour filmer la préparation des plats, en mettant l'accent sur les détails et les textures. Le tournage s'est déroulé sur une journée, avec une attention particulière à la lumière naturelle.</p>
-      <a href="#portfolio" class="back-button">Retour au Portfolio</a>
-    </section>
-
-    <section id="project-stephanie-valmorex" class="project-page hidden-project">
-      <h2>Portrait de Stéphanie Valmorex</h2>
-      <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Portrait de Stéphanie Valmorex" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-      <h3>Contexte du projet</h3>
-      <p>Réalisation d'un portrait vidéo intime et inspirant de Stéphanie Valmorex, mettant en lumière son parcours, ses passions et son message. Le but était de créer une connexion émotionnelle avec le spectateur.</p>
-
-      <h3>Mon rôle exact</h3>
-      <ul>
-        <li><i class="fas fa-video"></i> Réalisateur</li>
-        <li><i class="fas fa-microphone"></i> Ingénieur du son (prise de son des interviews)</li>
-        <li><i class="fas fa-cut"></i> Monteur (narration et rythme)</li>
-      </ul>
-
-      <h3>Outils utilisés</h3>
-      <ul>
-        <li><i class="fab fa-adobe"></i> Adobe Premiere Pro</li>
-        <li><i class="fas fa-camera"></i> Sony A7 III</li>
-        <li><i class="fas fa-microphone"></i> Micro cravate Sennheiser</li>
-      </ul>
-
-      <h3>Coulisses / Making-of</h3>
-      <p>Les interviews ont été le cœur de ce projet, nécessitant une approche délicate pour mettre Stéphanie à l'aise et capturer son authenticité. Nous avons choisi des lieux de tournage qui reflétaient sa personnalité et ses activités. Le montage a été un processus méticuleux pour tisser les témoignages et les images en un récit cohérent et émouvant.</p>
-      <a href="#portfolio" class="back-button">Retour au Portfolio</a>
-    </section>
-
-    <section id="project-kidnapink" class="project-page hidden-project">
-      <h2>KidnaPink Final Officiel</h2>
-      <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="KidnaPink Final Officiel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-      <h3>Contexte du projet</h3>
-      <p>KidnaPink est un projet créatif et humoristique, un court métrage décalé qui joue avec les codes du genre. L'objectif était de divertir et de surprendre le public avec une histoire originale et une réalisation dynamique.</p>
-
-      <h3>Mon rôle exact</h3>
-      <ul>
-        <li><i class="fas fa-camera"></i> Cadreur</li>
-        <li><i class="fab fa-adobe"></i> Spécialiste After Effects (effets visuels comiques)</li>
-        <li><i class="fas fa-film"></i> Assistant réalisateur</li>
-      </ul>
-
-      <h3>Outils utilisés</h3>
-      <ul>
-        <li><i class="fab fa-adobe"></i> Adobe Premiere Pro</li>
-        <li><i class="fab fa-adobe"></i> Adobe After Effects</li>
-        <li><i class="fas fa-camera"></i> Canon C200</li>
-      </ul>
-
-      <h3>Coulisses / Making-of</h3>
-      <p>Le tournage de KidnaPink a été un vrai plaisir, avec beaucoup d'improvisation et de fous rires. Les défis techniques étaient liés aux effets spéciaux, que nous avons voulu exagérés pour coller au ton humoristique. Nous avons passé beaucoup de temps en post-production à affiner le timing des gags et les animations.</p>
-      <a href="#portfolio" class="back-button">Retour au Portfolio</a>
-    </section>
-
-    <section id="project-alone" class="project-page hidden-project">
-      <h2>ALONE</h2>
-      <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="ALONE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-      <h3>Contexte du projet</h3>
-      <p>ALONE est un court métrage d'ambiance, une exploration visuelle de la solitude et de la contemplation dans des environnements désertiques. L'objectif était de créer une expérience immersive et méditative pour le spectateur.</p>
-
-      <h3>Mon rôle exact</h3>
-      <ul>
-        <li><i class="fas fa-video"></i> Réalisateur</li>
-        <li><i class="fas fa-camera"></i> Cadreur (plans larges et contemplatifs)</li>
-        <li><i class="fas fa-cut"></i> Monteur (rythme lent et atmosphérique)</li>
-      </ul>
-
-      <h3>Outils utilisés</h3>
-      <ul>
-        <li><i class="fab fa-adobe"></i> Adobe Premiere Pro</li>
-        <li><i class="fas fa-camera"></i> Sony A7S II</li>
-        <li><i class="fas fa-grip-horizontal"></i> Trépied et slider pour mouvements lents</li>
-      </ul>
-
-      <h3>Coulisses / Making-of</h3>
-      <p>Le tournage en milieu désertique a présenté des défis uniques, notamment la chaleur extrême et la gestion de la poussière pour protéger le matériel. Nous avons privilégié les heures dorées pour capturer la lumière la plus dramatique, ce qui a souvent impliqué des réveils très matinaux. Le son a également joué un rôle crucial pour renforcer l'ambiance.</p>
-      <a href="#portfolio" class="back-button">Retour au Portfolio</a>
-    </section>
-
-    <section id="project-diabetique" class="project-page hidden-project">
-      <h2>Dessert spécial diabétique - Ensemble contre le diabète ( Julien LEVENEUR )</h2>
-      <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Dessert spécial diabétique" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-      <h3>Contexte du projet</h3>
-      <p>Cette vidéo a été réalisée en collaboration avec Julien Leveneur pour la campagne "Ensemble contre le diabète", présentant une recette de dessert adaptée. L'objectif était d'informer et d'inspirer les personnes atteintes de diabète avec des options gourmandes et saines.</p>
-
-      <h3>Mon rôle exact</h3>
-      <ul>
-        <li><i class="fas fa-camera"></i> Cadreur (focus sur la préparation culinaire)</li>
-        <li><i class="fas fa-cut"></i> Monteur (clarté des étapes et dynamisme)</li>
-        <li><i class="fas fa-lightbulb"></i> Consultant pour la mise en scène culinaire</li>
-      </ul>
-
-      <h3>Outils utilisés</h3>
-      <ul>
-        <li><i class="fab fa-adobe"></i> Adobe Premiere Pro</li>
-        <li><i class="fas fa-camera"></i> Panasonic GH5</li>
-        <li><i class="fas fa-lightbulb"></i> Lumières de studio pour la nourriture</li>
-      </ul>
-
-      <h3>Coulisses / Making-of</h3>
-      <p>Le tournage d'une recette demande de la précision et une bonne organisation pour suivre toutes les étapes. Nous avons mis en place un éclairage spécifique pour sublimer les ingrédients et le plat final. La voix-off de Julien a été enregistrée séparément pour garantir une clarté optimale. Le plus agréable a été de goûter le dessert à la fin du tournage !</p>
-      <a href="#portfolio" class="back-button">Retour au Portfolio</a>
-    </section>
-    <section id="photos">
-      <h2>Vitrine Photo</h2>
-      <div class="photo-categories-container">
-
-        <div class="photo-category">
-          <h3 class="category-title">Photo Aérienne</h3>
-          <div class="carousel-container" id="carousel-aerienne">
-            <div class="carousel-track">
-              <div class="photo-item">
-                <a href="images/Drone/DJI_0457.jpg" data-src-large="images/Drone/DJI_0457.jpg" class="photo-lightbox-trigger">
-                  <img src="images/Drone/DJI_0457.jpg" alt="Vue aérienne d'une ville côtière avec plage et vagues turquoise.">
-                </a>
-                <div class="photo-title">Bleu Infini</div>
-              </div>
-              <div class="photo-item">
-                <a href="images/Drone/DJI_0459.jpg" data-src-large="images/Drone/DJI_0459.jpg" class="photo-lightbox-trigger">
-                  <img src="images/Drone/DJI_0459.jpg" alt="Vagues turquoise roulant vers une plage de sable bordée d'un brise-lames et d'une marina remplie de bateaux, maisons résidentielles et collines verdoyantes en arrière-plan sous un ciel partiellement nuageux, atmosphère côtière calme et étendue.">
-                </a>
-                <div class="photo-title">Azur & Rivages</div>
-              </div>
-              <div class="photo-item">
-                <a href="images/Drone/DJI_0460.jpg" data-src-large="images/Drone/DJI_0460.jpg" class="photo-lightbox-trigger">
-                  <img src="images/Drone/DJI_0460.jpg" alt="Ville côtière bordée par l'océan turquoise avec des vagues douces, une plage de sable, une marina avec des bateaux, et des maisons nichées parmi des collines verdoyantes sous un ciel partiellement nuageux, atmosphère tranquille et étendue.">
-                </a>
-                <div class="photo-title">Émeraude Côtière</div>
-              </div>
-              <div class="photo-item">
-                <a href="images/Drone/DJI_0466.jpg" data-src-large="images/Drone/DJI_0466.jpg" class="photo-lightbox-trigger">
-                  <img src="images/Drone/DJI_0466.jpg" alt="White catamaran boat floating alone on deep blue ocean water viewed from above with sunlight reflecting on the waves, creating a sense of tranquility and vastness">
-                </a>
-                <div class="photo-title">Solitude Bleue</div>
-              </div>
-            </div>
-            <div class="carousel-nav-buttons">
-              <button class="carousel-nav-button prev-button" data-carousel="aerienne"><i class="fas fa-chevron-left"></i></button>
-              <button class="carousel-nav-button next-button" data-carousel="aerienne"><i class="fas fa-chevron-right"></i></button>
-            </div>
-          </div>
-        </div>
-
-        <div class="photo-category">
-          <h3 class="category-title">Portrait</h3>
-          <div class="carousel-container" id="carousel-portrait">
-            <div class="carousel-track">
-              <div class="photo-item">
-                <a href="https://placehold.co/600x400/333/fff?text=Portrait+1" data-src-large="https://placehold.co/1200x800/333/fff?text=Portrait+1+Large" class="photo-lightbox-trigger">
-                  <img src="https://placehold.co/300x180/333/fff?text=Portrait+1" alt="Portrait 1">
-                </a>
-                <div class="photo-title">Portrait 1</div>
-              </div>
-              <div class="photo-item">
-                <a href="https://placehold.co/600x400/333/fff?text=Portrait+2" data-src-large="https://placehold.co/1200x800/333/fff?text=Portrait+2+Large" class="photo-lightbox-trigger">
-                  <img src="https://placehold.co/300x180/333/fff?text=Portrait+2" alt="Portrait 2">
-                </a>
-                <div class="photo-title">Portrait 2</div>
-              </div>
-              <div class="photo-item">
-                <a href="https://placehold.co/600x400/333/fff?text=Portrait+3" data-src-large="https://placehold.co/1200x800/333/fff?text=Portrait+3+Large" class="photo-lightbox-trigger">
-                  <img src="https://placehold.co/300x180/333/fff?text=Portrait+3" alt="Portrait 3">
-                </a>
-                <div class="photo-title">Portrait 3</div>
-              </div>
-              <div class="photo-item">
-                <a href="https://placehold.co/600x400/333/fff?text=Portrait+4" data-src-large="https://placehold.co/1200x800/333/fff?text=Portrait+4+Large" class="photo-lightbox-trigger">
-                  <img src="https://placehold.co/300x180/333/fff?text=Portrait+4" alt="Portrait 4">
-                </a>
-                <div class="photo-title">Portrait 4</div>
-              </div>
-            </div>
-            <div class="carousel-nav-buttons">
-              <button class="carousel-nav-button prev-button" data-carousel="portrait"><i class="fas fa-chevron-left"></i></button>
-              <button class="carousel-nav-button next-button" data-carousel="portrait"><i class="fas fa-chevron-right"></i></button>
-            </div>
-          </div>
-        </div>
-
-        <div class="photo-category">
-          <h3 class="category-title">Paysage</h3>
-          <div class="carousel-container" id="carousel-paysage">
-            <div class="carousel-track">
-              <div class="photo-item">
-                <a href="https://placehold.co/600x400/333/fff?text=Paysage+1" data-src-large="https://placehold.co/1200x800/333/fff?text=Paysage+1+Large" class="photo-lightbox-trigger">
-                  <img src="https://placehold.co/300x180/333/fff?text=Paysage+1" alt="Paysage 1">
-                </a>
-                <div class="photo-title">Paysage 1</div>
-              </div>
-              <div class="photo-item">
-                <a href="https://placehold.co/600x400/333/fff?text=Paysage+2" data-src-large="https://placehold.co/1200x800/333/fff?text=Paysage+2+Large" class="photo-lightbox-trigger">
-                  <img src="https://placehold.co/300x180/333/fff?text=Paysage+2" alt="Paysage 2">
-                </a>
-                <div class="photo-title">Paysage 2</div>
-              </div>
-              <div class="photo-item">
-                <a href="https://placehold.co/600x400/333/fff?text=Paysage+3" data-src-large="https://placehold.co/1200x800/333/fff?text=Paysage+3+Large" class="photo-lightbox-trigger">
-                  <img src="https://placehold.co/300x180/333/fff?text=Paysage+3" alt="Paysage 3">
-                </a>
-                <div class="photo-title">Paysage 3</div>
-              </div>
-              <div class="photo-item">
-                <a href="https://placehold.co/600x400/333/fff?text=Paysage+4" data-src-large="https://placehold.co/1200x800/333/fff?text=Paysage+4+Large" class="photo-lightbox-trigger">
-                  <img src="https://placehold.co/300x180/333/fff?text=Paysage+4" alt="Paysage 4">
-                </a>
-                <div class="photo-title">Paysage 4</div>
-              </div>
-              <div class="photo-item">
-                <a href="https://placehold.co/600x400/333/fff?text=Paysage+5" data-src-large="https://placehold.co/1200x800/333/fff?text=Paysage+5+Large" class="photo-lightbox-trigger">
-                  <img src="https://placehold.co/300x180/333/fff?text=Paysage+5" alt="Paysage 5">
-                </a>
-                <div class="photo-title">Paysage 5</div>
-              </div>
-            </div>
-            <div class="carousel-nav-buttons">
-              <button class="carousel-nav-button prev-button" data-carousel="paysage"><i class="fas fa-chevron-left"></i></button>
-              <button class="carousel-nav-button next-button" data-carousel="paysage"><i class="fas fa-chevron-right"></i></button>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-  </div>
-
-  <section id="contact" class="contact section-white">
-    <h2>Contact <i id="contactToggleIcon" class="fas fa-chevron-down"></i></h2>
-    <div id="contactContent" class="contact-content">
-      <div class="contact-form">
-        <form action="https://formspree.io/f/mgvkgnjg" method="POST">
-          <label for="name">Nom :</label>
-          <input type="text" id="name" name="name" required aria-label="Votre nom">
-
-          <label for="email">Email :</label>
-          <input type="email" id="email" name="email" required aria-label="Votre adresse email">
-
-          <label for="message">Message :</label>
-          <textarea id="message" name="message" rows="5" required aria-label="Votre message"></textarea>
-
-          <button type="submit">Envoyer le message</button>
-        </form>
-        <div id="successMessage" class="success-message hidden">
-          <p>Votre message a été envoyé avec succès !</p>
-        </div>
-      </div>
-      <div class="contact-info" style="margin-top: 2rem;">
-        <p><i class="fas fa-envelope"></i> Email : <a href="mailto:contact@jeremiefavre.com">contact@jeremiefavre.com</a></p>
-        <p><i class="fab fa-instagram"></i> Instagram : <a href="https://instagram.com/j3remie_fvr" target="_blank" onclick="gtag('event', 'clic_instagram', { event_category: 'Réseaux sociaux', event_label: 'Instagram j3remie_fvr' });">@j3remie_fvr</a></p>
-        <p><i class="fas fa-map-marker-alt"></i> Basé à La Réunion</p>
-        <p><i class="fas fa-phone"></i> Téléphone : <a href="tel:+262693112398">0693112398</a></p>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2025 Jérémie FAVRE. Tous droits réservés.</p>
-  </footer>
-
-  <button id="back-to-top" title="Retour en haut"><i class="fas fa-arrow-up"></i></button>
-
-  <div id="lightbox" class="lightbox">
-    <span class="close-button">×</span>
-    <img class="lightbox-content zoomable" id="lightbox-image" src="" alt="Image agrandie">
-    <div id="lightbox-caption" class="lightbox-caption"></div>
-    <button class="lightbox-nav-button prev" id="lightbox-prev-btn"><i class="fas fa-chevron-left"></i></button>
-    <button class="lightbox-nav-button next" id="lightbox-next-btn"><i class="fas fa-chevron-right"></i></button>
-  </div>
-
-  <div id="offline-message">
+</section>
+<section id="skills">
+<h2>Mon Expertise</h2>
+<div class="skills-grid">
+<div>
+<h3>Mes Outils Créatifs</h3>
+<div class="skill-item"><i class="fas fa-cut"></i> Premiere Pro : Maîtrise du montage vidéo professionnel.</div>
+<div class="skill-item"><i class="fas fa-magic"></i> After Effects : Création d'effets visuels et animations.</div>
+<div class="skill-item"><i class="fas fa-image"></i> Photoshop : Retouche d'image et conception graphique.</div>
+<div class="skill-item"><i class="fas fa-adjust"></i> Lightroom : Optimisation et catalogage des images.</div>
+<div class="skill-item"><i class="fas fa-video"></i> Production Vidéo : De l'idée au produit final.</div>
+<div class="skill-item"><i class="fas fa-film"></i> Montage Vidéo : Narration visuelle et rythme.</div>
+<div class="skill-item"><i class="fas fa-helicopter"></i> Pilotage Drone : Perspectives aériennes uniques.</div>
+</div>
+</div>
+</section>
+<section class="section-white" id="portfolio">
+<h2>Portfolio Vidéo</h2>
+<div class="gallery">
+<div class="video" data-camera="RED SCARLET" data-date="2024" data-director="Loïc Bege - Jérémie Favre" data-iframe="https://www.youtube.com/embed/qtrdrRYwMoA" data-location="Parc des palmiers" data-title="LIVRE DU DESTIN">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/qtrdrRYwMoA"></iframe>
+<div class="video-title">LIVRE DU DESTIN Court metrage</div>
+</div>
+<div class="video" data-camera="RED SCARLET" data-date="2024" data-director="Wesley Themyr - Jérémie Favre - Dhiessene Virapin" data-iframe="https://www.youtube.com/embed/j_FrzbnDIuY" data-location="Plaine des sables" data-title="AURORA">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/j_FrzbnDIuY"></iframe>
+<div class="video-title">AURORA - Court Métrages</div>
+</div>
+<div class="video" data-camera="Sony A7 IV" data-date="2024" data-director="Jérémie Favre" data-iframe="https://www.youtube.com/embed/_q7MnK_2QFI" data-location="Parking sous terrain Saint-Leu" data-title="VENUM PUB">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/_q7MnK_2QFI"></iframe>
+<div class="video-title">Venum - PUB</div>
+</div>
+<div class="video" data-camera="Sony A7 IV + Sony A6700" data-date="2024" data-director="Jérémie Favre" data-iframe="https://www.youtube.com/embed/XOG37yLswio" data-location="Saint-Gilles" data-title="Restaurant LE LEON">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/XOG37yLswio"></iframe>
+<div class="video-title">Restaurant LE LEON</div>
+</div>
+<div class="video" data-camera="Sony A7 IV" data-date="2024" data-director="Jérémie Favre" data-iframe="https://www.youtube.com/embed/zZD8K0tTuzo" data-location="Champ de canne" data-title="Portrait Stéphanie Valmorex">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/zZD8K0tTuzo"></iframe>
+<div class="video-title">Portrait de Stéphanie Valmorex</div>
+</div>
+<div class="video" data-camera="Sony A7 IV" data-date="2024" data-director="Jérémie Favre" data-iframe="https://www.youtube.com/embed/9GQS8eGeZlk" data-location="Studio et extérieur" data-title="KidnaPink Final">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/9GQS8eGeZlk"></iframe>
+<div class="video-title">KidnaPink Final Officiel</div>
+</div>
+<div class="video" data-camera="Sony A7 IV" data-date="2024" data-director="Jérémie Favre" data-iframe="https://www.youtube.com/embed/6bbMbT8_QGE" data-location="Littoral Ouest" data-title="ALONE">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/6bbMbT8_QGE"></iframe>
+<div class="video-title">ALONE</div>
+</div>
+<div class="video" data-camera="Sony A7 III" data-date="2024" data-director="Jérémie Favre" data-iframe="https://www.youtube.com/embed/5S_ke4JsViI" data-location="Chez Julien Leveneur" data-title="Dessert Diabétique">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/5S_ke4JsViI"></iframe>
+<div class="video-title">Dessert spécial diabétique - Ensemble contre le diabète ( Julien LEVENEUR )</div>
+</div>
+</div>
+</section>
+<section id="photos">
+<h2>Vitrine Photo</h2>
+<div class="photo-categories-container">
+<div class="photo-category">
+<h3 class="category-title">Photo Aérienne</h3>
+<div class="carousel-container" id="carousel-aerienne">
+<div class="carousel-track">
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="images/Drone/DJI_0457.jpg" href="images/Drone/DJI_0457.jpg">
+<img alt="Vue aérienne d'une ville côtière avec plage et vagues turquoise." src="images/Drone/DJI_0457.jpg"/>
+</a>
+<div class="photo-title">Bleu Infini</div>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="images/Drone/DJI_0459.jpg" href="images/Drone/DJI_0459.jpg">
+<img alt="Vagues turquoise roulant vers une plage de sable bordée d'un brise-lames et d'une marina remplie de bateaux, maisons résidentielles et collines verdoyantes en arrière-plan sous un ciel partiellement nuageux, atmosphère côtière calme et étendue." src="images/Drone/DJI_0459.jpg"/>
+</a>
+<div class="photo-title">Azur & Rivages</div>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="images/Drone/DJI_0460.jpg" href="images/Drone/DJI_0460.jpg">
+<img alt="Ville côtière bordée par l'océan turquoise avec des vagues douces, une plage de sable, une marina avec des bateaux, et des maisons nichées parmi des collines verdoyantes sous un ciel partiellement nuageux, atmosphère tranquille et étendue." src="images/Drone/DJI_0460.jpg"/>
+</a>
+<div class="photo-title">Émeraude Côtière</div>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="images/Drone/DJI_0466.jpg" href="images/Drone/DJI_0466.jpg">
+<img alt="White catamaran boat floating alone on deep blue ocean water viewed from above with sunlight reflecting on the waves, creating a sense of tranquility and vastness" src="images/Drone/DJI_0466.jpg"/>
+</a>
+<div class="photo-title">Solitude Bleue</div>
+</div>
+</div>
+<div class="carousel-nav-buttons">
+<button class="carousel-nav-button prev-button" data-carousel="aerienne"><i class="fas fa-chevron-left"></i></button>
+<button class="carousel-nav-button next-button" data-carousel="aerienne"><i class="fas fa-chevron-right"></i></button>
+</div>
+</div>
+</div>
+<div class="photo-category">
+<h3 class="category-title">Portrait</h3>
+<div class="carousel-container" id="carousel-portrait">
+<div class="carousel-track">
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="https://placehold.co/1200x800/333/fff?text=Portrait+1+Large" href="https://placehold.co/600x400/333/fff?text=Portrait+1">
+<img alt="Portrait 1" src="https://placehold.co/300x180/333/fff?text=Portrait+1"/>
+</a>
+<div class="photo-title">Portrait 1</div>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="https://placehold.co/1200x800/333/fff?text=Portrait+2+Large" href="https://placehold.co/600x400/333/fff?text=Portrait+2">
+<img alt="Portrait 2" src="https://placehold.co/300x180/333/fff?text=Portrait+2"/>
+</a>
+<div class="photo-title">Portrait 2</div>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="https://placehold.co/1200x800/333/fff?text=Portrait+3+Large" href="https://placehold.co/600x400/333/fff?text=Portrait+3">
+<img alt="Portrait 3" src="https://placehold.co/300x180/333/fff?text=Portrait+3"/>
+</a>
+<div class="photo-title">Portrait 3</div>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="https://placehold.co/1200x800/333/fff?text=Portrait+4+Large" href="https://placehold.co/600x400/333/fff?text=Portrait+4">
+<img alt="Portrait 4" src="https://placehold.co/300x180/333/fff?text=Portrait+4"/>
+</a>
+<div class="photo-title">Portrait 4</div>
+</div>
+</div>
+<div class="carousel-nav-buttons">
+<button class="carousel-nav-button prev-button" data-carousel="portrait"><i class="fas fa-chevron-left"></i></button>
+<button class="carousel-nav-button next-button" data-carousel="portrait"><i class="fas fa-chevron-right"></i></button>
+</div>
+</div>
+</div>
+<div class="photo-category">
+<h3 class="category-title">Paysage</h3>
+<div class="carousel-container" id="carousel-paysage">
+<div class="carousel-track">
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="https://placehold.co/1200x800/333/fff?text=Paysage+1+Large" href="https://placehold.co/600x400/333/fff?text=Paysage+1">
+<img alt="Paysage 1" src="https://placehold.co/300x180/333/fff?text=Paysage+1"/>
+</a>
+<div class="photo-title">Paysage 1</div>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="https://placehold.co/1200x800/333/fff?text=Paysage+2+Large" href="https://placehold.co/600x400/333/fff?text=Paysage+2">
+<img alt="Paysage 2" src="https://placehold.co/300x180/333/fff?text=Paysage+2"/>
+</a>
+<div class="photo-title">Paysage 2</div>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="https://placehold.co/1200x800/333/fff?text=Paysage+3+Large" href="https://placehold.co/600x400/333/fff?text=Paysage+3">
+<img alt="Paysage 3" src="https://placehold.co/300x180/333/fff?text=Paysage+3"/>
+</a>
+<div class="photo-title">Paysage 3</div>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="https://placehold.co/1200x800/333/fff?text=Paysage+4+Large" href="https://placehold.co/600x400/333/fff?text=Paysage+4">
+<img alt="Paysage 4" src="https://placehold.co/300x180/333/fff?text=Paysage+4"/>
+</a>
+<div class="photo-title">Paysage 4</div>
+</div>
+<div class="photo-item">
+<a class="photo-lightbox-trigger" data-src-large="https://placehold.co/1200x800/333/fff?text=Paysage+5+Large" href="https://placehold.co/600x400/333/fff?text=Paysage+5">
+<img alt="Paysage 5" src="https://placehold.co/300x180/333/fff?text=Paysage+5"/>
+</a>
+<div class="photo-title">Paysage 5</div>
+</div>
+</div>
+<div class="carousel-nav-buttons">
+<button class="carousel-nav-button prev-button" data-carousel="paysage"><i class="fas fa-chevron-left"></i></button>
+<button class="carousel-nav-button next-button" data-carousel="paysage"><i class="fas fa-chevron-right"></i></button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<section class="contact section-white" id="contact">
+<h2>Contact <i class="fas fa-chevron-down" id="contactToggleIcon"></i></h2>
+<div class="contact-content" id="contactContent">
+<div class="contact-form">
+<form action="https://formspree.io/f/mgvkgnjg" method="POST">
+<label for="name">Nom :</label>
+<input aria-label="Votre nom" id="name" name="name" required="" type="text"/>
+<label for="email">Email :</label>
+<input aria-label="Votre adresse email" id="email" name="email" required="" type="email"/>
+<label for="message">Message :</label>
+<textarea aria-label="Votre message" id="message" name="message" required="" rows="5"></textarea>
+<button type="submit">Envoyer le message</button>
+</form>
+<div class="success-message hidden" id="successMessage">
+<p>Votre message a été envoyé avec succès !</p>
+</div>
+</div>
+<div class="contact-info" style="margin-top: 2rem;">
+<p><i class="fas fa-envelope"></i> Email : <a href="mailto:contact@jeremiefavre.com">contact@jeremiefavre.com</a></p>
+<p><i class="fab fa-instagram"></i> Instagram : <a href="https://instagram.com/j3remie_fvr" onclick="gtag('event', 'clic_instagram', { event_category: 'Réseaux sociaux', event_label: 'Instagram j3remie_fvr' });" target="_blank">@j3remie_fvr</a></p>
+<p><i class="fas fa-map-marker-alt"></i> Basé à La Réunion</p>
+<p><i class="fas fa-phone"></i> Téléphone : <a href="tel:+262693112398">0693112398</a></p>
+</div>
+</div>
+</section>
+<footer>
+<p>© 2025 Jérémie FAVRE. Tous droits réservés.</p>
+</footer>
+<button id="back-to-top" title="Retour en haut"><i class="fas fa-arrow-up"></i></button>
+<div class="lightbox" id="lightbox">
+<span class="close-button">×</span>
+<img alt="Image agrandie" class="lightbox-content zoomable" id="lightbox-image" src=""/>
+<div class="lightbox-caption" id="lightbox-caption"></div>
+<button class="lightbox-nav-button prev" id="lightbox-prev-btn"><i class="fas fa-chevron-left"></i></button>
+<button class="lightbox-nav-button next" id="lightbox-next-btn"><i class="fas fa-chevron-right"></i></button>
+</div>
+<div id="offline-message">
     Vous êtes hors ligne, certaines vidéos peuvent ne pas s’afficher.
   </div>
 
-  <script>
+<!-- Modale Vidéo améliorée (EXISTANT) -->
+<div class="lightbox" id="videoModal">
+<div class="video-popup" style="max-width:900px; width:90%; background:#000; border-radius:12px; overflow:hidden;">
+<div class="video-part" style="background:#000;">
+<iframe id="videoModalIframe" src="" allowfullscreen style="width:100%; height:500px; border:none; pointer-events:auto;"></iframe>
+</div>
+<div class="description-part" style="background:#f5f1e6; color:#111; padding:2rem; font-family:'Lato',sans-serif;">
+<h3 id="videoTitle" style="font-family:'Bebas Neue',sans-serif; font-size:2rem; margin-bottom:1rem; color:#222;"></h3>
+<p style="margin:0.5rem 0;">🎬 <strong>Réalisateur :</strong> <span id="videoDirector"></span></p>
+<p style="margin:0.5rem 0;">🎥 <strong>Matériel :</strong> <span id="videoCamera"></span></p>
+<p style="margin:0.5rem 0;">📍 <strong>Lieu :</strong> <span id="videoLocation"></span></p>
+<p style="margin:0.5rem 0;">🗓 <strong>Date :</strong> <span id="videoDate"></span></p>
+</div>
+</div>
+<span class="close-button" onclick="closeVideoModal()" style="position:absolute;top:30px;right:30px;font-size:2rem;color:white;cursor:pointer;">×</span>
+</div>
+
+<!-- NOUVEAU: Lightbox Instagram -->
+<div class="lightbox" id="instagramLightbox">
+    <div class="instagram-popup">
+        <span class="close-button" onclick="closeInstagramLightbox()">×</span>
+        <h3>Mon dernier post Instagram</h3>
+        <div id="instagramPostContainer">
+            <p>Chargement du post Instagram...</p>
+        </div>
+    </div>
+</div>
+
+<!-- Firebase SDKs - Ajoutez-les avant votre script principal -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+<!-- OU pour Cloud Firestore, si vous choisissez cela : -->
+<!-- <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script> -->
+
+<script>
     document.addEventListener('DOMContentLoaded', () => {
       // --- LOGIQUE DU THÈME CLAIR/SOMBRE ---
       const themeToggle = document.getElementById('theme-toggle');
@@ -1784,12 +1687,12 @@
             this.startAutoScroll();
           });
           window.addEventListener('resize', () => {
-            this.currentIndex = 0; // Reset index on resize for simpler logic
+            this.currentIndex = 0; // Réinitialiser l'index au redimensionnement pour une logique plus simple
             this.updateCarouselPosition();
             this.stopAutoScroll();
             this.startAutoScroll();
           });
-          // Initial calculation in case images are already loaded
+          // Calcul initial au cas où les images sont déjà chargées
           this.calculateItemsPerPage();
         }
 
@@ -1799,7 +1702,7 @@
               return;
           }
           const firstItem = this.photoItems[0];
-          // Ensure image is loaded before calculating width
+          // S'assurer que l'image est chargée avant de calculer la largeur
           if (firstItem && firstItem.querySelector('img') && !firstItem.querySelector('img').complete) {
               firstItem.querySelector('img').onload = () => this.updateCarouselPosition();
               return;
@@ -1811,12 +1714,12 @@
           if (itemWidth > 0 && containerWidth > 0) {
               if (window.innerWidth >= 992) {
                   this.itemsPerView = Math.floor(containerWidth / itemWidth);
-                  this.itemsPerView = Math.max(3, this.itemsPerView); // Minimum 3 items on large screens
+                  this.itemsPerView = Math.max(3, this.itemsPerView); // Minimum 3 éléments sur les grands écrans
               } else if (window.innerWidth >= 768) {
                   this.itemsPerView = Math.floor(containerWidth / itemWidth);
-                  this.itemsPerView = Math.max(2, this.itemsPerView); // Minimum 2 items on medium screens
+                  this.itemsPerView = Math.max(2, this.itemsPerView); // Minimum 2 éléments sur les écrans moyens
               } else {
-                  this.itemsPerView = 1; // 1 item on small screens
+                  this.itemsPerView = 1; // 1 élément sur les petits écrans
               }
               this.itemsPerView = Math.min(this.itemsPerView, this.photoItems.length);
           } else {
@@ -1881,7 +1784,7 @@
           this.lightbox = document.getElementById('lightbox');
           this.lightboxImage = document.getElementById('lightbox-image');
           this.lightboxCaption = document.getElementById('lightbox-caption');
-          this.closeLightboxBtn = document.querySelector('.close-button');
+          this.closeLightboxBtn = document.querySelector('.close-button'); // Utilise le sélecteur générique
           this.lightboxPrevBtn = document.getElementById('lightbox-prev-btn');
           this.lightboxNextBtn = document.getElementById('lightbox-next-btn');
 
@@ -2074,7 +1977,7 @@
           this.lightboxImage.addEventListener('mouseup', this.handleMouseUp.bind(this));
           this.lightboxImage.addEventListener('mouseleave', this.handleMouseLeave.bind(this));
 
-          // Touch events for mobile
+          // Événements tactiles pour mobile
           this.lightboxImage.addEventListener('touchstart', this.handleTouchStart.bind(this));
           this.lightboxImage.addEventListener('touchmove', this.handleTouchMove.bind(this));
           this.lightboxImage.addEventListener('touchend', this.handleTouchEnd.bind(this));
@@ -2083,11 +1986,11 @@
       new Lightbox();
 
       // --- LOGIQUE DE SUIVI DES CLICS SUR LES VIDÉOS ---
-      document.querySelectorAll('.video a').forEach(videoLink => { // Cible le lien à l'intérieur du .video
-        videoLink.addEventListener('click', () => {
-          const videoTitleElement = videoLink.querySelector('.video-title'); // Cherche le titre à l'intérieur du lien
+      document.querySelectorAll('.video').forEach(videoDiv => {
+        videoDiv.addEventListener('click', () => {
+          const videoTitleElement = videoDiv.querySelector('.video-title');
           const videoTitle = videoTitleElement ? videoTitleElement.textContent : 'Vidéo sans titre';
-          gtag('event', 'video_detail_view', { // Nouvel événement pour la vue de détail
+          gtag('event', 'video_play', {
             event_category: 'Vidéos',
             event_label: videoTitle
           });
@@ -2127,7 +2030,135 @@
             });
         });
       }
+
+    // Script pour modale vidéo enrichie (EXISTANT - Réorganisé pour être dans le même bloc de script)
+    document.querySelectorAll('.video').forEach(video => {
+      video.addEventListener('click', () => {
+        document.getElementById('videoModal').classList.add('active');
+        document.getElementById('videoModalIframe').src = video.dataset.iframe;
+        document.getElementById('videoTitle').textContent = video.dataset.title;
+        document.getElementById('videoDirector').textContent = video.dataset.director;
+        document.getElementById('videoCamera').textContent = video.dataset.camera;
+        document.getElementById('videoLocation').textContent = video.dataset.location;
+        document.getElementById('videoDate').textContent = video.dataset.date;
+        document.body.style.overflow = 'hidden';
+      });
     });
-  </script>
+
+    function closeVideoModal() {
+      document.getElementById('videoModal').classList.remove('active');
+      document.getElementById('videoModalIframe').src = "";
+      document.body.style.overflow = 'auto';
+    }
+
+    // NOUVEAU: Script pour Lightbox Instagram
+    // Votre configuration Firebase (REMPLACEZ AVEC VOTRE VRAIE CONFIG)
+    const firebaseConfig = {
+        apiKey: "AIzaSyAORWbN3pDEhMlpVz3Mb1uyJz_bM44w7JA",
+        authDomain: "portfolio-jeremie-favre.firebaseapp.com",
+        projectId: "portfolio-jeremie-favre",
+        storageBucket: "portfolio-jeremie-favre.firebasestorage.app",
+        messagingSenderId: "958529482559",
+        appId: "1:958529482559:web:e01cab1b4f86d437736d8a",
+        measurementId: "G-V8GS2X4LQP"
+    };
+
+    // Initialiser Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    // Obtenir une référence au service de base de données (Realtime Database)
+    const database = firebase.database();
+    // OU pour Cloud Firestore:
+    // const db = firebase.firestore(); // Décommentez et utilisez si vous préférez Firestore
+
+    // Obtenir les éléments de la Lightbox Instagram
+    const openInstagramLightboxBtn = document.getElementById('openInstagramLightboxBtn');
+    const instagramLightbox = document.getElementById('instagramLightbox');
+    const instagramPostContainer = document.getElementById('instagramPostContainer');
+
+    // Fonction pour ouvrir la Lightbox Instagram
+    function openInstagramLightbox() {
+        instagramLightbox.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Empêche le défilement du corps
+        fetchLatestInstagramPost(); // Charger le post lors de l'ouverture
+    }
+
+    // Fonction pour fermer la Lightbox Instagram
+    function closeInstagramLightbox() {
+        instagramLightbox.classList.remove('active');
+        document.body.style.overflow = 'auto'; // Rétablit le défilement
+        instagramPostContainer.innerHTML = '<p>Chargement du post Instagram...</p>'; // Réinitialiser le contenu
+    }
+
+    // Fonction pour récupérer le dernier post Instagram depuis Firebase
+    async function fetchLatestInstagramPost() {
+        instagramPostContainer.innerHTML = '<p>Chargement du post Instagram...</p>'; // Afficher le message de chargement
+
+        try {
+            // --- Pour Firebase Realtime Database ---
+            // Assurez-vous que vos données de post sont stockées sous 'instagram/latestPost'
+            const snapshot = await database.ref('instagram/latestPost').once('value');
+            const postData = snapshot.val();
+
+            if (postData) {
+                displayInstagramPost(postData);
+            } else {
+                instagramPostContainer.innerHTML = '<p>Aucun post Instagram trouvé dans Firebase. Veuillez vérifier votre configuration Firebase ou vos fonctions Cloud.</p>';
+            }
+
+            // --- Pour Cloud Firestore (si vous préférez) ---
+            /*
+            // Décommentez et utilisez si vous utilisez Firestore
+            const querySnapshot = await db.collection('instagramPosts')
+                                           .orderBy('timestamp', 'desc') // Assurez-vous d'avoir un champ 'timestamp'
+                                           .limit(1)
+                                           .get();
+
+            if (!querySnapshot.empty) {
+                const postData = querySnapshot.docs[0].data();
+                displayInstagramPost(postData);
+            } else {
+                instagramPostContainer.innerHTML = '<p>Aucun post Instagram trouvé dans Firestore.</p>';
+            }
+            */
+
+        } catch (error) {
+            console.error("Erreur lors de la récupération du post Instagram depuis Firebase:", error);
+            instagramPostContainer.innerHTML = '<p>Erreur lors du chargement du post. Veuillez réessayer plus tard.</p>';
+        }
+    }
+
+    // Fonction pour afficher le post Instagram dans la Lightbox
+    function displayInstagramPost(post) {
+        let htmlContent = `<h3>${post.caption ? post.caption.substring(0, 100) + '...' : 'Dernier post Instagram'}</h3>`; // Tronquer la légende pour le titre
+        if (post.media_type === 'IMAGE' || post.media_type === 'CAROUSEL_ALBUM') {
+            htmlContent += `<img src="${post.media_url}" alt="Instagram Post">`;
+        } else if (post.media_type === 'VIDEO') {
+            htmlContent += `<video controls src="${post.media_url}" style="max-width: 100%; height: auto;"></video>`;
+        }
+
+        if (post.caption) {
+            // Garder la légende complète sous le média
+            htmlContent += `<p>${post.caption}</p>`;
+        }
+        htmlContent += `<p><a href="${post.permalink}" target="_blank" rel="noopener noreferrer">Voir sur Instagram</a></p>`;
+
+        instagramPostContainer.innerHTML = htmlContent;
+    }
+
+    // Écouteurs d'événements pour la Lightbox Instagram
+    openInstagramLightboxBtn.addEventListener('click', openInstagramLightbox);
+
+    // Fermer la Lightbox si cliqué en dehors du contenu (pour les deux modales)
+    window.addEventListener('click', (event) => {
+        if (event.target === instagramLightbox) {
+            closeInstagramLightbox();
+        }
+        if (event.target === document.getElementById('videoModal')) { // ID de votre modale vidéo existante
+            closeVideoModal();
+        }
+    });
+
+</script>
 </body>
 </html>

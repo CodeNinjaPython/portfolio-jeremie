@@ -4,10 +4,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <script async="" data-cbid="9ca2ce88-942f-428b-9100-65869676c999" id="Cookiebot" src="https://consent.cookiebot.com/uc.js" type="text/javascript"></script>
   <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Jérémie FAVRE - Portfolio</title>
-  <meta content="Portfolio de Jérémie Favre, vidéaste et cadreur-monteur basé à La Réunion. Découvrez mes projets vidéo, compétences et contactez-me pour vos réalisations." name="description"/>
-  <meta content="Jérémie Favre, vidéaste, cadreur, monteur, La Réunion, production vidéo, after effects, premiere pro, drone, FPV, portfolio, vidéo, film, publicité" name="keywords"/>
+  <title>Jérémie FAVRE - Vidéaste à La Réunion | Portfolio vidéo, drone et photo</title>
+  <meta content="Jérémie Favre, vidéaste à La Réunion. Réalisation de clips, publicités, contenus sociaux, mariages, prises de vue drone et montage vidéo." name="description"/>
+  <meta content="Jérémie Favre, vidéaste La Réunion, cadreur monteur La Réunion, photographe mariage La Réunion, drone FPV, production vidéo, publicité, clip, portfolio vidéo" name="keywords"/>
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
   <link href="https://cdnjs.cloudflare.com" rel="preconnect"/>
@@ -18,10 +17,43 @@
   <meta content="Jérémie FAVRE - Vidéaste à La Réunion" property="og:title"/>
   <meta content="Découvrez le portfolio de Jérémie Favre, vidéaste et cadreur-monteur basé à La Réunion. Des clips dynamiques aux documentaires immersifs." property="og:description"/>
   <meta content="website" property="og:type"/>
-  <meta content="https://votre-site.com" property="og:url"/>
-  <meta content="https://votre-site.com/unnamed.jpg" property="og:image"/>
+  <link href="https://www.jeremiefavre.com/" rel="canonical"/>
+  <meta content="https://www.jeremiefavre.com/" property="og:url"/>
+  <meta content="https://www.jeremiefavre.com/unnamed.jpg" property="og:image"/>
   <meta content="Logo de Jérémie Favre" property="og:image:alt"/>
   <meta content="fr_FR" property="og:locale"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="Jérémie FAVRE - Vidéaste à La Réunion" name="twitter:title"/>
+  <meta content="Découvrez le portfolio de Jérémie Favre, vidéaste et cadreur-monteur basé à La Réunion. Des clips dynamiques aux documentaires immersifs." name="twitter:description"/>
+  <meta content="https://www.jeremiefavre.com/unnamed.jpg" name="twitter:image"/>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Jérémie Favre",
+      "jobTitle": "Vidéaste et cadreur-monteur",
+      "url": "https://www.jeremiefavre.com/",
+      "image": "https://www.jeremiefavre.com/unnamed.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "La Réunion",
+        "addressCountry": "FR"
+      },
+      "sameAs": [
+        "https://www.instagram.com/j3remie_fvr",
+        "https://www.linkedin.com/in/jérémie-favre-a402a9239/",
+        "https://www.tiktok.com/@jerem_fvr"
+      ],
+      "knowsAbout": [
+        "Production vidéo",
+        "Montage vidéo",
+        "Publicité",
+        "Drone FPV",
+        "Mariage",
+        "Photographie"
+      ]
+    }
+  </script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -266,6 +298,71 @@
     transform: scale(1.1);
   }
 
+  .hero-intro {
+    max-width: 760px;
+    font-size: 1.1rem;
+    margin: 0;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.9rem 1.3rem;
+    border-radius: 999px;
+    border: 1px solid var(--border-color);
+    background: rgba(255,255,255,0.08);
+    color: var(--text-color);
+    text-decoration: none;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 1px;
+    transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+  }
+
+  .hero-cta:hover {
+    transform: translateY(-3px);
+    background: var(--accent-color);
+    color: var(--bg-color);
+  }
+
+  .hero-cta.secondary {
+    background: transparent;
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    width: min(100%, 820px);
+  }
+
+  .hero-stat {
+    padding: 1rem;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
+  }
+
+  .hero-stat strong {
+    display: block;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+
+  .hero-stat span {
+    font-size: 0.95rem;
+    opacity: 0.85;
+  }
+
   .top-banner {
     position: absolute;
     top: 20px;
@@ -453,6 +550,74 @@
     transform-origin: bottom left;
   }
 
+  .section-kicker {
+    display: inline-block;
+    margin-bottom: 0.8rem;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 1.5px;
+    color: var(--accent-color);
+  }
+
+  .lead {
+    font-size: 1.1rem;
+    max-width: 70ch;
+  }
+
+  .pill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+  }
+
+  .pill {
+    padding: 0.55rem 0.9rem;
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    background: rgba(255,255,255,0.05);
+  }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.2rem;
+  }
+
+  .service-card,
+  .process-card,
+  .featured-card {
+    padding: 1.4rem;
+    border-radius: 18px;
+    border: 1px solid var(--border-color);
+    background: rgba(255,255,255,0.04);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+  }
+
+  .service-card h3,
+  .process-card h3,
+  .featured-card h3 {
+    margin-bottom: 0.6rem;
+  }
+
+  .service-card p,
+  .process-card p,
+  .featured-card p {
+    margin: 0;
+  }
+
+  .featured-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  .featured-card a {
+    align-self: flex-start;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 1px;
+    text-decoration: none;
+  }
+
   #portfolio,
   #photos,
   #contact,
@@ -473,33 +638,135 @@
   }
   .video {
     width: min(100%, 460px);
-    background-color: var(--nav-bg);
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px var(--shadow-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease;
-    border: 1px solid var(--border-color);
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)),
+      var(--nav-bg);
+    padding: 0;
+    border-radius: 18px;
+    box-shadow: 0 14px 30px rgba(0,0,0,0.18);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease, border-color 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.08);
     cursor: pointer;
+    overflow: hidden;
   }
-  .video:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px var(--shadow-color);
+  .video > iframe {
+    display: none;
   }
-  .video-title {
-    text-align: center;
-    margin-top: 10px;
-    font-weight: bold;
-    font-size: 1.1rem;
-    color: var(--accent-color);
-    transition: color 0.5s ease;
-  }
-  iframe {
+  .video-poster {
+    position: relative;
     width: 100%;
     aspect-ratio: 16 / 9;
     border: none;
-    border-radius: 8px;
-    display: block;
-    pointer-events: none;
+    border-radius: 0;
+    display: grid;
+    place-items: end start;
+    overflow: hidden;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.76)),
+      linear-gradient(135deg, #5f5f5f 0%, #161616 100%);
+    background-size: cover;
+    background-position: center;
+    padding: 1.1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .video-poster::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0.04), rgba(0,0,0,0.7)),
+      radial-gradient(circle at top right, rgba(255,255,255,0.18), transparent 35%);
+  }
+  .video-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.8);
+    transform: translate(-50%, -50%);
+    background: rgba(255,255,255,0.14);
+    backdrop-filter: blur(10px);
+    color: #111;
+    font-size: 1.3rem;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.28);
+    cursor: pointer;
+    transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+    z-index: 2;
+  }
+  .video-play i {
+    color: #fff;
+    margin-left: 3px;
+  }
+  .video-play:hover {
+    transform: translate(-50%, -50%) scale(1.06);
+    background: rgba(255,255,255,0.22);
+    border-color: #fff;
+  }
+  .video-meta {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .video-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.35rem 0.6rem;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.14);
+    color: #fff;
+    font-size: 0.8rem;
+    backdrop-filter: blur(8px);
+  }
+  .video:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 22px 40px rgba(0,0,0,0.24);
+    border-color: rgba(255,255,255,0.14);
+  }
+  .video-title {
+    text-align: left;
+    margin: 14px 18px 0;
+    font-weight: bold;
+    font-size: 1.1rem;
+    line-height: 1.35;
+    min-height: calc(1.35em * 2);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+    color: var(--accent-color);
+    transition: color 0.5s ease;
+  }
+  .video-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1rem 18px 18px;
+  }
+  .video-details {
+    color: var(--text-color);
+    font-size: 0.88rem;
+    opacity: 0.72;
+  }
+  .video-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 1px;
+  }
+  .video-card-link:hover {
+    color: var(--text-color);
   }
 
   /* ============================
@@ -645,6 +912,22 @@
     display: flex;
     align-items: center;
   }
+  .contact-quick-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin: 1rem 0 1.5rem;
+  }
+  .contact-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1rem;
+    border-radius: 999px;
+    border: 1px solid var(--border-color);
+    text-decoration: none;
+    background: rgba(0,0,0,0.05);
+  }
   .contact-info a {
     color: var(--link-color);
     text-decoration: none;
@@ -681,6 +964,7 @@
   }
   .contact-form input[type="text"],
   .contact-form input[type="email"],
+  .contact-form select,
   .contact-form textarea {
     width: calc(100% - 20px);
     padding: 10px;
@@ -699,6 +983,7 @@
   }
   .contact-form input[type="text"]:focus,
   .contact-form input[type="email"]:focus,
+  .contact-form select:focus,
   .contact-form textarea:focus {
     outline: none;
     border-color: var(--accent-color);
@@ -1085,13 +1370,15 @@
     background: #000;
     border-radius: 12px;
     overflow: hidden;
+    max-height: min(90vh, 900px);
   }
   #videoModal .video-part {
     background: #000;
   }
   #videoModal #videoModalIframe {
     width: 100%;
-    height: 500px;
+    height: min(500px, 56vw);
+    min-height: 240px;
     border: none;
     pointer-events: auto;
   }
@@ -1123,6 +1410,22 @@
      MEDIA QUERIES
      ============================ */
   @media (max-width: 768px) {
+    .hero-stats {
+      grid-template-columns: 1fr;
+    }
+    .hero-actions {
+      width: 100%;
+    }
+    .hero-intro {
+      font-size: 1rem;
+    }
+    .hero-cta {
+      width: 100%;
+      justify-content: center;
+    }
+    .cards-grid {
+      grid-template-columns: 1fr;
+    }
     .gallery {
       grid-template-columns: 1fr;
       gap: 1.5rem;
@@ -1133,16 +1436,35 @@
     h1 { font-size: 2.8rem; }
     h2 { font-size: 1.8rem; }
     .top-banner {
+      position: static;
       font-size: 1.4rem;
-      padding: 8px 50px;
-      left: -30px;
+      padding: 0.55rem 1.2rem;
+      left: auto;
+      top: auto;
+      margin: 0 auto 1rem;
+      transform: rotate(-4deg);
+      display: inline-block;
+      max-width: calc(100% - 32px);
     }
     nav ul {
-      flex-direction: column;
-      gap: 1rem;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      width: 100%;
     }
-    nav a { font-size: 1rem; }
-    section { padding: 1.5rem; }
+    nav a {
+      font-size: 1rem;
+      display: block;
+      padding: 0.5rem 0.75rem;
+    }
+    section {
+      padding: 1.35rem;
+      border-radius: 18px;
+    }
+    section:hover,
+    .video:hover,
+    .photo-item:hover {
+      transform: none;
+    }
     .profile-photo {
       width: 140px;
       height: 140px;
@@ -1151,13 +1473,31 @@
       width: 100%;
       margin-right: 0;
     }
-    .carousel-nav-buttons { padding: 0 5px; }
+    .carousel-container {
+      padding: 1rem 1rem 4.5rem;
+    }
+    .carousel-nav-buttons {
+      top: auto;
+      bottom: 0.9rem;
+      right: 0.9rem;
+      left: auto;
+      width: auto;
+      transform: none;
+      gap: 0.6rem;
+      padding: 0;
+    }
+    .carousel-nav-button.prev-button,
+    .carousel-nav-button.next-button {
+      margin: 0;
+    }
     nav {
       flex-direction: column;
-      padding-bottom: 1rem;
+      padding: 1rem 0.75rem;
+      gap: 0.8rem;
+      margin-top: -1rem;
     }
     #theme-toggle {
-      margin-top: 1rem;
+      margin-top: 0;
       margin-right: 0;
     }
     #loader img {
@@ -1177,20 +1517,58 @@
       width: 40px;
       height: 40px;
       font-size: 1.5rem;
+    }
+    .lightbox-nav-button.prev {
       left: 10px;
+    }
+    .lightbox-nav-button.next {
       right: 10px;
     }
     .lightbox-content.zoomed { transform: scale(1.5); }
     .contact-info p, .skill-item { font-size: 1rem; }
     .contact-info i { font-size: 1.4rem; }
-    .contact-form input, .contact-form textarea {
-      width: calc(100% - 20px);
+    .contact-form input, .contact-form textarea, .contact-form select {
+      width: 100%;
+      box-sizing: border-box;
       padding: 8px;
       margin-bottom: 1rem;
     }
     .contact-form button {
+      width: 100%;
       padding: 10px 20px;
       font-size: 1.1rem;
+    }
+    .video-actions {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .contact-quick-actions {
+      flex-direction: column;
+    }
+    .contact-chip {
+      width: 100%;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+    .contact-info p {
+      align-items: flex-start;
+    }
+    .contact-content.expanded {
+      max-height: 1400px !important;
+    }
+    #videoModal .video-popup {
+      width: calc(100% - 24px);
+      max-height: calc(100vh - 32px);
+    }
+    #videoModal #videoModalIframe {
+      height: auto;
+      aspect-ratio: 16 / 9;
+      min-height: 0;
+    }
+    #videoModal .description-part {
+      padding: 1.25rem;
+      max-height: 32vh;
+      overflow: auto;
     }
     .success-message {
       padding: 0.8rem;
@@ -1205,35 +1583,65 @@
     h2 { font-size: 1.5rem; }
     .top-banner {
       font-size: 1.2rem;
-      padding: 6px 40px;
-      left: -10px;
+      padding: 0.5rem 0.9rem;
+      left: auto;
     }
-    header { padding: 3rem 0.5rem 2rem; }
+    header { padding: 2.4rem 0.5rem 1.8rem; }
     .profile-photo {
       width: 120px;
       height: 120px;
     }
-    nav ul { gap: 0.8rem; }
+    nav ul { gap: 0.45rem; }
     nav a { padding: 0.4rem 0.8rem; }
     .main-content {
       gap: 3rem;
-      padding: 0 1rem;
+      padding: 0 0.75rem;
     }
     section { padding: 1rem; }
+    .hero-stat {
+      padding: 0.85rem;
+    }
+    .hero-stat strong {
+      font-size: 1.65rem;
+    }
+    .pill-list {
+      gap: 0.55rem;
+    }
+    .pill {
+      width: 100%;
+      text-align: center;
+      box-sizing: border-box;
+    }
     .video {
       width: 100%;
-      padding: 10px;
+    }
+    .video-play {
+      width: 58px;
+      height: 58px;
     }
     .video-title { font-size: 1rem; }
+    .video-actions {
+      margin: 0.85rem 14px 14px;
+    }
+    #videoModal .description-part {
+      padding: 1rem;
+    }
+    #videoModal .description-part #videoTitle {
+      font-size: 1.5rem;
+    }
     .photo-item { padding: 8px; }
     .photo-item img { height: 150px; }
     .photo-title { font-size: 0.85rem; }
     #back-to-top {
-      width: 40px;
-      height: 40px;
-      font-size: 1.2rem;
-      bottom: 15px;
-      right: 15px;
+      width: 44px;
+      height: 44px;
+      font-size: 1.1rem;
+      bottom: 14px;
+      right: 14px;
+    }
+    .close-button {
+      top: 12px;
+      right: 12px;
     }
     #offline-message {
       padding: 10px 15px;
@@ -1274,16 +1682,39 @@
   Raconter le monde, un plan à la fois.
 </p>
 <div class="social-links">
-<a aria-label="Instagram" href="https://www.instagram.com/j3remie_fvr" target="_blank"><i class="fab fa-instagram"></i></a>
-<a aria-label="LinkedIn" href="https://www.linkedin.com/in/jérémie-favre-a402a9239/" target="_blank"><i class="fab fa-linkedin"></i></a>
-<a aria-label="TikTok" href="https://www.tiktok.com/@jerem_fvr" target="_blank"><i class="fab fa-tiktok"></i></a>
+<a aria-label="Instagram" href="https://www.instagram.com/j3remie_fvr" rel="noopener noreferrer" target="_blank"><i class="fab fa-instagram"></i></a>
+<a aria-label="LinkedIn" href="https://www.linkedin.com/in/jérémie-favre-a402a9239/" rel="noopener noreferrer" target="_blank"><i class="fab fa-linkedin"></i></a>
+<a aria-label="TikTok" href="https://www.tiktok.com/@jerem_fvr" rel="noopener noreferrer" target="_blank"><i class="fab fa-tiktok"></i></a>
+</div>
+<p class="hero-intro">
+  Je conçois des images qui servent un objectif clair: faire émerger une marque, raconter une histoire ou capter une énergie réelle. Basé à La Réunion, j'interviens en vidéo, drone, montage et photographie avec une approche légère, réactive et orientée résultat.
+</p>
+<div class="hero-actions">
+  <a class="hero-cta" href="#portfolio"><i class="fas fa-play"></i> Voir les projets</a>
+  <a class="hero-cta secondary" href="#contact"><i class="fas fa-paper-plane"></i> Demander un devis</a>
+  <a class="hero-cta secondary" href="https://wa.me/262693112398" rel="noopener noreferrer" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp direct</a>
+</div>
+<div class="hero-stats">
+  <div class="hero-stat">
+    <strong>Video</strong>
+    <span>Publicité, social media, clip, captation et contenu de marque</span>
+  </div>
+  <div class="hero-stat">
+    <strong>Drone</strong>
+    <span>Plans stabilisés et FPV pour apporter du relief visuel</span>
+  </div>
+  <div class="hero-stat">
+    <strong>Local</strong>
+    <span>Basé à La Réunion, mobile selon les tournages et les besoins</span>
+  </div>
 </div>
 </div>
 </header>
 <nav>
 <ul>
 <li><a href="#about">À propos</a></li>
-<li><a href="#skills">Mes Outils Créatifs</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#method">Méthode</a></li>
 <li><a href="#portfolio">Portfolio</a></li>
 <li><a href="#photos">Vitrine Photo</a></li>
 <li><a href="#contact">Contact</a></li>
@@ -1295,29 +1726,87 @@
 <div class="main-content">
 <section id="about">
 <h2>À propos de moi</h2>
+<span class="section-kicker">Vidéaste à La Réunion</span>
+<p class="lead">
+    Je réalise des contenus visuels pensés pour être utiles, mémorables et exploitables. Mon rôle couvre la préparation, la prise de vue, le montage et la finition, avec une attention forte portée au rythme, à la lisibilité du message et à l'impact final.
+</p>
 <p>
-    Passionné par l'image et le mouvement, je suis Jérémie Favre, vidéaste indépendant basé à La Réunion. J'aime transformer des idées en récits visuels et donner vie à chaque projet, de la conception à la post-production.<br/>
-    J'explore la coordination des tournages et la prise de vue aérienne avec drone stabilisé ou FPV, pour apporter des perspectives originales à vos projets.
-    </p>
+    J'interviens pour des marques, des projets culturels, des contenus réseaux sociaux, des mariages et des formats plus cinématographiques. Le but reste le même: produire une image cohérente avec votre intention, votre public et votre diffusion.
+</p>
+<div class="pill-list">
+  <span class="pill">Vidéaste indépendant</span>
+  <span class="pill">Cadreur-monteur</span>
+  <span class="pill">Drone stabilisé et FPV</span>
+  <span class="pill">Publicité et social media</span>
+  <span class="pill">Mariage et événementiel</span>
+</div>
+</section>
+<section class="section-white" id="services">
+<h2>Services</h2>
+<span class="section-kicker">Formats que je produis</span>
+<div class="cards-grid">
+  <article class="service-card">
+    <h3>Publicité et marque</h3>
+    <p>Films courts, formats campagne, présentation d'offre, contenu de lancement et image de marque.</p>
+  </article>
+  <article class="service-card">
+    <h3>Social media</h3>
+    <p>Formats verticaux, capsules courtes, teasing d'événement et contenus pensés pour Instagram, TikTok et Meta.</p>
+  </article>
+  <article class="service-card">
+    <h3>Mariage et émotion</h3>
+    <p>Captation sensible, montage narratif, images vraies et restitution fluide de la journée.</p>
+  </article>
+  <article class="service-card">
+    <h3>Drone et FPV</h3>
+    <p>Plans aériens immersifs pour enrichir le récit, situer un lieu ou dynamiser un film.</p>
+  </article>
+  <article class="service-card">
+    <h3>Montage et post-production</h3>
+    <p>Assemblage, sound design, rythme, étalonnage et finition pour une diffusion propre.</p>
+  </article>
+  <article class="service-card">
+    <h3>Photographie éditoriale</h3>
+    <p>Sélections photo pour vitrine, événement, portrait ou univers de marque.</p>
+  </article>
+</div>
+</section>
+<section id="method">
+<h2>Méthode</h2>
+<span class="section-kicker">De l'idée à la livraison</span>
+<div class="cards-grid">
+  <article class="process-card">
+    <h3>1. Cadrage</h3>
+    <p>Objectif, cible, format, diffusion et contraintes sont clarifiés avant de tourner.</p>
+  </article>
+  <article class="process-card">
+    <h3>2. Production</h3>
+    <p>Tournage agile, direction visuelle claire et capture pensée pour le montage final.</p>
+  </article>
+  <article class="process-card">
+    <h3>3. Post-production</h3>
+    <p>Montage, habillage, étalonnage et versions adaptées selon les supports de diffusion.</p>
+  </article>
+</div>
 </section>
 <section id="skills">
 <h2>Mes Outils Créatifs</h2>
 <div class="skills-grid">
 <div>
-<div class="skill-item"><i class="fas fa-cut"></i> Premiere Pro : Maîtrise du montage vidéo professionnel.</div>
-<div class="skill-item"><i class="fas fa-magic"></i> After Effects : Création d'effets visuels et animations.</div>
-<div class="skill-item"><i class="fas fa-image"></i> Photoshop : Retouche d'image et conception graphique.</div>
-<div class="skill-item"><i class="fas fa-adjust"></i> Lightroom : Optimisation et catalogage des images.</div>
-<div class="skill-item"><i class="fas fa-video"></i> Production Vidéo : De l'idée au produit final.</div>
-<div class="skill-item"><i class="fas fa-film"></i> Montage Vidéo : Narration visuelle et rythme.</div>
-<div class="skill-item"><i class="fas fa-helicopter"></i> Pilotage Drone : Perspectives aériennes uniques.</div>
+<div class="skill-item"><i class="fas fa-cut"></i> Premiere Pro pour le montage, le rythme et les livrables de diffusion.</div>
+<div class="skill-item"><i class="fas fa-magic"></i> After Effects pour l'animation, les transitions et les finitions graphiques.</div>
+<div class="skill-item"><i class="fas fa-image"></i> Photoshop pour la retouche, les visuels et les supports de présentation.</div>
+<div class="skill-item"><i class="fas fa-adjust"></i> Lightroom pour la sélection et l'optimisation photo.</div>
+<div class="skill-item"><i class="fas fa-video"></i> Production vidéo complète, du brief à la livraison.</div>
+<div class="skill-item"><i class="fas fa-film"></i> Narration visuelle orientée marque, émotion et performance.</div>
+<div class="skill-item"><i class="fas fa-helicopter"></i> Pilotage drone pour élargir le champ narratif.</div>
 </div>
 </div>
 </section>
 <section class="section-white" id="portfolio">
 <h2>Portfolio Vidéo</h2>
 <div class="gallery">
-<div class="video" data-camera="Sony A6700" data-date="2024" data-director="" data-iframe="https://www.youtube.com/embed/cdwpWkyDJWY" data-location="La Réunion" data-title="Les Bons Plans de Bruna : OZO Réunion">
+<div class="video" data-camera="Sony A6700" data-case-study="projets/ozo-reunion.html" data-date="2024" data-director="" data-iframe="https://www.youtube.com/embed/cdwpWkyDJWY" data-location="La Réunion" data-title="Les Bons Plans de Bruna : OZO Réunion">
 <iframe allowfullscreen="" data-src="https://www.youtube.com/embed/cdwpWkyDJWY" loading="lazy" title="Lecteur vidéo pour Les Bons Plans de Bruna : OZO Réunion"></iframe>
 <div class="video-title">Les Bons Plans de Bruna : OZO Réunion</div>
 </div>
@@ -1353,11 +1842,11 @@
 <iframe allowfullscreen="" data-src="https://www.youtube.com/embed/XOG37yLswio" loading="lazy" title="Lecteur vidéo pour Restaurant LE LEON"></iframe>
 <div class="video-title">Restaurant LE LEON</div>
 </div>
-<div class="video" data-camera="Sony A7 IV" data-date="2024" data-director="Jérémie Favre" data-iframe="https://www.youtube.com/embed/_q7MnK_2QFI" data-location="Parking sous terrain Saint-Leu" data-title="VENUM - PUB">
+<div class="video" data-camera="Sony A7 IV" data-case-study="projets/venum-pub.html" data-date="2024" data-director="Jérémie Favre" data-iframe="https://www.youtube.com/embed/_q7MnK_2QFI" data-location="Parking sous terrain Saint-Leu" data-title="VENUM - PUB">
 <iframe allowfullscreen="" data-src="https://www.youtube.com/embed/_q7MnK_2QFI" loading="lazy" title="Lecteur vidéo pour Venum - PUB"></iframe>
 <div class="video-title">Venum - PUB</div>
 </div>
-<div class="video" data-camera="RED SCARLET" data-date="2024" data-director="Wesley Themyr - Jérémie Favre - Dhiessene Virapin" data-iframe="https://www.youtube.com/embed/1J_S1kuRwHQ" data-location="Plaine des sables" data-title="AURORA - COURT METRAGE">
+<div class="video" data-camera="RED SCARLET" data-case-study="projets/aurora-court-metrage.html" data-date="2024" data-director="Wesley Themyr - Jérémie Favre - Dhiessene Virapin" data-iframe="https://www.youtube.com/embed/1J_S1kuRwHQ" data-location="Plaine des sables" data-title="AURORA - COURT METRAGE">
 <iframe allowfullscreen="" data-src="https://www.youtube.com/embed/1J_S1kuRwHQ" loading="lazy" title="Lecteur vidéo pour AURORA - COURT METRAGE"></iframe>
 <div class="video-title">AURORA - COURT METRAGE</div>
 </div>
@@ -1378,6 +1867,27 @@
 <div class="video-title">Zembrocal - COURT METRAGE</div>
 </div>
 </section>
+<section class="section-white" id="featured-projects">
+<h2>Projets en avant</h2>
+<span class="section-kicker">Études de cas rapides</span>
+<div class="cards-grid">
+  <article class="featured-card">
+    <h3>OZO Réunion</h3>
+    <p>Un format local pensé pour rester vivant, lisible et identifiable rapidement sur les réseaux.</p>
+    <a href="projets/ozo-reunion.html">Voir l'étude de cas <i class="fas fa-arrow-right"></i></a>
+  </article>
+  <article class="featured-card">
+    <h3>VENUM - PUB</h3>
+    <p>Un spot plus direct, plus tendu visuellement, construit pour affirmer une énergie de marque.</p>
+    <a href="projets/venum-pub.html">Voir l'étude de cas <i class="fas fa-arrow-right"></i></a>
+  </article>
+  <article class="featured-card">
+    <h3>AURORA</h3>
+    <p>Un registre plus cinématographique, basé sur l'ambiance, la matière visuelle et le relief du décor.</p>
+    <a href="projets/aurora-court-metrage.html">Voir l'étude de cas <i class="fas fa-arrow-right"></i></a>
+  </article>
+</div>
+</section>
 <section id="photos">
 <h2>Vitrine Photo</h2>
 <div class="photo-category">
@@ -1393,7 +1903,7 @@
 <div class="photo-categories-container">
   <div class="photo-category">
     <h3 class="category-title">
-      <a href="Grille photo.html" target="_blank" style="color:#ffffff; text-decoration:none; display:inline-flex; align-items:center;">
+      <a href="Grille photo.html" rel="noopener noreferrer" target="_blank" style="color:#ffffff; text-decoration:none; display:inline-flex; align-items:center;">
         Galerie
         <i class="fas fa-external-link-alt" aria-hidden="true" style="margin-left:8px; color:#ffffff; font-size:0.9em;"></i>
       </a>
@@ -1566,7 +2076,7 @@
 <div class="photo-categories-container">
   <div class="photo-category">
     <h3 class="category-title">
-      <a href="Grille photo Mariage.html" target="_blank" style="color:#ffffff; text-decoration:none; display:inline-flex; align-items:center;">
+      <a href="Grille photo Mariage.html" rel="noopener noreferrer" target="_blank" style="color:#ffffff; text-decoration:none; display:inline-flex; align-items:center;">
         Mariage
         <i class="fas fa-external-link-alt" aria-hidden="true" style="margin-left:8px; color:#ffffff; font-size:0.9em;"></i>
       </a>
@@ -1744,13 +2254,23 @@
 <h2>Contact <i class="fas fa-chevron-down" id="contactToggleIcon"></i></h2>
 <div class="contact-content" id="contactContent">
 <div class="contact-form">
+<p class="lead">Parlez-moi du projet, du format attendu et de la date visée. Je reviens vers vous avec une réponse claire et exploitable.</p>
 <form action="https://formspree.io/f/mgvkgnjg" method="POST">
 <label for="name">Nom :</label>
 <input aria-label="Votre nom" id="name" name="name" required="" type="text"/>
 <label for="email">Email :</label>
 <input aria-label="Votre adresse email" id="email" name="email" required="" type="email"/>
+<label for="service">Type de projet :</label>
+<select aria-label="Type de projet" id="service" name="service">
+  <option value="Publicité / marque">Publicité / marque</option>
+  <option value="Social media">Social media</option>
+  <option value="Mariage">Mariage</option>
+  <option value="Photographie">Photographie</option>
+  <option value="Drone / FPV">Drone / FPV</option>
+  <option value="Autre">Autre</option>
+</select>
 <label for="message">Message :</label>
-<textarea aria-label="Votre message" id="message" name="message" required="" rows="5"></textarea>
+<textarea aria-label="Votre message" id="message" name="message" placeholder="Objectif, lieu, date, format attendu, budget ou timing." required="" rows="5"></textarea>
 <button type="submit">Envoyer le message</button>
 </form>
 <div class="success-message hidden" id="successMessage">
@@ -1758,15 +2278,20 @@
 </div>
 </div>
 <div class="contact-info" style="margin-top: 2rem;">
+<div class="contact-quick-actions">
+  <a class="contact-chip" href="mailto:fvjeremie@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+  <a class="contact-chip" href="tel:+262693112398"><i class="fas fa-phone"></i> Appeler</a>
+  <a class="contact-chip" href="https://wa.me/262693112398" rel="noopener noreferrer" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+</div>
 <p><i class="fas fa-envelope"></i> Email : <a href="mailto:fvjeremie@gmail.com">fvjeremie@gmail.com</a></p>
-<p><i class="fab fa-instagram"></i> Instagram : <a href="https://instagram.com/j3remie_fvr" onclick="gtag('event', 'clic_instagram', { event_category: 'Réseaux sociaux', event_label: 'Instagram j3remie_fvr' });" target="_blank">@j3remie_fvr</a></p>
+<p><i class="fab fa-instagram"></i> Instagram : <a href="https://instagram.com/j3remie_fvr" onclick="gtag('event', 'clic_instagram', { event_category: 'Réseaux sociaux', event_label: 'Instagram j3remie_fvr' });" rel="noopener noreferrer" target="_blank">@j3remie_fvr</a></p>
 <p><i class="fas fa-map-marker-alt"></i> Basé à La Réunion</p>
 <p><i class="fas fa-phone"></i> Téléphone : <a href="tel:+262693112398">0693112398</a></p>
 </div>
 </div>
 </section>
 <footer>
-<p>© 2025 Jérémie FAVRE. Tous droits réservés.</p>
+<p>© 2025 Jérémie FAVRE. Vidéaste, cadreur-monteur et création de contenus visuels à La Réunion.</p>
 </footer>
 <button id="back-to-top" title="Retour en haut"><i class="fas fa-arrow-up"></i></button>
 <div class="lightbox" id="lightbox">
@@ -1801,6 +2326,56 @@
    SCRIPT GLOBAL CONSOLIDÉ (Commentaires ajoutés)
    ======================================= -->
 <script>
+  const getYouTubeThumbnail = (embedUrl) => {
+    const match = embedUrl.match(/embed\/([^?&]+)/);
+    return match ? `https://i.ytimg.com/vi/${match[1]}/hqdefault.jpg` : '';
+  };
+
+  const buildVideoPreview = (videoElement) => {
+    const poster = document.createElement('div');
+    poster.className = 'video-poster';
+
+    const isYouTube = videoElement.dataset.iframe.includes('youtube.com/embed/');
+    const thumbnail = isYouTube ? getYouTubeThumbnail(videoElement.dataset.iframe) : '';
+    if (thumbnail) {
+      poster.style.backgroundImage = `linear-gradient(180deg, rgba(0,0,0,0.08), rgba(0,0,0,0.72)), url("${thumbnail}")`;
+    }
+
+    const playButton = document.createElement('button');
+    playButton.className = 'video-play';
+    playButton.type = 'button';
+    playButton.setAttribute('aria-label', `Lire ${videoElement.dataset.title}`);
+    playButton.innerHTML = '<i class="fas fa-play"></i>';
+
+    const meta = document.createElement('div');
+    meta.className = 'video-meta';
+    const location = videoElement.dataset.location ? `<span class="video-badge"><i class="fas fa-location-dot"></i>${videoElement.dataset.location}</span>` : '';
+    const date = videoElement.dataset.date ? `<span class="video-badge"><i class="fas fa-calendar"></i>${videoElement.dataset.date}</span>` : '';
+    meta.innerHTML = `${location}${date}`;
+
+    poster.append(playButton, meta);
+    videoElement.prepend(poster);
+
+    const actions = document.createElement('div');
+    actions.className = 'video-actions';
+    actions.innerHTML = `
+      <div class="video-details">${videoElement.dataset.camera || 'Configuration légère et adaptable'}</div>
+      ${videoElement.dataset.caseStudy ? `<a class="video-card-link" href="${videoElement.dataset.caseStudy}">Étude de cas <i class="fas fa-arrow-right"></i></a>` : ''}
+    `;
+    videoElement.append(actions);
+    const caseStudyLink = actions.querySelector('.video-card-link');
+    if (caseStudyLink) {
+      caseStudyLink.addEventListener('click', (event) => {
+        event.stopPropagation();
+      });
+    }
+
+    playButton.addEventListener('click', (event) => {
+      event.stopPropagation();
+      openVideoModal(videoElement);
+    });
+  };
+
   /* ============================
      MODALE VIDÉO (OUVRIR / FERMER)
      ============================ */
@@ -1827,6 +2402,14 @@
      SCRIPT PRINCIPAL : DOMContentLoaded
      ============================ */
   document.addEventListener('DOMContentLoaded', () => {
+
+    document.querySelectorAll('a[target="_blank"]').forEach((link) => {
+      link.rel = 'noopener noreferrer';
+    });
+
+    document.querySelectorAll('.video').forEach((video) => {
+      buildVideoPreview(video);
+    });
 
     /* ----------------------------
      INITIALISATION : CLIC SUR VIDÉOS (OUVRIR MODALE)
@@ -2061,7 +2644,7 @@
       this.lightbox = document.getElementById('lightbox');
       this.lightboxImage = document.getElementById('lightbox-image');
       this.lightboxCaption = document.getElementById('lightbox-caption');
-      this.closeLightboxBtn = document.querySelector('.close-button');
+      this.closeLightboxBtn = document.querySelector('#lightbox .close-button');
       this.lightboxPrevBtn = document.getElementById('lightbox-prev-btn');
       this.lightboxNextBtn = document.getElementById('lightbox-next-btn');
       this.currentPhotoIndex = 0;
@@ -2087,7 +2670,7 @@
       this.allPhotoItems = Array.from(document.querySelectorAll('.photo-lightbox-trigger')).map(trigger => ({
       srcLarge: trigger.getAttribute('data-src-large'),
       altText: trigger.querySelector('img').alt,
-      title: trigger.closest('.photo-item').querySelector('.photo-title').textContent
+      title: trigger.querySelector('img').alt.replace(/^Photo (galerie|mariage) - /, '')
       }));
     }
     showPhoto(index) {
@@ -2224,31 +2807,12 @@
       script.dataset.loaded = 'true';
     };
 
-    const hydrateDeferredIframes = (root = document) => {
-      root.querySelectorAll('iframe[data-src]').forEach((iframe) => {
-        if (!iframe.dataset.src || iframe.src) return;
-        iframe.src = iframe.dataset.src;
-      });
-    };
-
     document.querySelectorAll('img').forEach((image, index) => {
       image.decoding = 'async';
       if (index > 1) {
         image.loading = 'lazy';
         image.fetchPriority = 'low';
       }
-    });
-
-    const deferredIframeObserver = new IntersectionObserver((entries, observerInstance) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        hydrateDeferredIframes(entry.target);
-        observerInstance.unobserve(entry.target);
-      });
-    }, { rootMargin: '300px 0px' });
-
-    document.querySelectorAll('.video').forEach((videoCard) => {
-      deferredIframeObserver.observe(videoCard);
     });
 
     let photosFeaturesReady = false;
@@ -2308,6 +2872,16 @@
       .catch(err => console.log('ServiceWorker registration failed: ', err));
     });
     }
+
+    const videoModal = document.getElementById('videoModal');
+    videoModal.addEventListener('click', (event) => {
+      if (event.target === videoModal) closeVideoModal();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && videoModal.classList.contains('active')) {
+        closeVideoModal();
+      }
+    });
   });
 
   /* ============================

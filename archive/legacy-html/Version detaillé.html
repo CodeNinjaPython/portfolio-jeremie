@@ -17,8 +17,8 @@
   <meta property="og:title" content="Jérémie FAVRE - Vidéaste à La Réunion">
   <meta property="og:description" content="Découvrez le portfolio de Jérémie Favre, vidéaste et cadreur-monteur basé à La Réunion. Des clips dynamiques aux documentaires immersifs.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://votre-site.com">
-  <meta property="og:image" content="https://votre-site.com/unnamed.jpg">
+  <meta property="og:url" content="https://www.jeremiefavre.com/">
+  <meta property="og:image" content="https://www.jeremiefavre.com/unnamed.jpg">
   <meta property="og:image:alt" content="Logo de Jérémie Favre">
   <meta property="og:locale" content="fr_FR">
 
@@ -160,23 +160,6 @@
       margin-bottom: 0;
       box-shadow: 0 8px 16px var(--shadow-color);
       transition: background 0.5s ease, box-shadow 0.5s ease;
-      /* Suppression des propriétés de background-image directes */
-    }
-
-    /* Nouveau pseudo-élément pour la texture de papier froissé */
-    header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('images/texture-de-papier-blanc.jpg'); /* Chemin mis à jour */
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      opacity: 0.15; /* Ajustez cette valeur pour rendre la texture plus ou moins visible */
-      z-index: 1; /* S'assure que la texture est derrière le contenu mais devant la couleur de fond */
     }
 
     /* Effet "papier déchiré" en bas de l'en-tête */
@@ -197,13 +180,13 @@
 
     .header-content {
       position: relative;
-      z-index: 2; /* S'assure que le contenu est au-dessus de la texture */
+      z-index: 2;
       max-width: 900px;
       margin: auto;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 2rem; /* Augmenté pour plus d'espace */
+      gap: 1.5rem;
     }
 
     .profile-photo {
@@ -226,28 +209,8 @@
 
     .header p {
       font-size: 1.3rem;
+      margin-top: 0;
       font-weight: 300;
-      /* margin-top et margin-bottom gérés par le gap du parent */
-    }
-
-    /* Styles pour les icônes de réseaux sociaux dans l'en-tête */
-    .social-links {
-      display: flex;
-      gap: 1.5rem;
-      justify-content: center; /* Centrer les icônes horizontalement */
-      /* margin-top géré par le gap du parent */
-    }
-
-    .social-links a {
-      color: var(--text-color);
-      font-size: 2rem;
-      transition: color 0.3s ease, transform 0.3s ease;
-      text-decoration: none; /* Assure que les liens ne sont pas soulignés */
-    }
-
-    .social-links a:hover {
-      color: var(--accent-color);
-      transform: scale(1.1);
     }
 
     /* Bannière "VIDÉASTE - CADREUR MONTEUR" */
@@ -272,7 +235,7 @@
       background-color: var(--nav-bg);
       padding: 1.5rem 0;
       width: 100%;
-      margin-top: -2rem; /* Réduit le chevauchement avec l'en-tête */
+      margin-top: -3rem;
       z-index: 10;
       box-shadow: 0 4px 8px var(--shadow-color);
       position: relative;
@@ -458,14 +421,80 @@
       color: var(--accent-color);
       transition: color 0.5s ease;
     }
-    iframe {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      border: none;
-      border-radius: 8px;
-      display: block;
-      pointer-events: none;
+    /* Styles pour les pages de projet */
+    .project-page {
+      background-color: var(--section-bg);
+      padding: 2.5rem;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px var(--shadow-color);
+      border: 1px solid var(--border-color);
+      transition: background-color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
+      margin-top: 5rem; /* Espace au-dessus des pages de projet */
     }
+
+    .project-page .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      height: 0;
+      margin-bottom: 2rem;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .project-page .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      pointer-events: auto; /* Permet l'interaction avec la vidéo */
+    }
+
+    .project-page h3 {
+      margin-top: 2rem;
+      color: var(--accent-color);
+    }
+
+    .project-page ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 2rem;
+    }
+
+    .project-page ul li {
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+    }
+
+    .project-page ul li i {
+      color: var(--icon-color);
+      font-size: 1.2rem;
+      margin-top: 0.2rem;
+    }
+
+    .project-page .back-button {
+      display: inline-block;
+      background-color: var(--button-bg);
+      color: var(--button-text);
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 1px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      margin-top: 2rem;
+    }
+
+    .project-page .back-button:hover {
+      background-color: var(--button-hover-bg);
+      transform: translateY(-2px);
+    }
+
 
     /* Styles pour la galerie photo */
     .photo-category {
@@ -1058,7 +1087,7 @@
         }
         .lightbox-content.zoomed { transform: scale(1.5); }
         .contact-info p, .skill-item { font-size: 1rem; }
-        .contact-info i { font-size: 1.4rem; }
+        .contact-info i, .skill-item i { font-size: 1.4rem; }
         .contact-form input, .contact-form textarea {
             width: calc(100% - 20px);
             padding: 8px;
@@ -1128,12 +1157,7 @@
         <img src="unnamed.jpg" alt="Portrait de Jérémie Favre souriant, regardant l'objectif, centré dans un cercle à fond neutre, ambiance professionnelle et chaleureuse" style="width:100%; height:100%; object-fit:cover; object-position:center;">
       </div>
       <h1>Jérémie FAVRE</h1>
-      <p>Votre nouvelle phrase ici</p>
-      <div class="social-links">
-        <a href="https://www.instagram.com/j3remie_fvr" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/jérémie-favre-a402a9239/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.tiktok.com/@jerem_fvr" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-      </div>
+      <p>Vidéaste basé à La Réunion</p>
     </div>
   </header>
 
@@ -1179,47 +1203,280 @@
       <h2>Portfolio Vidéo</h2>
       <div class="gallery">
         <div class="video">
-          <iframe src="https://www.youtube.com/embed/qtrdrRYwMoA" allowfullscreen></iframe>
-          <div class="video-title">LIVRE DU DESTIN Court metrage</div>
+          <a href="#project-livre-du-destin">
+            <img src="https://placehold.co/300x180/333/fff?text=Livre+du+Destin" alt="Miniature de la vidéo Livre du Destin" style="width:100%; aspect-ratio:16/9; border-radius:8px; display:block;">
+            <div class="video-title">LIVRE DU DESTIN Court metrage</div>
+          </a>
         </div>
 
         <div class="video">
-          <iframe src="https://www.youtube.com/embed/j_FrzbnDIuY" allowfullscreen></iframe>
-          <div class="video-title">AURORA - Court Métrages</div>
+          <a href="#project-aurora">
+            <img src="https://placehold.co/300x180/333/fff?text=Aurora" alt="Miniature de la vidéo Aurora" style="width:100%; aspect-ratio:16/9; border-radius:8px; display:block;">
+            <div class="video-title">AURORA - Court Métrages</div>
+          </a>
         </div>
 
         <div class="video">
-          <iframe src="https://www.youtube.com/embed/_q7MnK_2QFI" allowfullscreen></iframe>
-          <div class="video-title">Venum - PUB</div>
+          <a href="#project-venum">
+            <img src="https://placehold.co/300x180/333/fff?text=Venum+PUB" alt="Miniature de la vidéo Venum - PUB" style="width:100%; aspect-ratio:16/9; border-radius:8px; display:block;">
+            <div class="video-title">Venum - PUB</div>
+          </a>
         </div>
 
         <div class="video">
-          <iframe src="https://www.youtube.com/embed/XOG37yLswio" allowfullscreen></iframe>
-          <div class="video-title">Restaurant LE LEON</div>
+          <a href="#project-restaurant-le-leon">
+            <img src="https://placehold.co/300x180/333/fff?text=Restaurant+Le+Leon" alt="Miniature de la vidéo Restaurant LE LEON" style="width:100%; aspect-ratio:16/9; border-radius:8px; display:block;">
+            <div class="video-title">Restaurant LE LEON</div>
+          </a>
         </div>
 
         <div class="video">
-          <iframe src="https://www.youtube.com/embed/zZD8K0tTuzo" allowfullscreen></iframe>
-          <div class="video-title">Portrait de Stéphanie Valmorex</div>
+          <a href="#project-stephanie-valmorex">
+            <img src="https://placehold.co/300x180/333/fff?text=Stephanie+Valmorex" alt="Miniature de la vidéo Portrait de Stéphanie Valmorex" style="width:100%; aspect-ratio:16/9; border-radius:8px; display:block;">
+            <div class="video-title">Portrait de Stéphanie Valmorex</div>
+          </a>
         </div>
 
         <div class="video">
-          <iframe src="https://www.youtube.com/embed/9GQS8eGeZlk" allowfullscreen></iframe>
-          <div class="video-title">KidnaPink Final Officiel</div>
+          <a href="#project-kidnapink">
+            <img src="https://placehold.co/300x180/333/fff?text=KidnaPink" alt="Miniature de la vidéo KidnaPink Final Officiel" style="width:100%; aspect-ratio:16/9; border-radius:8px; display:block;">
+            <div class="video-title">KidnaPink Final Officiel</div>
+          </a>
         </div>
 
         <div class="video">
-          <iframe src="https://www.youtube.com/embed/6bbMbT8_QGE" allowfullscreen></iframe>
-          <div class="video-title">ALONE</div>
+          <a href="#project-alone">
+            <img src="https://placehold.co/300x180/333/fff?text=ALONE" alt="Miniature de la vidéo ALONE" style="width:100%; aspect-ratio:16/9; border-radius:8px; display:block;">
+            <div class="video-title">ALONE</div>
+          </a>
         </div>
 
         <div class="video">
-          <iframe src="https://www.youtube.com/embed/5S_ke4JsViI" allowfullscreen></iframe>
-          <div class="video-title">Dessert spécial diabétique - Ensemble contre le diabète ( Julien LEVENEUR )</div>
+          <a href="#project-diabetique">
+            <img src="https://placehold.co/300x180/333/fff?text=Dessert+Diabetique" alt="Miniature de la vidéo Dessert spécial diabétique" style="width:100%; aspect-ratio:16/9; border-radius:8px; display:block;">
+            <div class="video-title">Dessert spécial diabétique - Ensemble contre le diabète ( Julien LEVENEUR )</div>
+          </a>
         </div>
       </div>
     </section>
 
+    <section id="project-livre-du-destin" class="project-page hidden-project">
+      <h2>LIVRE DU DESTIN - Court métrage</h2>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="LIVRE DU DESTIN Court metrage" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <h3>Contexte du projet</h3>
+      <p>Ce court métrage a été réalisé dans le cadre d'un projet personnel/professionnel visant à explorer des techniques narratives et visuelles innovantes. L'objectif était de créer une atmosphère immersive et de raconter une histoire complexe en un temps limité.</p>
+
+      <h3>Mon rôle exact</h3>
+      <ul>
+        <li><i class="fas fa-camera"></i> Cadreur principal</li>
+        <li><i class="fas fa-cut"></i> Monteur vidéo</li>
+        <li><i class="fas fa-lightbulb"></i> Co-scénariste et directeur artistique</li>
+      </ul>
+
+      <h3>Outils utilisés</h3>
+      <ul>
+        <li><i class="fab fa-adobe"></i> Adobe Premiere Pro (montage)</li>
+        <li><i class="fab fa-adobe"></i> Adobe After Effects (effets spéciaux)</li>
+        <li><i class="fas fa-camera"></i> Caméra Sony FX3</li>
+        <li><i class="fas fa-microphone"></i> Kit audio Rode NTG2</li>
+      </ul>
+
+      <h3>Coulisses / Making-of</h3>
+      <p>Le tournage a duré 3 jours intenses, avec une équipe réduite mais passionnée. Nous avons dû faire face à des défis logistiques, notamment la gestion de l'éclairage naturel et la coordination des acteurs dans des environnements variés. Le plus grand challenge a été de synchroniser les effets visuels complexes avec les prises de vue réelles pour un rendu fluide et crédible. Vous pouvez voir quelques photos des coulisses ci-dessous.</p>
+      <a href="#portfolio" class="back-button">Retour au Portfolio</a>
+    </section>
+
+    <section id="project-aurora" class="project-page hidden-project">
+      <h2>AURORA - Court Métrages</h2>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="AURORA - Court Métrages" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <h3>Contexte du projet</h3>
+      <p>Aurora est un court métrage expérimental explorant les thèmes de la solitude et de la reconnexion avec la nature. Il a été tourné dans des paysages grandioses pour accentuer le sentiment d'isolement et la beauté brute de l'environnement.</p>
+
+      <h3>Mon rôle exact</h3>
+      <ul>
+        <li><i class="fas fa-video"></i> Réalisateur</li>
+        <li><i class="fas fa-camera"></i> Cadreur principal</li>
+        <li><i class="fab fa-adobe"></i> Étalonneur (DaVinci Resolve)</li>
+      </ul>
+
+      <h3>Outils utilisés</h3>
+      <ul>
+        <li><i class="fab fa-adobe"></i> DaVinci Resolve (étalonnage)</li>
+        <li><i class="fab fa-adobe"></i> Adobe Premiere Pro (montage)</li>
+        <li><i class="fas fa-camera"></i> Blackmagic Pocket Cinema Camera 6K</li>
+        <li><i class="fas fa-drone"></i> DJI Mavic 3 (prises de vue aériennes)</li>
+      </ul>
+
+      <h3>Coulisses / Making-of</h3>
+      <p>Les conditions de tournage étaient parfois difficiles en raison des variations météorologiques en montagne. Nous avons dû être très flexibles et adapter nos plans en fonction de la lumière et des intempéries. L'utilisation du drone a permis d'obtenir des plans époustouflants qui renforcent l'immersion. Une anecdote amusante : nous avons failli perdre le drone à cause d'un vent inattendu !</p>
+      <a href="#portfolio" class="back-button">Retour au Portfolio</a>
+    </section>
+
+    <section id="project-venum" class="project-page hidden-project">
+      <h2>Venum - PUB</h2>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Venum - PUB" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <h3>Contexte du projet</h3>
+      <p>Cette publicité pour Venum visait à capturer l'énergie et la puissance de la marque à travers des scènes dynamiques d'entraînement et de combat. L'objectif était de produire un contenu percutant pour les réseaux sociaux et les campagnes marketing.</p>
+
+      <h3>Mon rôle exact</h3>
+      <ul>
+        <li><i class="fas fa-camera"></i> Cadreur principal</li>
+        <li><i class="fas fa-cut"></i> Monteur (coupes rapides et dynamiques)</li>
+        <li><i class="fas fa-lightbulb"></i> Consultant créatif pour la mise en scène</li>
+      </ul>
+
+      <h3>Outils utilisés</h3>
+      <ul>
+        <li><i class="fab fa-adobe"></i> Adobe Premiere Pro (montage rapide)</li>
+        <li><i class="fas fa-camera"></i> Sony Alpha 7S III</li>
+        <li><i class="fas fa-grip-horizontal"></i> Stabilisateur Ronin SC</li>
+      </ul>
+
+      <h3>Coulisses / Making-of</h3>
+      <p>Le tournage a eu lieu dans une salle de sport, nécessitant une gestion précise de l'éclairage pour mettre en valeur les athlètes et les produits. Nous avons utilisé des mouvements de caméra fluides et rapides pour accentuer l'intensité des scènes. La post-production a mis l'accent sur un étalonnage des couleurs percutant et des effets sonores immersifs.</p>
+      <a href="#portfolio" class="back-button">Retour au Portfolio</a>
+    </section>
+
+    <section id="project-restaurant-le-leon" class="project-page hidden-project">
+      <h2>Restaurant LE LEON</h2>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Restaurant LE LEON" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <h3>Contexte du projet</h3>
+      <p>Création d'une vidéo promotionnelle pour le restaurant LE LEON, mettant en avant l'ambiance, la cuisine et l'expérience client. L'objectif était de susciter l'envie et de donner un aperçu authentique de l'établissement.</p>
+
+      <h3>Mon rôle exact</h3>
+      <ul>
+        <li><i class="fas fa-video"></i> Réalisateur</li>
+        <li><i class="fas fa-camera"></i> Cadreur (focus sur la nourriture et l'ambiance)</li>
+        <li><i class="fas fa-cut"></i> Monteur</li>
+      </ul>
+
+      <h3>Outils utilisés</h3>
+      <ul>
+        <li><i class="fab fa-adobe"></i> Adobe Premiere Pro</li>
+        <li><i class="fas fa-camera"></i> Canon EOS R5</li>
+        <li><i class="fas fa-lightbulb"></i> Kit d'éclairage LED</li>
+      </ul>
+
+      <h3>Coulisses / Making-of</h3>
+      <p>Le défi principal a été de capturer la fraîcheur des plats et l'atmosphère chaleureuse du restaurant sans perturber le service. Nous avons travaillé en étroite collaboration avec le chef pour filmer la préparation des plats, en mettant l'accent sur les détails et les textures. Le tournage s'est déroulé sur une journée, avec une attention particulière à la lumière naturelle.</p>
+      <a href="#portfolio" class="back-button">Retour au Portfolio</a>
+    </section>
+
+    <section id="project-stephanie-valmorex" class="project-page hidden-project">
+      <h2>Portrait de Stéphanie Valmorex</h2>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Portrait de Stéphanie Valmorex" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <h3>Contexte du projet</h3>
+      <p>Réalisation d'un portrait vidéo intime et inspirant de Stéphanie Valmorex, mettant en lumière son parcours, ses passions et son message. Le but était de créer une connexion émotionnelle avec le spectateur.</p>
+
+      <h3>Mon rôle exact</h3>
+      <ul>
+        <li><i class="fas fa-video"></i> Réalisateur</li>
+        <li><i class="fas fa-microphone"></i> Ingénieur du son (prise de son des interviews)</li>
+        <li><i class="fas fa-cut"></i> Monteur (narration et rythme)</li>
+      </ul>
+
+      <h3>Outils utilisés</h3>
+      <ul>
+        <li><i class="fab fa-adobe"></i> Adobe Premiere Pro</li>
+        <li><i class="fas fa-camera"></i> Sony A7 III</li>
+        <li><i class="fas fa-microphone"></i> Micro cravate Sennheiser</li>
+      </ul>
+
+      <h3>Coulisses / Making-of</h3>
+      <p>Les interviews ont été le cœur de ce projet, nécessitant une approche délicate pour mettre Stéphanie à l'aise et capturer son authenticité. Nous avons choisi des lieux de tournage qui reflétaient sa personnalité et ses activités. Le montage a été un processus méticuleux pour tisser les témoignages et les images en un récit cohérent et émouvant.</p>
+      <a href="#portfolio" class="back-button">Retour au Portfolio</a>
+    </section>
+
+    <section id="project-kidnapink" class="project-page hidden-project">
+      <h2>KidnaPink Final Officiel</h2>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="KidnaPink Final Officiel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <h3>Contexte du projet</h3>
+      <p>KidnaPink est un projet créatif et humoristique, un court métrage décalé qui joue avec les codes du genre. L'objectif était de divertir et de surprendre le public avec une histoire originale et une réalisation dynamique.</p>
+
+      <h3>Mon rôle exact</h3>
+      <ul>
+        <li><i class="fas fa-camera"></i> Cadreur</li>
+        <li><i class="fab fa-adobe"></i> Spécialiste After Effects (effets visuels comiques)</li>
+        <li><i class="fas fa-film"></i> Assistant réalisateur</li>
+      </ul>
+
+      <h3>Outils utilisés</h3>
+      <ul>
+        <li><i class="fab fa-adobe"></i> Adobe Premiere Pro</li>
+        <li><i class="fab fa-adobe"></i> Adobe After Effects</li>
+        <li><i class="fas fa-camera"></i> Canon C200</li>
+      </ul>
+
+      <h3>Coulisses / Making-of</h3>
+      <p>Le tournage de KidnaPink a été un vrai plaisir, avec beaucoup d'improvisation et de fous rires. Les défis techniques étaient liés aux effets spéciaux, que nous avons voulu exagérés pour coller au ton humoristique. Nous avons passé beaucoup de temps en post-production à affiner le timing des gags et les animations.</p>
+      <a href="#portfolio" class="back-button">Retour au Portfolio</a>
+    </section>
+
+    <section id="project-alone" class="project-page hidden-project">
+      <h2>ALONE</h2>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="ALONE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <h3>Contexte du projet</h3>
+      <p>ALONE est un court métrage d'ambiance, une exploration visuelle de la solitude et de la contemplation dans des environnements désertiques. L'objectif était de créer une expérience immersive et méditative pour le spectateur.</p>
+
+      <h3>Mon rôle exact</h3>
+      <ul>
+        <li><i class="fas fa-video"></i> Réalisateur</li>
+        <li><i class="fas fa-camera"></i> Cadreur (plans larges et contemplatifs)</li>
+        <li><i class="fas fa-cut"></i> Monteur (rythme lent et atmosphérique)</li>
+      </ul>
+
+      <h3>Outils utilisés</h3>
+      <ul>
+        <li><i class="fab fa-adobe"></i> Adobe Premiere Pro</li>
+        <li><i class="fas fa-camera"></i> Sony A7S II</li>
+        <li><i class="fas fa-grip-horizontal"></i> Trépied et slider pour mouvements lents</li>
+      </ul>
+
+      <h3>Coulisses / Making-of</h3>
+      <p>Le tournage en milieu désertique a présenté des défis uniques, notamment la chaleur extrême et la gestion de la poussière pour protéger le matériel. Nous avons privilégié les heures dorées pour capturer la lumière la plus dramatique, ce qui a souvent impliqué des réveils très matinaux. Le son a également joué un rôle crucial pour renforcer l'ambiance.</p>
+      <a href="#portfolio" class="back-button">Retour au Portfolio</a>
+    </section>
+
+    <section id="project-diabetique" class="project-page hidden-project">
+      <h2>Dessert spécial diabétique - Ensemble contre le diabète ( Julien LEVENEUR )</h2>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Dessert spécial diabétique" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <h3>Contexte du projet</h3>
+      <p>Cette vidéo a été réalisée en collaboration avec Julien Leveneur pour la campagne "Ensemble contre le diabète", présentant une recette de dessert adaptée. L'objectif était d'informer et d'inspirer les personnes atteintes de diabète avec des options gourmandes et saines.</p>
+
+      <h3>Mon rôle exact</h3>
+      <ul>
+        <li><i class="fas fa-camera"></i> Cadreur (focus sur la préparation culinaire)</li>
+        <li><i class="fas fa-cut"></i> Monteur (clarté des étapes et dynamisme)</li>
+        <li><i class="fas fa-lightbulb"></i> Consultant pour la mise en scène culinaire</li>
+      </ul>
+
+      <h3>Outils utilisés</h3>
+      <ul>
+        <li><i class="fab fa-adobe"></i> Adobe Premiere Pro</li>
+        <li><i class="fas fa-camera"></i> Panasonic GH5</li>
+        <li><i class="fas fa-lightbulb"></i> Lumières de studio pour la nourriture</li>
+      </ul>
+
+      <h3>Coulisses / Making-of</h3>
+      <p>Le tournage d'une recette demande de la précision et une bonne organisation pour suivre toutes les étapes. Nous avons mis en place un éclairage spécifique pour sublimer les ingrédients et le plat final. La voix-off de Julien a été enregistrée séparément pour garantir une clarté optimale. Le plus agréable a été de goûter le dessert à la fin du tournage !</p>
+      <a href="#portfolio" class="back-button">Retour au Portfolio</a>
+    </section>
     <section id="photos">
       <h2>Vitrine Photo</h2>
       <div class="photo-categories-container">
@@ -1826,11 +2083,11 @@
       new Lightbox();
 
       // --- LOGIQUE DE SUIVI DES CLICS SUR LES VIDÉOS ---
-      document.querySelectorAll('.video').forEach(videoDiv => {
-        videoDiv.addEventListener('click', () => {
-          const videoTitleElement = videoDiv.querySelector('.video-title');
+      document.querySelectorAll('.video a').forEach(videoLink => { // Cible le lien à l'intérieur du .video
+        videoLink.addEventListener('click', () => {
+          const videoTitleElement = videoLink.querySelector('.video-title'); // Cherche le titre à l'intérieur du lien
           const videoTitle = videoTitleElement ? videoTitleElement.textContent : 'Vidéo sans titre';
-          gtag('event', 'video_play', {
+          gtag('event', 'video_detail_view', { // Nouvel événement pour la vue de détail
             event_category: 'Vidéos',
             event_label: videoTitle
           });
@@ -1872,62 +2129,5 @@
       }
     });
   </script>
-
-<!-- Modale vidéo personnalisée -->
-<div id="videoModal" class="lightbox">
-  <span class="close-button" id="closeVideoModal">&times;</span>
-  <div class="lightbox-content" style="max-width: 960px; width: 90%; background-color: #000; border-radius: 8px; overflow: hidden;">
-    <iframe id="youtubePlayer" width="100%" height="540" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    <div id="videoDescription" class="lightbox-caption" style="color: #fff; padding: 1rem; font-size: 1rem; line-height: 1.4;"></div>
-  </div>
-</div>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const videos = document.querySelectorAll('.video');
-    const modal = document.getElementById('videoModal');
-    const iframe = document.getElementById('youtubePlayer');
-    const desc = document.getElementById('videoDescription');
-    const closeBtn = document.getElementById('closeVideoModal');
-
-    const videoInfos = {
-  "qtrdrRYwMoA": "<h3 style=\"text-align:center; margin-bottom: 1rem;\">LIVRE DU DESTIN COURT METRAGE</h3>    <hr style=\"border: 0; border-top: 1px solid #aaa; margin: 1rem 0;\">    <p><strong>CONTEXTE DU PROJET :</strong> Ce court-métrage a été réalisé dans le cadre d'un projet étudiant, explorant les thèmes du destin et du libre arbitre à travers une narration visuelle poétique.</p>    <p><strong>COULISSES / MAKING-OF :</strong> Le tournage a impliqué des défis logistiques importants, notamment la gestion des éclairages naturels pour créer des ambiances spécifiques et l'utilisation de techniques de ralenti pour accentuer certaines scènes clés. Le montage a mis l'accent sur le rythme et l'émotion.</p>    <p><strong>MON RÔLE EXACT :</strong> Réalisateur, Cadreur, Monteur</p>    <p><strong>OUTILS UTILISÉS :</strong> Sony Alpha a7S III, DJI Ronin-S, Adobe Premiere Pro, Adobe After Effects</p>",
-  "j_FrzbnDIuY": "<h3 style=\"text-align:center; margin-bottom: 1rem;\">AURORA - COURT MÉTRAGE</h3>    <hr style=\"border: 0; border-top: 1px solid #aaa; margin: 1rem 0;\">    <p><strong>CONTEXTE DU PROJET :</strong> Court-métrage contemplatif autour de la lumière et du mouvement.</p>    <p><strong>COULISSES / MAKING-OF :</strong> Tournage à l’aube dans un décor naturel, en lumière disponible. Post-production avec colorimétrie avancée.</p>    <p><strong>MON RÔLE EXACT :</strong> Réalisateur, Coloriste</p>    <p><strong>OUTILS UTILISÉS :</strong> Sony FX3, DaVinci Resolve</p>",
-  "XOG37yLswio": "<h3 style=\"text-align:center; margin-bottom: 1rem;\">RESTAURANT LE LEON</h3>    <hr style=\"border: 0; border-top: 1px solid #aaa; margin: 1rem 0;\">    <p><strong>CONTEXTE DU PROJET :</strong> Vidéo promotionnelle pour un établissement gastronomique à La Réunion.</p>    <p><strong>COULISSES / MAKING-OF :</strong> Captation en situation réelle, avec stabilisateur pour mouvements fluides et gestion sonore ambiante.</p>    <p><strong>MON RÔLE EXACT :</strong> Cadreur, Monteur</p>    <p><strong>OUTILS UTILISÉS :</strong> Canon EOS R5, Zoom H5, Adobe Premiere Pro</p>",
-  "zZD8K0tTuzo": "<h3 style=\"text-align:center; margin-bottom: 1rem;\">Titre à compléter</h3>    <hr style=\"border: 0; border-top: 1px solid #aaa; margin: 1rem 0;\">    <p><strong>CONTEXTE DU PROJET :</strong> À compléter.</p>    <p><strong>COULISSES / MAKING-OF :</strong> À compléter.</p>    <p><strong>MON RÔLE EXACT :</strong> À compléter.</p>    <p><strong>OUTILS UTILISÉS :</strong> À compléter.</p>",
-  "9GQS8eGeZlk": "<h3 style=\"text-align:center; margin-bottom: 1rem;\">Titre à compléter</h3>    <hr style=\"border: 0; border-top: 1px solid #aaa; margin: 1rem 0;\">    <p><strong>CONTEXTE DU PROJET :</strong> À compléter.</p>    <p><strong>COULISSES / MAKING-OF :</strong> À compléter.</p>    <p><strong>MON RÔLE EXACT :</strong> À compléter.</p>    <p><strong>OUTILS UTILISÉS :</strong> À compléter.</p>",
-  "6bbMbT8_QGE": "<h3 style=\"text-align:center; margin-bottom: 1rem;\">Titre à compléter</h3>    <hr style=\"border: 0; border-top: 1px solid #aaa; margin: 1rem 0;\">    <p><strong>CONTEXTE DU PROJET :</strong> À compléter.</p>    <p><strong>COULISSES / MAKING-OF :</strong> À compléter.</p>    <p><strong>MON RÔLE EXACT :</strong> À compléter.</p>    <p><strong>OUTILS UTILISÉS :</strong> À compléter.</p>",
-  "5S_ke4JsViI": "<h3 style=\"text-align:center; margin-bottom: 1rem;\">Titre à compléter</h3>    <hr style=\"border: 0; border-top: 1px solid #aaa; margin: 1rem 0;\">    <p><strong>CONTEXTE DU PROJET :</strong> À compléter.</p>    <p><strong>COULISSES / MAKING-OF :</strong> À compléter.</p>    <p><strong>MON RÔLE EXACT :</strong> À compléter.</p>    <p><strong>OUTILS UTILISÉS :</strong> À compléter.</p>",
-  "_q7MnK_2QFI": "<h3 style=\"text-align:center; margin-bottom: 1rem;\">Titre à compléter</h3>    <hr style=\"border: 0; border-top: 1px solid #aaa; margin: 1rem 0;\">    <p><strong>CONTEXTE DU PROJET :</strong> À compléter.</p>    <p><strong>COULISSES / MAKING-OF :</strong> À compléter.</p>    <p><strong>MON RÔLE EXACT :</strong> À compléter.</p>    <p><strong>OUTILS UTILISÉS :</strong> À compléter.</p>",
-};
-
-    videos.forEach(video => {
-      video.addEventListener('click', () => {
-        const iframeTag = video.querySelector('iframe');
-        const src = iframeTag.getAttribute('src');
-        const videoId = src.split('/embed/')[1];
-
-        iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-        desc.textContent = videoInfos[videoId] || "Détails du tournage à venir.";
-
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      });
-    });
-
-    closeBtn.addEventListener('click', () => {
-      iframe.src = "";
-      modal.classList.remove('active');
-      document.body.style.overflow = 'auto';
-    });
-
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        closeBtn.click();
-      }
-    });
-  });
-</script>
-
 </body>
 </html>
