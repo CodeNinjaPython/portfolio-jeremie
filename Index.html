@@ -75,6 +75,12 @@
     }
   </script>
 <style>
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
   /* ============================
      VARIABLES GLOBALES (THÈMES)
      ============================ */
@@ -137,14 +143,17 @@
   /* ============================
      STYLES GÉNÉRAUX (body, html)
      ============================ */
-  html { scroll-behavior: smooth; }
+  html {
+    scroll-behavior: smooth;
+    overflow-x: clip;
+  }
   body {
     margin: 0;
     font-family: 'Lato', Arial, sans-serif;
     line-height: 1.6;
     background-color: var(--bg-color);
     color: var(--text-color);
-    overflow-x: hidden;
+    overflow-x: clip;
     background-image:
     linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px),
