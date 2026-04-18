@@ -8,6 +8,9 @@
   <title>Jérémie FAVRE - Portfolio</title>
   <meta content="Portfolio de Jérémie Favre, vidéaste et cadreur-monteur basé à La Réunion. Découvrez mes projets vidéo, compétences et contactez-me pour vos réalisations." name="description"/>
   <meta content="Jérémie Favre, vidéaste, cadreur, monteur, La Réunion, production vidéo, after effects, premiere pro, drone, FPV, portfolio, vidéo, film, publicité" name="keywords"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://cdnjs.cloudflare.com" rel="preconnect"/>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
   <link href="/manifest.json" rel="manifest"/>
@@ -19,12 +22,25 @@
   <meta content="https://votre-site.com/unnamed.jpg" property="og:image"/>
   <meta content="Logo de Jérémie Favre" property="og:image:alt"/>
   <meta content="fr_FR" property="og:locale"/>
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ZSLE032V4E"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-ZSLE032V4E'); // VOTRE ID DE MESURE GOOGLE ANALYTICS
+    const loadAnalytics = () => {
+      if (window.analyticsLoaded) return;
+      window.analyticsLoaded = true;
+      const analyticsScript = document.createElement('script');
+      analyticsScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZSLE032V4E';
+      analyticsScript.async = true;
+      document.head.appendChild(analyticsScript);
+      gtag('js', new Date());
+      gtag('config', 'G-ZSLE032V4E');
+    };
+
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(loadAnalytics, { timeout: 2500 });
+    } else {
+      window.addEventListener('load', loadAnalytics, { once: true });
+    }
   </script>
 <style>
   /* ============================
@@ -435,6 +451,14 @@
   .section-white:not(#contact):nth-child(even)::after {
     transform: skewY(2deg);
     transform-origin: bottom left;
+  }
+
+  #portfolio,
+  #photos,
+  #contact,
+  footer {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 900px;
   }
 
   /* ============================
@@ -1207,7 +1231,7 @@
 </head>
 <body>
 <div id="loader">
-<img alt="Logo Jérémie Favre, portrait stylisé de Jérémie Favre dans un cercle sur fond neutre, ambiance professionnelle et épurée" src="unnamed.jpg" style="border-radius:50%; width:120px; height:120px; object-fit:cover; background:#f4f4f4;"/>
+<img alt="Logo Jérémie Favre, portrait stylisé de Jérémie Favre dans un cercle sur fond neutre, ambiance professionnelle et épurée" decoding="async" fetchpriority="high" height="120" src="unnamed.jpg" style="border-radius:50%; width:120px; height:120px; object-fit:cover; background:#f4f4f4;" width="120"/>
 <h1>Jérémie FAVRE</h1>
 <p>Portfolio</p>
 </div>
@@ -1215,7 +1239,7 @@
 <div class="top-banner">VIDÉASTE - CADREUR MONTEUR</div>
 <div class="header-content">
 <div class="profile-photo">
-<img alt="Portrait de Jérémie Favre souriant, regardant l'objectif, centré dans un cercle à fond neutre, ambiance professionnelle et chaleureuse" src="unnamed.jpg" style="width:100%; height:100%; object-fit:cover; object-position:center;"/>
+<img alt="Portrait de Jérémie Favre souriant, regardant l'objectif, centré dans un cercle à fond neutre, ambiance professionnelle et chaleureuse" decoding="async" fetchpriority="high" height="180" src="unnamed.jpg" style="width:100%; height:100%; object-fit:cover; object-position:center;" width="180"/>
 </div>
 <h1>Jérémie FAVRE</h1>
 <p style="
@@ -1281,70 +1305,70 @@
 <h2>Portfolio Vidéo</h2>
 <div class="gallery">
 <div class="video" data-camera="Sony A6700" data-date="2024" data-director="" data-iframe="https://www.youtube.com/embed/cdwpWkyDJWY" data-location="La Réunion" data-title="Les Bons Plans de Bruna : OZO Réunion">
-<iframe title="Lecteur vidéo pour Les Bons Plans de Bruna : OZO Réunion" allowfullscreen="" src="https://www.youtube.com/embed/cdwpWkyDJWY"></iframe>
+<iframe allowfullscreen="" data-src="https://www.youtube.com/embed/cdwpWkyDJWY" loading="lazy" title="Lecteur vidéo pour Les Bons Plans de Bruna : OZO Réunion"></iframe>
 <div class="video-title">Les Bons Plans de Bruna : OZO Réunion</div>
 </div>
 <div class="video" data-camera="Sony A7 IV - A6700" data-date="2024" data-director="" data-iframe="https://www.youtube.com/embed/j8iEHbRhkf4" data-location="La Réunion" data-title="Clicemploi l'émission #4 : métiers des transports routiers">
-<iframe title="Lecteur vidéo pour Les Bons Plans de Bruna : OZO Réunion" allowfullscreen="" src="https://www.youtube.com/embed/j8iEHbRhkf4"></iframe>
+<iframe allowfullscreen="" data-src="https://www.youtube.com/embed/j8iEHbRhkf4" loading="lazy" title="Lecteur vidéo pour Les Bons Plans de Bruna : OZO Réunion"></iframe>
 <div class="video-title">Clicemploi l'émission #4 : métiers des transports routiers</div>
 </div>
 <div class="video" data-camera="Sony A7 IV + A6700" data-date="2024" data-director="Jean-Chris Oulia - Jeannette Crescence" data-iframe="https://www.facebook.com/plugins/video.php?height=316&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F435836468981953%2F&show_text=false&width=560&t=0" data-location="La Réunion" data-title="Les couples qui danseront pour une cause lors de notre soirée de Gala le samedi 4 mai.">
-<iframe title="Lecteur vidéo pour Ne manquez pas cette occasion de vivre la magie de la danse tout en soutenant les couples qui danseront pour une cause devant notre Jury Elsa Bois& Alizée Bois, et Christophe Licata lors de notre soirée de Gala le samedi 4 mai. " allowfullscreen="" src="https://www.facebook.com/plugins/video.php?height=316&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F435836468981953%2F&show_text=false&width=560&t=0"></iframe>
+<iframe allowfullscreen="" data-src="https://www.facebook.com/plugins/video.php?height=316&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F435836468981953%2F&show_text=false&width=560&t=0" loading="lazy" title="Lecteur vidéo pour Ne manquez pas cette occasion de vivre la magie de la danse tout en soutenant les couples qui danseront pour une cause devant notre Jury Elsa Bois& Alizée Bois, et Christophe Licata lors de notre soirée de Gala le samedi 4 mai. "></iframe>
 <div class="video-title">Les couples qui danseront pour une cause lors de notre soirée de Gala le samedi 4 mai.</div>
 </div>
 <div class="video" data-camera="Sony A7 IV + A6700" data-date="2024" data-director="Jean-Chris Oulia - Jeannette Crescence" data-iframe="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F3729968190600908%2F&s" data-location="La Réunion" data-title="Ne manquez pas les débuts en danse de Ruddy Cabix & Olivia Eti-n">
-<iframe title="Lecteur vidéo pour Ne manquez pas les débuts en danse de Ruddy Cabix & Olivia Eti-n !" allowfullscreen="" src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F3729968190600908%2F&s"></iframe>
+<iframe allowfullscreen="" data-src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F3729968190600908%2F&s" loading="lazy" title="Lecteur vidéo pour Ne manquez pas les débuts en danse de Ruddy Cabix & Olivia Eti-n !"></iframe>
 <div class="video-title">Ne manquez pas les débuts en danse de Ruddy Cabix & Olivia Eti-n</div>
 </div> 
 <div class="video" data-camera="Sony A7 IV + A6700" data-date="2024" data-director="Jean-Chris Oulia - Jeannette Crescence" data-iframe="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1200875547960380%2F&show_text=false&width=560&t=0" data-location="La Réunion" data-title="Ne manquez pas les débuts en danse de Michael Marmitte & Louïz">
-<iframe title="Lecteur vidéo pour Ne manquez pas les débuts en danse de Michael Marmitte & Louïz !" allowfullscreen="" src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1200875547960380%2F&show_text=false&width=560&t=0"></iframe>
+<iframe allowfullscreen="" data-src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1200875547960380%2F&show_text=false&width=560&t=0" loading="lazy" title="Lecteur vidéo pour Ne manquez pas les débuts en danse de Michael Marmitte & Louïz !"></iframe>
 <div class="video-title">Ne manquez pas les débuts en danse de Michael Marmitte & Louïz</div>
 </div>
 <div  class="video" data-camera="Sony A7 IV + Sony A7 III + A6700" data-date="2024" data-director="Wesley Themyr - Jérémie Favre" data-iframe="https://www.youtube.com/embed/8SAUpdJsBJI" data-location="La Réunion" data-title="Régal azot'! Peu importe nout' kiltir !">
-<iframe title="Lecteur vidéo pour Régal azot'! Peu importe nout' kiltir !" allowfullscreen="" src="https://www.youtube.com/embed/8SAUpdJsBJI"></iframe>
+<iframe allowfullscreen="" data-src="https://www.youtube.com/embed/8SAUpdJsBJI" loading="lazy" title="Lecteur vidéo pour Régal azot'! Peu importe nout' kiltir !"></iframe>
 <div class="video-title">Régal azot'! Peu importe nout' kiltir !</div>
 </div>
 <div class="video" data-camera="Sony A6700" data-date="2024" data-director="Wesley Themyr - Jérémie Favre" data-iframe="https://www.youtube.com/embed/5S_ke4JsViI" data-location="Chez Julien Leveneur" data-title="Dessert Diabétique">
-<iframe title="Lecteur vidéo pour Dessert spécial diabétique - Ensemble contre le diabète ( Julien LEVENEUR )" allowfullscreen="" src="https://www.youtube.com/embed/5S_ke4JsViI"></iframe>
+<iframe allowfullscreen="" data-src="https://www.youtube.com/embed/5S_ke4JsViI" loading="lazy" title="Lecteur vidéo pour Dessert spécial diabétique - Ensemble contre le diabète ( Julien LEVENEUR )"></iframe>
 <div class="video-title">Dessert spécial diabétique - Ensemble contre le diabète ( Julien LEVENEUR )</div>
 </div>
 <div class="video" data-camera="" data-date="" data-director="" data-iframe="https://www.youtube.com/embed/zZD8K0tTuzo" data-location="Champ de canne" data-title="Portrait Stéphanie Valmorex">
-<iframe title="Lecteur vidéo pour Portrait de Stéphanie Valmorex" allowfullscreen="" src="https://www.youtube.com/embed/zZD8K0tTuzo"></iframe>
+<iframe allowfullscreen="" data-src="https://www.youtube.com/embed/zZD8K0tTuzo" loading="lazy" title="Lecteur vidéo pour Portrait de Stéphanie Valmorex"></iframe>
 <div class="video-title">Portrait de Stéphanie Valmorex</div>
 </div>
 <div class="video" data-camera="Sony A7 IV + Sony A6700" data-date="2024" data-director="Johnatan Aure" data-iframe="https://www.youtube.com/embed/XOG37yLswio" data-location="Saint-Gilles" data-title="Restaurant LE LEON">
-<iframe title="Lecteur vidéo pour Restaurant LE LEON" allowfullscreen="" src="https://www.youtube.com/embed/XOG37yLswio"></iframe>
+<iframe allowfullscreen="" data-src="https://www.youtube.com/embed/XOG37yLswio" loading="lazy" title="Lecteur vidéo pour Restaurant LE LEON"></iframe>
 <div class="video-title">Restaurant LE LEON</div>
 </div>
 <div class="video" data-camera="Sony A7 IV" data-date="2024" data-director="Jérémie Favre" data-iframe="https://www.youtube.com/embed/_q7MnK_2QFI" data-location="Parking sous terrain Saint-Leu" data-title="VENUM - PUB">
-<iframe title="Lecteur vidéo pour Venum - PUB" allowfullscreen="" src="https://www.youtube.com/embed/_q7MnK_2QFI"></iframe>
+<iframe allowfullscreen="" data-src="https://www.youtube.com/embed/_q7MnK_2QFI" loading="lazy" title="Lecteur vidéo pour Venum - PUB"></iframe>
 <div class="video-title">Venum - PUB</div>
 </div>
 <div class="video" data-camera="RED SCARLET" data-date="2024" data-director="Wesley Themyr - Jérémie Favre - Dhiessene Virapin" data-iframe="https://www.youtube.com/embed/1J_S1kuRwHQ" data-location="Plaine des sables" data-title="AURORA - COURT METRAGE">
-<iframe title="Lecteur vidéo pour AURORA - COURT METRAGE" allowfullscreen="" src="https://www.youtube.com/embed/1J_S1kuRwHQ"></iframe>
+<iframe allowfullscreen="" data-src="https://www.youtube.com/embed/1J_S1kuRwHQ" loading="lazy" title="Lecteur vidéo pour AURORA - COURT METRAGE"></iframe>
 <div class="video-title">AURORA - COURT METRAGE</div>
 </div>
 <div class="video" data-camera="RED SCARLET" data-date="2024" data-director="Loïc Bege - Johnatan Aure" data-iframe="https://www.youtube.com/embed/qtrdrRYwMoA" data-location="Parc des palmiers" data-title="LIVRE DU DESTIN - COURT METRAGE">
-<iframe title="Lecteur vidéo pour LIVRE DU DESTIN - COURT METRAGE" allowfullscreen="" src="https://www.youtube.com/embed/qtrdrRYwMoA"></iframe>
+<iframe allowfullscreen="" data-src="https://www.youtube.com/embed/qtrdrRYwMoA" loading="lazy" title="Lecteur vidéo pour LIVRE DU DESTIN - COURT METRAGE"></iframe>
 <div class="video-title">LIVRE DU DESTIN - COURT METRAGE</div>
 </div>
 <div class="video" data-camera="Sony A7 IV" data-date="2024" data-director="Wesley Themyr - Julien Dennemont - Jérémie Favre" data-iframe="https://www.youtube.com/embed/9GQS8eGeZlk" data-location="Studio et extérieur" data-title="KidnaPink - COURT METRAGE">
-<iframe title="Lecteur vidéo pour KidnaPink - COURT METRAGE" allowfullscreen="" src="https://www.youtube.com/embed/9GQS8eGeZlk"></iframe>
+<iframe allowfullscreen="" data-src="https://www.youtube.com/embed/9GQS8eGeZlk" loading="lazy" title="Lecteur vidéo pour KidnaPink - COURT METRAGE"></iframe>
 <div class="video-title">KidnaPink - COURT METRAGE</div>
 </div>
 <div class="video" data-camera="Sony A7 IV" data-date="2024" data-director="Wesley Themyr - Julien Dennemont - Jérémie Favre" data-iframe="https://www.youtube.com/embed/sxEDTsaQFHw" data-location="Littoral Ouest" data-title="ALONE - COURT METRAGE">
-<iframe title="Lecteur vidéo pour ALONE - COURT METRAGE" allowfullscreen="" src="https://www.youtube.com/embed/sxEDTsaQFHw"></iframe>
+<iframe allowfullscreen="" data-src="https://www.youtube.com/embed/sxEDTsaQFHw" loading="lazy" title="Lecteur vidéo pour ALONE - COURT METRAGE"></iframe>
 <div class="video-title">ALONE - COURT METRAGE</div>
 </div>
 <div class="video" data-camera="Sony A7 IV" data-date="2024" data-director="Jérémie Favre" data-iframe="https://www.youtube.com/embed/RHYnoJ17VnQ" data-location="La Réunion" data-title="Zembrocal - COURT METRAGE">
-<iframe title="Lecteur vidéo pour Zembrocal - COURT METRAGE" allowfullscreen="" src="https://www.youtube.com/embed/RHYnoJ17VnQ"></iframe>
+<iframe allowfullscreen="" data-src="https://www.youtube.com/embed/RHYnoJ17VnQ" loading="lazy" title="Lecteur vidéo pour Zembrocal - COURT METRAGE"></iframe>
 <div class="video-title">Zembrocal - COURT METRAGE</div>
 </div>
 </section>
 <section id="photos">
 <h2>Vitrine Photo</h2>
 <div class="photo-category">
-<script src="https://static.elfsight.com/platform/platform.js" async></script>
+<script data-src="https://static.elfsight.com/platform/platform.js" id="elfsight-platform"></script>
 <h3 class="category-title">Quelques images</h3>
 <div class="elfsight-app-352bfc8c-4b61-420c-983b-79f1623f8368" data-elfsight-app-lazy></div>
 </div>
@@ -2021,9 +2045,6 @@
       this.carouselContainer.addEventListener('mouseleave', () => this.startAutoScroll());
     }
     }
-    new Carousel('carousel-galerie');
-    new Carousel('carousel-mariage');
-
     /* ----------------------------
      LIGHTBOX (PHOTOS) : Classe et comportements
      ---------------------------- */
@@ -2186,7 +2207,63 @@
       this.lightboxImage.addEventListener('touchend', this.handleTouchEnd.bind(this));
     }
     }
-    new Lightbox();
+
+    const loadDeferredScript = (scriptId) => {
+      const script = document.getElementById(scriptId);
+      if (!script || script.dataset.loaded === 'true' || !script.dataset.src) return;
+      script.src = script.dataset.src;
+      script.async = true;
+      script.dataset.loaded = 'true';
+    };
+
+    const hydrateDeferredIframes = (root = document) => {
+      root.querySelectorAll('iframe[data-src]').forEach((iframe) => {
+        if (!iframe.dataset.src || iframe.src) return;
+        iframe.src = iframe.dataset.src;
+      });
+    };
+
+    document.querySelectorAll('img').forEach((image, index) => {
+      image.decoding = 'async';
+      if (index > 1) {
+        image.loading = 'lazy';
+        image.fetchPriority = 'low';
+      }
+    });
+
+    const deferredIframeObserver = new IntersectionObserver((entries, observerInstance) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        hydrateDeferredIframes(entry.target);
+        observerInstance.unobserve(entry.target);
+      });
+    }, { rootMargin: '300px 0px' });
+
+    document.querySelectorAll('.video').forEach((videoCard) => {
+      deferredIframeObserver.observe(videoCard);
+    });
+
+    let photosFeaturesReady = false;
+    const initPhotosFeatures = () => {
+      if (photosFeaturesReady) return;
+      photosFeaturesReady = true;
+      loadDeferredScript('elfsight-platform');
+      new Carousel('carousel-galerie');
+      new Carousel('carousel-mariage');
+      new Lightbox();
+    };
+
+    const photosSection = document.getElementById('photos');
+    if (photosSection) {
+      const photosObserver = new IntersectionObserver((entries, observerInstance) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          initPhotosFeatures();
+          observerInstance.disconnect();
+        });
+      }, { rootMargin: '400px 0px' });
+      photosObserver.observe(photosSection);
+    }
 
     /* ----------------------------
      SUIVI CLICS VIDÉO (gtag)
