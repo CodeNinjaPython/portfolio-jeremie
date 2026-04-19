@@ -2372,6 +2372,48 @@
     return match ? `https://i.ytimg.com/vi/${match[1]}/hqdefault.jpg` : '';
   };
 
+  const escapeXml = (value = '') => value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+
+  const createFallbackThumbnail = (title, subtitle = '') => {
+    const safeTitle = escapeXml(title || 'Vidéo');
+    const safeSubtitle = escapeXml(subtitle || 'Portfolio vidéo');
+    const svg = `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-label="${safeTitle}">
+        <defs>
+          <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#2a2a2a"/>
+            <stop offset="100%" stop-color="#0f0f0f"/>
+          </linearGradient>
+          <radialGradient id="glow" cx="72%" cy="28%" r="60%">
+            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.22"/>
+            <stop offset="55%" stop-color="#ffffff" stop-opacity="0.04"/>
+            <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#f4f4f4" stop-opacity="0.96"/>
+            <stop offset="100%" stop-color="#d0d0d0" stop-opacity="0.78"/>
+          </linearGradient>
+        </defs>
+        <rect width="1280" height="720" fill="url(#bg)"/>
+        <rect width="1280" height="720" fill="url(#glow)"/>
+        <circle cx="180" cy="120" r="180" fill="#ffffff" opacity="0.06"/>
+        <circle cx="1110" cy="600" r="240" fill="#ffffff" opacity="0.05"/>
+        <path d="M0 610 L1280 420 L1280 720 L0 720 Z" fill="#000000" opacity="0.32"/>
+        <text x="80" y="150" fill="url(#accent)" font-family="Bebas Neue, Arial, sans-serif" font-size="54" letter-spacing="4">${safeSubtitle}</text>
+        <text x="80" y="280" fill="#ffffff" font-family="Bebas Neue, Arial, sans-serif" font-size="78" letter-spacing="2">${safeTitle}</text>
+        <g transform="translate(80 380)">
+          <rect x="0" y="0" width="220" height="8" rx="4" fill="#ffffff" opacity="0.85"/>
+          <rect x="0" y="26" width="150" height="8" rx="4" fill="#ffffff" opacity="0.45"/>
+        </g>
+      </svg>`;
+    return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+  };
+
   const buildVideoPreview = (videoElement) => {
     const poster = document.createElement('div');
     poster.className = 'video-poster';
@@ -2380,6 +2422,9 @@
     const thumbnail = isYouTube ? getYouTubeThumbnail(videoElement.dataset.iframe) : '';
     if (thumbnail) {
       poster.style.backgroundImage = `linear-gradient(180deg, rgba(0,0,0,0.08), rgba(0,0,0,0.72)), url("${thumbnail}")`;
+    } else {
+      const fallbackSubtitle = [videoElement.dataset.location, videoElement.dataset.date].filter(Boolean).join(' · ');
+      poster.style.backgroundImage = `linear-gradient(180deg, rgba(0,0,0,0.08), rgba(0,0,0,0.72)), url("${createFallbackThumbnail(videoElement.dataset.title, fallbackSubtitle)}")`;
     }
 
     const playButton = document.createElement('button');
