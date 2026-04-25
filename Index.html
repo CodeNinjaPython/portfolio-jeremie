@@ -13,6 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
   <link href="/manifest.json" rel="manifest"/>
+  <link href="unnamed.jpg" rel="apple-touch-icon"/>
   <meta content="#1a1a1a" name="theme-color"/>
   <meta content="Jérémie FAVRE - Vidéaste à La Réunion" property="og:title"/>
   <meta content="Découvrez le portfolio de Jérémie Favre, vidéaste et cadreur-monteur basé à La Réunion. Des clips dynamiques aux documentaires immersifs." property="og:description"/>
@@ -357,6 +358,7 @@
     border-radius: 18px;
     background: rgba(255,255,255,0.08);
     border: 1px solid var(--border-color);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
   }
 
@@ -386,6 +388,59 @@
     z-index: 3;
     box-shadow: 2px 2px 8px var(--shadow-color);
     transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
+  }
+
+  .loader-logo {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    background: #f4f4f4;
+  }
+
+  .profile-photo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .hero-tagline {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 0;
+    color: var(--accent-color);
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 1.5px;
+    text-shadow: 1px 2px 8px rgba(0,0,0,0.10);
+    background: linear-gradient(90deg, #e0e0e0 0%, #bdbdbd 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    padding: 0 10px;
+    border-radius: 6px;
+  }
+
+  .external-link {
+    color: #ffffff;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .external-link-icon {
+    margin-left: 8px;
+    color: #ffffff;
+    font-size: 0.9em;
+  }
+
+  .section-spacer {
+    height: 2.5rem;
+  }
+
+  .contact-info-spaced {
+    margin-top: 2rem;
   }
 
   /* ============================
@@ -663,6 +718,12 @@
   .video > iframe {
     display: none;
   }
+  .video.video-native-embed > iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 0;
+  }
   .video-poster {
     position: relative;
     width: 100%;
@@ -698,6 +759,7 @@
     border: 1px solid rgba(255,255,255,0.8);
     transform: translate(-50%, -50%);
     background: rgba(255,255,255,0.14);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     color: #111;
     font-size: 1.3rem;
@@ -733,6 +795,7 @@
     background: rgba(255,255,255,0.14);
     color: #fff;
     font-size: 0.8rem;
+    -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
   }
   .video:hover {
@@ -1693,7 +1756,7 @@
 </head>
 <body>
 <div id="loader">
-<img alt="Logo Jérémie Favre, portrait stylisé de Jérémie Favre dans un cercle sur fond neutre, ambiance professionnelle et épurée" decoding="async" fetchpriority="high" height="120" src="unnamed.jpg" style="border-radius:50%; width:120px; height:120px; object-fit:cover; background:#f4f4f4;" width="120"/>
+<img alt="Logo Jérémie Favre, portrait stylisé de Jérémie Favre dans un cercle sur fond neutre, ambiance professionnelle et épurée" class="loader-logo" decoding="async" height="120" src="unnamed.jpg" width="120"/>
 <h1>Jérémie FAVRE</h1>
 <p>Portfolio</p>
 </div>
@@ -1701,25 +1764,10 @@
 <div class="top-banner">VIDÉASTE - CADREUR MONTEUR</div>
 <div class="header-content">
 <div class="profile-photo">
-<img alt="Portrait de Jérémie Favre souriant, regardant l'objectif, centré dans un cercle à fond neutre, ambiance professionnelle et chaleureuse" decoding="async" fetchpriority="high" height="180" src="unnamed.jpg" style="width:100%; height:100%; object-fit:cover; object-position:center;" width="180"/>
+<img alt="Portrait de Jérémie Favre souriant, regardant l'objectif, centré dans un cercle à fond neutre, ambiance professionnelle et chaleureuse" class="profile-photo-img" decoding="async" height="180" src="unnamed.jpg" width="180"/>
 </div>
 <h1>Jérémie FAVRE</h1>
-<p style="
-  font-size: 1.5rem;
-  font-weight: 400;
-  margin: 0 0 0rem 0;
-  color: var(--accent-color);
-  font-family: 'Bebas Neue', sans-serif;
-  letter-spacing: 1.5px;
-  text-shadow: 1px 2px 8px rgba(0,0,0,0.10);
-  background: linear-gradient(90deg, #e0e0e0 0%, #bdbdbd 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-  padding: 0 10px;
-  border-radius: 6px;
-">
+<p class="hero-tagline">
   Raconter le monde, un plan à la fois.
 </p>
 <div class="social-links">
@@ -1735,27 +1783,12 @@
   <a class="hero-cta secondary" href="#contact"><i class="fas fa-paper-plane"></i> Demander un devis</a>
   <a class="hero-cta secondary" href="https://wa.me/262693112398" rel="noopener noreferrer" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp direct</a>
 </div>
-<div class="hero-stats">
-  <div class="hero-stat">
-    <strong>Video</strong>
-    <span>Publicité, social media, clip, captation et contenu de marque</span>
-  </div>
-  <div class="hero-stat">
-    <strong>Drone</strong>
-    <span>Plans stabilisés et FPV pour apporter du relief visuel</span>
-  </div>
-  <div class="hero-stat">
-    <strong>Local</strong>
-    <span>Basé à La Réunion, mobile selon les tournages et les besoins</span>
-  </div>
-</div>
 </div>
 </header>
 <nav>
 <ul>
 <li><a href="#about">À propos</a></li>
 <li><a href="#services">Services</a></li>
-<li><a href="#method">Méthode</a></li>
 <li><a href="#portfolio">Portfolio</a></li>
 <li><a href="#photos">Vitrine Photo</a></li>
 <li><a href="#contact">Contact</a></li>
@@ -1812,38 +1845,6 @@
   </article>
 </div>
 </section>
-<section id="method">
-<h2>Méthode</h2>
-<span class="section-kicker">De l'idée à la livraison</span>
-<div class="cards-grid">
-  <article class="process-card">
-    <h3>1. Cadrage</h3>
-    <p>Objectif, cible, format, diffusion et contraintes sont clarifiés avant de tourner.</p>
-  </article>
-  <article class="process-card">
-    <h3>2. Production</h3>
-    <p>Tournage agile, direction visuelle claire et capture pensée pour le montage final.</p>
-  </article>
-  <article class="process-card">
-    <h3>3. Post-production</h3>
-    <p>Montage, habillage, étalonnage et versions adaptées selon les supports de diffusion.</p>
-  </article>
-</div>
-</section>
-<section id="skills">
-<h2>Mes Outils Créatifs</h2>
-<div class="skills-grid">
-<div>
-<div class="skill-item"><i class="fas fa-cut"></i> Premiere Pro pour le montage, le rythme et les livrables de diffusion.</div>
-<div class="skill-item"><i class="fas fa-magic"></i> After Effects pour l'animation, les transitions et les finitions graphiques.</div>
-<div class="skill-item"><i class="fas fa-image"></i> Photoshop pour la retouche, les visuels et les supports de présentation.</div>
-<div class="skill-item"><i class="fas fa-adjust"></i> Lightroom pour la sélection et l'optimisation photo.</div>
-<div class="skill-item"><i class="fas fa-video"></i> Production vidéo complète, du brief à la livraison.</div>
-<div class="skill-item"><i class="fas fa-film"></i> Narration visuelle orientée marque, émotion et performance.</div>
-<div class="skill-item"><i class="fas fa-helicopter"></i> Pilotage drone pour élargir le champ narratif.</div>
-</div>
-</div>
-</section>
 <section class="section-white" id="portfolio">
 <h2>Portfolio Vidéo</h2>
 <div class="gallery">
@@ -1854,6 +1855,18 @@
 <div class="video" data-camera="Sony A7 IV - A6700" data-date="2024" data-director="" data-iframe="https://www.youtube.com/embed/j8iEHbRhkf4" data-location="La Réunion" data-title="Clicemploi l'émission #4 : métiers des transports routiers">
 <iframe allowfullscreen="" data-src="https://www.youtube.com/embed/j8iEHbRhkf4" loading="lazy" title="Lecteur vidéo pour Les Bons Plans de Bruna : OZO Réunion"></iframe>
 <div class="video-title">Clicemploi l'émission #4 : métiers des transports routiers</div>
+</div>
+<div class="video" data-camera="Non renseigné" data-date="2024" data-director="Jérémie Favre" data-iframe="https://www.youtube.com/embed/I3Msiw9MSdM" data-location="Mafate" data-title="Projet Alimentaire Territorial de MAFATE">
+<iframe allowfullscreen="" data-src="https://www.youtube.com/embed/I3Msiw9MSdM" loading="lazy" title="Lecteur vidéo pour Projet Alimentaire Territorial de MAFATE"></iframe>
+<div class="video-title">Projet Alimentaire Territorial de MAFATE</div>
+</div>
+<div class="video" data-camera="Non renseigné" data-date="2024" data-director="Jérémie Favre" data-iframe="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F4316822995313311%2F&show_text=false&width=560&t=0" data-location="La Réunion" data-title="Envie de fruits et légumes bio toutes les semaines sans te compliquer la vie ? BIO LE LA">
+<iframe allowfullscreen="" data-src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F4316822995313311%2F&show_text=false&width=560&t=0" loading="lazy" title="Lecteur vidéo pour Envie de fruits et légumes bio toutes les semaines sans te compliquer la vie ? BIO LE LA"></iframe>
+<div class="video-title">Envie de fruits et légumes bio toutes les semaines sans te compliquer la vie ? BIO LE LA</div>
+</div>
+<div class="video" data-camera="Non renseigné" data-date="2024" data-director="Jérémie Favre" data-iframe="https://www.youtube.com/embed/_sVgFzYcrbw" data-location="La Réunion" data-title="Interview de Maître Diane MARCHAU - Vergoz Immobilier">
+<iframe allowfullscreen="" data-src="https://www.youtube.com/embed/_sVgFzYcrbw" loading="lazy" title="Lecteur vidéo pour Interview de Maître Diane MARCHAU - Vergoz Immobilier"></iframe>
+<div class="video-title">Interview de Maître Diane MARCHAU - Vergoz Immobilier</div>
 </div>
 <div class="video" data-camera="Sony A7 IV + A6700" data-date="2024" data-director="Jean-Chris Oulia - Jeannette Crescence" data-iframe="https://www.facebook.com/plugins/video.php?height=316&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F435836468981953%2F&show_text=false&width=560&t=0" data-location="La Réunion" data-title="Les couples qui danseront pour une cause lors de notre soirée de Gala le samedi 4 mai.">
 <iframe allowfullscreen="" data-src="https://www.facebook.com/plugins/video.php?height=316&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F435836468981953%2F&show_text=false&width=560&t=0" loading="lazy" title="Lecteur vidéo pour Ne manquez pas cette occasion de vivre la magie de la danse tout en soutenant les couples qui danseront pour une cause devant notre Jury Elsa Bois& Alizée Bois, et Christophe Licata lors de notre soirée de Gala le samedi 4 mai. "></iframe>
@@ -1908,27 +1921,6 @@
 <div class="video-title">Zembrocal - COURT METRAGE</div>
 </div>
 </section>
-<section class="section-white" id="featured-projects">
-<h2>Projets en avant</h2>
-<span class="section-kicker">Études de cas rapides</span>
-<div class="cards-grid">
-  <article class="featured-card">
-    <h3>OZO Réunion</h3>
-    <p>Un format local pensé pour rester vivant, lisible et identifiable rapidement sur les réseaux.</p>
-    <a href="projets/ozo-reunion.html">Voir l'étude de cas <i class="fas fa-arrow-right"></i></a>
-  </article>
-  <article class="featured-card">
-    <h3>VENUM - PUB</h3>
-    <p>Un spot plus direct, plus tendu visuellement, construit pour affirmer une énergie de marque.</p>
-    <a href="projets/venum-pub.html">Voir l'étude de cas <i class="fas fa-arrow-right"></i></a>
-  </article>
-  <article class="featured-card">
-    <h3>AURORA</h3>
-    <p>Un registre plus cinématographique, basé sur l'ambiance, la matière visuelle et le relief du décor.</p>
-    <a href="projets/aurora-court-metrage.html">Voir l'étude de cas <i class="fas fa-arrow-right"></i></a>
-  </article>
-</div>
-</section>
 <section id="photos">
 <h2>Vitrine Photo</h2>
 <div class="photo-category">
@@ -1944,9 +1936,9 @@
 <div class="photo-categories-container">
   <div class="photo-category">
     <h3 class="category-title">
-      <a href="Grille photo.html" rel="noopener noreferrer" target="_blank" style="color:#ffffff; text-decoration:none; display:inline-flex; align-items:center;">
+      <a class="external-link" href="Grille photo.html" rel="noopener noreferrer" target="_blank">
         Galerie
-        <i class="fas fa-external-link-alt" aria-hidden="true" style="margin-left:8px; color:#ffffff; font-size:0.9em;"></i>
+        <i class="fas fa-external-link-alt external-link-icon" aria-hidden="true"></i>
       </a>
     </h3>
     <div class="carousel-container" id="carousel-galerie">
@@ -2101,15 +2093,15 @@
 </div>
 </div>
       <div class="carousel-nav-buttons">
-        <button class="carousel-nav-button prev-button" data-carousel="galerie"><i class="fas fa-chevron-left"></i></button>
-        <button class="carousel-nav-button next-button" data-carousel="galerie"><i class="fas fa-chevron-right"></i></button>
+        <button aria-label="Photo précédente" class="carousel-nav-button prev-button" data-carousel="galerie" title="Photo précédente"><i class="fas fa-chevron-left"></i></button>
+        <button aria-label="Photo suivante" class="carousel-nav-button next-button" data-carousel="galerie" title="Photo suivante"><i class="fas fa-chevron-right"></i></button>
       </div>
     </div>
   </div>
 </div>
 
 <!-- espace entre Galerie et Photo Mariage -->
-<div style="height:2.5rem;"></div>
+<div class="section-spacer"></div>
 
 <!--/* ============================
      CARROUSEL PHOTO - MARIAGE
@@ -2117,9 +2109,9 @@
 <div class="photo-categories-container">
   <div class="photo-category">
     <h3 class="category-title">
-      <a href="Grille photo Mariage.html" rel="noopener noreferrer" target="_blank" style="color:#ffffff; text-decoration:none; display:inline-flex; align-items:center;">
+      <a class="external-link" href="Grille photo Mariage.html" rel="noopener noreferrer" target="_blank">
         Mariage
-        <i class="fas fa-external-link-alt" aria-hidden="true" style="margin-left:8px; color:#ffffff; font-size:0.9em;"></i>
+        <i class="fas fa-external-link-alt external-link-icon" aria-hidden="true"></i>
       </a>
     </h3>
 <div class="carousel-container" id="carousel-mariage">
@@ -2279,8 +2271,8 @@
 </div>
 </div>
       <div class="carousel-nav-buttons">
-        <button class="carousel-nav-button prev-button" data-carousel="mariage"><i class="fas fa-chevron-left"></i></button>
-        <button class="carousel-nav-button next-button" data-carousel="mariage"><i class="fas fa-chevron-right"></i></button>
+        <button aria-label="Photo précédente" class="carousel-nav-button prev-button" data-carousel="mariage" title="Photo précédente"><i class="fas fa-chevron-left"></i></button>
+        <button aria-label="Photo suivante" class="carousel-nav-button next-button" data-carousel="mariage" title="Photo suivante"><i class="fas fa-chevron-right"></i></button>
       </div>
     </div>
   </div>
@@ -2318,7 +2310,7 @@
 <p>Votre message a été envoyé avec succès !</p>
 </div>
 </div>
-<div class="contact-info" style="margin-top: 2rem;">
+<div class="contact-info contact-info-spaced">
 <div class="contact-quick-actions">
   <a class="contact-chip" href="mailto:fvjeremie@gmail.com"><i class="fas fa-envelope"></i> Email</a>
   <a class="contact-chip" href="tel:+262693112398"><i class="fas fa-phone"></i> Appeler</a>
@@ -2415,11 +2407,37 @@
   };
 
   const buildVideoPreview = (videoElement) => {
+    const isFacebookEmbed = videoElement.dataset.iframe.includes('facebook.com/plugins/video.php');
+    if (isFacebookEmbed) {
+      const iframe = videoElement.querySelector('iframe');
+      if (iframe && iframe.dataset.src && !iframe.src) {
+        iframe.src = iframe.dataset.src;
+      }
+      videoElement.classList.add('video-native-embed');
+
+      const actions = document.createElement('div');
+      actions.className = 'video-actions';
+      actions.innerHTML = `
+        <div class="video-details">${videoElement.dataset.camera || 'Configuration légère et adaptable'}</div>
+        ${videoElement.dataset.caseStudy ? `<a class="video-card-link" href="${videoElement.dataset.caseStudy}">Étude de cas <i class="fas fa-arrow-right"></i></a>` : ''}
+      `;
+      videoElement.append(actions);
+
+      const caseStudyLink = actions.querySelector('.video-card-link');
+      if (caseStudyLink) {
+        caseStudyLink.addEventListener('click', (event) => {
+          event.stopPropagation();
+        });
+      }
+      return;
+    }
+
     const poster = document.createElement('div');
     poster.className = 'video-poster';
 
+    const explicitThumbnail = videoElement.dataset.thumbnail || '';
     const isYouTube = videoElement.dataset.iframe.includes('youtube.com/embed/');
-    const thumbnail = isYouTube ? getYouTubeThumbnail(videoElement.dataset.iframe) : '';
+    const thumbnail = explicitThumbnail || (isYouTube ? getYouTubeThumbnail(videoElement.dataset.iframe) : '');
     if (thumbnail) {
       poster.style.backgroundImage = `linear-gradient(180deg, rgba(0,0,0,0.08), rgba(0,0,0,0.72)), url("${thumbnail}")`;
     } else {
