@@ -1,0 +1,20 @@
+{
+  "index_file": "Index.html",
+  "valid_extensions": [".jpg", ".jpeg", ".png", ".webp"],
+  "categories": [
+    {
+      "id": "galerie",
+      "label": "galerie",
+      "folder": "images/Photo",
+      "html_id": "carousel-galerie",
+      "grille_file": "Grille photo.html"
+    },
+    {
+      "id": "mariage",
+      "label": "mariage",
+      "folder": "images/Mariage",
+      "html_id": "carousel-mariage",
+      "grille_file": "Grille photo Mariage.html"
+    }
+  ]
+}
