@@ -2418,7 +2418,6 @@
       actions.className = 'video-actions';
       actions.innerHTML = `
         <div class="video-details">${videoElement.dataset.camera || 'Configuration légère et adaptable'}</div>
-        ${videoElement.dataset.caseStudy ? `<a class="video-card-link" href="${videoElement.dataset.caseStudy}">Étude de cas <i class="fas fa-arrow-right"></i></a>` : ''}
       `;
       videoElement.append(actions);
 
@@ -2463,7 +2462,6 @@
     actions.className = 'video-actions';
     actions.innerHTML = `
       <div class="video-details">${videoElement.dataset.camera || 'Configuration légère et adaptable'}</div>
-      ${videoElement.dataset.caseStudy ? `<a class="video-card-link" href="${videoElement.dataset.caseStudy}">Étude de cas <i class="fas fa-arrow-right"></i></a>` : ''}
     `;
     videoElement.append(actions);
     const caseStudyLink = actions.querySelector('.video-card-link');
