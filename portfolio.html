@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Portfolio Vidéo — Jérémie FAVRE Vidéaste à La Réunion</title>
+  <meta name="description" content="Portfolio vidéo complet de Jérémie Favre — publicités, documentaires, court-métrages, social media et drone à La Réunion.">
+  <link rel="canonical" href="https://www.jeremiefavre.com/portfolio.html">
+  <meta property="og:title" content="Portfolio — Jérémie FAVRE Vidéaste">
+  <meta property="og:description" content="19 projets vidéo — publicités, documentaires, court-métrages, social media.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.jeremiefavre.com/portfolio.html">
+  <meta property="og:image" content="https://www.jeremiefavre.com/unnamed.jpg">
+  <meta name="theme-color" content="#111111">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="9ca2ce88-942f-428b-9100-65869676c999" type="text/javascript" async></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    const _loadGA = () => {
+      if (window._gaLoaded) return; window._gaLoaded = true;
+      const s = document.createElement('script');
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZSLE032V4E';
+      s.async = true; document.head.appendChild(s);
+      gtag('js', new Date()); gtag('config', 'G-ZSLE032V4E');
+    };
+    'requestIdleCallback' in window ? requestIdleCallback(_loadGA, {timeout:2500}) : window.addEventListener('load', _loadGA, {once:true});
+  </script>
+<style>
+  /* ============================
+     RESET + BASE
+     ============================ */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; overflow-x: clip; }
+  body {
+    font-family: 'Lato', Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.65;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: clip;
+  }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  ul { list-style: none; }
+  button { font-family: inherit; cursor: pointer; }
+
+  /* ============================
+     DESIGN TOKENS (identical to index)
+     ============================ */
+  :root {
+    --bg:       #f5f0e8;
+    --bg-alt:   #edeae0;
+    --dark:     #111111;
+    --dark-alt: #1c1c1c;
+    --text:     #111111;
+    --muted:    #777777;
+    --lt:       #f5f0e8;
+    --lt-muted: rgba(245,240,232,0.6);
+    --border:   rgba(0,0,0,0.1);
+    --border-dk:rgba(255,255,255,0.1);
+    --shadow-lg:0 8px 40px rgba(0,0,0,0.18);
+    --r:        4px;
+    --r-lg:     14px;
+    --max:      1200px;
+  }
+
+  /* ============================
+     TYPOGRAPHY
+     ============================ */
+  h1,h2,h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 1px;
+    line-height: 1;
+  }
+  h1 { font-size: clamp(3rem, 7vw, 6rem); }
+  h2 { font-size: clamp(2rem, 4vw, 3.2rem); margin-bottom: 1rem; }
+  .eyebrow {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--lt-muted);
+    margin-bottom: 1rem;
+  }
+
+  /* ============================
+     LAYOUT
+     ============================ */
+  .container {
+    width: min(100%, var(--max));
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* ============================
+     BUTTONS
+     ============================ */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.8rem 1.5rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 2px;
+    border: 2px solid transparent;
+    border-radius: var(--r);
+    transition: background 0.22s, color 0.22s, border-color 0.22s;
+  }
+  .btn-lt    { background: var(--lt);   color: var(--dark); border-color: var(--lt); }
+  .btn-lt:hover { background: transparent; color: var(--lt); }
+  .btn-ghost { background: transparent; color: var(--lt); border-color: rgba(245,240,232,0.35); }
+  .btn-ghost:hover { border-color: var(--lt); }
+
+  /* ============================
+     NAV (identical to index)
+     ============================ */
+  #nav {
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 68px;
+    background: rgba(17,17,17,0.94);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 1px 0 var(--border-dk);
+  }
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.7rem;
+    letter-spacing: 3px;
+    color: var(--lt);
+  }
+  #nav-links {
+    display: flex;
+    align-items: center;
+  }
+  #nav-links a {
+    display: block;
+    padding: 0.55rem 1rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    color: rgba(245,240,232,0.75);
+    position: relative;
+    transition: color 0.2s;
+  }
+  #nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 1rem; right: 1rem;
+    height: 1px;
+    background: var(--lt);
+    transform: scaleX(0);
+    transition: transform 0.25s ease;
+  }
+  #nav-links a:hover,
+  #nav-links a.active { color: var(--lt); }
+  #nav-links a:hover::after,
+  #nav-links a.active::after { transform: scaleX(1); }
+  .nav-cta {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    padding: 0.45rem 1rem;
+    background: var(--lt);
+    color: var(--dark);
+    border-radius: var(--r);
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--bg-alt); }
+  .nav-burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    color: var(--lt);
+    cursor: pointer;
+  }
+  .nav-burger span {
+    display: block;
+    width: 22px; height: 2px;
+    background: currentColor;
+    border-radius: 1px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-burger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* ============================
+     PAGE HEADER
+     ============================ */
+  .page-header {
+    background: var(--dark);
+    padding: 120px 0 70px;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 70% 50%, rgba(255,255,255,0.04) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .page-header h1 { color: var(--lt); margin-bottom: 0.8rem; }
+  .page-header p {
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: var(--lt-muted);
+    max-width: 55ch;
+  }
+
+  /* ============================
+     FILTERS
+     ============================ */
+  .filters-wrap {
+    background: var(--bg);
+    padding: 0;
+    position: sticky;
+    top: 68px;
+    z-index: 100;
+    border-bottom: 1px solid var(--border);
+    transition: box-shadow 0.3s;
+  }
+  .filters-wrap.shadowed { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+  .filters-inner {
+    width: min(100%, var(--max));
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .filters-inner::-webkit-scrollbar { display: none; }
+  .filt-btn {
+    padding: 1rem 1.25rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: var(--muted);
+    white-space: nowrap;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .filt-btn:hover { color: var(--text); }
+  .filt-btn.active { color: var(--text); border-bottom-color: var(--text); }
+
+  /* ============================
+     VIDEO GRID
+     ============================ */
+  .portfolio-main {
+    background: var(--dark);
+    padding: 3rem 0 5rem;
+  }
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1.25rem;
+  }
+  .vc {
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    background: var(--dark-alt);
+    cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .vc:hover { transform: translateY(-4px); box-shadow: 0 16px 44px rgba(0,0,0,0.45); }
+  .vc.hidden { display: none; }
+  .vc-poster {
+    position: relative;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    background: #0a0a0a;
+  }
+  .vc-poster img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: filter 0.4s, transform 0.5s;
+    filter: brightness(0.72) grayscale(10%);
+  }
+  .vc:hover .vc-poster img { filter: brightness(0.45); transform: scale(1.04); }
+  .vc-play {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%) scale(0.85);
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    border: 2px solid rgba(245,240,232,0.7);
+    background: rgba(17,17,17,0.3);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    display: grid;
+    place-items: center;
+    color: var(--lt);
+    font-size: 1rem;
+    opacity: 0;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+  .vc-play i { margin-left: 3px; }
+  .vc:hover .vc-play { opacity: 1; transform: translate(-50%,-50%) scale(1); }
+  .vc-badge-bar {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 0.65rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+  .vc-badge {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 99px;
+    background: rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.9);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+  }
+  .vc-info { padding: 0.85rem 1rem 1rem; }
+  .vc-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.05rem;
+    letter-spacing: 1px;
+    color: var(--lt);
+    margin-bottom: 0.2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .vc-meta { font-size: 0.75rem; color: rgba(245,240,232,0.4); }
+
+  /* External link card (FB/Instagram) */
+  .vc-external .vc-poster {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1c1c1c;
+  }
+  .vc-external-icon {
+    font-size: 2.5rem;
+    color: rgba(245,240,232,0.2);
+  }
+  .vc-external-label {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 0.65rem 0.85rem;
+    background: rgba(0,0,0,0.75);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.72rem;
+    color: var(--lt-muted);
+    letter-spacing: 1px;
+  }
+  .vc-external-label i { font-size: 0.9rem; }
+
+  /* Empty state */
+  .empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 4rem 1rem;
+    color: var(--lt-muted);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+
+  /* ============================
+     VIDEO MODAL
+     ============================ */
+  .modal-bg {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.92);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+  }
+  .modal-bg.on { display: flex; }
+  .modal-box {
+    width: min(100%, 900px);
+    background: var(--dark);
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    position: relative;
+  }
+  .modal-vid { width: 100%; aspect-ratio: 16/9; background: #000; }
+  .modal-vid iframe { width: 100%; height: 100%; border: 0; }
+  .modal-info { padding: 1.25rem 1.75rem; background: var(--dark-alt); }
+  .modal-info-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    color: var(--lt);
+    margin-bottom: 0.65rem;
+  }
+  .modal-details { display: flex; flex-wrap: wrap; gap: 1rem; }
+  .modal-detail {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.82rem;
+    color: var(--lt-muted);
+  }
+  .modal-detail i { font-size: 0.75rem; opacity: 0.6; }
+  .modal-close {
+    position: absolute;
+    top: 0.9rem; right: 0.9rem;
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.55);
+    border: none;
+    color: #fff;
+    font-size: 0.9rem;
+    display: grid;
+    place-items: center;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    transition: background 0.2s;
+  }
+  .modal-close:hover { background: rgba(0,0,0,0.9); }
+
+  /* ============================
+     FOOTER
+     ============================ */
+  footer {
+    background: var(--dark);
+    border-top: 1px solid var(--border-dk);
+    padding: 2rem 0;
+  }
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .footer-brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 3px;
+    color: var(--lt);
+  }
+  .footer-copy { font-size: 0.75rem; color: rgba(245,240,232,0.25); }
+  .footer-social { display: flex; gap: 1.25rem; }
+  .footer-social a {
+    color: var(--lt-muted);
+    font-size: 1.05rem;
+    transition: color 0.2s;
+  }
+  .footer-social a:hover { color: var(--lt); }
+
+  /* ============================
+     BACK TO TOP
+     ============================ */
+  #btt {
+    display: none;
+    position: fixed;
+    bottom: 1.75rem; right: 1.75rem;
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    background: var(--dark);
+    color: var(--lt);
+    border: 1px solid var(--border-dk);
+    font-size: 0.9rem;
+    z-index: 100;
+    box-shadow: var(--shadow-lg);
+    place-items: center;
+    transition: background 0.2s;
+  }
+  #btt.on { display: grid; }
+  #btt:hover { background: #333; }
+
+  /* ============================
+     LOADER
+     ============================ */
+  #loader {
+    position: fixed;
+    inset: 0;
+    background: var(--dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+  }
+  .ld-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    letter-spacing: 5px;
+    color: var(--lt);
+    animation: ldpulse 1.2s ease-in-out infinite alternate;
+  }
+  .ld-sub {
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--lt-muted);
+    margin-top: 0.4rem;
+  }
+  @keyframes ldpulse { from{opacity:0.55} to{opacity:1} }
+
+  /* ============================
+     MOBILE NAV
+     ============================ */
+  @media (max-width: 900px) {
+    .nav-burger { display: flex; }
+    .nav-cta { display: none; }
+    #nav-links {
+      display: none;
+      position: absolute;
+      top: 68px; left: 0; right: 0;
+      background: rgba(17,17,17,0.97);
+      -webkit-backdrop-filter: blur(14px);
+      backdrop-filter: blur(14px);
+      flex-direction: column;
+      padding: 0.5rem 2rem 1.5rem;
+      border-top: 1px solid var(--border-dk);
+    }
+    #nav-links.open { display: flex; }
+    #nav-links a {
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--border-dk);
+    }
+    #nav-links li:last-child a { border-bottom: none; }
+    #nav-links a::after { display: none; }
+  }
+
+  /* ============================
+     RESPONSIVE
+     ============================ */
+  @media (max-width: 1024px) {
+    .video-grid { grid-template-columns: repeat(2,1fr); }
+  }
+  @media (max-width: 600px) {
+    .video-grid { grid-template-columns: 1fr; }
+    .page-header { padding: 100px 0 50px; }
+    .footer-inner { flex-direction: column; text-align: center; }
+    .footer-social { justify-content: center; }
+  }
+  @media (max-width: 480px) {
+    .container { padding: 0 1.25rem; }
+    .filters-inner { padding: 0 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<div id="loader">
+  <div class="ld-logo">JF</div>
+  <div class="ld-sub">Portfolio</div>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a class="nav-logo" href="index.html">JF</a>
+  <ul id="nav-links">
+    <li><a href="index.html#showreel">Showreel</a></li>
+    <li><a href="portfolio.html" class="active">Portfolio</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#about">À propos</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="contact.html">Devis gratuit</a>
+  <button class="nav-burger" id="nav-burger" type="button" aria-expanded="false" aria-label="Ouvrir le menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- PAGE HEADER -->
+<header class="page-header">
+  <div class="container">
+    <span class="eyebrow">19 projets</span>
+    <h1>Portfolio Vidéo</h1>
+    <p>Publicités, documentaires, court-métrages, social media — du tournage à la livraison finale.</p>
+  </div>
+</header>
+
+<!-- FILTERS -->
+<div class="filters-wrap" id="filtersWrap">
+  <div class="filters-inner" role="group" aria-label="Filtrer par catégorie">
+    <button class="filt-btn active" data-filter="all" type="button">Tous</button>
+    <button class="filt-btn" data-filter="pub" type="button">Pub &amp; Marque</button>
+    <button class="filt-btn" data-filter="doc" type="button">Documentaire</button>
+    <button class="filt-btn" data-filter="social" type="button">Social &amp; Évènements</button>
+    <button class="filt-btn" data-filter="fiction" type="button">Court-métrages</button>
+  </div>
+</div>
+
+<!-- VIDEO GRID -->
+<main class="portfolio-main">
+  <div class="container">
+    <div class="video-grid" id="videoGrid">
+
+      <!-- PUB -->
+      <div class="vc" data-cat="pub"
+           data-iframe="https://www.youtube.com/embed/cdwpWkyDJWY"
+           data-title="Les Bons Plans de Bruna : OZO Réunion"
+           data-camera="Sony A6700"
+           data-location="La Réunion"
+           data-date="2024"
+           data-director="">
+      </div>
+
+      <div class="vc" data-cat="pub"
+           data-iframe="https://www.youtube.com/embed/XOG37yLswio"
+           data-title="Restaurant LE LEON"
+           data-camera="Sony A7 IV · A6700"
+           data-location="Saint-Gilles"
+           data-date="2024"
+           data-director="Johnatan Aure">
+      </div>
+
+      <div class="vc" data-cat="pub"
+           data-iframe="https://www.youtube.com/embed/_q7MnK_2QFI"
+           data-title="VENUM — Publicité"
+           data-camera="Sony A7 IV"
+           data-location="Saint-Leu"
+           data-date="2024"
+           data-director="Jérémie Favre">
+      </div>
+
+      <div class="vc vc-external" data-cat="pub"
+           data-external="https://www.facebook.com/reel/4316822995313311/"
+           data-platform="facebook"
+           data-title="BIO LE LA — Fruits et légumes bio"
+           data-camera="Sony FX30 · A7 IV"
+           data-location="La Réunion"
+           data-date="2025"
+           data-director="Jérémie Favre">
+      </div>
+
+      <div class="vc vc-external" data-cat="pub"
+           data-external="https://www.instagram.com/reel/DXrYw6Rxmmn/"
+           data-platform="instagram"
+           data-title="Interview Maître Diane MARCHAU — Vergoz Immobilier"
+           data-camera="Sony FX30 · A7 IV"
+           data-location="La Réunion"
+           data-date="2025"
+           data-director="Jérémie Favre">
+      </div>
+
+      <!-- DOCUMENTAIRE -->
+      <div class="vc" data-cat="doc"
+           data-iframe="https://www.youtube.com/embed/j8iEHbRhkf4"
+           data-title="Clicemploi — Métiers des transports"
+           data-camera="Sony A7 IV · A6700"
+           data-location="La Réunion"
+           data-date="2024"
+           data-director="">
+      </div>
+
+      <div class="vc" data-cat="doc"
+           data-iframe="https://www.youtube.com/embed/I3Msiw9MSdM"
+           data-title="Projet Alimentaire Territorial de MAFATE"
+           data-camera="Sony A7 IV · A6700"
+           data-location="Mafate"
+           data-date="2025"
+           data-director="Jérémie Favre">
+      </div>
+
+      <div class="vc" data-cat="doc"
+           data-iframe="https://www.youtube.com/embed/8SAUpdJsBJI"
+           data-title="Régal azot' — Peu importe nout' kiltir"
+           data-camera="Sony A7 IV · A7 III · A6700"
+           data-location="La Réunion"
+           data-date="2024"
+           data-director="Wesley Themyr · Jérémie Favre">
+      </div>
+
+      <div class="vc" data-cat="doc"
+           data-iframe="https://www.youtube.com/embed/5S_ke4JsViI"
+           data-title="Dessert spécial diabétique — Julien Leveneur"
+           data-camera="Sony A6700"
+           data-location="Chez Julien Leveneur"
+           data-date="2024"
+           data-director="Wesley Themyr · Jérémie Favre">
+      </div>
+
+      <div class="vc" data-cat="doc"
+           data-iframe="https://www.youtube.com/embed/zZD8K0tTuzo"
+           data-title="Portrait de Stéphanie Valmorex"
+           data-camera=""
+           data-location="Champ de canne"
+           data-date=""
+           data-director="">
+      </div>
+
+      <!-- SOCIAL & ÉVÈNEMENTS -->
+      <div class="vc" data-cat="social"
+           data-iframe="https://www.youtube.com/embed/buituUXcZ_Y"
+           data-title="KOURMÉTRAZ Saint-Benoît 2025"
+           data-camera="LUMIX S5II"
+           data-location="Saint-Benoît"
+           data-date="2025"
+           data-director="Athéna Boyer">
+      </div>
+
+      <div class="vc vc-external" data-cat="social"
+           data-external="https://www.facebook.com/reel/435836468981953/"
+           data-platform="facebook"
+           data-title="Gala de danse — Couples en compétition"
+           data-camera="Sony A7 IV · A6700"
+           data-location="La Réunion"
+           data-date="2024"
+           data-director="Jean-Chris Oulia · Jeannette Crescence">
+      </div>
+
+      <div class="vc vc-external" data-cat="social"
+           data-external="https://www.facebook.com/reel/3729968190600908/"
+           data-platform="facebook"
+           data-title="Ruddy Cabix &amp; Olivia — Premiers pas en danse"
+           data-camera="Sony A7 IV · A6700"
+           data-location="La Réunion"
+           data-date="2024"
+           data-director="Jean-Chris Oulia · Jeannette Crescence">
+      </div>
+
+      <div class="vc vc-external" data-cat="social"
+           data-external="https://www.facebook.com/reel/1200875547960380/"
+           data-platform="facebook"
+           data-title="Michael Marmitte &amp; Louïz — Premiers pas en danse"
+           data-camera="Sony A7 IV · A6700"
+           data-location="La Réunion"
+           data-date="2024"
+           data-director="Jean-Chris Oulia · Jeannette Crescence">
+      </div>
+
+      <!-- COURT-MÉTRAGES -->
+      <div class="vc" data-cat="fiction"
+           data-iframe="https://www.youtube.com/embed/1J_S1kuRwHQ"
+           data-title="AURORA — Court-métrage"
+           data-camera="RED SCARLET"
+           data-location="Plaine des sables"
+           data-date="2024"
+           data-director="Wesley Themyr · Jérémie Favre · Dhiessene Virapin">
+      </div>
+
+      <div class="vc" data-cat="fiction"
+           data-iframe="https://www.youtube.com/embed/qtrdrRYwMoA"
+           data-title="LIVRE DU DESTIN — Court-métrage"
+           data-camera="RED SCARLET"
+           data-location="Parc des palmiers"
+           data-date="2024"
+           data-director="Loïc Bege · Johnatan Aure">
+      </div>
+
+      <div class="vc" data-cat="fiction"
+           data-iframe="https://www.youtube.com/embed/9GQS8eGeZlk"
+           data-title="KidnaPink — Court-métrage"
+           data-camera="Sony A7 IV"
+           data-location="Studio et extérieur"
+           data-date="2024"
+           data-director="Wesley Themyr · Julien Dennemont · Jérémie Favre">
+      </div>
+
+      <div class="vc" data-cat="fiction"
+           data-iframe="https://www.youtube.com/embed/sxEDTsaQFHw"
+           data-title="ALONE — Court-métrage"
+           data-camera="Sony A7 IV"
+           data-location="Littoral Ouest"
+           data-date="2024"
+           data-director="Wesley Themyr · Julien Dennemont · Jérémie Favre">
+      </div>
+
+      <div class="vc" data-cat="fiction"
+           data-iframe="https://www.youtube.com/embed/RHYnoJ17VnQ"
+           data-title="Zembrocal — Court-métrage"
+           data-camera="Sony A7 IV"
+           data-location="La Réunion"
+           data-date="2024"
+           data-director="Jérémie Favre">
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <a class="footer-brand" href="index.html">JF</a>
+      <span class="footer-copy">&copy; 2024–2026 Jérémie FAVRE — La Réunion</span>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/j3remie_fvr" aria-label="Instagram" rel="noopener noreferrer" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/jérémie-favre-a402a9239/" aria-label="LinkedIn" rel="noopener noreferrer" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.tiktok.com/@jerem_fvr" aria-label="TikTok" rel="noopener noreferrer" target="_blank"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button id="btt" type="button" title="Retour en haut"><i class="fas fa-arrow-up"></i></button>
+
+<!-- VIDEO MODAL -->
+<div class="modal-bg" id="videoModal" role="dialog" aria-modal="true">
+  <div class="modal-box">
+    <div class="modal-vid">
+      <iframe id="videoModalIframe" src="" allowfullscreen title="Lecteur vidéo"></iframe>
+    </div>
+    <div class="modal-info">
+      <p class="modal-info-title" id="mTitle"></p>
+      <div class="modal-details">
+        <span class="modal-detail" id="mDirRow"><i class="fas fa-film"></i><span id="mDir"></span></span>
+        <span class="modal-detail" id="mCamRow"><i class="fas fa-video"></i><span id="mCam"></span></span>
+        <span class="modal-detail" id="mLocRow"><i class="fas fa-location-dot"></i><span id="mLoc"></span></span>
+        <span class="modal-detail" id="mDateRow"><i class="fas fa-calendar"></i><span id="mDate"></span></span>
+      </div>
+    </div>
+    <button class="modal-close" id="mClose" type="button" aria-label="Fermer"><i class="fas fa-times"></i></button>
+  </div>
+</div>
+
+<script>
+const getYTId = url => { const m = url.match(/embed\/([^?&]+)/); return m ? m[1] : null; };
+
+const buildCard = (card) => {
+  const { iframe, external, platform, title='', camera='', location='', date='' } = card.dataset;
+  const poster = document.createElement('div');
+  poster.className = 'vc-poster';
+
+  if (external) {
+    const icon = document.createElement('div');
+    icon.className = 'vc-external-icon';
+    icon.innerHTML = platform === 'instagram'
+      ? '<i class="fab fa-instagram"></i>'
+      : '<i class="fab fa-facebook"></i>';
+    poster.appendChild(icon);
+    const label = document.createElement('div');
+    label.className = 'vc-external-label';
+    label.innerHTML = platform === 'instagram'
+      ? '<i class="fab fa-instagram"></i> Voir sur Instagram'
+      : '<i class="fab fa-facebook"></i> Voir sur Facebook';
+    poster.appendChild(label);
+  } else if (iframe) {
+    const ytId = getYTId(iframe);
+    if (ytId) {
+      const img = document.createElement('img');
+      img.src = `https://i.ytimg.com/vi/${ytId}/hqdefault.jpg`;
+      img.alt = title;
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      img.width = 480; img.height = 270;
+      poster.appendChild(img);
+    }
+    const playBtn = document.createElement('div');
+    playBtn.className = 'vc-play';
+    playBtn.setAttribute('aria-hidden', 'true');
+    playBtn.innerHTML = '<i class="fas fa-play"></i>';
+    poster.appendChild(playBtn);
+  }
+
+  if ((location || date) && !external) {
+    const bar = document.createElement('div');
+    bar.className = 'vc-badge-bar';
+    if (location) bar.innerHTML += `<span class="vc-badge">${location}</span>`;
+    if (date)     bar.innerHTML += `<span class="vc-badge">${date}</span>`;
+    poster.appendChild(bar);
+  }
+
+  const info = document.createElement('div');
+  info.className = 'vc-info';
+  info.innerHTML = `<p class="vc-title">${title}</p>${camera ? `<p class="vc-meta">${camera}</p>` : ''}`;
+
+  card.appendChild(poster);
+  card.appendChild(info);
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  /* --- LOADER --- */
+  const loader = document.getElementById('loader');
+  window.addEventListener('load', () => {
+    loader.style.opacity = '0';
+    setTimeout(() => loader.remove(), 550);
+  });
+
+  /* --- NAV BURGER --- */
+  const nav    = document.getElementById('nav');
+  const burger = document.getElementById('nav-burger');
+  const links  = document.getElementById('nav-links');
+
+  burger.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    burger.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', String(open));
+  });
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    links.classList.remove('open');
+    burger.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+  }));
+  document.addEventListener('click', e => {
+    if (!nav.contains(e.target)) {
+      links.classList.remove('open');
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  /* --- SCROLL --- */
+  window.addEventListener('scroll', () => {
+    document.getElementById('btt').classList.toggle('on', window.scrollY > 400);
+    document.getElementById('filtersWrap').classList.toggle('shadowed', window.scrollY > 200);
+  }, { passive: true });
+
+  /* --- BUILD CARDS --- */
+  document.querySelectorAll('.vc').forEach(buildCard);
+
+  /* --- FILTERS --- */
+  const filterBtns = document.querySelectorAll('.filt-btn');
+  const cards      = document.querySelectorAll('.vc');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      let visible = 0;
+      cards.forEach(c => {
+        const show = f === 'all' || c.dataset.cat === f;
+        c.classList.toggle('hidden', !show);
+        if (show) visible++;
+      });
+      const empty = document.getElementById('emptyState');
+      if (empty) empty.style.display = visible === 0 ? 'block' : 'none';
+    });
+  });
+
+  /* --- VIDEO MODAL --- */
+  const modal  = document.getElementById('videoModal');
+  const iframe = document.getElementById('videoModalIframe');
+
+  const openModal = el => {
+    const d = el.dataset;
+    if (d.external) { window.open(d.external, '_blank', 'noopener,noreferrer'); return; }
+    document.getElementById('mTitle').textContent = d.title || '';
+    document.getElementById('mDir').textContent   = d.director || '';
+    document.getElementById('mCam').textContent   = d.camera || '';
+    document.getElementById('mLoc').textContent   = d.location || '';
+    document.getElementById('mDate').textContent  = d.date || '';
+    ['mDirRow','mCamRow','mLocRow','mDateRow'].forEach(id => {
+      const row = document.getElementById(id);
+      if (row) row.style.display = row.querySelector('span:last-child').textContent ? '' : 'none';
+    });
+    iframe.src = d.iframe || '';
+    modal.classList.add('on');
+    document.body.style.overflow = 'hidden';
+  };
+  const closeModal = () => {
+    modal.classList.remove('on');
+    iframe.src = '';
+    document.body.style.overflow = '';
+  };
+
+  cards.forEach(c => c.addEventListener('click', () => openModal(c)));
+  document.getElementById('mClose').addEventListener('click', closeModal);
+  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  /* --- BACK TO TOP --- */
+  document.getElementById('btt').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+});
+</script>
+</body>
+</html>
