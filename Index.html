@@ -23,6 +23,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://www.youtube.com">
+  <link rel="preconnect" href="https://s.ytimg.com">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="9ca2ce88-942f-428b-9100-65869676c999" type="text/javascript" async></script>
@@ -53,6 +55,23 @@
       gtag('js', new Date()); gtag('config', 'G-ZSLE032V4E');
     };
     'requestIdleCallback' in window ? requestIdleCallback(_loadGA, {timeout:2500}) : window.addEventListener('load', _loadGA, {once:true});
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Showreel — Jérémie Favre",
+    "description": "Showreel — extraits de travaux de vidéaste, drone et montage.",
+    "thumbnailUrl": "https://i.ytimg.com/vi/1J_S1kuRwHQ/maxresdefault.jpg",
+    "uploadDate": "2026-01-01",
+    "contentUrl": "https://www.youtube.com/watch?v=1J_S1kuRwHQ",
+    "embedUrl": "https://www.youtube.com/embed/1J_S1kuRwHQ",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Jérémie Favre",
+      "logo": { "@type": "ImageObject", "url": "https://www.jeremiefavre.com/unnamed.jpg" }
+    }
+  }
   </script>
 <style>
   /* ============================
@@ -937,7 +956,10 @@
     <p class="lead rv d2">Fictions, documentaires, publicités — un aperçu de mon travail de vidéaste, cadreur-monteur et pilote drone à La Réunion.</p>
     <div class="showreel-wrap rv d3">
       <button class="showreel-btn" data-video-id="1J_S1kuRwHQ" type="button" aria-label="Lire le showreel">
-        <img src="https://i.ytimg.com/vi/1J_S1kuRwHQ/maxresdefault.jpg" alt="Showreel Jérémie Favre" width="1280" height="720" loading="eager">
+        <img class="video-thumb" src="https://i.ytimg.com/vi/1J_S1kuRwHQ/maxresdefault.jpg"
+             srcset="https://i.ytimg.com/vi/1J_S1kuRwHQ/maxresdefault.jpg 1280w, https://i.ytimg.com/vi/1J_S1kuRwHQ/hqdefault.jpg 480w, https://i.ytimg.com/vi/1J_S1kuRwHQ/mqdefault.jpg 320w"
+             sizes="(max-width: 600px) 100vw, 800px"
+             alt="Showreel Jérémie Favre" width="1280" height="720" loading="eager" decoding="async">
         <span class="showreel-play" aria-hidden="true"><i class="fas fa-play"></i></span>
       </button>
     </div>
@@ -951,56 +973,68 @@
     <h2 class="rv d1">Quelques projets</h2>
     <p class="lead lead-lt rv d2">Quatre projets récents — de la publicité au court-métrage.</p>
     <div class="featured-grid">
-      <div class="fc rv"
+      <div class="fc rv" tabindex="0" role="button" aria-label="VENUM — Publicité"
            data-iframe="https://www.youtube.com/embed/_q7MnK_2QFI"
            data-title="VENUM — Publicité"
            data-camera="Sony A7 IV"
            data-location="Saint-Leu"
            data-date="2024"
            data-director="Jérémie Favre">
-        <img class="fc-thumb" src="https://i.ytimg.com/vi/_q7MnK_2QFI/hqdefault.jpg" alt="VENUM Publicité" loading="lazy" width="480" height="270">
+           <img class="fc-thumb video-thumb" src="https://i.ytimg.com/vi/_q7MnK_2QFI/maxresdefault.jpg"
+             srcset="https://i.ytimg.com/vi/_q7MnK_2QFI/maxresdefault.jpg 1280w, https://i.ytimg.com/vi/_q7MnK_2QFI/hqdefault.jpg 480w, https://i.ytimg.com/vi/_q7MnK_2QFI/mqdefault.jpg 320w"
+             sizes="(max-width: 600px) 100vw, 480px"
+             alt="VENUM Publicité" loading="lazy" width="480" height="270" decoding="async">
         <div class="fc-overlay">
           <span class="fc-tag">Pub &amp; Marque</span>
           <p class="fc-title">VENUM — Publicité</p>
         </div>
         <div class="fc-play" aria-hidden="true"><i class="fas fa-play"></i></div>
       </div>
-      <div class="fc rv d1"
+      <div class="fc rv d1" tabindex="0" role="button" aria-label="AURORA — Court-métrage"
            data-iframe="https://www.youtube.com/embed/1J_S1kuRwHQ"
            data-title="AURORA — Court-métrage"
            data-camera="RED SCARLET"
            data-location="Plaine des sables"
            data-date="2024"
            data-director="Wesley Themyr · Jérémie Favre">
-        <img class="fc-thumb" src="https://i.ytimg.com/vi/1J_S1kuRwHQ/hqdefault.jpg" alt="AURORA Court-métrage" loading="lazy" width="480" height="270">
+           <img class="fc-thumb video-thumb" src="https://i.ytimg.com/vi/1J_S1kuRwHQ/maxresdefault.jpg"
+             srcset="https://i.ytimg.com/vi/1J_S1kuRwHQ/maxresdefault.jpg 1280w, https://i.ytimg.com/vi/1J_S1kuRwHQ/hqdefault.jpg 480w, https://i.ytimg.com/vi/1J_S1kuRwHQ/mqdefault.jpg 320w"
+             sizes="(max-width: 600px) 100vw, 480px"
+             alt="AURORA Court-métrage" loading="lazy" width="480" height="270" decoding="async">
         <div class="fc-overlay">
           <span class="fc-tag">Court-métrage</span>
           <p class="fc-title">AURORA</p>
         </div>
         <div class="fc-play" aria-hidden="true"><i class="fas fa-play"></i></div>
       </div>
-      <div class="fc rv d2"
+      <div class="fc rv d2" tabindex="0" role="button" aria-label="Projet Alimentaire de Mafate"
            data-iframe="https://www.youtube.com/embed/I3Msiw9MSdM"
            data-title="Projet Alimentaire de Mafate"
            data-camera="Sony A7 IV · A6700"
            data-location="Mafate"
            data-date="2025"
            data-director="Jérémie Favre">
-        <img class="fc-thumb" src="https://i.ytimg.com/vi/I3Msiw9MSdM/hqdefault.jpg" alt="Projet Alimentaire Mafate" loading="lazy" width="480" height="270">
+           <img class="fc-thumb video-thumb" src="https://i.ytimg.com/vi/I3Msiw9MSdM/maxresdefault.jpg"
+             srcset="https://i.ytimg.com/vi/I3Msiw9MSdM/maxresdefault.jpg 1280w, https://i.ytimg.com/vi/I3Msiw9MSdM/hqdefault.jpg 480w, https://i.ytimg.com/vi/I3Msiw9MSdM/mqdefault.jpg 320w"
+             sizes="(max-width: 600px) 100vw, 480px"
+             alt="Projet Alimentaire Mafate" loading="lazy" width="480" height="270" decoding="async">
         <div class="fc-overlay">
           <span class="fc-tag">Documentaire</span>
           <p class="fc-title">Projet Alimentaire de Mafate</p>
         </div>
         <div class="fc-play" aria-hidden="true"><i class="fas fa-play"></i></div>
       </div>
-      <div class="fc rv d3"
+      <div class="fc rv d3" tabindex="0" role="button" aria-label="Restaurant LE LEON"
            data-iframe="https://www.youtube.com/embed/XOG37yLswio"
            data-title="Restaurant LE LEON"
            data-camera="Sony A7 IV · A6700"
            data-location="Saint-Gilles"
            data-date="2024"
            data-director="Johnatan Aure">
-        <img class="fc-thumb" src="https://i.ytimg.com/vi/XOG37yLswio/hqdefault.jpg" alt="Restaurant LE LEON" loading="lazy" width="480" height="270">
+           <img class="fc-thumb video-thumb" src="https://i.ytimg.com/vi/XOG37yLswio/maxresdefault.jpg"
+             srcset="https://i.ytimg.com/vi/XOG37yLswio/maxresdefault.jpg 1280w, https://i.ytimg.com/vi/XOG37yLswio/hqdefault.jpg 480w, https://i.ytimg.com/vi/XOG37yLswio/mqdefault.jpg 320w"
+             sizes="(max-width: 600px) 100vw, 480px"
+             alt="Restaurant LE LEON" loading="lazy" width="480" height="270" decoding="async">
         <div class="fc-overlay">
           <span class="fc-tag">Pub &amp; Marque</span>
           <p class="fc-title">Restaurant LE LEON</p>
@@ -1237,9 +1271,46 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* --- VIDEO MODAL --- */
+  /* --- UTIL: fallback SVG for broken thumbs --- */
+  function escapeHtml(s){ return String(s).replace(/[&<>\"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+  function setFallbackSVG(img){
+    const title = escapeHtml(img.alt || 'Vidéo');
+    const svg = `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1280 720'><rect width='100%' height='100%' fill='#0b0b0b'/><text x='50%' y='50%' fill='#dfe6e9' font-family='Lato,Arial,Helvetica' font-size='28' dominant-baseline='middle' text-anchor='middle'>${title}</text></svg>`;
+    img.removeAttribute('srcset');
+    img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+  }
+  document.querySelectorAll('.video-thumb').forEach(img => {
+    img.addEventListener('error', () => setFallbackSVG(img));
+  });
+
+  /* --- VIDEO MODAL (accessibility + focus trap) --- */
   const modal  = document.getElementById('videoModal');
   const iframe = document.getElementById('videoModalIframe');
+  const modalBox = modal.querySelector('.modal-box');
+  const focusableSelector = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, [tabindex]:not([tabindex="-1"])';
+  let _lastFocused = null;
+
+  function setMainInert(state){
+    document.querySelectorAll('body > *:not(#videoModal):not(script):not(style)').forEach(el => {
+      if (state){
+        el.setAttribute('aria-hidden','true');
+        try{ el.inert = true; }catch(e){}
+      } else {
+        el.removeAttribute('aria-hidden');
+        try{ el.inert = false; }catch(e){}
+      }
+    });
+  }
+
+  function trapTab(e){
+    if (e.key !== 'Tab') return;
+    const nodes = modalBox.querySelectorAll(focusableSelector);
+    if (!nodes.length) return;
+    const first = nodes[0];
+    const last = nodes[nodes.length-1];
+    if (e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+  }
 
   const openModal = el => {
     const { title='', director='', camera='', location='', date='', iframe: src='' } = el.dataset;
@@ -1252,17 +1323,32 @@ document.addEventListener('DOMContentLoaded', () => {
       const row = document.getElementById(id);
       if (row) row.style.display = row.querySelector('span:last-child').textContent ? '' : 'none';
     });
-    iframe.src = src;
+    iframe.src = src + (src.includes('?') ? '&' : '?') + 'autoplay=1&rel=0&modestbranding=1';
+    _lastFocused = document.activeElement;
     modal.classList.add('on');
+    setMainInert(true);
     document.body.style.overflow = 'hidden';
+    // focus first interactive inside modal
+    const focusable = modalBox.querySelectorAll(focusableSelector);
+    (focusable.length ? focusable[0] : document.getElementById('mClose')).focus();
+    modalBox.addEventListener('keydown', trapTab);
   };
+
   const closeModal = () => {
     modal.classList.remove('on');
     iframe.src = '';
+    setMainInert(false);
     document.body.style.overflow = '';
+    modalBox.removeEventListener('keydown', trapTab);
+    if (_lastFocused && _lastFocused.focus) _lastFocused.focus();
   };
 
-  document.querySelectorAll('.fc').forEach(c => c.addEventListener('click', () => openModal(c)));
+  document.querySelectorAll('.fc').forEach(c => {
+    c.addEventListener('click', () => openModal(c));
+    c.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(c); }
+    });
+  });
   document.getElementById('mClose').addEventListener('click', closeModal);
   modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
