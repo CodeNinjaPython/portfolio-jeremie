@@ -1,0 +1,888 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Jérémie Favre - Réalisateur & Vidéaste à La Réunion</title>
+  <meta name="description" content="Direction, tournage, drone et post-production. Jérémie Favre accompagne les marques et projets culturels avec une approche vidéo haut de gamme.">
+  <meta name="theme-color" content="#f5f7fb">
+  <meta property="og:title" content="Jérémie Favre - Réalisateur & Vidéaste">
+  <meta property="og:description" content="Films de marque, documentaires, contenu social et captation drone à La Réunion.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="unnamed.jpg">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.youtube.com">
+  <link rel="preconnect" href="https://i.ytimg.com">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --bg-soft: #ebeff7;
+      --surface: #ffffff;
+      --ink: #111827;
+      --ink-soft: #4b5563;
+      --accent: #0ea5e9;
+      --accent-dark: #0369a1;
+      --line: rgba(17, 24, 39, 0.08);
+      --radius: 18px;
+      --radius-sm: 12px;
+      --shadow: 0 14px 40px rgba(2, 6, 23, 0.08);
+      --max: 1220px;
+      --section: 6.5rem;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Manrope, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 500px at 90% -10%, rgba(14, 165, 233, 0.20), transparent 60%),
+        radial-gradient(800px 300px at 0% 20%, rgba(99, 102, 241, 0.08), transparent 70%),
+        var(--bg);
+      line-height: 1.6;
+      overflow-x: clip;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    button { font: inherit; }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      background: var(--ink);
+      color: #fff;
+      padding: 0.6rem 0.9rem;
+      border-radius: 0 0 8px 8px;
+      z-index: 999;
+    }
+    .skip-link:focus { left: 1rem; }
+
+    .container {
+      width: min(100% - 2.4rem, var(--max));
+      margin-inline: auto;
+    }
+
+    h1, h2, h3 {
+      font-family: Syne, sans-serif;
+      letter-spacing: -0.02em;
+      line-height: 1.02;
+    }
+
+    p { color: var(--ink-soft); }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.4rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(14, 165, 233, 0.12);
+      color: var(--accent-dark);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 600ms cubic-bezier(.2, .6, .2, 1), transform 600ms cubic-bezier(.2, .6, .2, 1);
+    }
+    .reveal.is-visible { opacity: 1; transform: none; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(245, 247, 251, 0.82);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+    }
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(140deg, var(--accent), #22d3ee);
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.88rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+      font-weight: 600;
+      color: var(--ink-soft);
+    }
+
+    .nav-links a { position: relative; padding: 0.25rem 0.1rem; }
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 100%;
+      height: 2px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 220ms ease;
+    }
+    .nav-links a:hover::after,
+    .nav-links a:focus-visible::after { transform: scaleX(1); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      border: 0;
+      border-radius: 12px;
+      padding: 0.78rem 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+    .btn:focus-visible,
+    .card:focus-visible,
+    .icon-btn:focus-visible {
+      outline: 3px solid rgba(14, 165, 233, 0.28);
+      outline-offset: 2px;
+    }
+
+    .btn-primary {
+      color: #fff;
+      background: linear-gradient(140deg, var(--accent), #06b6d4);
+      box-shadow: 0 10px 28px rgba(14, 165, 233, 0.25);
+    }
+    .btn-primary:hover { transform: translateY(-2px); }
+
+    .btn-light {
+      background: var(--surface);
+      color: var(--ink);
+      border: 1px solid var(--line);
+    }
+    .btn-light:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+
+    .menu-toggle {
+      display: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer;
+    }
+    .menu-toggle span {
+      width: 18px;
+      height: 2px;
+      background: var(--ink);
+      border-radius: 2px;
+      transition: transform 220ms ease, opacity 220ms ease;
+    }
+    .menu-toggle.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .menu-toggle.open span:nth-child(2) { opacity: 0; }
+    .menu-toggle.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    .hero {
+      padding-top: 4.5rem;
+      padding-bottom: 3.4rem;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 2.2rem;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.25rem, 5.5vw, 5rem);
+      margin: 1rem 0 1.1rem;
+    }
+
+    .hero p { font-size: clamp(1rem, 1.9vw, 1.2rem); max-width: 52ch; }
+
+    .hero-actions {
+      margin-top: 1.6rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .stats {
+      margin-top: 1.9rem;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.7rem;
+    }
+    .stat {
+      padding: 0.9rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(8px);
+    }
+    .stat strong {
+      display: block;
+      font-size: 1.35rem;
+      font-family: Syne, sans-serif;
+      line-height: 1;
+      margin-bottom: 0.2rem;
+    }
+    .stat span { font-size: 0.8rem; color: var(--ink-soft); }
+
+    .hero-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      position: relative;
+      isolation: isolate;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(2, 6, 23, 0.46), transparent 45%);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-preview {
+      position: relative;
+      cursor: pointer;
+      border: 0;
+      width: 100%;
+      background: #000;
+    }
+    .hero-preview img {
+      width: 100%;
+      aspect-ratio: 16/10;
+      object-fit: cover;
+      transition: transform 400ms ease;
+    }
+    .hero-preview:hover img { transform: scale(1.03); }
+
+    .play-chip {
+      position: absolute;
+      left: 1rem;
+      bottom: 1rem;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 0.45rem 0.8rem;
+      font-weight: 700;
+      border: 1px solid rgba(0, 0, 0, 0.07);
+    }
+
+    .section {
+      padding-block: var(--section);
+    }
+
+    .section-head {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-between;
+      align-items: end;
+      margin-bottom: 1.7rem;
+    }
+
+    .section h2 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      margin-top: 0.55rem;
+    }
+
+    .bento {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform 260ms ease, box-shadow 260ms ease;
+    }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(2, 6, 23, 0.10); }
+
+    .project {
+      grid-column: span 4;
+      cursor: pointer;
+      text-align: left;
+      padding: 0;
+    }
+
+    .project img {
+      width: 100%;
+      aspect-ratio: 16/10;
+      object-fit: cover;
+    }
+
+    .project-body { padding: 1rem 1rem 1.15rem; }
+    .tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-dark);
+      background: rgba(14, 165, 233, 0.12);
+      padding: 0.35rem 0.55rem;
+      border-radius: 999px;
+      margin-bottom: 0.6rem;
+    }
+    .project h3 {
+      font-size: 1.18rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .service {
+      padding: 1.2rem;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+    }
+
+    .service h3 {
+      font-size: 1.04rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .service p { font-size: 0.95rem; }
+
+    .about {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 1.2rem;
+    }
+
+    .about-media {
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: #dbe4f3;
+    }
+    .about-media img {
+      width: 100%;
+      height: 100%;
+      min-height: 430px;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .about-panel {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      padding: 1.45rem;
+    }
+    .about-panel p + p { margin-top: 0.85rem; }
+
+    .skills {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .skills span {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0.34rem 0.62rem;
+      font-size: 0.82rem;
+      color: var(--ink-soft);
+      background: #fff;
+    }
+
+    .cta {
+      text-align: center;
+      background: linear-gradient(140deg, #ffffff, #eef7ff);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: clamp(1.8rem, 4vw, 3.2rem);
+    }
+
+    .cta h2 { font-size: clamp(1.8rem, 5vw, 3.2rem); margin-bottom: 0.8rem; }
+    .cta p { max-width: 60ch; margin-inline: auto; }
+    .cta .hero-actions { justify-content: center; }
+
+    footer {
+      padding: 2.2rem 0 2.4rem;
+      border-top: 1px solid var(--line);
+      margin-top: 3.4rem;
+    }
+
+    .footer-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      color: var(--ink-soft);
+      font-weight: 600;
+    }
+
+    #toTop {
+      position: fixed;
+      right: 1.1rem;
+      bottom: 1.1rem;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: var(--shadow);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(8px);
+      pointer-events: none;
+      transition: opacity 200ms ease, transform 200ms ease;
+      z-index: 50;
+    }
+    #toTop.show {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(3, 7, 18, 0.8);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.2rem;
+      z-index: 200;
+    }
+    .modal.open { display: flex; }
+
+    .modal-panel {
+      width: min(100%, 980px);
+      background: #0b1220;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+    }
+
+    .modal-video {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      background: #000;
+    }
+    .modal-video iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .modal-info {
+      padding: 1rem 1.15rem;
+      color: #c4cbd7;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .icon-btn {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: transparent;
+      color: #fff;
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 1000px) {
+      .hero,
+      .about { grid-template-columns: 1fr; }
+      .project { grid-column: span 6; }
+      .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .about-media img { min-height: 320px; }
+    }
+
+    @media (max-width: 760px) {
+      :root { --section: 4.5rem; }
+
+      .nav-links {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 74px;
+        background: rgba(245, 247, 251, 0.97);
+        border-bottom: 1px solid var(--line);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0.8rem 1.2rem 1.2rem;
+        display: none;
+      }
+      .nav-links.open { display: flex; }
+      .menu-toggle { display: inline-flex; }
+      .desktop-cta { display: none; }
+      .project { grid-column: span 12; }
+      .services-grid { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu</a>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Accueil Jérémie Favre">
+        <span class="brand-mark">JF</span>
+        <span>Jérémie Favre</span>
+      </a>
+
+      <nav id="navLinks" class="nav-links" aria-label="Navigation principale">
+        <a href="#projects">Projets</a>
+        <a href="#services">Services</a>
+        <a href="#about">A propos</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="btn btn-primary desktop-cta" href="contact.html">Demander un devis</a>
+
+      <button id="menuToggle" class="menu-toggle" aria-expanded="false" aria-label="Ouvrir le menu" type="button">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="home" class="container hero">
+      <div class="reveal">
+        <span class="kicker">Vidéaste • Réalisateur • Drone</span>
+        <h1>Des films premium qui servent vos objectifs.</h1>
+        <p>
+          Je conçois des productions visuelles avec une approche claire: stratégie, narration, exécution. De la publicité au documentaire, chaque image est pensée pour être utile et mémorable.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">Voir les projets</a>
+          <a class="btn btn-light" href="#showreel">Lancer le showreel</a>
+        </div>
+
+        <div class="stats" aria-label="Statistiques">
+          <div class="stat"><strong>5+</strong><span>Années d'experience</span></div>
+          <div class="stat"><strong>50+</strong><span>Projets livres</span></div>
+          <div class="stat"><strong>4K</strong><span>Tournage & finition</span></div>
+        </div>
+      </div>
+
+      <article id="showreel" class="hero-card reveal" aria-label="Showreel">
+        <button class="hero-preview" data-video-id="1J_S1kuRwHQ" data-video-title="Showreel - Jeremie Favre" type="button">
+          <img
+            src="images/optimized/yt/1J_S1kuRwHQ-1280.jpg"
+            srcset="images/optimized/yt/1J_S1kuRwHQ-1280.jpg 1280w, images/optimized/yt/1J_S1kuRwHQ-480.jpg 480w, images/optimized/yt/1J_S1kuRwHQ-320.jpg 320w"
+            sizes="(max-width: 1000px) 100vw, 42vw"
+            alt="Showreel Jeremie Favre"
+            loading="eager"
+            decoding="async"
+          >
+          <span class="play-chip" aria-hidden="true">▶ Voir le showreel</span>
+        </button>
+      </article>
+    </section>
+
+    <section id="projects" class="section container">
+      <div class="section-head reveal">
+        <div>
+          <span class="kicker">Selection</span>
+          <h2>Projets recents</h2>
+        </div>
+        <p>Une selection representative entre films de marque, narration et territoire.</p>
+      </div>
+
+      <div class="bento">
+        <article class="project card reveal" role="button" tabindex="0" data-video-id="_q7MnK_2QFI" data-video-title="VENUM - Publicite">
+          <img src="images/optimized/yt/_q7MnK_2QFI-1280.jpg" srcset="images/optimized/yt/_q7MnK_2QFI-1280.jpg 1280w, images/optimized/yt/_q7MnK_2QFI-480.jpg 480w, images/optimized/yt/_q7MnK_2QFI-320.jpg 320w" sizes="(max-width: 1000px) 100vw, 31vw" alt="Projet VENUM" loading="lazy" decoding="async">
+          <div class="project-body">
+            <span class="tag">Pub & Marque</span>
+            <h3>VENUM - Publicite</h3>
+            <p>Spot dynamique oriente conversion et image premium.</p>
+          </div>
+        </article>
+
+        <article class="project card reveal" role="button" tabindex="0" data-video-id="1J_S1kuRwHQ" data-video-title="AURORA - Court-metrage">
+          <img src="images/optimized/yt/1J_S1kuRwHQ-1280.jpg" srcset="images/optimized/yt/1J_S1kuRwHQ-1280.jpg 1280w, images/optimized/yt/1J_S1kuRwHQ-480.jpg 480w, images/optimized/yt/1J_S1kuRwHQ-320.jpg 320w" sizes="(max-width: 1000px) 100vw, 31vw" alt="Projet AURORA" loading="lazy" decoding="async">
+          <div class="project-body">
+            <span class="tag">Narration</span>
+            <h3>AURORA</h3>
+            <p>Court-metrage visuel, travail de lumiere et rythme cinematique.</p>
+          </div>
+        </article>
+
+        <article class="project card reveal" role="button" tabindex="0" data-video-id="I3Msiw9MSdM" data-video-title="Projet Alimentaire - Mafate">
+          <img src="images/optimized/yt/I3Msiw9MSdM-1280.jpg" srcset="images/optimized/yt/I3Msiw9MSdM-1280.jpg 1280w, images/optimized/yt/I3Msiw9MSdM-480.jpg 480w, images/optimized/yt/I3Msiw9MSdM-320.jpg 320w" sizes="(max-width: 1000px) 100vw, 31vw" alt="Projet Mafate" loading="lazy" decoding="async">
+          <div class="project-body">
+            <span class="tag">Documentaire</span>
+            <h3>Projet Alimentaire - Mafate</h3>
+            <p>Film de territoire avec une approche authentique et utile.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="services" class="section container">
+      <div class="section-head reveal">
+        <div>
+          <span class="kicker">Expertise</span>
+          <h2>Services video</h2>
+        </div>
+        <p>Un workflow clair de la pre-production a la livraison finale.</p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service reveal">
+          <h3>Films de marque</h3>
+          <p>Concept, tournage et montage de contenus premium pour notoriété et acquisition.</p>
+        </article>
+        <article class="service reveal">
+          <h3>Drone & plans aeriens</h3>
+          <p>Captation drone pour valoriser vos lieux, itineraires et experiences.</p>
+        </article>
+        <article class="service reveal">
+          <h3>Social media</h3>
+          <p>Formats verticaux et capsules courtes adaptees a Instagram, TikTok et Meta.</p>
+        </article>
+        <article class="service reveal">
+          <h3>Evenementiel</h3>
+          <p>Couverture d'evenements avec montage rapide et assets multi-formats.</p>
+        </article>
+        <article class="service reveal">
+          <h3>Post-production</h3>
+          <p>Montage, sound design, etalonnage et finition pour diffusion professionnelle.</p>
+        </article>
+        <article class="service reveal">
+          <h3>Accompagnement creatif</h3>
+          <p>Conseil editorial, angle narratif et plan de publication selon vos objectifs.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="section container about">
+      <figure class="about-media reveal">
+        <img src="unnamed.jpg" alt="Jeremie Favre sur un tournage" loading="lazy" decoding="async">
+      </figure>
+
+      <article class="about-panel reveal">
+        <span class="kicker">A propos</span>
+        <h2 style="margin:0.6rem 0 1rem; font-size: clamp(1.7rem, 3.6vw, 2.8rem);">Un partenaire de production, pas juste un operateur.</h2>
+        <p>
+          Mon role est d'aligner la creation avec vos objectifs business ou culturels. Je privilegie une methode simple: cadrage precis, execution propre, livraison fiable.
+        </p>
+        <p>
+          Je travaille principalement a La Reunion pour des marques, institutions, artistes et entrepreneurs qui veulent des images utiles et elegantes.
+        </p>
+
+        <div class="skills" aria-label="Outils et competences">
+          <span>Sony A7 IV / FX30</span>
+          <span>Drone DJI / FPV</span>
+          <span>DaVinci Resolve</span>
+          <span>Premiere Pro</span>
+          <span>Etalonnage</span>
+          <span>Sound design</span>
+        </div>
+      </article>
+    </section>
+
+    <section id="contact" class="section container">
+      <article class="cta reveal">
+        <span class="kicker">Contact</span>
+        <h2>Parlons de votre prochain film.</h2>
+        <p>Donnez-moi le contexte, la date cible et le format. Je vous reponds avec une proposition claire, un delai et un budget transparent.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="contact.html">Demander un devis</a>
+          <a class="btn btn-light" href="https://wa.me/262693112398" target="_blank" rel="noopener noreferrer">WhatsApp direct</a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <p><strong>Jeremie Favre</strong> - Videaste & realisateur a La Reunion</p>
+      <nav class="footer-links" aria-label="Liens footer">
+        <a href="#home">Accueil</a>
+        <a href="portfolio.html">Portfolio complet</a>
+        <a href="contact.html">Contact</a>
+        <a href="https://www.instagram.com/j3remie_fvr" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </nav>
+    </div>
+  </footer>
+
+  <button id="toTop" type="button" aria-label="Retour en haut">↑</button>
+
+  <div id="videoModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-panel" role="document">
+      <div class="modal-video">
+        <iframe id="videoFrame" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Lecteur video"></iframe>
+      </div>
+      <div class="modal-info">
+        <strong id="videoTitle">Video</strong>
+        <button id="closeModal" class="icon-btn" type="button" aria-label="Fermer">✕</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuToggle = document.getElementById('menuToggle');
+      const navLinks = document.getElementById('navLinks');
+      const toTop = document.getElementById('toTop');
+      const reveals = document.querySelectorAll('.reveal');
+      const modal = document.getElementById('videoModal');
+      const frame = document.getElementById('videoFrame');
+      const videoTitle = document.getElementById('videoTitle');
+      const closeModalBtn = document.getElementById('closeModal');
+      const videoTriggers = document.querySelectorAll('[data-video-id]');
+      let lastFocus = null;
+
+      menuToggle.addEventListener('click', () => {
+        const open = navLinks.classList.toggle('open');
+        menuToggle.classList.toggle('open', open);
+        menuToggle.setAttribute('aria-expanded', String(open));
+      });
+
+      navLinks.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          navLinks.classList.remove('open');
+          menuToggle.classList.remove('open');
+          menuToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      window.addEventListener('scroll', () => {
+        toTop.classList.toggle('show', window.scrollY > 420);
+      }, { passive: true });
+
+      toTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.14 });
+      reveals.forEach(el => obs.observe(el));
+
+      function openVideo(videoId, title) {
+        const src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
+        lastFocus = document.activeElement;
+        frame.src = src;
+        videoTitle.textContent = title || 'Video';
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        closeModalBtn.focus();
+      }
+
+      function closeVideo() {
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+        frame.src = '';
+        document.body.style.overflow = '';
+        if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
+      }
+
+      videoTriggers.forEach(el => {
+        const run = () => openVideo(el.dataset.videoId, el.dataset.videoTitle);
+        el.addEventListener('click', run);
+        el.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            run();
+          }
+        });
+      });
+
+      closeModalBtn.addEventListener('click', closeVideo);
+      modal.addEventListener('click', e => { if (e.target === modal) closeVideo(); });
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && modal.classList.contains('open')) closeVideo();
+      });
+
+      // fallback image if any thumbnail fails
+      document.querySelectorAll('img').forEach(img => {
+        img.addEventListener('error', () => {
+          if (img.dataset.fallbackApplied) return;
+          img.dataset.fallbackApplied = '1';
+          img.removeAttribute('srcset');
+          img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(
+            `<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360"><rect width="100%" height="100%" fill="#111827"/><text x="50%" y="50%" fill="#e5e7eb" font-family="Arial,Helvetica,sans-serif" font-size="20" dominant-baseline="middle" text-anchor="middle">Apercu indisponible</text></svg>`
+          );
+        });
+      });
+
+    });
+  </script>
+</body>
+</html>
