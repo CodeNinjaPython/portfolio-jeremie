@@ -5,7 +5,7 @@
     {
       "id": "galerie",
       "label": "galerie",
-      "folder": "images/Photo",
+      "folders": ["images/Photo", "images/Mariage", "images/Produit", "images/Portrait"],
       "grille_file": "Grille photo.html"
     },
     {

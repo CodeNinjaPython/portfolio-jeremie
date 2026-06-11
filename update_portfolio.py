@@ -29,17 +29,21 @@ def write_text_if_changed(file_path, content):
 
 
 def build_category(raw_category):
-    required_keys = {"id", "folder", "grille_file"}
+    required_keys = {"id", "grille_file"}
     missing_keys = required_keys - raw_category.keys()
     if missing_keys:
         missing = ", ".join(sorted(missing_keys))
         raise ValueError(f"Catégorie invalide dans {CONFIG_FILE}: clés manquantes: {missing}")
 
+    folders = raw_category.get("folders") or ([raw_category["folder"]] if "folder" in raw_category else [])
+    if not folders:
+        raise ValueError(f"Catégorie invalide dans {CONFIG_FILE}: 'folder' ou 'folders' requis.")
+
     category_id = raw_category["id"]
     return {
         "id": category_id,
         "label": raw_category.get("label", category_id),
-        "folder": raw_category["folder"],
+        "folders": folders,
         "html_id": raw_category.get("html_id"),
         "grille_file": raw_category["grille_file"],
         "grid_start_marker": GRID_START_MARKER,
@@ -201,10 +205,13 @@ def main():
 
     for category in config["categories"]:
         print(f"\nTraitement de la catégorie : {category['id'].upper()}")
-        images = get_image_list(category["folder"], valid_extensions)
+        images = []
+        for folder in category["folders"]:
+            images.extend(get_image_list(folder, valid_extensions))
+        images = sorted(set(images))
 
         if not images:
-            print(f"-> Dossier {category['folder']} vide. Aucune photo à synchroniser.")
+            print(f"-> Dossier(s) {', '.join(category['folders'])} vide(s). Aucune photo à synchroniser.")
             continue
 
         if not ensure_grid_markers(
