@@ -29,7 +29,7 @@ def write_text_if_changed(file_path, content):
 
 
 def build_category(raw_category):
-    required_keys = {"id", "folder", "html_id", "grille_file"}
+    required_keys = {"id", "folder", "grille_file"}
     missing_keys = required_keys - raw_category.keys()
     if missing_keys:
         missing = ", ".join(sorted(missing_keys))
@@ -40,7 +40,7 @@ def build_category(raw_category):
         "id": category_id,
         "label": raw_category.get("label", category_id),
         "folder": raw_category["folder"],
-        "html_id": raw_category["html_id"],
+        "html_id": raw_category.get("html_id"),
         "grille_file": raw_category["grille_file"],
         "grid_start_marker": GRID_START_MARKER,
         "grid_end_marker": GRID_END_MARKER,
@@ -222,6 +222,10 @@ def main():
             print(f"-> Fichier '{category['grille_file']}' mis à jour ({len(images)} photos).")
         else:
             failures.append(f"Marqueurs de galerie introuvables dans {category['grille_file']}")
+
+        if not category["html_id"]:
+            # Pas de carrousel sur l'index pour cette catégorie : seule la grille est synchronisée.
+            continue
 
         if not ensure_index_markers(
             index_file,

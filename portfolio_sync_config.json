@@ -6,15 +6,25 @@
       "id": "galerie",
       "label": "galerie",
       "folder": "images/Photo",
-      "html_id": "carousel-galerie",
       "grille_file": "Grille photo.html"
     },
     {
       "id": "mariage",
       "label": "mariage",
       "folder": "images/Mariage",
-      "html_id": "carousel-mariage",
       "grille_file": "Grille photo Mariage.html"
+    },
+    {
+      "id": "produit",
+      "label": "produit",
+      "folder": "images/Produit",
+      "grille_file": "Grille photo Produit.html"
+    },
+    {
+      "id": "portrait",
+      "label": "portrait",
+      "folder": "images/Portrait",
+      "grille_file": "Grille photo Portrait.html"
     }
   ]
 }

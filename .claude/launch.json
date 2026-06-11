@@ -7,6 +7,12 @@
       "runtimeArgs": ["--prefix", "site", "run", "dev"],
       "port": 3007,
       "autoPort": true
+    },
+    {
+      "name": "html-static",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8087"],
+      "port": 8087
     }
   ]
 }
