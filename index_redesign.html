@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Jérémie Favre — Vidéaste | Portfolio</title>
+  <meta name="description" content="Jérémie Favre — Réalisateur, pilote drone et monteur basé à La Réunion. Showreel, projets et contact.">
+  <link rel="canonical" href="/index_redesign.html">
+  <meta property="og:title" content="Jérémie Favre — Vidéaste">
+  <meta property="og:description" content="Showreel, projets vidéo et services de production.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="unnamed.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.youtube.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0b0b0b;--muted:#9aa0a6;--accent:#7cc8ff;--accent-2:#5fb8ff;--card:#0f1113;--radius:14px;--max:1200px}
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:'Lato',Arial,sans-serif;background:linear-gradient(180deg,#050505 0%,#0b0b0b 60%);color:#fff}
+    a{color:inherit}
+    .wrap{max-width:var(--max);margin:0 auto;padding:2rem}
+    header{position:sticky;top:0;backdrop-filter:blur(6px);background:linear-gradient(180deg,rgba(11,11,11,0.7),transparent);z-index:30}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 2rem}
+    .brand{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:3px}
+    .nav-links{display:flex;gap:1rem;align-items:center}
+    .btn-ghost{border:1px solid rgba(255,255,255,0.06);padding:.6rem 1rem;border-radius:10px;background:transparent}
+
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1fr 460px;gap:2rem;align-items:center;min-height:78vh;padding:3rem 2rem}
+    .hero-left h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,8vw,6rem);margin:0 0 .6rem;line-height:0.9}
+    .hero-sub{color:var(--muted);max-width:60ch;font-weight:300}
+    .hero-cta{margin-top:1.6rem;display:flex;gap:1rem}
+    .btn{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#111;padding:.9rem 1.2rem;border-radius:10px;font-weight:700;box-shadow:0 10px 30px rgba(0,0,0,0.5);}
+    .meta{display:flex;gap:1.2rem;margin-top:1.8rem;color:var(--muted);font-size:.9rem}
+    .hero-right{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.65);border:1px solid rgba(255,255,255,0.03)}
+    .hero-media{width:100%;aspect-ratio:16/10;display:block;object-fit:cover;transform:scale(1.02)}
+
+    /* Grid projects */
+    .section{padding:3rem 2rem}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(0,0,0,0.12));border-radius:12px;overflow:hidden;cursor:pointer;position:relative;transition:transform .28s,box-shadow .28s}
+    .card:hover{transform:translateY(-8px);box-shadow:0 24px 60px rgba(0,0,0,0.6)}
+    .card:focus{outline:3px solid rgba(255,205,0,.18)}
+    .card-thumb{width:100%;height:220px;object-fit:cover;display:block}
+    .card-body{padding:1rem}
+    .tag{display:inline-block;background:rgba(255,255,255,0.04);padding:.25rem .5rem;border-radius:999px;color:var(--muted);font-size:.75rem}
+
+    /* modal */
+    .modal{display:none;position:fixed;inset:0;background:linear-gradient(180deg,rgba(2,2,2,0.92),rgba(2,2,2,0.96));align-items:center;justify-content:center;padding:2rem;z-index:60}
+    .modal.on{display:flex}
+    .modal-panel{width:min(1100px,100%);background:var(--card);border-radius:12px;overflow:hidden}
+    .modal-vid{aspect-ratio:16/9;background:#000}
+    .modal-info{padding:1rem;color:var(--muted)}
+    .modal-close{position:absolute;top:1rem;right:1rem;border:0;background:rgba(255,255,255,0.03);color:#fff;padding:.6rem;border-radius:8px}
+
+    footer{padding:3rem 2rem;color:var(--muted);border-top:1px solid rgba(255,255,255,0.03)}
+
+    @media(max-width:900px){.hero{grid-template-columns:1fr;}.grid{grid-template-columns:repeat(2,1fr)}.hero-right{order:-1}}
+    @media(max-width:600px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav wrap">
+      <div class="brand">JF</div>
+      <nav class="nav-links" aria-label="Navigation principale">
+        <a class="nav-link" href="#projects">Projets</a>
+        <a class="nav-link" href="#services">Services</a>
+        <a class="nav-link" href="#contact">Contact</a>
+        <a class="btn-ghost" href="contact.html">Devis</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero wrap" id="home">
+      <div class="hero-left">
+        <span style="color:var(--muted);letter-spacing:2px;font-weight:700">Vidéaste • Drone • Montage</span>
+        <h1>Images qui racontent<br>des histoires</h1>
+        <p class="hero-sub">Je réalise films, publicités et reportages depuis La Réunion. Rythme, lumière et intention — pour des vidéos qui servent un but.</p>
+        <div class="hero-cta">
+          <a class="btn" href="#showreel">Voir le showreel</a>
+          <a class="btn-ghost" href="contact.html">Parler projet</a>
+        </div>
+        <div class="meta">
+          <div><strong>5+</strong> ans d'expérience</div>
+          <div><strong>50+</strong> projets</div>
+          <div><strong>4K</strong> capture</div>
+        </div>
+      </div>
+      <div class="hero-right" aria-hidden="true">
+        <picture>
+          <source srcset="images/optimized/Photo/DSC05258.jpg" media="(min-width:800px)">
+          <img class="hero-media" src="unnamed.jpg" alt="Extrait showreel">
+        </picture>
+      </div>
+    </section>
+
+    <section id="showreel" class="section wrap">
+      <h2>Showreel</h2>
+      <p style="color:var(--muted);max-width:60ch">Un montage court qui présente mon univers visuel — diffusion, publicité et captation drone.</p>
+      <div style="margin-top:1rem;display:grid;grid-template-columns:1fr;gap:1rem;max-width:900px">
+          <button id="showreelBtn" class="card" data-video="1J_S1kuRwHQ" aria-label="Lire le showreel">
+            <img class="card-thumb" alt="Showreel" src="images/optimized/yt/1J_S1kuRwHQ-1280.jpg">
+            <div class="card-body"><span class="tag">Showreel</span><div style="margin-top:.6rem">2:15 — Extraits variés</div></div>
+        </button>
+      </div>
+    </section>
+
+    <section id="projects" class="section wrap">
+      <h2>Projets</h2>
+      <p style="color:var(--muted)">Sélection récente</p>
+      <div class="grid" role="list">
+        <article class="card" role="button" tabindex="0" data-title="VENUM — Publicité" data-video="_q7MnK_2QFI">
+            <img class="card-thumb" src="images/optimized/yt/_q7MnK_2QFI-1280.jpg" srcset="images/optimized/yt/_q7MnK_2QFI-1280.jpg 1280w, images/optimized/yt/_q7MnK_2QFI-480.jpg 480w, images/optimized/yt/_q7MnK_2QFI-320.jpg 320w, https://i.ytimg.com/vi/_q7MnK_2QFI/hqdefault.jpg 480w" alt="VENUM" loading="lazy">
+          <div class="card-body"><div class="tag">Pub</div><h3 style="margin:.5rem 0 0">VENUM — Publicité</h3></div>
+        </article>
+        <article class="card" role="button" tabindex="0" data-title="AURORA" data-video="1J_S1kuRwHQ">
+            <img class="card-thumb" src="images/optimized/yt/1J_S1kuRwHQ-1280.jpg" srcset="images/optimized/yt/1J_S1kuRwHQ-1280.jpg 1280w, images/optimized/yt/1J_S1kuRwHQ-480.jpg 480w, images/optimized/yt/1J_S1kuRwHQ-320.jpg 320w, https://i.ytimg.com/vi/1J_S1kuRwHQ/hqdefault.jpg 480w" alt="AURORA" loading="lazy">
+          <div class="card-body"><div class="tag">Court-métrage</div><h3 style="margin:.5rem 0 0">AURORA</h3></div>
+        </article>
+        <article class="card" role="button" tabindex="0" data-title="Projet Mafate" data-video="I3Msiw9MSdM">
+            <img class="card-thumb" src="images/optimized/yt/I3Msiw9MSdM-1280.jpg" srcset="images/optimized/yt/I3Msiw9MSdM-1280.jpg 1280w, images/optimized/yt/I3Msiw9MSdM-480.jpg 480w, images/optimized/yt/I3Msiw9MSdM-320.jpg 320w, https://i.ytimg.com/vi/I3Msiw9MSdM/hqdefault.jpg 480w" alt="Mafate" loading="lazy">
+          <div class="card-body"><div class="tag">Doc</div><h3 style="margin:.5rem 0 0">Projet Mafate</h3></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="services" class="section wrap">
+      <h2>Services</h2>
+      <p style="color:var(--muted)">Production complète : préparation, tournage, post-prod, drone.</p>
+      <ul style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem;color:var(--muted)">
+        <li class="tag">Publicité</li>
+        <li class="tag">Social</li>
+        <li class="tag">Mariage</li>
+        <li class="tag">Drone & FPV</li>
+        <li class="tag">Étalonnage</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="section wrap">
+      <h2>Contact</h2>
+      <p style="color:var(--muted)">Parle-moi du projet : format, date, budget.</p>
+      <div style="margin-top:1rem;display:flex;gap:1rem;flex-wrap:wrap">
+        <a class="btn" href="contact.html">Demander un devis</a>
+        <a class="btn-ghost" href="mailto:contact@jeremiefavre.com">contact@jeremiefavre.com</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem">
+        <div><strong>Jérémie Favre</strong><div style="color:var(--muted)">Vidéaste — La Réunion</div></div>
+        <nav style="display:flex;gap:1rem"><a href="#projects">Projets</a><a href="#contact">Contact</a><a href="https://www.instagram.com/j3remie_fvr" target="_blank" rel="noopener">Instagram</a></nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-panel" role="document">
+      <div style="position:relative">
+        <div class="modal-vid" id="modalVid"></div>
+        <button id="modalClose" class="modal-close" aria-label="Fermer la fenêtre">✕</button>
+      </div>
+      <div class="modal-info" id="modalInfo"></div>
+    </div>
+  </div>
+
+  <script>
+    // progressive enhancements: lazy load iframe and accessible modal
+    function setFallback(img){img.addEventListener('error',()=>{img.src='data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360"><rect width="100%" height="100%" fill="#111"/><text x="50%" y="50%" fill="#ddd" font-family="Lato,Arial" font-size="18" text-anchor="middle" dominant-baseline="middle">Aperçu indisponible</text></svg>')})}
+    document.querySelectorAll('img').forEach(setFallback);
+
+    // build responsive srcset for YouTube thumbnails and prefer local optimized copies if present
+    async function buildSrcsets(){
+      const imgs = Array.from(document.querySelectorAll('img')).filter(i=>/i.ytimg.com\/vi\//.test(i.src));
+      for(const img of imgs){
+        const m = img.src.match(/vi\/(.+?)\//);
+        if(!m) continue;
+        const id = m[1];
+        const candidates = [
+          `images/optimized/yt/${id}-1280.jpg`,
+          `images/optimized/yt/${id}-480.jpg`,
+          `images/optimized/yt/${id}-320.jpg`,
+          `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`,
+          `https://i.ytimg.com/vi/${id}/hqdefault.jpg`,
+          `https://i.ytimg.com/vi/${id}/mqdefault.jpg`
+        ];
+        const parts = [];
+        for(const c of candidates){
+          try{
+            // try local optimized first with a HEAD request
+            if(c.startsWith('images/')){
+              const res = await fetch(c, {method:'HEAD'});
+              if(res.ok){
+                if(c.includes('1280')) parts.push(`${c} 1280w`);
+                else if(c.includes('480')) parts.push(`${c} 480w`);
+                else if(c.includes('320')) parts.push(`${c} 320w`);
+              }
+            } else {
+              // remote resources: just include
+              if(c.includes('maxres')) parts.push(`${c} 1280w`);
+              else if(c.includes('hqdefault')) parts.push(`${c} 480w`);
+              else if(c.includes('mqdefault')) parts.push(`${c} 320w`);
+            }
+          }catch(e){/* ignore */}
+        }
+        if(parts.length) img.setAttribute('srcset', parts.join(', '));
+        img.setAttribute('sizes','(max-width:600px) 100vw, 480px');
+        img.decoding = 'async';
+      }
+    }
+    // run in background
+    buildSrcsets().catch(()=>{});
+
+    const modal = document.getElementById('modal');
+    const modalVid = document.getElementById('modalVid');
+    const modalClose = document.getElementById('modalClose');
+    const modalInfo = document.getElementById('modalInfo');
+    let lastFocus = null;
+
+    function openVideo(id,title){
+      lastFocus = document.activeElement;
+      modal.setAttribute('aria-hidden','false');
+      modal.classList.add('on');
+      document.body.style.overflow='hidden';
+      modalVid.innerHTML = '<iframe src="https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;height:100%;border:0"></iframe>';
+      modalInfo.textContent = title;
+      modalClose.focus();
+      trapFocus(modal);
+    }
+    function closeVideo(){modal.classList.remove('on');modal.setAttribute('aria-hidden','true');modalVid.innerHTML='';document.body.style.overflow='';if(lastFocus)lastFocus.focus();removeTrap(modal)}
+
+    // attach to showreel
+    document.getElementById('showreelBtn').addEventListener('click',e=>{openVideo(e.currentTarget.dataset.video,'Showreel — Jérémie Favre')});
+
+    // attach to project cards
+    document.querySelectorAll('[role="button"][data-video]').forEach(el=>{
+      el.addEventListener('click',()=>openVideo(el.dataset.video,el.dataset.title));
+      el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openVideo(el.dataset.video,el.dataset.title)}});
+    });
+
+    modalClose.addEventListener('click',closeVideo);
+    modal.addEventListener('click',e=>{if(e.target===modal)closeVideo()});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('on'))closeVideo()});
+
+    // focus trap utils
+    const focusableSel = 'a[href],button,textarea,input,select,[tabindex]:not([tabindex="-1"])';
+    function trapFocus(container){
+      const nodes = Array.from(container.querySelectorAll(focusableSel));
+      if(!nodes.length) return;
+      const first = nodes[0], last = nodes[nodes.length-1];
+      container._trap = function(e){
+        if(e.key!=='Tab') return;
+        if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}
+        else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
+      };
+      document.addEventListener('keydown',container._trap);
+    }
+    function removeTrap(container){if(container._trap){document.removeEventListener('keydown',container._trap);container._trap=null}}
+
+    // minimal JSON-LD
+    const ld = {"@context":"https://schema.org","@type":"Person","name":"Jérémie Favre","jobTitle":"Vidéaste","url":"https://www.jeremiefavre.com"};
+    const s = document.createElement('script');s.type='application/ld+json';s.textContent=JSON.stringify(ld);document.head.appendChild(s);
+  </script>
+</body>
+</html>

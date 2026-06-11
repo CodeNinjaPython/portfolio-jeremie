@@ -1,0 +1,18 @@
+{
+  "videos": [
+    { "id": "_q7MnK_2QFI", "title": "VENUM", "category": "Publicité", "description": "Spot publicitaire pour la marque VENUM.", "featured": true, "order": 1 },
+    { "id": "I3Msiw9MSdM", "title": "Projet Alimentaire de Mafate", "category": "Documentaire", "description": "Film de territoire au coeur du cirque de Mafate.", "featured": true, "order": 2 },
+    { "id": "1J_S1kuRwHQ", "title": "AURORA", "category": "Court-métrage", "description": "Travail de lumière et rythme cinématographique.", "featured": true, "order": 3 },
+    { "id": "cdwpWkyDJWY", "title": "Les Bons Plans de Bruna : OZO Réunion", "category": "Publicité", "description": "Format découverte tourné au Sony A6700.", "featured": true, "order": 4 },
+    { "id": "8SAUpdJsBJI", "title": "Régal azot' — Peu importe nout' kiltir", "category": "Documentaire", "description": "Portrait d'un artisan et de son savoir-faire local.", "featured": true, "order": 5 },
+    { "id": "buituUXcZ_Y", "title": "KOURMÉTRAZ Saint-Benoît 2025", "category": "Événement", "description": "Aftermovie de la course, au plus près des coureurs.", "featured": true, "order": 6 },
+    { "id": "XOG37yLswio", "title": "Restaurant LE LEON", "category": "Publicité", "description": "Mise en valeur du lieu, des plats et de l'équipe.", "featured": false, "order": 7 },
+    { "id": "j8iEHbRhkf4", "title": "Clicemploi — Métiers des transports", "category": "Documentaire", "description": "Reportage sur les métiers du transport à La Réunion.", "featured": false, "order": 8 },
+    { "id": "5S_ke4JsViI", "title": "Dessert spécial diabétique — Julien Leveneur", "category": "Documentaire", "description": "Rencontre gourmande avec le chef Julien Leveneur.", "featured": false, "order": 9 },
+    { "id": "zZD8K0tTuzo", "title": "Portrait de Stéphanie Valmorex", "category": "Documentaire", "description": "Portrait filmé d'une personnalité réunionnaise.", "featured": false, "order": 10 },
+    { "id": "qtrdrRYwMoA", "title": "LIVRE DU DESTIN", "category": "Court-métrage", "description": "Fiction courte écrite et réalisée à La Réunion.", "featured": false, "order": 11 },
+    { "id": "9GQS8eGeZlk", "title": "KidnaPink", "category": "Court-métrage", "description": "Court-métrage entre comédie et suspense.", "featured": false, "order": 12 },
+    { "id": "sxEDTsaQFHw", "title": "ALONE", "category": "Court-métrage", "description": "Exercice de style autour de la solitude.", "featured": false, "order": 13 },
+    { "id": "RHYnoJ17VnQ", "title": "Zembrocal", "category": "Court-métrage", "description": "Histoire locale, saveurs et identité créole.", "featured": false, "order": 14 }
+  ]
+}

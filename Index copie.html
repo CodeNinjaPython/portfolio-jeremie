@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Jérémie Favre - Vidéaste & Photographe à La Réunion</title>
-  <meta name="description" content="Portfolio de Jérémie Favre, vidéaste et photographe à La Réunion : publicités, documentaires, courts-métrages, mariage, produit et portrait.">
+  <title>Jérémie Favre - Réalisateur & Vidéaste à La Réunion</title>
+  <meta name="description" content="Direction, tournage, drone et post-production. Jérémie Favre accompagne les marques et projets culturels avec une approche vidéo haut de gamme.">
   <meta name="theme-color" content="#f5f7fb">
-  <meta property="og:title" content="Jérémie Favre - Vidéaste & Photographe">
-  <meta property="og:description" content="Publicités, documentaires, courts-métrages et photographie à La Réunion. Découvrez mon portfolio.">
+  <meta property="og:title" content="Jérémie Favre - Réalisateur & Vidéaste">
+  <meta property="og:description" content="Films de marque, documentaires, contenu social et captation drone à La Réunion.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="unnamed.jpg">
   <meta property="og:locale" content="fr_FR">
@@ -237,6 +237,28 @@
       flex-wrap: wrap;
       gap: 0.75rem;
     }
+
+    .stats {
+      margin-top: 1.9rem;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.7rem;
+    }
+    .stat {
+      padding: 0.9rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(8px);
+    }
+    .stat strong {
+      display: block;
+      font-size: 1.35rem;
+      font-family: Syne, sans-serif;
+      line-height: 1;
+      margin-bottom: 0.2rem;
+    }
+    .stat span { font-size: 0.8rem; color: var(--ink-soft); }
 
     .hero-card {
       background: var(--surface);
@@ -561,6 +583,7 @@
       .desktop-cta { display: none; }
       .project { grid-column: span 12; }
       .services-grid { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
   </style>
 </head>
@@ -577,8 +600,7 @@
       <nav id="navLinks" class="nav-links" aria-label="Navigation principale">
         <a href="#projects">Projets</a>
         <a href="#services">Services</a>
-        <a href="#photos">Photos</a>
-        <a href="#about">À propos</a>
+        <a href="#about">A propos</a>
         <a href="#contact">Contact</a>
       </nav>
 
@@ -593,25 +615,31 @@
   <main id="main">
     <section id="home" class="container hero">
       <div class="reveal">
-        <span class="kicker">Vidéaste • Photographe • Drone</span>
-        <h1>Je raconte des histoires en images.</h1>
+        <span class="kicker">Vidéaste • Réalisateur • Drone</span>
+        <h1>Des films premium qui servent vos objectifs.</h1>
         <p>
-          Vidéaste et photographe à La Réunion, je filme des marques, des événements et des histoires d'ici. De la publicité au court-métrage, je m'occupe de tout : l'idée, le tournage et le montage.
+          Je conçois des productions visuelles avec une approche claire: stratégie, narration, exécution. De la publicité au documentaire, chaque image est pensée pour être utile et mémorable.
         </p>
 
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#projects">Voir mes réalisations</a>
+          <a class="btn btn-primary" href="#projects">Voir les projets</a>
           <a class="btn btn-light" href="#showreel">Lancer le showreel</a>
+        </div>
+
+        <div class="stats" aria-label="Statistiques">
+          <div class="stat"><strong>5+</strong><span>Années d'experience</span></div>
+          <div class="stat"><strong>50+</strong><span>Projets livres</span></div>
+          <div class="stat"><strong>4K</strong><span>Tournage & finition</span></div>
         </div>
       </div>
 
       <article id="showreel" class="hero-card reveal" aria-label="Showreel">
-        <button class="hero-preview" data-video-id="1J_S1kuRwHQ" data-video-title="Showreel - Jérémie Favre" type="button">
+        <button class="hero-preview" data-video-id="1J_S1kuRwHQ" data-video-title="Showreel - Jeremie Favre" type="button">
           <img
             src="images/optimized/yt/1J_S1kuRwHQ-1280.jpg"
             srcset="images/optimized/yt/1J_S1kuRwHQ-1280.jpg 1280w, images/optimized/yt/1J_S1kuRwHQ-480.jpg 480w, images/optimized/yt/1J_S1kuRwHQ-320.jpg 320w"
             sizes="(max-width: 1000px) 100vw, 42vw"
-            alt="Showreel Jérémie Favre"
+            alt="Showreel Jeremie Favre"
             loading="eager"
             decoding="async"
           >
@@ -623,113 +651,92 @@
     <section id="projects" class="section container">
       <div class="section-head reveal">
         <div>
-          <span class="kicker">Mes réalisations</span>
-          <h2>Mes vidéos</h2>
+          <span class="kicker">Selection</span>
+          <h2>Projets recents</h2>
         </div>
-        <p>Publicités, documentaires, courts-métrages... cliquez sur une vidéo pour la regarder.</p>
+        <p>Une selection representative entre films de marque, narration et territoire.</p>
       </div>
 
-      <div class="bento" id="videoGrid"></div>
+      <div class="bento">
+        <article class="project card reveal" role="button" tabindex="0" data-video-id="_q7MnK_2QFI" data-video-title="VENUM - Publicite">
+          <img src="images/optimized/yt/_q7MnK_2QFI-1280.jpg" srcset="images/optimized/yt/_q7MnK_2QFI-1280.jpg 1280w, images/optimized/yt/_q7MnK_2QFI-480.jpg 480w, images/optimized/yt/_q7MnK_2QFI-320.jpg 320w" sizes="(max-width: 1000px) 100vw, 31vw" alt="Projet VENUM" loading="lazy" decoding="async">
+          <div class="project-body">
+            <span class="tag">Pub & Marque</span>
+            <h3>VENUM - Publicite</h3>
+            <p>Spot dynamique oriente conversion et image premium.</p>
+          </div>
+        </article>
 
-      <div class="hero-actions reveal" style="margin-top: 1.6rem; justify-content: center;">
-        <button id="moreVideos" class="btn btn-light" type="button">Voir plus de vidéos</button>
-        <a class="btn btn-light" href="portfolio.html">Portfolio complet</a>
+        <article class="project card reveal" role="button" tabindex="0" data-video-id="1J_S1kuRwHQ" data-video-title="AURORA - Court-metrage">
+          <img src="images/optimized/yt/1J_S1kuRwHQ-1280.jpg" srcset="images/optimized/yt/1J_S1kuRwHQ-1280.jpg 1280w, images/optimized/yt/1J_S1kuRwHQ-480.jpg 480w, images/optimized/yt/1J_S1kuRwHQ-320.jpg 320w" sizes="(max-width: 1000px) 100vw, 31vw" alt="Projet AURORA" loading="lazy" decoding="async">
+          <div class="project-body">
+            <span class="tag">Narration</span>
+            <h3>AURORA</h3>
+            <p>Court-metrage visuel, travail de lumiere et rythme cinematique.</p>
+          </div>
+        </article>
+
+        <article class="project card reveal" role="button" tabindex="0" data-video-id="I3Msiw9MSdM" data-video-title="Projet Alimentaire - Mafate">
+          <img src="images/optimized/yt/I3Msiw9MSdM-1280.jpg" srcset="images/optimized/yt/I3Msiw9MSdM-1280.jpg 1280w, images/optimized/yt/I3Msiw9MSdM-480.jpg 480w, images/optimized/yt/I3Msiw9MSdM-320.jpg 320w" sizes="(max-width: 1000px) 100vw, 31vw" alt="Projet Mafate" loading="lazy" decoding="async">
+          <div class="project-body">
+            <span class="tag">Documentaire</span>
+            <h3>Projet Alimentaire - Mafate</h3>
+            <p>Film de territoire avec une approche authentique et utile.</p>
+          </div>
+        </article>
       </div>
     </section>
 
     <section id="services" class="section container">
       <div class="section-head reveal">
         <div>
-          <span class="kicker">Savoir-faire</span>
-          <h2>Ce que je fais</h2>
+          <span class="kicker">Expertise</span>
+          <h2>Services video</h2>
         </div>
-        <p>De l'idée de départ jusqu'au fichier final, je m'occupe de chaque étape.</p>
+        <p>Un workflow clair de la pre-production a la livraison finale.</p>
       </div>
 
       <div class="services-grid">
         <article class="service reveal">
-          <h3>Vidéos d'entreprise</h3>
-          <p>Des films qui présentent votre activité, vos produits ou votre équipe avec sincérité.</p>
+          <h3>Films de marque</h3>
+          <p>Concept, tournage et montage de contenus premium pour notoriété et acquisition.</p>
         </article>
         <article class="service reveal">
-          <h3>Drone & plans aériens</h3>
-          <p>Des images aériennes pour montrer vos lieux et paysages sous un autre angle.</p>
+          <h3>Drone & plans aeriens</h3>
+          <p>Captation drone pour valoriser vos lieux, itineraires et experiences.</p>
         </article>
         <article class="service reveal">
-          <h3>Réseaux sociaux</h3>
-          <p>Formats verticaux et capsules courtes pensés pour Instagram, TikTok et Facebook.</p>
+          <h3>Social media</h3>
+          <p>Formats verticaux et capsules courtes adaptees a Instagram, TikTok et Meta.</p>
         </article>
         <article class="service reveal">
-          <h3>Événementiel & mariage</h3>
-          <p>Je capture vos événements en vidéo et en photo, pour en garder le meilleur.</p>
-        </article>
-        <article class="service reveal">
-          <h3>Photographie</h3>
-          <p>Mariage, produit ou portrait : des photos soignées, en lumière naturelle ou en mise en scène.</p>
+          <h3>Evenementiel</h3>
+          <p>Couverture d'evenements avec montage rapide et assets multi-formats.</p>
         </article>
         <article class="service reveal">
           <h3>Post-production</h3>
-          <p>Montage, étalonnage, sound design : je finalise chaque projet jusqu'au rendu final.</p>
+          <p>Montage, sound design, etalonnage et finition pour diffusion professionnelle.</p>
         </article>
-      </div>
-    </section>
-
-    <section id="photos" class="section container">
-      <div class="section-head reveal">
-        <div>
-          <span class="kicker">Photographie</span>
-          <h2>La photo, l'autre regard</h2>
-        </div>
-        <p>Mariage, produit et portrait - des images soignées, réalisées à La Réunion.</p>
-      </div>
-
-      <div class="bento">
-        <a class="project card reveal" href="Grille photo Mariage.html">
-          <img src="images/optimized/Mariage/DSC04940.jpg" alt="Photographie de mariage - alliances et bouquet de roses" loading="lazy" decoding="async">
-          <div class="project-body">
-            <span class="tag">Mariage</span>
-            <h3>Mariage</h3>
-            <p>Le reportage de votre journée, des préparatifs à la soirée.</p>
-          </div>
-        </a>
-
-        <a class="project card reveal" href="Grille photo Produit.html">
-          <img src="images/optimized/Produit/RM0.jpg" alt="Photographie de produit - mise en scène artisanale" loading="lazy" decoding="async">
-          <div class="project-body">
-            <span class="tag">Produit</span>
-            <h3>Produit</h3>
-            <p>Packshots et mises en scène pour valoriser vos créations.</p>
-          </div>
-        </a>
-
-        <a class="project card reveal" href="Grille photo Portrait.html">
-          <img src="images/optimized/Portrait/DSC06907.jpg" alt="Portrait en extérieur - lumière naturelle" loading="lazy" decoding="async">
-          <div class="project-body">
-            <span class="tag">Portrait</span>
-            <h3>Portrait</h3>
-            <p>Des portraits qui révèlent chaque personnalité, en lumière naturelle.</p>
-          </div>
-        </a>
-      </div>
-
-      <div class="hero-actions reveal" style="margin-top: 1.6rem; justify-content: center;">
-        <a class="btn btn-light" href="Grille photo.html">Voir toute la galerie</a>
+        <article class="service reveal">
+          <h3>Accompagnement creatif</h3>
+          <p>Conseil editorial, angle narratif et plan de publication selon vos objectifs.</p>
+        </article>
       </div>
     </section>
 
     <section id="about" class="section container about">
       <figure class="about-media reveal">
-        <img src="unnamed.jpg" alt="Jérémie Favre en tournage" loading="lazy" decoding="async">
+        <img src="unnamed.jpg" alt="Jeremie Favre sur un tournage" loading="lazy" decoding="async">
       </figure>
 
       <article class="about-panel reveal">
-        <span class="kicker">À propos</span>
-        <h2 style="margin:0.6rem 0 1rem; font-size: clamp(1.7rem, 3.6vw, 2.8rem);">Moi, c'est Jérémie.</h2>
+        <span class="kicker">A propos</span>
+        <h2 style="margin:0.6rem 0 1rem; font-size: clamp(1.7rem, 3.6vw, 2.8rem);">Un partenaire de production, pas juste un operateur.</h2>
         <p>
-          Passionné d'image depuis toujours, je filme et photographie La Réunion, ses gens et ses histoires. Ce qui me plaît : trouver le bon angle, la bonne lumière, et raconter quelque chose de vrai.
+          Mon role est d'aligner la creation avec vos objectifs business ou culturels. Je privilegie une methode simple: cadrage precis, execution propre, livraison fiable.
         </p>
         <p>
-          Je travaille avec des marques, des institutions, des artistes et des particuliers, toujours avec la même envie : des images simples, belles et qui vous ressemblent.
+          Je travaille principalement a La Reunion pour des marques, institutions, artistes et entrepreneurs qui veulent des images utiles et elegantes.
         </p>
 
         <div class="skills" aria-label="Outils et competences">
@@ -737,7 +744,7 @@
           <span>Drone DJI / FPV</span>
           <span>DaVinci Resolve</span>
           <span>Premiere Pro</span>
-          <span>Étalonnage</span>
+          <span>Etalonnage</span>
           <span>Sound design</span>
         </div>
       </article>
@@ -746,8 +753,8 @@
     <section id="contact" class="section container">
       <article class="cta reveal">
         <span class="kicker">Contact</span>
-        <h2>Parlons de votre projet.</h2>
-        <p>Un film, un mariage, des photos ? Expliquez-moi votre idée et votre date : je vous réponds rapidement avec une proposition claire et un budget transparent.</p>
+        <h2>Parlons de votre prochain film.</h2>
+        <p>Donnez-moi le contexte, la date cible et le format. Je vous reponds avec une proposition claire, un delai et un budget transparent.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="contact.html">Demander un devis</a>
           <a class="btn btn-light" href="https://wa.me/262693112398" target="_blank" rel="noopener noreferrer">WhatsApp direct</a>
@@ -758,7 +765,7 @@
 
   <footer>
     <div class="container footer-row">
-      <p><strong>Jérémie Favre</strong> - Vidéaste & photographe à La Réunion</p>
+      <p><strong>Jeremie Favre</strong> - Videaste & realisateur a La Reunion</p>
       <nav class="footer-links" aria-label="Liens footer">
         <a href="#home">Accueil</a>
         <a href="portfolio.html">Portfolio complet</a>
@@ -783,74 +790,7 @@
   </div>
 
   <script>
-    document.addEventListener('DOMContentLoaded', async () => {
-
-      // ===== MES VIDÉOS =====
-      // Les vidéos sont gérées depuis l'espace admin (admin.html), qui exporte le fichier videos.json.
-      // "featured": true  -> affichée directement sur l'accueil
-      // "featured": false -> accessible via le bouton "Voir plus de vidéos"
-      let mesVideos = [];
-      try {
-        const reponse = await fetch('videos.json?_=' + Date.now());
-        const data = await reponse.json();
-        mesVideos = data.videos.slice().sort((a, b) => (a.order || 0) - (b.order || 0));
-      } catch (e) {
-        console.error('Impossible de charger videos.json', e);
-      }
-
-      // vedettes d'abord, les autres derrière "Voir plus"
-      mesVideos = [...mesVideos.filter(v => v.featured), ...mesVideos.filter(v => !v.featured)];
-      const nbVedettes = mesVideos.filter(v => v.featured).length;
-
-      const videoGrid = document.getElementById('videoGrid');
-      const moreVideosBtn = document.getElementById('moreVideos');
-
-      mesVideos.forEach((v, i) => {
-        const card = document.createElement('article');
-        card.className = 'project card reveal';
-        card.setAttribute('role', 'button');
-        card.tabIndex = 0;
-        card.dataset.videoId = v.id;
-        card.dataset.videoTitle = v.title;
-        if (i >= nbVedettes) card.hidden = true;
-
-        const img = document.createElement('img');
-        img.alt = v.title;
-        img.loading = 'lazy';
-        img.decoding = 'async';
-        img.dataset.fallbackApplied = '1'; // repli géré ici : miniature locale, sinon celle de YouTube
-        const sources = [
-          `images/optimized/yt/${v.id}-1280.jpg`,
-          `https://i.ytimg.com/vi/${v.id}/maxresdefault.jpg`,
-          `https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`
-        ];
-        let step = 0;
-        img.addEventListener('error', () => { if (step < sources.length - 1) img.src = sources[++step]; });
-        img.src = sources[0];
-
-        const body = document.createElement('div');
-        body.className = 'project-body';
-        const tag = document.createElement('span');
-        tag.className = 'tag';
-        tag.textContent = v.category;
-        const h3 = document.createElement('h3');
-        h3.textContent = v.title;
-        const p = document.createElement('p');
-        p.textContent = v.description || '';
-        body.append(tag, h3, p);
-        card.append(img, body);
-        videoGrid.append(card);
-      });
-
-      if (mesVideos.length <= nbVedettes) {
-        moreVideosBtn.hidden = true;
-      } else {
-        moreVideosBtn.addEventListener('click', () => {
-          videoGrid.querySelectorAll('[hidden]').forEach(el => { el.hidden = false; });
-          moreVideosBtn.hidden = true;
-        });
-      }
-
+    document.addEventListener('DOMContentLoaded', () => {
       const menuToggle = document.getElementById('menuToggle');
       const navLinks = document.getElementById('navLinks');
       const toTop = document.getElementById('toTop');

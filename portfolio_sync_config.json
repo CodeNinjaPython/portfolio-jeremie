@@ -1,0 +1,30 @@
+{
+  "index_file": "Index.html",
+  "valid_extensions": [".jpg", ".jpeg", ".png", ".webp"],
+  "categories": [
+    {
+      "id": "galerie",
+      "label": "galerie",
+      "folders": ["images/Photo", "images/Mariage", "images/Produit", "images/Portrait"],
+      "grille_file": "Grille photo.html"
+    },
+    {
+      "id": "mariage",
+      "label": "mariage",
+      "folder": "images/Mariage",
+      "grille_file": "Grille photo Mariage.html"
+    },
+    {
+      "id": "produit",
+      "label": "produit",
+      "folder": "images/Produit",
+      "grille_file": "Grille photo Produit.html"
+    },
+    {
+      "id": "portrait",
+      "label": "portrait",
+      "folder": "images/Portrait",
+      "grille_file": "Grille photo Portrait.html"
+    }
+  ]
+}
